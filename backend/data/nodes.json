@@ -1,0 +1,257 @@
+[
+  {
+    "id": "ch6_overview",
+    "name": "传输层概述",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层为应用进程之间提供端到端的逻辑通信，主要功能包括复用/分用、可靠传输、流量控制、拥塞控制等。",
+    "keywords": [
+      "端到端",
+      "复用",
+      "分用",
+      "逻辑通信"
+    ],
+    "difficulty": 2,
+    "image_urls": []
+  },
+  {
+    "id": "tcp",
+    "name": "TCP 协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输控制协议（TCP）是一种面向连接的、可靠的、基于字节流的传输层通信协议。提供全双工通信、流量控制、拥塞控制等机制。",
+    "keywords": [
+      "面向连接",
+      "可靠传输",
+      "字节流",
+      "全双工"
+    ],
+    "difficulty": 3,
+    "image_urls": [
+      "https://img-blog.csdnimg.cn/63b02186165b44c283ea2f3fbd6a7980.png",
+      "https://pic1.zhimg.com/v2-a45ed86c41f785103da8f611941ea5be_1440w.jpg"
+    ],
+    "video_url": "https://www.bilibili.com/video/BV1kV411j7hA/?spm_id_from=333.337.search-card.all.click"
+  },
+  {
+    "id": "udp",
+    "name": "UDP 协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "用户数据报协议（UDP）是一种无连接的传输层协议，提供不可靠的数据传输服务，但具有低延迟、低开销的特点。",
+    "keywords": [
+      "无连接",
+      "不可靠",
+      "低延迟",
+      "数据报"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "tcp_handshake",
+    "name": "TCP 三次握手",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP 建立连接需要三次握手：SYN → SYN+ACK → ACK，确保双方收发能力正常，防止已失效的连接请求到达服务器。",
+    "keywords": [
+      "SYN",
+      "ACK",
+      "连接建立",
+      "序列号"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "tcp_wavehand",
+    "name": "TCP 四次挥手",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP 释放连接需要四次挥手：FIN → ACK → FIN → ACK，因为 TCP 是全双工的，每个方向需要单独关闭。",
+    "keywords": [
+      "FIN",
+      "连接释放",
+      "全双工",
+      "TIME_WAIT"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "congestion_control",
+    "name": "TCP 拥塞控制",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP 拥塞控制包括慢启动、拥塞避免、快重传、快恢复四种算法，通过拥塞窗口 cwnd 和慢启动门限 ssthresh 来控制发送速率。",
+    "keywords": [
+      "慢启动",
+      "拥塞避免",
+      "快重传",
+      "快恢复",
+      "cwnd",
+      "ssthresh"
+    ],
+    "difficulty": 4
+  },
+  {
+    "id": "flow_control",
+    "name": "TCP 流量控制",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP 使用滑动窗口机制进行流量控制，接收方通过rwnd（接收窗口）告诉发送方自己还能接收多少数据，防止发送方发送过快导致接收方缓冲区溢出。",
+    "keywords": [
+      "滑动窗口",
+      "rwnd",
+      "接收窗口",
+      "缓冲区"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "tcp_header",
+    "name": "TCP 报文段格式",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP 报文段由首部和数据两部分组成，首部包括源端口、目的端口、序号、确认号、数据偏移、标志位、窗口、检验和、紧急指针等字段。",
+    "keywords": [
+      "首部",
+      "序号",
+      "确认号",
+      "标志位",
+      "检验和"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "udp_header",
+    "name": "UDP 数据报格式",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP 数据报由首部和数据组成，首部仅8字节：源端口、目的端口、长度、检验和，结构简单、开销小。",
+    "keywords": [
+      "首部",
+      "端口",
+      "检验和",
+      "8字节"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "port",
+    "name": "端口号",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "端口是传输层用于标识应用进程的16位编号，分为熟知端口(0-1023)、注册端口(1024-49151)、动态端口(49152-65535)。",
+    "keywords": [
+      "16位",
+      "熟知端口",
+      "注册端口",
+      "动态端口",
+      "套接字"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "case_tcp_congestion",
+    "name": "TCP 拥塞控制案例分析",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "传输层",
+    "description": "通过 Wireshark 抓包分析 TCP 拥塞控制过程，观察 cwnd 的动态变化、慢启动阶段的指数增长和拥塞避免阶段的线性增长。",
+    "keywords": [
+      "Wireshark",
+      "拥塞窗口",
+      "抓包分析",
+      "吞吐量"
+    ],
+    "difficulty": 4
+  },
+  {
+    "id": "case_tcp_wireshark",
+    "name": "Wireshark TCP 协议分析",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "传输层",
+    "description": "使用 Wireshark 捕获 TCP 通信报文，分析三次握手、数据传输、四次挥手过程，验证序列号和确认号的变化规律。",
+    "keywords": [
+      "Wireshark",
+      "抓包",
+      "三次握手",
+      "四次挥手",
+      "序号分析"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "q_tcp_001",
+    "name": "TCP 三次握手过程",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "关于 TCP 三次握手中 SYN 和 ACK 标志位变化的题目",
+    "keywords": [
+      "三次握手",
+      "SYN",
+      "ACK"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "q_tcp_002",
+    "name": "TCP 拥塞控制计算",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "给定初始 cwnd 和 ssthresh，计算经过若干轮次后的拥塞窗口大小",
+    "keywords": [
+      "拥塞控制",
+      "cwnd",
+      "ssthresh",
+      "慢启动"
+    ],
+    "difficulty": 4
+  },
+  {
+    "id": "q_tcp_003",
+    "name": "TCP 与 UDP 对比",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "比较 TCP 和 UDP 的特点、适用场景及优缺点",
+    "keywords": [
+      "TCP",
+      "UDP",
+      "对比",
+      "可靠传输"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "q_tcp_004",
+    "name": "TCP 四次挥手状态",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "TCP 四次挥手中各状态转换的题目",
+    "keywords": ["四次挥手", "TIME_WAIT", "FIN", "状态转换"],
+    "difficulty": 3
+  },
+  {
+    "id": "q_tcp_005",
+    "name": "TCP 流量控制字段",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "TCP 流量控制中窗口字段相关的题目",
+    "keywords": ["流量控制", "窗口", "rwnd", "滑动窗口"],
+    "difficulty": 2
+  }
+]

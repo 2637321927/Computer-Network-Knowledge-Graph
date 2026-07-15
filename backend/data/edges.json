@@ -1,0 +1,149 @@
+[
+  {
+    "id": "edge_001",
+    "source": "tcp",
+    "target": "congestion_control",
+    "relation": "包含",
+    "description": "TCP 包含拥塞控制机制"
+  },
+  {
+    "id": "edge_002",
+    "source": "tcp",
+    "target": "flow_control",
+    "relation": "包含",
+    "description": "TCP 包含流量控制机制"
+  },
+  {
+    "id": "edge_003",
+    "source": "tcp",
+    "target": "tcp_handshake",
+    "relation": "包含",
+    "description": "TCP 连接建立使用三次握手"
+  },
+  {
+    "id": "edge_004",
+    "source": "tcp",
+    "target": "tcp_wavehand",
+    "relation": "包含",
+    "description": "TCP 连接释放使用四次挥手"
+  },
+  {
+    "id": "edge_005",
+    "source": "tcp",
+    "target": "tcp_header",
+    "relation": "包含",
+    "description": "TCP 协议定义了报文段格式"
+  },
+  {
+    "id": "edge_006",
+    "source": "ch6_overview",
+    "target": "tcp",
+    "relation": "前置知识",
+    "description": "了解传输层概述后再学习 TCP 协议"
+  },
+  {
+    "id": "edge_007",
+    "source": "ch6_overview",
+    "target": "udp",
+    "relation": "前置知识",
+    "description": "了解传输层概述后再学习 UDP 协议"
+  },
+  {
+    "id": "edge_008",
+    "source": "tcp",
+    "target": "udp",
+    "relation": "对比",
+    "description": "TCP 与 UDP 在可靠性、连接性、效率等方面形成对比"
+  },
+  {
+    "id": "edge_009",
+    "source": "tcp_handshake",
+    "target": "tcp_wavehand",
+    "relation": "对比",
+    "description": "三次握手建立连接与四次挥手释放连接的对比"
+  },
+  {
+    "id": "edge_010",
+    "source": "congestion_control",
+    "target": "flow_control",
+    "relation": "对比",
+    "description": "拥塞控制（全局）与流量控制（端到端）的区别和联系"
+  },
+  {
+    "id": "edge_011",
+    "source": "tcp_header",
+    "target": "udp_header",
+    "relation": "对比",
+    "description": "TCP 首部（20-60字节）与 UDP 首部（8字节）的对比"
+  },
+  {
+    "id": "edge_012",
+    "source": "port",
+    "target": "tcp",
+    "relation": "依赖",
+    "description": "TCP 使用端口号标识应用进程"
+  },
+  {
+    "id": "edge_013",
+    "source": "port",
+    "target": "udp",
+    "relation": "依赖",
+    "description": "UDP 使用端口号标识应用进程"
+  },
+  {
+    "id": "edge_014",
+    "source": "tcp",
+    "target": "case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "TCP 拥塞控制的 Wireshark 分析案例"
+  },
+  {
+    "id": "edge_015",
+    "source": "tcp",
+    "target": "case_tcp_wireshark",
+    "relation": "相关案例",
+    "description": "TCP 协议的 Wireshark 抓包分析案例"
+  },
+  {
+    "id": "edge_016",
+    "source": "tcp_handshake",
+    "target": "q_tcp_001",
+    "relation": "关联试题",
+    "description": "三次握手相关试题"
+  },
+  {
+    "id": "edge_017",
+    "source": "congestion_control",
+    "target": "q_tcp_002",
+    "relation": "关联试题",
+    "description": "拥塞控制计算题"
+  },
+  {
+    "id": "edge_018",
+    "source": "tcp",
+    "target": "q_tcp_003",
+    "relation": "关联试题",
+    "description": "TCP/UDP 对比试题"
+  },
+  {
+    "id": "edge_019",
+    "source": "udp",
+    "target": "udp_header",
+    "relation": "包含",
+    "description": "UDP 协议定义了数据报格式"
+  },
+  {
+    "id": "edge_021",
+    "source": "tcp_wavehand",
+    "target": "q_tcp_004",
+    "relation": "关联试题",
+    "description": "TCP四次挥手状态相关试题"
+  },
+  {
+    "id": "edge_022",
+    "source": "flow_control",
+    "target": "q_tcp_005",
+    "relation": "关联试题",
+    "description": "TCP流量控制字段相关试题"
+  }
+]

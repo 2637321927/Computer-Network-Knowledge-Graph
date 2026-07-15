@@ -1,0 +1,57 @@
+[
+  {
+    "id": "q_tcp_001",
+    "title": "TCP 三次握手过程中，第二次握手报文包含的标志位是？",
+    "type": "单选题",
+    "related_nodes": ["tcp_handshake", "tcp"],
+    "options": ["A. SYN", "B. ACK", "C. SYN+ACK", "D. FIN"],
+    "answer": "C",
+    "explanation": "第二次握手是服务器向客户端发送 SYN+ACK 报文，同时确认客户端的 SYN 并发送自己的 SYN。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_tcp_002",
+    "title": "设 TCP 的 ssthresh 初始值为 8（单位为报文段），当拥塞窗口上升到 12 时发生超时，TCP 开始慢启动和拥塞避免。试分别求出第 1 次到第 15 次传输的各拥塞窗口大小。",
+    "type": "计算题",
+    "related_nodes": ["congestion_control", "tcp"],
+    "options": [],
+    "answer": "cwnd 变化：1→2→4→8→9→10→11→12→1→2→4→6→7→8→9",
+    "explanation": "前 7 轮：慢启动(1→8)后拥塞避免(9→12)；超时后 ssthresh=6，重新慢启动(1→6)后拥塞避免(7→9)。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_tcp_003",
+    "title": "以下关于 TCP 和 UDP 的说法，正确的是？",
+    "type": "多选题",
+    "related_nodes": ["tcp", "udp"],
+    "options": [
+      "A. TCP 提供可靠传输，UDP 提供不可靠传输",
+      "B. TCP 面向连接，UDP 无连接",
+      "C. TCP 首部比 UDP 首部小",
+      "D. TCP 支持流量控制和拥塞控制，UDP 不支持"
+    ],
+    "answer": "ABD",
+    "explanation": "TCP 首部最小 20 字节，UDP 首部仅 8 字节，所以 C 选项错误。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_tcp_004",
+    "title": "TCP 四次挥手中，客户端收到服务器的 FIN 报文后，会进入什么状态？",
+    "type": "单选题",
+    "related_nodes": ["tcp_wavehand", "tcp"],
+    "options": ["A. CLOSE_WAIT", "B. TIME_WAIT", "C. LAST_ACK", "D. FIN_WAIT_2"],
+    "answer": "B",
+    "explanation": "客户端收到服务器的 FIN 后发送 ACK，然后进入 TIME_WAIT 状态，等待 2MSL 时间。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_tcp_005",
+    "title": "TCP 流量控制中，接收方通过什么字段告诉发送方自己的接收能力？",
+    "type": "填空题",
+    "related_nodes": ["flow_control", "tcp"],
+    "options": [],
+    "answer": "窗口大小（Window/rwnd）",
+    "explanation": "TCP 报文段首部中的窗口字段（16 位）用于流量控制，表示接收方还能接收的字节数。",
+    "difficulty": 2
+  }
+]
