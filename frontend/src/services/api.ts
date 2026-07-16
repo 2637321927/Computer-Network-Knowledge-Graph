@@ -67,8 +67,8 @@ export async function deleteEdge(id: string): Promise<void> {
 
 // 案例 API
 
-export async function fetchCases(): Promise<CaseItem[]> {
-  const { data } = await api.get('/cases');
+export async function fetchCases(params?: { chapter?: string }): Promise<CaseItem[]> {
+  const { data } = await api.get('/cases', { params });
   return data;
 }
 
@@ -79,8 +79,8 @@ export async function fetchCaseById(id: string): Promise<CaseItem> {
 
 // 试题 API
 
-export async function fetchQuestions(): Promise<QuestionItem[]> {
-  const { data } = await api.get('/questions');
+export async function fetchQuestions(params?: { chapter?: string }): Promise<QuestionItem[]> {
+  const { data } = await api.get('/questions', { params });
   return data;
 }
 

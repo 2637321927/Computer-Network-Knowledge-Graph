@@ -22,11 +22,13 @@ export default function CasesPage() {
   const [editingCase, setEditingCase] = useState<CaseItem | null>(null);
   const [viewingCase, setViewingCase] = useState<CaseItem | null>(null);
   const [form] = Form.useForm();
+  const [chapterFilter, setChapterFilter] = useState<string | undefined>(undefined);
+  const [pagination, setPagination] = useState({ current: 1, pageSize: 15 });
 
   const loadCases = async () => {
     setLoading(true);
     try {
-      const data = await fetchCases();
+      const data = await fetchCases({ chapter: chapterFilter });
       setCases(data);
     } catch {
       message.error('加载案例失败');
@@ -35,7 +37,10 @@ export default function CasesPage() {
     }
   };
 
-  useEffect(() => { loadCases(); }, []);
+  useEffect(() => { loadCases(); }, [chapterFilter]);
+  
+  // 切换筛选时重置分页
+  useEffect(() => { setPagination(prev => ({ ...prev, current: 1 })); }, [chapterFilter]);
 
   const handleAdd = () => {
     setEditingCase(null);
@@ -140,6 +145,14 @@ export default function CasesPage() {
         title="案例管理"
         extra={
           <Space>
+            <Select
+              allowClear
+              placeholder="按章节筛选"
+              style={{ width: 180 }}
+              value={chapterFilter}
+              onChange={(val) => setChapterFilter(val)}
+              options={['计算机网络概述', '物理层', '数据链路层', '局域网原理', '网络层', '传输层', '应用层', '网络性能优化', '软件定义网络与边缘计算', '课程综合项目'].map(c => ({ label: c, value: c }))}
+            />
             <Button icon={<ReloadOutlined />} onClick={loadCases}>刷新</Button>
             <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>新增案例</Button>
           </Space>
@@ -150,9 +163,15 @@ export default function CasesPage() {
           columns={columns}
           dataSource={cases}
           loading={loading}
-          scroll={{ y: 'calc(100vh - 280px)' }}
           size="middle"
-          pagination={{ pageSize: 15, showSizeChanger: true, showTotal: (t) => `共 ${t} 条` }}
+          pagination={{
+            current: pagination.current,
+            pageSize: pagination.pageSize,
+            showSizeChanger: true,
+            pageSizeOptions: ['10', '15', '20', '50', '100'],
+            showTotal: (t) => `共 ${t} 条`,
+            onChange: (page, pageSize) => setPagination({ current: page, pageSize }),
+          }}
         />
       </Card>
 

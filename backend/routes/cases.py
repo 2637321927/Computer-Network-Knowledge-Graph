@@ -1,17 +1,19 @@
 """案例相关API路由"""
-from fastapi import APIRouter, HTTPException
-from typing import List
+from fastapi import APIRouter, HTTPException, Query
+from typing import List, Optional
 from models import Case, CaseCreate, CaseUpdate
-from database import get_all_cases, get_case_by_id, create_case, update_case, delete_case
+from database import get_all_cases, get_case_by_id, create_case, update_case, delete_case, search_cases
 from database import create_node, update_node, delete_node
 
 router = APIRouter(prefix="/api/cases", tags=["案例管理"])
 
 
 @router.get("", response_model=List[Case])
-async def list_cases():
-    """查询案例列表"""
-    return get_all_cases()
+async def list_cases(
+    chapter: Optional[str] = Query(None, description="按章节筛选")
+):
+    """查询案例列表，支持按章节筛选"""
+    return search_cases(chapter=chapter)
 
 
 @router.get("/{case_id}", response_model=Case)

@@ -1,17 +1,19 @@
 """试题相关API路由"""
-from fastapi import APIRouter, HTTPException
-from typing import List
+from fastapi import APIRouter, HTTPException, Query
+from typing import List, Optional
 from models import Question, QuestionCreate, QuestionUpdate
-from database import get_all_questions, get_question_by_id, create_question, update_question, delete_question
+from database import get_all_questions, get_question_by_id, create_question, update_question, delete_question, search_questions
 from database import create_node, update_node, delete_node
 
 router = APIRouter(prefix="/api/questions", tags=["试题管理"])
 
 
 @router.get("", response_model=List[Question])
-async def list_questions():
-    """查询试题列表"""
-    return get_all_questions()
+async def list_questions(
+    chapter: Optional[str] = Query(None, description="按章节筛选")
+):
+    """查询试题列表，支持按章节筛选"""
+    return search_questions(chapter=chapter)
 
 
 @router.get("/{question_id}", response_model=Question)

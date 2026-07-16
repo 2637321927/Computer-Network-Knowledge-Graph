@@ -241,7 +241,12 @@
     "layer": "问题层",
     "chapter": "传输层",
     "description": "TCP 四次挥手中各状态转换的题目",
-    "keywords": ["四次挥手", "TIME_WAIT", "FIN", "状态转换"],
+    "keywords": [
+      "四次挥手",
+      "TIME_WAIT",
+      "FIN",
+      "状态转换"
+    ],
     "difficulty": 3
   },
   {
@@ -251,7 +256,27 @@
     "layer": "问题层",
     "chapter": "传输层",
     "description": "TCP 流量控制中窗口字段相关的题目",
-    "keywords": ["流量控制", "窗口", "rwnd", "滑动窗口"],
+    "keywords": [
+      "流量控制",
+      "窗口",
+      "rwnd",
+      "滑动窗口"
+    ],
     "difficulty": 2
+  },
+  {
+    "id": "case_router_loop",
+    "name": "路由环路检测与预防",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "网络层",
+    "description": "分析 RIP 协议中路由环路产生的原因及解决机制：水平分割、毒性反转、触发更新、抑制计时器。",
+    "keywords": [
+      "路由环路",
+      "RIP",
+      "距离向量",
+      "水平分割"
+    ],
+    "difficulty": 3
   }
 ]

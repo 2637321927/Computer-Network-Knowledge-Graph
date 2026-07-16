@@ -181,6 +181,14 @@ def get_all_cases() -> List[Dict]:
     return _read_json(CASES_FILE)
 
 
+def search_cases(chapter: str = None) -> List[Dict]:
+    """搜索案例，支持按章节筛选"""
+    cases = _read_json(CASES_FILE)
+    if chapter:
+        cases = [c for c in cases if c.get("chapter") == chapter]
+    return cases
+
+
 def get_case_by_id(case_id: str) -> Optional[Dict]:
     cases = _read_json(CASES_FILE)
     for case in cases:
@@ -222,6 +230,14 @@ def delete_case(case_id: str) -> bool:
 
 def get_all_questions() -> List[Dict]:
     return _read_json(QUESTIONS_FILE)
+
+
+def search_questions(chapter: str = None) -> List[Dict]:
+    """搜索试题，支持按章节筛选"""
+    questions = _read_json(QUESTIONS_FILE)
+    if chapter:
+        questions = [q for q in questions if q.get("chapter") == chapter]
+    return questions
 
 
 def get_question_by_id(question_id: str) -> Optional[Dict]:

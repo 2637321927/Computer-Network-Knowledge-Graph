@@ -46,6 +46,8 @@ export default function NodesPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingNode, setEditingNode] = useState<KnowledgeNode | null>(null);
   const [form] = Form.useForm();
+  const [chapterFilter, setChapterFilter] = useState<string | undefined>(undefined);
+  const [pagination, setPagination] = useState({ current: 1, pageSize: 15 });
 
   // 预览
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -59,7 +61,7 @@ export default function NodesPage() {
   const loadNodes = async () => {
     setLoading(true);
     try {
-      const data = await fetchNodes();
+      const data = await fetchNodes({ chapter: chapterFilter as any });
       setNodes(data);
       const edges = await fetchEdges();
       setAllEdges(edges);
@@ -70,7 +72,10 @@ export default function NodesPage() {
     }
   };
 
-  useEffect(() => { loadNodes(); }, []);
+  useEffect(() => { loadNodes(); }, [chapterFilter]);
+  
+  // 切换筛选时重置分页
+  useEffect(() => { setPagination(prev => ({ ...prev, current: 1 })); }, [chapterFilter]);
 
   // 加载某节点的关联关系
   const loadNodeEdges = async (nodeId: string) => {
@@ -214,6 +219,14 @@ export default function NodesPage() {
         title="知识点管理"
         extra={
           <Space>
+            <Select
+              allowClear
+              placeholder="按章节筛选"
+              style={{ width: 180 }}
+              value={chapterFilter}
+              onChange={(val) => setChapterFilter(val)}
+              options={chapters.map(c => ({ label: c, value: c }))}
+            />
             <Button icon={<ReloadOutlined />} onClick={loadNodes}>刷新</Button>
             <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>新增知识点</Button>
           </Space>
@@ -224,9 +237,15 @@ export default function NodesPage() {
           columns={columns}
           dataSource={nodes}
           loading={loading}
-          scroll={{ y: 'calc(100vh - 280px)' }}
           size="middle"
-          pagination={{ pageSize: 15, showSizeChanger: true, showTotal: (t) => `共 ${t} 条` }}
+          pagination={{
+            current: pagination.current,
+            pageSize: pagination.pageSize,
+            showSizeChanger: true,
+            pageSizeOptions: ['10', '15', '20', '50', '100'],
+            showTotal: (t) => `共 ${t} 条`,
+            onChange: (page, pageSize) => setPagination({ current: page, pageSize }),
+          }}
         />
       </Card>
 

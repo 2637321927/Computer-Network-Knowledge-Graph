@@ -27,11 +27,13 @@ export default function QuestionsPage() {
   const [editingQ, setEditingQ] = useState<QuestionItem | null>(null);
   const [viewingQ, setViewingQ] = useState<QuestionItem | null>(null);
   const [form] = Form.useForm();
+  const [chapterFilter, setChapterFilter] = useState<string | undefined>(undefined);
+  const [pagination, setPagination] = useState({ current: 1, pageSize: 15 });
 
   const loadQuestions = async () => {
     setLoading(true);
     try {
-      const data = await fetchQuestions();
+      const data = await fetchQuestions({ chapter: chapterFilter });
       setQuestions(data);
     } catch {
       message.error('加载试题失败');
@@ -40,7 +42,10 @@ export default function QuestionsPage() {
     }
   };
 
-  useEffect(() => { loadQuestions(); }, []);
+  useEffect(() => { loadQuestions(); }, [chapterFilter]);
+  
+  // 切换筛选时重置分页
+  useEffect(() => { setPagination(prev => ({ ...prev, current: 1 })); }, [chapterFilter]);
 
   const handleAdd = () => {
     setEditingQ(null);
@@ -154,6 +159,14 @@ export default function QuestionsPage() {
         title="试题管理"
         extra={
           <Space>
+            <Select
+              allowClear
+              placeholder="按章节筛选"
+              style={{ width: 180 }}
+              value={chapterFilter}
+              onChange={(val) => setChapterFilter(val)}
+              options={chapters.map(c => ({ label: c, value: c }))}
+            />
             <Button icon={<ReloadOutlined />} onClick={loadQuestions}>刷新</Button>
             <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>新增试题</Button>
           </Space>
@@ -164,9 +177,15 @@ export default function QuestionsPage() {
           columns={columns}
           dataSource={questions}
           loading={loading}
-          scroll={{ y: 'calc(100vh - 280px)' }}
           size="middle"
-          pagination={{ pageSize: 15, showSizeChanger: true, showTotal: (t) => `共 ${t} 条` }}
+          pagination={{
+            current: pagination.current,
+            pageSize: pagination.pageSize,
+            showSizeChanger: true,
+            pageSizeOptions: ['10', '15', '20', '50', '100'],
+            showTotal: (t) => `共 ${t} 条`,
+            onChange: (page, pageSize) => setPagination({ current: page, pageSize }),
+          }}
         />
       </Card>
 
