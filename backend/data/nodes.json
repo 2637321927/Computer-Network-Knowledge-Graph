@@ -278,5 +278,17 @@
       "水平分割"
     ],
     "difficulty": 3
+  },
+  {
+    "id": "b7265299",
+    "name": "1",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "计算机网络概述",
+    "description": "1",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
   }
 ]
