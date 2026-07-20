@@ -6418,5 +6418,149 @@
     "difficulty": 5,
     "image_urls": [],
     "video_url": null
+  },
+  {
+    "id": "case_fd_ch1_delay_bottleneck",
+    "name": "校园网视频下载变慢：时延、排队与瓶颈分析",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "计算机网络概述",
+    "description": "通过校园网多用户同时下载视频的场景，计算结点时延、流量强度和共享瓶颈吞吐量，并比较分组交换与电路交换。",
+    "keywords": [
+      "端到端时延",
+      "排队",
+      "流量强度",
+      "瓶颈链路",
+      "分组交换"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch2_line_coding_sync",
+    "name": "长串比特传输失败：线路编码与时钟同步",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "物理层",
+    "description": "对同一比特串分别采用NRZ、曼彻斯特和差分曼彻斯特编码，分析长时间无跳变造成的同步问题以及带宽代价。",
+    "keywords": [
+      "线路编码",
+      "NRZ",
+      "曼彻斯特",
+      "自同步",
+      "波形"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch2_adsl_capacity",
+    "name": "ADSL线路速率下降：信噪比与信道容量评估",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "物理层",
+    "description": "根据带宽和不同距离下的信噪比计算奈奎斯特与香农上限，解释ADSL速率随距离下降以及DMT自适应分配的作用。",
+    "keywords": [
+      "ADSL",
+      "DMT",
+      "信噪比",
+      "香农容量",
+      "奈奎斯特"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch3_crc_burst_error",
+    "name": "传输途中发生突发差错：CRC检测实验",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "数据链路层",
+    "description": "对给定数据完成CRC编码，分别注入单比特和突发错误，并在接收端通过模二除法判断帧是否出错。",
+    "keywords": [
+      "CRC",
+      "模二除法",
+      "突发差错",
+      "奇偶校验",
+      "差错检测"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch3_shared_channel_collision",
+    "name": "多台主机同时发送：从ALOHA到CSMA/CD",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "数据链路层",
+    "description": "通过共享总线上的发送时间表比较纯ALOHA、时隙ALOHA和CSMA/CD，并计算最小帧长与二进制指数退避范围。",
+    "keywords": [
+      "ALOHA",
+      "CSMA",
+      "CSMA/CD",
+      "碰撞",
+      "指数退避"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch4_wireshark_arp",
+    "name": "Wireshark捕获Ethernet与ARP报文",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "局域网原理",
+    "description": "通过清理ARP缓存并执行ping，捕获广播ARP请求、单播ARP回复和以太网帧，比较同子网与跨子网交付。",
+    "keywords": [
+      "Wireshark",
+      "ARP",
+      "Ethernet",
+      "MAC地址",
+      "抓包"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch4_switch_learning",
+    "name": "交换机为什么先泛洪后定向转发",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "局域网原理",
+    "description": "在两台交换机转发表初始为空的条件下，逐帧推导源MAC学习、未知目的泛洪、已知目的转发和同端口过滤。",
+    "keywords": [
+      "交换机",
+      "自学习",
+      "转发表",
+      "泛洪",
+      "过滤"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch4_vlan_trunk",
+    "name": "同VLAN主机无法跨交换机通信：802.1Q Trunk排障",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "局域网原理",
+    "description": "在Packet Tracer中排查跨交换机同VLAN通信失败，完成Access端口、Trunk、允许VLAN和Native VLAN配置。",
+    "keywords": [
+      "VLAN",
+      "Trunk",
+      "802.1Q",
+      "Packet Tracer",
+      "故障排查"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
   }
 ]

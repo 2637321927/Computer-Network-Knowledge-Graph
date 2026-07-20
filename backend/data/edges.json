@@ -2896,5 +2896,306 @@
     "target": "q_fd_ch4_web_request_lifecycle_03",
     "relation": "关联试题",
     "description": "“ch4_web_request_lifecycle”关联基础篇试题“Web请求的跨层工作流程·基础题3”"
+  },
+  {
+    "id": "edge_cfd_001",
+    "source": "ch1_packet_switching",
+    "target": "case_fd_ch1_delay_bottleneck",
+    "relation": "相关案例",
+    "description": "“ch1_packet_switching”在案例“校园网视频下载变慢：时延、排队与瓶颈分析”中得到应用"
+  },
+  {
+    "id": "edge_cfd_002",
+    "source": "ch1_queueing_packet_loss",
+    "target": "case_fd_ch1_delay_bottleneck",
+    "relation": "相关案例",
+    "description": "“ch1_queueing_packet_loss”在案例“校园网视频下载变慢：时延、排队与瓶颈分析”中得到应用"
+  },
+  {
+    "id": "edge_cfd_003",
+    "source": "ch1_circuit_switching",
+    "target": "case_fd_ch1_delay_bottleneck",
+    "relation": "相关案例",
+    "description": "“ch1_circuit_switching”在案例“校园网视频下载变慢：时延、排队与瓶颈分析”中得到应用"
+  },
+  {
+    "id": "edge_cfd_004",
+    "source": "ch1_nodal_delay",
+    "target": "case_fd_ch1_delay_bottleneck",
+    "relation": "相关案例",
+    "description": "“ch1_nodal_delay”在案例“校园网视频下载变慢：时延、排队与瓶颈分析”中得到应用"
+  },
+  {
+    "id": "edge_cfd_005",
+    "source": "ch1_traffic_intensity",
+    "target": "case_fd_ch1_delay_bottleneck",
+    "relation": "相关案例",
+    "description": "“ch1_traffic_intensity”在案例“校园网视频下载变慢：时延、排队与瓶颈分析”中得到应用"
+  },
+  {
+    "id": "edge_cfd_006",
+    "source": "ch1_throughput_bottleneck",
+    "target": "case_fd_ch1_delay_bottleneck",
+    "relation": "相关案例",
+    "description": "“ch1_throughput_bottleneck”在案例“校园网视频下载变慢：时延、排队与瓶颈分析”中得到应用"
+  },
+  {
+    "id": "edge_cfd_007",
+    "source": "ch2_data_signal_system",
+    "target": "case_fd_ch2_line_coding_sync",
+    "relation": "相关案例",
+    "description": "“ch2_data_signal_system”在案例“长串比特传输失败：线路编码与时钟同步”中得到应用"
+  },
+  {
+    "id": "edge_cfd_008",
+    "source": "ch2_baseband_signal_modulation",
+    "target": "case_fd_ch2_line_coding_sync",
+    "relation": "相关案例",
+    "description": "“ch2_baseband_signal_modulation”在案例“长串比特传输失败：线路编码与时钟同步”中得到应用"
+  },
+  {
+    "id": "edge_cfd_009",
+    "source": "ch2_line_coding",
+    "target": "case_fd_ch2_line_coding_sync",
+    "relation": "相关案例",
+    "description": "“ch2_line_coding”在案例“长串比特传输失败：线路编码与时钟同步”中得到应用"
+  },
+  {
+    "id": "edge_cfd_010",
+    "source": "ch2_channel_distortion",
+    "target": "case_fd_ch2_line_coding_sync",
+    "relation": "相关案例",
+    "description": "“ch2_channel_distortion”在案例“长串比特传输失败：线路编码与时钟同步”中得到应用"
+  },
+  {
+    "id": "edge_cfd_011",
+    "source": "ch2_snr",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_snr”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_012",
+    "source": "ch2_shannon_capacity",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_shannon_capacity”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_013",
+    "source": "ch2_nyquist_criterion",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_nyquist_criterion”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_014",
+    "source": "ch2_guided_media",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_guided_media”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_015",
+    "source": "ch2_adsl",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_adsl”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_016",
+    "source": "ch2_dmt",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_dmt”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_017",
+    "source": "ch2_fttx",
+    "target": "case_fd_ch2_adsl_capacity",
+    "relation": "相关案例",
+    "description": "“ch2_fttx”在案例“ADSL线路速率下降：信噪比与信道容量评估”中得到应用"
+  },
+  {
+    "id": "edge_cfd_018",
+    "source": "ch3_frame",
+    "target": "case_fd_ch3_crc_burst_error",
+    "relation": "相关案例",
+    "description": "“ch3_frame”在案例“传输途中发生突发差错：CRC检测实验”中得到应用"
+  },
+  {
+    "id": "edge_cfd_019",
+    "source": "ch3_error_detection",
+    "target": "case_fd_ch3_crc_burst_error",
+    "relation": "相关案例",
+    "description": "“ch3_error_detection”在案例“传输途中发生突发差错：CRC检测实验”中得到应用"
+  },
+  {
+    "id": "edge_cfd_020",
+    "source": "ch3_parity",
+    "target": "case_fd_ch3_crc_burst_error",
+    "relation": "相关案例",
+    "description": "“ch3_parity”在案例“传输途中发生突发差错：CRC检测实验”中得到应用"
+  },
+  {
+    "id": "edge_cfd_021",
+    "source": "ch3_crc",
+    "target": "case_fd_ch3_crc_burst_error",
+    "relation": "相关案例",
+    "description": "“ch3_crc”在案例“传输途中发生突发差错：CRC检测实验”中得到应用"
+  },
+  {
+    "id": "edge_cfd_022",
+    "source": "ch3_multiple_access_link",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_multiple_access_link”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_023",
+    "source": "ch3_mac_taxonomy",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_mac_taxonomy”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_024",
+    "source": "ch3_slotted_aloha",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_slotted_aloha”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_025",
+    "source": "ch3_pure_aloha",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_pure_aloha”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_026",
+    "source": "ch3_csma",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_csma”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_027",
+    "source": "ch3_csma_cd",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_csma_cd”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_028",
+    "source": "ch3_binary_exponential_backoff",
+    "target": "case_fd_ch3_shared_channel_collision",
+    "relation": "相关案例",
+    "description": "“ch3_binary_exponential_backoff”在案例“多台主机同时发送：从ALOHA到CSMA/CD”中得到应用"
+  },
+  {
+    "id": "edge_cfd_029",
+    "source": "ch4_mac_address",
+    "target": "case_fd_ch4_wireshark_arp",
+    "relation": "相关案例",
+    "description": "“ch4_mac_address”在案例“Wireshark捕获Ethernet与ARP报文”中得到应用"
+  },
+  {
+    "id": "edge_cfd_030",
+    "source": "ch4_arp",
+    "target": "case_fd_ch4_wireshark_arp",
+    "relation": "相关案例",
+    "description": "“ch4_arp”在案例“Wireshark捕获Ethernet与ARP报文”中得到应用"
+  },
+  {
+    "id": "edge_cfd_031",
+    "source": "ch4_arp_table",
+    "target": "case_fd_ch4_wireshark_arp",
+    "relation": "相关案例",
+    "description": "“ch4_arp_table”在案例“Wireshark捕获Ethernet与ARP报文”中得到应用"
+  },
+  {
+    "id": "edge_cfd_032",
+    "source": "ch4_cross_subnet_delivery",
+    "target": "case_fd_ch4_wireshark_arp",
+    "relation": "相关案例",
+    "description": "“ch4_cross_subnet_delivery”在案例“Wireshark捕获Ethernet与ARP报文”中得到应用"
+  },
+  {
+    "id": "edge_cfd_033",
+    "source": "ch4_ethernet_frame",
+    "target": "case_fd_ch4_wireshark_arp",
+    "relation": "相关案例",
+    "description": "“ch4_ethernet_frame”在案例“Wireshark捕获Ethernet与ARP报文”中得到应用"
+  },
+  {
+    "id": "edge_cfd_034",
+    "source": "ch4_ethernet_switch",
+    "target": "case_fd_ch4_switch_learning",
+    "relation": "相关案例",
+    "description": "“ch4_ethernet_switch”在案例“交换机为什么先泛洪后定向转发”中得到应用"
+  },
+  {
+    "id": "edge_cfd_035",
+    "source": "ch4_switch_table",
+    "target": "case_fd_ch4_switch_learning",
+    "relation": "相关案例",
+    "description": "“ch4_switch_table”在案例“交换机为什么先泛洪后定向转发”中得到应用"
+  },
+  {
+    "id": "edge_cfd_036",
+    "source": "ch4_switch_self_learning",
+    "target": "case_fd_ch4_switch_learning",
+    "relation": "相关案例",
+    "description": "“ch4_switch_self_learning”在案例“交换机为什么先泛洪后定向转发”中得到应用"
+  },
+  {
+    "id": "edge_cfd_037",
+    "source": "ch4_switch_filter_forward",
+    "target": "case_fd_ch4_switch_learning",
+    "relation": "相关案例",
+    "description": "“ch4_switch_filter_forward”在案例“交换机为什么先泛洪后定向转发”中得到应用"
+  },
+  {
+    "id": "edge_cfd_038",
+    "source": "ch4_switch_interconnection",
+    "target": "case_fd_ch4_switch_learning",
+    "relation": "相关案例",
+    "description": "“ch4_switch_interconnection”在案例“交换机为什么先泛洪后定向转发”中得到应用"
+  },
+  {
+    "id": "edge_cfd_039",
+    "source": "ch4_ethernet_frame",
+    "target": "case_fd_ch4_vlan_trunk",
+    "relation": "相关案例",
+    "description": "“ch4_ethernet_frame”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
+  },
+  {
+    "id": "edge_cfd_040",
+    "source": "ch4_switch_interconnection",
+    "target": "case_fd_ch4_vlan_trunk",
+    "relation": "相关案例",
+    "description": "“ch4_switch_interconnection”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
+  },
+  {
+    "id": "edge_cfd_041",
+    "source": "ch4_vlan",
+    "target": "case_fd_ch4_vlan_trunk",
+    "relation": "相关案例",
+    "description": "“ch4_vlan”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
+  },
+  {
+    "id": "edge_cfd_042",
+    "source": "ch4_port_based_vlan",
+    "target": "case_fd_ch4_vlan_trunk",
+    "relation": "相关案例",
+    "description": "“ch4_port_based_vlan”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
+  },
+  {
+    "id": "edge_cfd_043",
+    "source": "ch4_vlan_trunk_8021q",
+    "target": "case_fd_ch4_vlan_trunk",
+    "relation": "相关案例",
+    "description": "“ch4_vlan_trunk_8021q”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
   }
 ]
