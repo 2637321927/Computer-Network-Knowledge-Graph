@@ -49,5 +49,203 @@
       "距离向量",
       "水平分割"
     ]
+<<<<<<< HEAD
+=======
+  },
+  {
+    "id": "case_fd_ch1_delay_bottleneck",
+    "title": "校园网视频下载变慢：时延、排队与瓶颈分析",
+    "description": "通过校园网多用户同时下载视频的场景，计算结点时延、流量强度和共享瓶颈吞吐量，并比较分组交换与电路交换。",
+    "chapter": "计算机网络概述",
+    "difficulty": 3,
+    "related_nodes": [
+      "ch1_packet_switching",
+      "ch1_queueing_packet_loss",
+      "ch1_circuit_switching",
+      "ch1_nodal_delay",
+      "ch1_traffic_intensity",
+      "ch1_throughput_bottleneck"
+    ],
+    "tags": [
+      "端到端时延",
+      "排队",
+      "流量强度",
+      "瓶颈链路",
+      "分组交换"
+    ],
+    "content": "# 校园网视频下载变慢\n\n四名学生同时通过校园网下载视频。大家看到的现象是：刚开始还能播放，人数一多就开始缓冲，严重时还会出现丢包。这个案例要把“网速慢”拆成时延、排队和吞吐量三个问题。\n\n## 网络条件\n\n```text\n客户端 --100 Mbps接入链路-- 校园边缘路由器\n       --20 Mbps共享核心链路-- 服务器侧路由器\n       --200 Mbps服务器链路-- 视频服务器\n```\n\n- 分组长度：`L=12,000 bit`\n- 三段链路传播时延之和：`12 ms`\n- 路由器处理时延之和：`2 ms`\n- 核心链路开始发送前已有5个等长分组排队\n- 核心链路由4条视频连接公平共享\n\n## 任务一：算出第一个分组的时延\n\n三条链路的传输时延分别为：\n\n```text\n12,000 / 100 Mbps = 0.12 ms\n12,000 / 20 Mbps  = 0.60 ms\n12,000 / 200 Mbps = 0.06 ms\n```\n\n核心链路前有5个分组，所以排队时延近似为：\n\n```text\n5 × 0.60 ms = 3 ms\n```\n\n结点总时延近似为：\n\n```text\nd = 0.12 + 0.60 + 0.06 + 3 + 12 + 2\n  = 17.78 ms\n```\n\n注意：传输时延由`L/R`决定，传播时延由距离和信号传播速度决定，两者不是一回事。\n\n## 任务二：判断队列负载\n\n如果核心链路平均每秒到达1,400个分组：\n\n```text\nLa/R = 12,000 × 1,400 / 20,000,000 = 0.84\n```\n\n`La/R`还小于1，但已经比较接近1，平均排队时延会明显增大。如果到达率上升到1,800 packet/s：\n\n```text\nLa/R = 1.08\n```\n\n这时长期到达工作量超过服务能力，队列会持续增长，缓冲区最终溢出并丢包。\n\n## 任务三：找瓶颈吞吐量\n\n4条连接公平共享20 Mbps核心链路，每条连接最多分到：\n\n```text\n20 Mbps / 4 = 5 Mbps\n```\n\n端到端吞吐量取路径上可用速率的最小值，所以每名学生约为5 Mbps。即使服务器链路提高到1 Gbps，只要20 Mbps共享核心链路不变，用户吞吐量仍不会提高。\n\n## 分组交换还是电路交换\n\n如果为每个用户预留5 Mbps电路，4个用户会占满20 Mbps。用户暂停视频时，预留带宽也不能立即给其他用户使用。分组交换允许突发业务按需共享资源，利用率更高，但代价是高负载下会出现排队、时延和丢包。\n\n## 结论\n\n- “网页打开慢”不一定是传播距离远，也可能是排队造成的。\n- `La/R`接近1时，排队时延会迅速增加。\n- 端到端吞吐量由瓶颈链路决定。\n- 提升非瓶颈链路速率通常不能解决问题。",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch2_line_coding_sync",
+    "title": "长串比特传输失败：线路编码与时钟同步",
+    "description": "对同一比特串分别采用NRZ、曼彻斯特和差分曼彻斯特编码，分析长时间无跳变造成的同步问题以及带宽代价。",
+    "chapter": "物理层",
+    "difficulty": 3,
+    "related_nodes": [
+      "ch2_data_signal_system",
+      "ch2_baseband_signal_modulation",
+      "ch2_line_coding",
+      "ch2_channel_distortion"
+    ],
+    "tags": [
+      "线路编码",
+      "NRZ",
+      "曼彻斯特",
+      "自同步",
+      "波形"
+    ],
+    "content": "# 长串比特传输失败\n\n发送端连续发送`00000000101101`。使用NRZ编码时，接收端在前8个0期间很久都看不到电平跳变，时钟稍有偏差就可能把一个bit判断成两个，或者漏掉一个bit。\n\n## 实验约定\n\n为避免不同教材的0、1电平约定不同，本案例统一规定：\n\n- NRZ-L：`1`为高电平，`0`为低电平。\n- 曼彻斯特：`1`为码元中间低到高跳变，`0`为中间高到低跳变。\n- 差分曼彻斯特：每个码元中间一定跳变；码元开始处有跳变表示`0`，无跳变表示`1`。\n\n## 操作步骤\n\n1. 画出时间轴，每个bit划分为前半和后半两个区间。\n2. 分别画出NRZ-L、曼彻斯特和差分曼彻斯特波形。\n3. 假设接收端时钟每个bit慢1%，观察连续8个0后采样点的位置偏移。\n4. 把整条线路的正负极性反转，再对三种波形解码。\n5. 统计每种编码在一个bit时间内可能出现的最大跳变次数。\n\n## 观察结果\n\n**NRZ-L**：连续0期间电平保持不变。接收端只能依赖自己的本地时钟划分bit边界，长串相同比特容易积累同步误差。\n\n**曼彻斯特编码**：每个bit中间都有一次固定跳变，接收端能从跳变中恢复时钟，因此具有自同步能力。但一个bit至少需要两个信号区间，频谱需求比NRZ高。\n\n**差分曼彻斯特编码**：信息由“相邻码元边界是否跳变”表示，而不是由绝对高低电平表示。线路极性整体反转后，跳变关系不变，因此仍能正确解码。\n\n## 故障判断\n\n如果抓到的波形长时间保持同一电平，而接收数据在长串0或1后开始错位，优先考虑：\n\n- 编码本身缺少同步跳变；\n- 收发时钟存在频率偏差；\n- 信道失真使跳变边沿变得不清楚；\n- 码元速率过高，产生码间串扰。\n\n## 结论\n\n线路编码不是简单地把0换成低电平、1换成高电平。编码还要考虑同步、直流分量、抗极性反转能力和带宽。曼彻斯特类编码用更多跳变换取可靠同步。",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch2_adsl_capacity",
+    "title": "ADSL线路速率下降：信噪比与信道容量评估",
+    "description": "根据带宽和不同距离下的信噪比计算奈奎斯特与香农上限，解释ADSL速率随距离下降以及DMT自适应分配的作用。",
+    "chapter": "物理层",
+    "difficulty": 4,
+    "related_nodes": [
+      "ch2_snr",
+      "ch2_shannon_capacity",
+      "ch2_nyquist_criterion",
+      "ch2_guided_media",
+      "ch2_adsl",
+      "ch2_dmt",
+      "ch2_fttx"
+    ],
+    "tags": [
+      "ADSL",
+      "DMT",
+      "信噪比",
+      "香农容量",
+      "奈奎斯特"
+    ],
+    "content": "# ADSL线路速率为什么随距离下降\n\n同一套餐的两个用户使用相同电话线接入。近端用户测得信噪比30 dB，远端用户只有20 dB。假设可用带宽均为1.1 MHz，运营商希望提供8 Mbps下行速率。\n\n## 第一步：把dB换成线性信噪比\n\n```text\nSNR(dB) = 10 log10(S/N)\n```\n\n- 30 dB对应`S/N=1000`。\n- 20 dB对应`S/N=100`。\n\n## 第二步：计算香农容量\n\n```text\nC = W log2(1 + S/N)\n```\n\n近端线路：\n\n```text\nC = 1.1×10^6 × log2(1001) ≈ 10.96 Mbps\n```\n\n远端线路：\n\n```text\nC = 1.1×10^6 × log2(101) ≈ 7.32 Mbps\n```\n\n8 Mbps低于近端线路的香农上限，理论上可能实现；但它已经超过远端线路的7.32 Mbps理论上限，再好的调制器也不能保证无差错达到8 Mbps。\n\n## 第三步：用奈奎斯特准则检查码元方案\n\n如果每个码元有16种状态，每个码元携带4 bit：\n\n```text\nRmax = 2W log2(16)\n     = 2 × 1.1 MHz × 4\n     = 8.8 Mbps\n```\n\n8.8 Mbps是假设理想无噪声信道得到的上限。实际设计还必须同时满足香农容量，因此远端线路仍不能达到8 Mbps。\n\n## DMT怎样处理不同质量的子信道\n\nDMT把ADSL高频频谱划分为许多窄子信道。训练阶段分别测量每个子信道质量：\n\n- 信噪比高的子信道分配更多bit；\n- 信噪比一般的子信道分配较少bit；\n- 干扰严重的子信道可以暂时停用；\n- 线路条件变化时重新调整bit分配。\n\n远端用户的铜线更长，衰减和外部干扰更明显，可用子信道和每个子信道能够承载的bit都会减少，所以同步速率下降。\n\n## 方案比较\n\n- 继续使用ADSL：复用现有电话线，成本低，但速率受距离和铜线质量影响。\n- 改用FTTx：光纤损耗小、容量大且不受电磁干扰，适合更高带宽需求。\n\n## 结论\n\n奈奎斯特准则描述理想带宽限制，香农公式进一步考虑噪声。实际速率不能超过两类限制中更严格的一项。ADSL使用DMT不是突破香农上限，而是尽量逼近不同子信道条件下的可用容量。",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch3_crc_burst_error",
+    "title": "传输途中发生突发差错：CRC检测实验",
+    "description": "对给定数据完成CRC编码，分别注入单比特和突发错误，并在接收端通过模二除法判断帧是否出错。",
+    "chapter": "数据链路层",
+    "difficulty": 4,
+    "related_nodes": [
+      "ch3_frame",
+      "ch3_error_detection",
+      "ch3_parity",
+      "ch3_crc"
+    ],
+    "tags": [
+      "CRC",
+      "模二除法",
+      "突发差错",
+      "奇偶校验",
+      "差错检测"
+    ],
+    "content": "# CRC突发差错检测实验\n\n发送端准备发送数据：\n\n```text\nD = 1101011011\nG = 1011\n```\n\n`G`有4 bit，所以CRC余数长度`r=3`。\n\n## 发送端计算\n\n先在数据D后补3个0：\n\n```text\n1101011011000\n```\n\n使用`1011`进行模二除法。模二减法就是按位异或，不需要借位。得到余数：\n\n```text\nR = 100\n```\n\n最终发送比特串为：\n\n```text\nD || R = 1101011011100\n```\n\n正确比特串可以被`G`整除，接收端余数应为`000`。\n\n## 注入错误\n\n分别进行三次实验：\n\n1. 翻转发送串中的一个bit。\n2. 连续翻转3个bit，模拟短突发干扰。\n3. 不改变比特串，作为对照组。\n\n每次都把接收串重新除以`G`：\n\n- 余数为`000`：没有检测到错误；\n- 余数不为`000`：检测到帧发生错误，应丢弃或交给上层恢复。\n\n## 与奇偶校验比较\n\n一维奇偶校验能够检测奇数个bit翻转，但偶数个bit同时翻转可能逃过检查。二维奇偶校验能够定位并纠正单bit错误。CRC通过选择生成多项式，可以有效检测多类突发错误，能力通常强于简单奇偶校验。\n\n## 注意\n\nCRC的作用是**检测错误**，不是自动恢复原始数据。并且差错检测并非百分之百可靠，某些错误模式可能恰好仍能被生成多项式整除。\n\n## 结论\n\n发送端增加EDC会带来少量开销，但能让接收端在不了解原始数据的情况下检查帧是否受到破坏。生成多项式的选择决定了CRC能够检测哪些错误模式。",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch3_shared_channel_collision",
+    "title": "多台主机同时发送：从ALOHA到CSMA/CD",
+    "description": "通过共享总线上的发送时间表比较纯ALOHA、时隙ALOHA和CSMA/CD，并计算最小帧长与二进制指数退避范围。",
+    "chapter": "数据链路层",
+    "difficulty": 4,
+    "related_nodes": [
+      "ch3_multiple_access_link",
+      "ch3_mac_taxonomy",
+      "ch3_slotted_aloha",
+      "ch3_pure_aloha",
+      "ch3_csma",
+      "ch3_csma_cd",
+      "ch3_binary_exponential_backoff"
+    ],
+    "tags": [
+      "ALOHA",
+      "CSMA",
+      "CSMA/CD",
+      "碰撞",
+      "指数退避"
+    ],
+    "content": "# 多台主机同时发送\n\n4台主机共享一条广播链路，每个frame恰好占用一个时隙。某5个时隙中的发送情况如下：\n\n| 时隙 | 尝试发送的主机 | 结果 |\n| --- | --- | --- |\n| 0 | A、B | 碰撞 |\n| 1 | C | 成功 |\n| 2 | A | 成功 |\n| 3 | B、D | 碰撞 |\n| 4 | D | 成功 |\n\n这个短序列的成功率是`3/5=60%`，但它只是一次样本，不代表协议长期理论效率。\n\n## 纯ALOHA与时隙ALOHA\n\n**纯ALOHA**中，节点有帧就立即发送。一个frame发送时间为T，只要其他节点在前后共`2T`的脆弱期内开始发送，就可能重叠冲突。理论最大效率约为：\n\n```text\n1 / (2e) ≈ 18%\n```\n\n**时隙ALOHA**要求所有节点只在时隙开始发送，把脆弱期缩短为T。理论最大效率约为：\n\n```text\n1 / e ≈ 37%\n```\n\n冲突后不能所有节点立刻同时重传，否则还会再次碰撞，所以每个节点以概率`p`决定是否在下一时隙重传。\n\n## 为什么CSMA仍会碰撞\n\nCSMA发送前先侦听信道。但信号传播需要时间：A刚开始发送时，远端B还没听到A的信号，也可能判断信道空闲并开始发送，所以“先听后发”不能彻底消除碰撞。\n\n## CSMA/CD最小帧长\n\n假设链路速率`R=100 Mbps`，最大单向传播时延`τ=20 μs`。为了让发送端在最坏情况下仍能检测到碰撞：\n\n```text\nLmin / R >= 2τ\nLmin >= 2 × 20 μs × 100 Mbps\n     = 4,000 bit\n     = 500 byte\n```\n\n如果帧太短，发送端可能已经发送结束才收到远端碰撞信号，便会误以为发送成功。\n\n## 二进制指数退避\n\n发生第3次碰撞后：\n\n```text\nK ∈ {0,1,2,3,4,5,6,7}\n等待时间 = K × 512 bit times\n```\n\n碰撞次数越多，随机等待范围越大，让高负载下的节点逐渐分散重传时间。\n\n## 结论\n\n- ALOHA直接竞争，简单但效率较低。\n- CSMA利用载波侦听减少碰撞，但传播时延使碰撞仍可能发生。\n- CSMA/CD通过边发边检测快速停止失败发送。\n- 指数退避在低负载时等待较短，高负载时扩大随机范围。",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch4_wireshark_arp",
+    "title": "Wireshark捕获Ethernet与ARP报文",
+    "description": "通过清理ARP缓存并执行ping，捕获广播ARP请求、单播ARP回复和以太网帧，比较同子网与跨子网交付。",
+    "chapter": "局域网原理",
+    "difficulty": 3,
+    "related_nodes": [
+      "ch4_mac_address",
+      "ch4_arp",
+      "ch4_arp_table",
+      "ch4_cross_subnet_delivery",
+      "ch4_ethernet_frame"
+    ],
+    "tags": [
+      "Wireshark",
+      "ARP",
+      "Ethernet",
+      "MAC地址",
+      "抓包"
+    ],
+    "content": "# Wireshark捕获Ethernet与ARP报文\n\n主机发送IP datagram前，必须先知道这一跳应该填写哪个目的MAC地址。这个实验直接观察ARP请求、ARP回复以及随后发送的以太网帧。\n\n## 实验准备\n\n1. 使用`ipconfig`查看本机IPv4地址、子网掩码和默认网关。\n2. 使用`arp -a`记录当前ARP缓存。\n3. 在权限允许时删除目标IP对应的ARP表项；如果无法删除，可以换一个近期没有通信过的同子网目标。\n4. 打开Wireshark，选择正在联网的网卡开始捕获。\n\n## 捕获同子网通信\n\n对同一子网中的另一台主机执行：\n\n```text\nping <同子网主机IP>\n```\n\n使用显示过滤器：\n\n```text\narp\n```\n\n应观察到：\n\n- ARP request封装在广播以太网帧中，目的MAC为`FF:FF:FF:FF:FF:FF`；\n- 请求内容的意思是“谁拥有这个IP，请告诉发送者”；\n- 目标主机发送ARP reply，通常使用单播回复；\n- 本机ARP表增加目标IP与MAC地址的映射；\n- 后续IP datagram的以太网目的MAC是目标主机MAC。\n\n## 捕获跨子网通信\n\n再ping一个不同子网的IP，例如公共DNS地址。IP datagram中的目的IP仍然是远端主机，但本机这一跳的以太网目的MAC不是远端服务器MAC，而是默认网关接口的MAC。\n\n```text\n端到端IP目的地址：远端服务器IP\n第一跳Ethernet目的地址：默认网关MAC\n```\n\n路由器收到frame后去掉旧链路层首部，再根据下一跳重新封装。IP地址负责端到端寻址，MAC地址负责当前链路上的一跳交付。\n\n## 检查以太网字段\n\n选择一个以太网帧，查看：\n\n- Destination：目的MAC；\n- Source：源MAC；\n- Type：上层协议类型；\n- Payload：通常是IP datagram或ARP报文。\n\n注意：很多网卡在硬件中生成或校验FCS，操作系统抓包时不一定把FCS交给Wireshark。因此看不到CRC字段不等于线上没有FCS。\n\n## 结论\n\nARP只解析同一链路中的下一跳MAC。ARP请求使用广播，是因为发送者此时还不知道目标接口在哪里；ARP回复能够单播，是因为请求中已经携带发送者的MAC地址。",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch4_switch_learning",
+    "title": "交换机为什么先泛洪后定向转发",
+    "description": "在两台交换机转发表初始为空的条件下，逐帧推导源MAC学习、未知目的泛洪、已知目的转发和同端口过滤。",
+    "chapter": "局域网原理",
+    "difficulty": 3,
+    "related_nodes": [
+      "ch4_ethernet_switch",
+      "ch4_switch_table",
+      "ch4_switch_self_learning",
+      "ch4_switch_filter_forward",
+      "ch4_switch_interconnection"
+    ],
+    "tags": [
+      "交换机",
+      "自学习",
+      "转发表",
+      "泛洪",
+      "过滤"
+    ],
+    "content": "# 交换机为什么先泛洪后定向转发\n\n两台交换机刚启动时转发表为空，但主机不需要手工告诉交换机自己在哪个端口。交换机通过收到frame时的源MAC自动学习。\n\n## 拓扑\n\n```text\nA -- S1端口1          S2端口1 -- C\nB -- S1端口2 --端口5/5-- S2端口2 -- D\n```\n\nS1与S2通过各自端口5相连。开始时两张转发表都为空。\n\n## 第一次通信：A发送给C\n\n1. S1从端口1收到frame，学习`A -> 端口1`。\n2. S1不知道C的位置，所以除端口1外向端口2和端口5泛洪。\n3. S2从端口5收到frame，学习`A -> 端口5`。\n4. S2不知道C的位置，所以向端口1和端口2泛洪。\n5. C接收frame，B和D发现目的MAC不是自己后丢弃。\n\n## C回复A\n\n1. S2从端口1收到回复，学习`C -> 端口1`。\n2. S2已经知道A位于端口5，只向端口5定向转发。\n3. S1从端口5收到回复，学习`C -> 端口5`。\n4. S1已经知道A位于端口1，只向端口1转发。\n\n经过一次请求和回复，两台交换机就学习到了A和C的位置，后续通信不再泛洪到无关端口。\n\n## B发送给A\n\nS1从端口2收到frame，先学习`B -> 端口2`。目的A已知，所以只向端口1转发，frame不会经过交换机间链路。\n\n如果A和B都位于同一外接集线器一侧，交换机收到B发给A的frame后发现目的端口与来向端口相同，就会过滤，不再从该端口发回去。\n\n## 表项超时\n\n转发表项带有时间戳。A长时间不发送后，`A -> 端口1`可能被删除。此时C再次发给A，目的MAC重新变为未知，交换机会再次泛洪；A一回复，交换机又能重新学习。\n\n## 转发规则\n\n```text\n收到frame：永远先根据源MAC学习\n目的MAC已知且出口不同：定向转发\n目的MAC已知且出口等于来向：过滤\n目的MAC未知：除来向接口外泛洪\n```",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_fd_ch4_vlan_trunk",
+    "title": "同VLAN主机无法跨交换机通信：802.1Q Trunk排障",
+    "description": "在Packet Tracer中排查跨交换机同VLAN通信失败，完成Access端口、Trunk、允许VLAN和Native VLAN配置。",
+    "chapter": "局域网原理",
+    "difficulty": 4,
+    "related_nodes": [
+      "ch4_ethernet_frame",
+      "ch4_switch_interconnection",
+      "ch4_vlan",
+      "ch4_port_based_vlan",
+      "ch4_vlan_trunk_8021q"
+    ],
+    "tags": [
+      "VLAN",
+      "Trunk",
+      "802.1Q",
+      "Packet Tracer",
+      "故障排查"
+    ],
+    "content": "# 同VLAN主机无法跨交换机通信\n\n两台交换机上都配置了VLAN 10和VLAN 20。同一台交换机内、同一VLAN的主机可以通信，但跨交换机后，即使两台主机属于同一VLAN也无法ping通。\n\n## 拓扑与地址\n\n```text\nPC1(VLAN10, 192.168.10.11) -- S1 -- S2 -- PC3(VLAN10, 192.168.10.12)\nPC2(VLAN20, 192.168.20.11) -- S1 -- S2 -- PC4(VLAN20, 192.168.20.12)\n```\n\n初始故障：S1和S2之间的接口仍是默认Access端口，属于VLAN 1，不能承载VLAN 10和VLAN 20的带标签流量。\n\n## 第一步：检查Access端口\n\n```text\nshow vlan brief\n```\n\n在两台交换机上创建VLAN并分配主机端口：\n\n```text\nvlan 10\n name STUDENT\nvlan 20\n name TEACHER\nvlan 99\n name NATIVE\n\ninterface f0/2\n switchport mode access\n switchport access vlan 10\n\ninterface f0/3\n switchport mode access\n switchport access vlan 20\n```\n\n## 第二步：配置交换机间Trunk\n\n假设两台交换机使用`f0/1`互联，两端都配置：\n\n```text\ninterface f0/1\n switchport mode trunk\n switchport trunk native vlan 99\n switchport trunk allowed vlan 10,20,99\n```\n\n使用下面的命令验证：\n\n```text\nshow interfaces trunk\n```\n\n应确认接口处于trunking状态，Native VLAN均为99，允许列表中包含10、20和99。\n\n## 第三步：分层测试\n\n1. PC1 ping PC3：同属VLAN 10，应当成功。\n2. PC2 ping PC4：同属VLAN 20，应当成功。\n3. PC1 ping PC2：属于不同VLAN，在没有路由器或三层交换功能时应失败。\n\nVLAN划分的是广播域。Trunk让同一VLAN跨越多台交换机，但不会自动提供不同VLAN之间的通信。\n\n## 常见故障\n\n- 一端是Trunk，另一端仍为Access；\n- Trunk允许列表漏掉目标VLAN；\n- 两端Native VLAN不同；\n- 主机端口被分到错误VLAN；\n- 某台交换机没有创建对应VLAN。\n\n## 802.1Q标签\n\nTrunk上的frame需要携带VLAN ID，让接收交换机知道frame属于哪个逻辑LAN。802.1Q标签改变了frame内容，所以发送端必须重新计算CRC。Native VLAN流量通常不带标签，两端Native VLAN不一致会导致流量被归入错误广播域。",
+    "image_urls": [],
+    "video_url": null
+>>>>>>> 15383e8131d1fbba61aef76e286ac2330eb01604
   }
 ]

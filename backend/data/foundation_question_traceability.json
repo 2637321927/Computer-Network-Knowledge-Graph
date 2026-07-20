@@ -1,0 +1,5783 @@
+{
+  "scope": "基础篇试题：计算机网络概述、物理层、数据链路层、局域网原理",
+  "generation": {
+    "script": "scripts/generate_foundation_questions.py",
+    "managed_question_prefix": "q_fd_",
+    "managed_edge_prefix": "edge_qfd_",
+    "knowledge_node_count": 86,
+    "questions_per_knowledge_node": 3,
+    "question_count": 258,
+    "question_node_count": 258,
+    "question_edge_count": 275,
+    "chapter_counts": {
+      "计算机网络概述": 60,
+      "物理层": 72,
+      "数据链路层": 54,
+      "局域网原理": 72
+    },
+    "type_counts": {
+      "单选题": 90,
+      "填空题": 30,
+      "多选题": 36,
+      "计算题": 24,
+      "简答题": 36,
+      "判断题": 42
+    }
+  },
+  "source_catalog": {
+    "local_scope": {
+      "description": "课程PPT决定范围，个人Markdown笔记决定中文表述与知识密度。",
+      "trace_file": "backend/data/foundation_traceability.json"
+    },
+    "kurose_interactive": {
+      "description": "Kurose/Ross官方交互练习；用于时延、吞吐量、CRC、ALOHA和交换机题型设计。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/interactive/"
+    },
+    "ncre_sample": {
+      "description": "中国教育考试网四级计算机网络样题；用于中文单选、多选题的表述方式校核。",
+      "url": "https://ncre.neea.edu.cn/res/Home/2501/2351319548cf65dfc6cd8ba95cf1f8e2.pdf"
+    },
+    "kurose_knowledge_checks": {
+      "description": "Kurose/Ross官方知识检查；用于概念辨析和基础计算题型设计。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/knowledgechecks/problem.php?c=1&s=4"
+    },
+    "kurose_link_layer": {
+      "description": "Kurose/Ross官方链路层资源；用于链路层、ARP、以太网和VLAN覆盖检查。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/videos/6/"
+    },
+    "kurose_wireshark": {
+      "description": "Kurose/Ross官方Wireshark实验；用于以太网帧与ARP场景题设计。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/wireshark.php/interactive/interactive/interactive/"
+    },
+    "rfc826": {
+      "description": "ARP规范依据。",
+      "url": "https://datatracker.ietf.org/doc/html/rfc826"
+    },
+    "umaine_ethernet": {
+      "description": "University of Maine ECE435有线以太网作业；用于帧解析与设备输出场景题型设计。",
+      "url": "https://web.eece.maine.edu/~vweaver/classes/ece435_2025s/ece435_hw10.pdf"
+    }
+  },
+  "questions": {
+    "q_fd_ch1_protocol_01": {
+      "primary_node": "ch1_protocol",
+      "related_nodes": [
+        "ch1_protocol"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#协议"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:7-8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_protocol_02": {
+      "primary_node": "ch1_protocol",
+      "related_nodes": [
+        "ch1_protocol"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#协议"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:7-8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_protocol_03": {
+      "primary_node": "ch1_protocol",
+      "related_nodes": [
+        "ch1_protocol"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#协议"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:7-8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_overview_01": {
+      "primary_node": "ch1_internet_overview",
+      "related_nodes": [
+        "ch1_internet_overview"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络三层结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:4-6"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_overview_02": {
+      "primary_node": "ch1_internet_overview",
+      "related_nodes": [
+        "ch1_internet_overview"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络三层结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:4-6"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_overview_03": {
+      "primary_node": "ch1_internet_overview",
+      "related_nodes": [
+        "ch1_internet_overview"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络三层结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:4-6"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_edge_01": {
+      "primary_node": "ch1_network_edge",
+      "related_nodes": [
+        "ch1_network_edge"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络三层结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:10-12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_edge_02": {
+      "primary_node": "ch1_network_edge",
+      "related_nodes": [
+        "ch1_network_edge"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络三层结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:10-12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_edge_03": {
+      "primary_node": "ch1_network_edge",
+      "related_nodes": [
+        "ch1_network_edge"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络三层结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:10-12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_access_network_01": {
+      "primary_node": "ch1_access_network",
+      "related_nodes": [
+        "ch1_access_network"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#接入网络和物理介质"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:13-20"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_access_network_02": {
+      "primary_node": "ch1_access_network",
+      "related_nodes": [
+        "ch1_access_network"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#接入网络和物理介质"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:13-20"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_access_network_03": {
+      "primary_node": "ch1_access_network",
+      "related_nodes": [
+        "ch1_access_network"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#接入网络和物理介质"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:13-20"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_physical_media_01": {
+      "primary_node": "ch1_physical_media",
+      "related_nodes": [
+        "ch1_physical_media"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#物理介质"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:22-24"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_physical_media_02": {
+      "primary_node": "ch1_physical_media",
+      "related_nodes": [
+        "ch1_physical_media"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#物理介质"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:22-24"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_physical_media_03": {
+      "primary_node": "ch1_physical_media",
+      "related_nodes": [
+        "ch1_physical_media"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#物理介质"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:22-24"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_core_01": {
+      "primary_node": "ch1_network_core",
+      "related_nodes": [
+        "ch1_network_core"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:26-29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_core_02": {
+      "primary_node": "ch1_network_core",
+      "related_nodes": [
+        "ch1_network_core"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:26-29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_core_03": {
+      "primary_node": "ch1_network_core",
+      "related_nodes": [
+        "ch1_network_core"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:26-29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_forwarding_01": {
+      "primary_node": "ch1_forwarding",
+      "related_nodes": [
+        "ch1_forwarding"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心两个关键功能"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:27,29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_forwarding_02": {
+      "primary_node": "ch1_forwarding",
+      "related_nodes": [
+        "ch1_forwarding"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心两个关键功能"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:27,29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_forwarding_03": {
+      "primary_node": "ch1_forwarding",
+      "related_nodes": [
+        "ch1_forwarding"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心两个关键功能"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:27,29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_routing_01": {
+      "primary_node": "ch1_routing",
+      "related_nodes": [
+        "ch1_routing"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心两个关键功能"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:27-28"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_routing_02": {
+      "primary_node": "ch1_routing",
+      "related_nodes": [
+        "ch1_routing"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心两个关键功能"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:27-28"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_routing_03": {
+      "primary_node": "ch1_routing",
+      "related_nodes": [
+        "ch1_routing"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络核心两个关键功能"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:27-28"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_packet_switching_01": {
+      "primary_node": "ch1_packet_switching",
+      "related_nodes": [
+        "ch1_packet_switching"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:26,30-32"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_packet_switching_02": {
+      "primary_node": "ch1_packet_switching",
+      "related_nodes": [
+        "ch1_packet_switching"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:26,30-32"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_packet_switching_03": {
+      "primary_node": "ch1_packet_switching",
+      "related_nodes": [
+        "ch1_packet_switching",
+        "ch1_store_and_forward"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:26,30-32"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_store_and_forward_01": {
+      "primary_node": "ch1_store_and_forward",
+      "related_nodes": [
+        "ch1_store_and_forward"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:30"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_store_and_forward_02": {
+      "primary_node": "ch1_store_and_forward",
+      "related_nodes": [
+        "ch1_store_and_forward"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:30"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_store_and_forward_03": {
+      "primary_node": "ch1_store_and_forward",
+      "related_nodes": [
+        "ch1_store_and_forward",
+        "ch1_nodal_delay"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:30"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_queueing_packet_loss_01": {
+      "primary_node": "ch1_queueing_packet_loss",
+      "related_nodes": [
+        "ch1_queueing_packet_loss"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:31-32,47,55"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_queueing_packet_loss_02": {
+      "primary_node": "ch1_queueing_packet_loss",
+      "related_nodes": [
+        "ch1_queueing_packet_loss"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:31-32,47,55"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_queueing_packet_loss_03": {
+      "primary_node": "ch1_queueing_packet_loss",
+      "related_nodes": [
+        "ch1_queueing_packet_loss"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:31-32,47,55"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_circuit_switching_01": {
+      "primary_node": "ch1_circuit_switching",
+      "related_nodes": [
+        "ch1_circuit_switching"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#电路交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:33-34"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_circuit_switching_02": {
+      "primary_node": "ch1_circuit_switching",
+      "related_nodes": [
+        "ch1_circuit_switching"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#电路交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:33-34"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_circuit_switching_03": {
+      "primary_node": "ch1_circuit_switching",
+      "related_nodes": [
+        "ch1_circuit_switching",
+        "ch2_tdm"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#电路交换"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:33-34"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_isp_structure_01": {
+      "primary_node": "ch1_internet_isp_structure",
+      "related_nodes": [
+        "ch1_internet_isp_structure"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#Internet 结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:37-45"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_isp_structure_02": {
+      "primary_node": "ch1_internet_isp_structure",
+      "related_nodes": [
+        "ch1_internet_isp_structure"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#Internet 结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:37-45"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_isp_structure_03": {
+      "primary_node": "ch1_internet_isp_structure",
+      "related_nodes": [
+        "ch1_internet_isp_structure"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#Internet 结构"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:37-45"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_nodal_delay_01": {
+      "primary_node": "ch1_nodal_delay",
+      "related_nodes": [
+        "ch1_nodal_delay"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组延时的四种来源"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:48-51"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_nodal_delay_02": {
+      "primary_node": "ch1_nodal_delay",
+      "related_nodes": [
+        "ch1_nodal_delay"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组延时的四种来源"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:48-51"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_nodal_delay_03": {
+      "primary_node": "ch1_nodal_delay",
+      "related_nodes": [
+        "ch1_nodal_delay",
+        "ch1_store_and_forward"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#分组延时的四种来源"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:48-51"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_traffic_intensity_01": {
+      "primary_node": "ch1_traffic_intensity",
+      "related_nodes": [
+        "ch1_traffic_intensity"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#排队延时"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:52"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_traffic_intensity_02": {
+      "primary_node": "ch1_traffic_intensity",
+      "related_nodes": [
+        "ch1_traffic_intensity"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#排队延时"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:52"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_traffic_intensity_03": {
+      "primary_node": "ch1_traffic_intensity",
+      "related_nodes": [
+        "ch1_traffic_intensity",
+        "ch1_queueing_packet_loss"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#排队延时"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:52"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_throughput_bottleneck_01": {
+      "primary_node": "ch1_throughput_bottleneck",
+      "related_nodes": [
+        "ch1_throughput_bottleneck"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#吞吐量"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:56-58"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_throughput_bottleneck_02": {
+      "primary_node": "ch1_throughput_bottleneck",
+      "related_nodes": [
+        "ch1_throughput_bottleneck"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#吞吐量"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:56-58"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_throughput_bottleneck_03": {
+      "primary_node": "ch1_throughput_bottleneck",
+      "related_nodes": [
+        "ch1_throughput_bottleneck",
+        "ch1_network_core"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#吞吐量"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:56-58"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_security_01": {
+      "primary_node": "ch1_network_security",
+      "related_nodes": [
+        "ch1_network_security"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络安全"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:60-65"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_security_02": {
+      "primary_node": "ch1_network_security",
+      "related_nodes": [
+        "ch1_network_security"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络安全"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:60-65"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_network_security_03": {
+      "primary_node": "ch1_network_security",
+      "related_nodes": [
+        "ch1_network_security"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#网络安全"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:60-65"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_protocol_stack_01": {
+      "primary_node": "ch1_internet_protocol_stack",
+      "related_nodes": [
+        "ch1_internet_protocol_stack"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#协议层和参考模型"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:67-71"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_protocol_stack_02": {
+      "primary_node": "ch1_internet_protocol_stack",
+      "related_nodes": [
+        "ch1_internet_protocol_stack"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#协议层和参考模型"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:67-71"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_internet_protocol_stack_03": {
+      "primary_node": "ch1_internet_protocol_stack",
+      "related_nodes": [
+        "ch1_internet_protocol_stack"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#协议层和参考模型"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:67-71"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_encapsulation_01": {
+      "primary_node": "ch1_encapsulation",
+      "related_nodes": [
+        "ch1_encapsulation"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#封装"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:72-77,89"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_encapsulation_02": {
+      "primary_node": "ch1_encapsulation",
+      "related_nodes": [
+        "ch1_encapsulation"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#封装"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:72-77,89"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_encapsulation_03": {
+      "primary_node": "ch1_encapsulation",
+      "related_nodes": [
+        "ch1_encapsulation"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#封装"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:72-77,89"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_osi_reference_model_01": {
+      "primary_node": "ch1_osi_reference_model",
+      "related_nodes": [
+        "ch1_osi_reference_model"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#ISO/OSI模型"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:88"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_osi_reference_model_02": {
+      "primary_node": "ch1_osi_reference_model",
+      "related_nodes": [
+        "ch1_osi_reference_model"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#ISO/OSI模型"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:88"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch1_osi_reference_model_03": {
+      "primary_node": "ch1_osi_reference_model",
+      "related_nodes": [
+        "ch1_osi_reference_model"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "一、导论.md#ISO/OSI模型"
+        ],
+        "slides": [
+          "Chapter_1_v8.2.pptx:88"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_physical_layer_01": {
+      "primary_node": "ch2_physical_layer",
+      "related_nodes": [
+        "ch2_physical_layer"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#基本概念"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:3"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_physical_layer_02": {
+      "primary_node": "ch2_physical_layer",
+      "related_nodes": [
+        "ch2_physical_layer"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#基本概念"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:3"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_physical_layer_03": {
+      "primary_node": "ch2_physical_layer",
+      "related_nodes": [
+        "ch2_physical_layer"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#基本概念"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:3"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_interface_characteristics_01": {
+      "primary_node": "ch2_interface_characteristics",
+      "related_nodes": [
+        "ch2_interface_characteristics"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#主要任务"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:4"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_interface_characteristics_02": {
+      "primary_node": "ch2_interface_characteristics",
+      "related_nodes": [
+        "ch2_interface_characteristics"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#主要任务"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:4"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_interface_characteristics_03": {
+      "primary_node": "ch2_interface_characteristics",
+      "related_nodes": [
+        "ch2_interface_characteristics"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#主要任务"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:4"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_data_signal_system_01": {
+      "primary_node": "ch2_data_signal_system",
+      "related_nodes": [
+        "ch2_data_signal_system"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#数据通信基本知识"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:5,7"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_data_signal_system_02": {
+      "primary_node": "ch2_data_signal_system",
+      "related_nodes": [
+        "ch2_data_signal_system"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#数据通信基本知识"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:5,7"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_data_signal_system_03": {
+      "primary_node": "ch2_data_signal_system",
+      "related_nodes": [
+        "ch2_data_signal_system"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#数据通信基本知识"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:5,7"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_communication_modes_01": {
+      "primary_node": "ch2_communication_modes",
+      "related_nodes": [
+        "ch2_communication_modes"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#数据通信基本知识"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_communication_modes_02": {
+      "primary_node": "ch2_communication_modes",
+      "related_nodes": [
+        "ch2_communication_modes"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#数据通信基本知识"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_communication_modes_03": {
+      "primary_node": "ch2_communication_modes",
+      "related_nodes": [
+        "ch2_communication_modes"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#数据通信基本知识"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_baseband_signal_modulation_01": {
+      "primary_node": "ch2_baseband_signal_modulation",
+      "related_nodes": [
+        "ch2_baseband_signal_modulation"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:8-9"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_baseband_signal_modulation_02": {
+      "primary_node": "ch2_baseband_signal_modulation",
+      "related_nodes": [
+        "ch2_baseband_signal_modulation"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:8-9"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_baseband_signal_modulation_03": {
+      "primary_node": "ch2_baseband_signal_modulation",
+      "related_nodes": [
+        "ch2_baseband_signal_modulation"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:8-9"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_line_coding_01": {
+      "primary_node": "ch2_line_coding",
+      "related_nodes": [
+        "ch2_line_coding"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Physical_Layer20260320.pptx:10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_line_coding_02": {
+      "primary_node": "ch2_line_coding",
+      "related_nodes": [
+        "ch2_line_coding"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Physical_Layer20260320.pptx:10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_line_coding_03": {
+      "primary_node": "ch2_line_coding",
+      "related_nodes": [
+        "ch2_line_coding"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Physical_Layer20260320.pptx:10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_bandpass_modulation_01": {
+      "primary_node": "ch2_bandpass_modulation",
+      "related_nodes": [
+        "ch2_bandpass_modulation"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:9,11"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_bandpass_modulation_02": {
+      "primary_node": "ch2_bandpass_modulation",
+      "related_nodes": [
+        "ch2_bandpass_modulation"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:9,11"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_bandpass_modulation_03": {
+      "primary_node": "ch2_bandpass_modulation",
+      "related_nodes": [
+        "ch2_bandpass_modulation"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:9,11"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_qam_01": {
+      "primary_node": "ch2_qam",
+      "related_nodes": [
+        "ch2_qam"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_qam_02": {
+      "primary_node": "ch2_qam",
+      "related_nodes": [
+        "ch2_qam"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_qam_03": {
+      "primary_node": "ch2_qam",
+      "related_nodes": [
+        "ch2_qam",
+        "ch2_bandpass_modulation"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#调制"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_channel_distortion_01": {
+      "primary_node": "ch2_channel_distortion",
+      "related_nodes": [
+        "ch2_channel_distortion"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道的极限容量"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:13-15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_channel_distortion_02": {
+      "primary_node": "ch2_channel_distortion",
+      "related_nodes": [
+        "ch2_channel_distortion"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道的极限容量"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:13-15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_channel_distortion_03": {
+      "primary_node": "ch2_channel_distortion",
+      "related_nodes": [
+        "ch2_channel_distortion"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道的极限容量"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:13-15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_nyquist_criterion_01": {
+      "primary_node": "ch2_nyquist_criterion",
+      "related_nodes": [
+        "ch2_nyquist_criterion"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Physical_Layer20260320.pptx:15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_nyquist_criterion_02": {
+      "primary_node": "ch2_nyquist_criterion",
+      "related_nodes": [
+        "ch2_nyquist_criterion"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Physical_Layer20260320.pptx:15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_nyquist_criterion_03": {
+      "primary_node": "ch2_nyquist_criterion",
+      "related_nodes": [
+        "ch2_nyquist_criterion",
+        "ch2_channel_distortion"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Physical_Layer20260320.pptx:15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_snr_01": {
+      "primary_node": "ch2_snr",
+      "related_nodes": [
+        "ch2_snr"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道的极限容量"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:16"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_snr_02": {
+      "primary_node": "ch2_snr",
+      "related_nodes": [
+        "ch2_snr"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道的极限容量"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:16"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_snr_03": {
+      "primary_node": "ch2_snr",
+      "related_nodes": [
+        "ch2_snr"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道的极限容量"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:16"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_shannon_capacity_01": {
+      "primary_node": "ch2_shannon_capacity",
+      "related_nodes": [
+        "ch2_shannon_capacity"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#香农公式"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:17-18"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_shannon_capacity_02": {
+      "primary_node": "ch2_shannon_capacity",
+      "related_nodes": [
+        "ch2_shannon_capacity"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#香农公式"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:17-18"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_shannon_capacity_03": {
+      "primary_node": "ch2_shannon_capacity",
+      "related_nodes": [
+        "ch2_shannon_capacity",
+        "ch2_snr"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#香农公式"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:17-18"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_transmission_media_01": {
+      "primary_node": "ch2_transmission_media",
+      "related_nodes": [
+        "ch2_transmission_media"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:20-21"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_transmission_media_02": {
+      "primary_node": "ch2_transmission_media",
+      "related_nodes": [
+        "ch2_transmission_media"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:20-21"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_transmission_media_03": {
+      "primary_node": "ch2_transmission_media",
+      "related_nodes": [
+        "ch2_transmission_media"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:20-21"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_guided_media_01": {
+      "primary_node": "ch2_guided_media",
+      "related_nodes": [
+        "ch2_guided_media"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:22-26"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_guided_media_02": {
+      "primary_node": "ch2_guided_media",
+      "related_nodes": [
+        "ch2_guided_media"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:22-26"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_guided_media_03": {
+      "primary_node": "ch2_guided_media",
+      "related_nodes": [
+        "ch2_guided_media"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:22-26"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_unguided_media_01": {
+      "primary_node": "ch2_unguided_media",
+      "related_nodes": [
+        "ch2_unguided_media"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:27-28"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_unguided_media_02": {
+      "primary_node": "ch2_unguided_media",
+      "related_nodes": [
+        "ch2_unguided_media"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:27-28"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_unguided_media_03": {
+      "primary_node": "ch2_unguided_media",
+      "related_nodes": [
+        "ch2_unguided_media"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#物理层下的传输媒介"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:27-28"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_multiplexing_01": {
+      "primary_node": "ch2_multiplexing",
+      "related_nodes": [
+        "ch2_multiplexing"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道复用技术"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:30"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_multiplexing_02": {
+      "primary_node": "ch2_multiplexing",
+      "related_nodes": [
+        "ch2_multiplexing"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道复用技术"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:30"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_multiplexing_03": {
+      "primary_node": "ch2_multiplexing",
+      "related_nodes": [
+        "ch2_multiplexing"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#信道复用技术"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:30"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_fdm_01": {
+      "primary_node": "ch2_fdm",
+      "related_nodes": [
+        "ch2_fdm"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#FDM 频分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:31"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_fdm_02": {
+      "primary_node": "ch2_fdm",
+      "related_nodes": [
+        "ch2_fdm"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#FDM 频分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:31"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_fdm_03": {
+      "primary_node": "ch2_fdm",
+      "related_nodes": [
+        "ch2_fdm",
+        "ch2_multiplexing"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#FDM 频分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:31"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_tdm_01": {
+      "primary_node": "ch2_tdm",
+      "related_nodes": [
+        "ch2_tdm"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#TDM 时分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:32-33"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_tdm_02": {
+      "primary_node": "ch2_tdm",
+      "related_nodes": [
+        "ch2_tdm"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#TDM 时分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:32-33"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_tdm_03": {
+      "primary_node": "ch2_tdm",
+      "related_nodes": [
+        "ch2_tdm",
+        "ch2_multiplexing"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#TDM 时分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:32-33"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_cdm_01": {
+      "primary_node": "ch2_cdm",
+      "related_nodes": [
+        "ch2_cdm"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#CDM 码分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:34-36"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_cdm_02": {
+      "primary_node": "ch2_cdm",
+      "related_nodes": [
+        "ch2_cdm"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#CDM 码分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:34-36"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_cdm_03": {
+      "primary_node": "ch2_cdm",
+      "related_nodes": [
+        "ch2_cdm"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#CDM 码分复用"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:34-36"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_broadband_access_01": {
+      "primary_node": "ch2_broadband_access",
+      "related_nodes": [
+        "ch2_broadband_access"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#宽带接入技术"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:38"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_broadband_access_02": {
+      "primary_node": "ch2_broadband_access",
+      "related_nodes": [
+        "ch2_broadband_access"
+      ],
+      "question_type": "多选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#宽带接入技术"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:38"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_broadband_access_03": {
+      "primary_node": "ch2_broadband_access",
+      "related_nodes": [
+        "ch2_broadband_access"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#宽带接入技术"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:38"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_adsl_01": {
+      "primary_node": "ch2_adsl",
+      "related_nodes": [
+        "ch2_adsl"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#ADSL 非对称数字用户线路"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:39-45"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_adsl_02": {
+      "primary_node": "ch2_adsl",
+      "related_nodes": [
+        "ch2_adsl"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#ADSL 非对称数字用户线路"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:39-45"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_adsl_03": {
+      "primary_node": "ch2_adsl",
+      "related_nodes": [
+        "ch2_adsl"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#ADSL 非对称数字用户线路"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:39-45"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_dmt_01": {
+      "primary_node": "ch2_dmt",
+      "related_nodes": [
+        "ch2_dmt"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#DMT"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:42-44"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_dmt_02": {
+      "primary_node": "ch2_dmt",
+      "related_nodes": [
+        "ch2_dmt"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#DMT"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:42-44"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_dmt_03": {
+      "primary_node": "ch2_dmt",
+      "related_nodes": [
+        "ch2_dmt",
+        "ch2_adsl"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#DMT"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:42-44"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_hfc_cable_modem_01": {
+      "primary_node": "ch2_hfc_cable_modem",
+      "related_nodes": [
+        "ch2_hfc_cable_modem"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#HFC 混合光纤同轴网络"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:47-50"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_hfc_cable_modem_02": {
+      "primary_node": "ch2_hfc_cable_modem",
+      "related_nodes": [
+        "ch2_hfc_cable_modem"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#HFC 混合光纤同轴网络"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:47-50"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_hfc_cable_modem_03": {
+      "primary_node": "ch2_hfc_cable_modem",
+      "related_nodes": [
+        "ch2_hfc_cable_modem"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#HFC 混合光纤同轴网络"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:47-50"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_fttx_01": {
+      "primary_node": "ch2_fttx",
+      "related_nodes": [
+        "ch2_fttx"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#FFx"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:51"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_fttx_02": {
+      "primary_node": "ch2_fttx",
+      "related_nodes": [
+        "ch2_fttx"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#FFx"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:51"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch2_fttx_03": {
+      "primary_node": "ch2_fttx",
+      "related_nodes": [
+        "ch2_fttx"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "二、物理层.md#FFx"
+        ],
+        "slides": [
+          "Physical_Layer20260320.pptx:51"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_knowledge_checks"
+      ]
+    },
+    "q_fd_ch3_link_layer_01": {
+      "primary_node": "ch3_link_layer",
+      "related_nodes": [
+        "ch3_link_layer"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#简介"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:4-6"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_link_layer_02": {
+      "primary_node": "ch3_link_layer",
+      "related_nodes": [
+        "ch3_link_layer"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#简介"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:4-6"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_link_layer_03": {
+      "primary_node": "ch3_link_layer",
+      "related_nodes": [
+        "ch3_link_layer"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#简介"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:4-6"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_frame_01": {
+      "primary_node": "ch3_frame",
+      "related_nodes": [
+        "ch3_frame"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层实现"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:4,7,10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_frame_02": {
+      "primary_node": "ch3_frame",
+      "related_nodes": [
+        "ch3_frame"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层实现"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:4,7,10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_frame_03": {
+      "primary_node": "ch3_frame",
+      "related_nodes": [
+        "ch3_frame"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层实现"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:4,7,10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_link_services_01": {
+      "primary_node": "ch3_link_services",
+      "related_nodes": [
+        "ch3_link_services"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层服务"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:7-8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_link_services_02": {
+      "primary_node": "ch3_link_services",
+      "related_nodes": [
+        "ch3_link_services"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层服务"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:7-8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_link_services_03": {
+      "primary_node": "ch3_link_services",
+      "related_nodes": [
+        "ch3_link_services"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层服务"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:7-8"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_nic_01": {
+      "primary_node": "ch3_nic",
+      "related_nodes": [
+        "ch3_nic"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层实现"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:9-10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_nic_02": {
+      "primary_node": "ch3_nic",
+      "related_nodes": [
+        "ch3_nic"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层实现"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:9-10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_nic_03": {
+      "primary_node": "ch3_nic",
+      "related_nodes": [
+        "ch3_nic"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#链路层实现"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:9-10"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_error_detection_01": {
+      "primary_node": "ch3_error_detection",
+      "related_nodes": [
+        "ch3_error_detection"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#错误检测"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_error_detection_02": {
+      "primary_node": "ch3_error_detection",
+      "related_nodes": [
+        "ch3_error_detection"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#错误检测"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_error_detection_03": {
+      "primary_node": "ch3_error_detection",
+      "related_nodes": [
+        "ch3_error_detection"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#错误检测"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:12"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_parity_01": {
+      "primary_node": "ch3_parity",
+      "related_nodes": [
+        "ch3_parity"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#奇偶校验"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:13"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_parity_02": {
+      "primary_node": "ch3_parity",
+      "related_nodes": [
+        "ch3_parity"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#奇偶校验"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:13"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_parity_03": {
+      "primary_node": "ch3_parity",
+      "related_nodes": [
+        "ch3_parity"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#奇偶校验"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:13"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_crc_01": {
+      "primary_node": "ch3_crc",
+      "related_nodes": [
+        "ch3_crc"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#CRC：循环冗余检测"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:14-15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_crc_02": {
+      "primary_node": "ch3_crc",
+      "related_nodes": [
+        "ch3_crc"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#CRC：循环冗余检测"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:14-15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_crc_03": {
+      "primary_node": "ch3_crc",
+      "related_nodes": [
+        "ch3_crc",
+        "ch3_error_detection"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#CRC：循环冗余检测"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:14-15"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_multiple_access_link_01": {
+      "primary_node": "ch3_multiple_access_link",
+      "related_nodes": [
+        "ch3_multiple_access_link"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#多路访问协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:17-18"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_multiple_access_link_02": {
+      "primary_node": "ch3_multiple_access_link",
+      "related_nodes": [
+        "ch3_multiple_access_link"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#多路访问协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:17-18"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_multiple_access_link_03": {
+      "primary_node": "ch3_multiple_access_link",
+      "related_nodes": [
+        "ch3_multiple_access_link"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#多路访问协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:17-18"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_ideal_mac_01": {
+      "primary_node": "ch3_ideal_mac",
+      "related_nodes": [
+        "ch3_ideal_mac"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#理想多路访问协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:19"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_ideal_mac_02": {
+      "primary_node": "ch3_ideal_mac",
+      "related_nodes": [
+        "ch3_ideal_mac"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#理想多路访问协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:19"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_ideal_mac_03": {
+      "primary_node": "ch3_ideal_mac",
+      "related_nodes": [
+        "ch3_ideal_mac",
+        "ch3_multiple_access_link"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#理想多路访问协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:19"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_mac_taxonomy_01": {
+      "primary_node": "ch3_mac_taxonomy",
+      "related_nodes": [
+        "ch3_mac_taxonomy"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#MAC 协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:20,36"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_mac_taxonomy_02": {
+      "primary_node": "ch3_mac_taxonomy",
+      "related_nodes": [
+        "ch3_mac_taxonomy"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#MAC 协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:20,36"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_mac_taxonomy_03": {
+      "primary_node": "ch3_mac_taxonomy",
+      "related_nodes": [
+        "ch3_mac_taxonomy"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#MAC 协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:20,36"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_channel_partitioning_mac_01": {
+      "primary_node": "ch3_channel_partitioning_mac",
+      "related_nodes": [
+        "ch3_channel_partitioning_mac"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#信道划分 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:21-22"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_channel_partitioning_mac_02": {
+      "primary_node": "ch3_channel_partitioning_mac",
+      "related_nodes": [
+        "ch3_channel_partitioning_mac"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#信道划分 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:21-22"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_channel_partitioning_mac_03": {
+      "primary_node": "ch3_channel_partitioning_mac",
+      "related_nodes": [
+        "ch3_channel_partitioning_mac"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#信道划分 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:21-22"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_slotted_aloha_01": {
+      "primary_node": "ch3_slotted_aloha",
+      "related_nodes": [
+        "ch3_slotted_aloha"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:24-26"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_slotted_aloha_02": {
+      "primary_node": "ch3_slotted_aloha",
+      "related_nodes": [
+        "ch3_slotted_aloha"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:24-26"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_slotted_aloha_03": {
+      "primary_node": "ch3_slotted_aloha",
+      "related_nodes": [
+        "ch3_slotted_aloha"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:24-26"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_pure_aloha_01": {
+      "primary_node": "ch3_pure_aloha",
+      "related_nodes": [
+        "ch3_pure_aloha"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:27,93"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_pure_aloha_02": {
+      "primary_node": "ch3_pure_aloha",
+      "related_nodes": [
+        "ch3_pure_aloha"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:27,93"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_pure_aloha_03": {
+      "primary_node": "ch3_pure_aloha",
+      "related_nodes": [
+        "ch3_pure_aloha"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:27,93"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_csma_01": {
+      "primary_node": "ch3_csma",
+      "related_nodes": [
+        "ch3_csma"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:28-29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_csma_02": {
+      "primary_node": "ch3_csma",
+      "related_nodes": [
+        "ch3_csma"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:28-29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_csma_03": {
+      "primary_node": "ch3_csma",
+      "related_nodes": [
+        "ch3_csma"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:28-29"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_csma_cd_01": {
+      "primary_node": "ch3_csma_cd",
+      "related_nodes": [
+        "ch3_csma_cd"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:28-32"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_csma_cd_02": {
+      "primary_node": "ch3_csma_cd",
+      "related_nodes": [
+        "ch3_csma_cd"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:28-32"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_csma_cd_03": {
+      "primary_node": "ch3_csma_cd",
+      "related_nodes": [
+        "ch3_csma_cd"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:28-32"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_binary_exponential_backoff_01": {
+      "primary_node": "ch3_binary_exponential_backoff",
+      "related_nodes": [
+        "ch3_binary_exponential_backoff"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:31"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_binary_exponential_backoff_02": {
+      "primary_node": "ch3_binary_exponential_backoff",
+      "related_nodes": [
+        "ch3_binary_exponential_backoff"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:31"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_binary_exponential_backoff_03": {
+      "primary_node": "ch3_binary_exponential_backoff",
+      "related_nodes": [
+        "ch3_binary_exponential_backoff",
+        "ch3_csma_cd"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#随机访问 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:31"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_polling_01": {
+      "primary_node": "ch3_polling",
+      "related_nodes": [
+        "ch3_polling"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#轮流协议 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:33-34"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_polling_02": {
+      "primary_node": "ch3_polling",
+      "related_nodes": [
+        "ch3_polling"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#轮流协议 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:33-34"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_polling_03": {
+      "primary_node": "ch3_polling",
+      "related_nodes": [
+        "ch3_polling"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#轮流协议 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:33-34"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_token_passing_01": {
+      "primary_node": "ch3_token_passing",
+      "related_nodes": [
+        "ch3_token_passing"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#轮流协议 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:33,35"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_token_passing_02": {
+      "primary_node": "ch3_token_passing",
+      "related_nodes": [
+        "ch3_token_passing"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#轮流协议 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:33,35"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch3_token_passing_03": {
+      "primary_node": "ch3_token_passing",
+      "related_nodes": [
+        "ch3_token_passing"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#轮流协议 MAC"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:33,35"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_interactive",
+        "kurose_link_layer"
+      ]
+    },
+    "q_fd_ch4_lan_01": {
+      "primary_node": "ch4_lan",
+      "related_nodes": [
+        "ch4_lan"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#局域网：LAN"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:37-40"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_lan_02": {
+      "primary_node": "ch4_lan",
+      "related_nodes": [
+        "ch4_lan"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#局域网：LAN"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:37-40"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_lan_03": {
+      "primary_node": "ch4_lan",
+      "related_nodes": [
+        "ch4_lan"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#局域网：LAN"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:37-40"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_mac_address_01": {
+      "primary_node": "ch4_mac_address",
+      "related_nodes": [
+        "ch4_mac_address"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#MAC 地址"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:38-40"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_mac_address_02": {
+      "primary_node": "ch4_mac_address",
+      "related_nodes": [
+        "ch4_mac_address"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#MAC 地址"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:38-40"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_mac_address_03": {
+      "primary_node": "ch4_mac_address",
+      "related_nodes": [
+        "ch4_mac_address"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#MAC 地址"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:38-40"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_arp_01": {
+      "primary_node": "ch4_arp",
+      "related_nodes": [
+        "ch4_arp"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#ARP：地址解析协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:41-44"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_arp_02": {
+      "primary_node": "ch4_arp",
+      "related_nodes": [
+        "ch4_arp"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#ARP：地址解析协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:41-44"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_arp_03": {
+      "primary_node": "ch4_arp",
+      "related_nodes": [
+        "ch4_arp"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#ARP：地址解析协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:41-44"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_arp_table_01": {
+      "primary_node": "ch4_arp_table",
+      "related_nodes": [
+        "ch4_arp_table"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#ARP：地址解析协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:41"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_arp_table_02": {
+      "primary_node": "ch4_arp_table",
+      "related_nodes": [
+        "ch4_arp_table"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#ARP：地址解析协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:41"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_arp_table_03": {
+      "primary_node": "ch4_arp_table",
+      "related_nodes": [
+        "ch4_arp_table"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#ARP：地址解析协议"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:41"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_cross_subnet_delivery_01": {
+      "primary_node": "ch4_cross_subnet_delivery",
+      "related_nodes": [
+        "ch4_cross_subnet_delivery"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#跨子网传输"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:45-50"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_cross_subnet_delivery_02": {
+      "primary_node": "ch4_cross_subnet_delivery",
+      "related_nodes": [
+        "ch4_cross_subnet_delivery"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#跨子网传输"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:45-50"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_cross_subnet_delivery_03": {
+      "primary_node": "ch4_cross_subnet_delivery",
+      "related_nodes": [
+        "ch4_cross_subnet_delivery"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#跨子网传输"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:45-50"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "q_fd_ch4_ethernet_01": {
+      "primary_node": "ch4_ethernet",
+      "related_nodes": [
+        "ch4_ethernet"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:52"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_02": {
+      "primary_node": "ch4_ethernet",
+      "related_nodes": [
+        "ch4_ethernet"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:52"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_03": {
+      "primary_node": "ch4_ethernet",
+      "related_nodes": [
+        "ch4_ethernet"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:52"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_topology_01": {
+      "primary_node": "ch4_ethernet_topology",
+      "related_nodes": [
+        "ch4_ethernet_topology"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:53"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_topology_02": {
+      "primary_node": "ch4_ethernet_topology",
+      "related_nodes": [
+        "ch4_ethernet_topology"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:53"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_topology_03": {
+      "primary_node": "ch4_ethernet_topology",
+      "related_nodes": [
+        "ch4_ethernet_topology"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:53"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_frame_01": {
+      "primary_node": "ch4_ethernet_frame",
+      "related_nodes": [
+        "ch4_ethernet_frame"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet 帧格式"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:54-55"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_frame_02": {
+      "primary_node": "ch4_ethernet_frame",
+      "related_nodes": [
+        "ch4_ethernet_frame"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet 帧格式"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:54-55"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_frame_03": {
+      "primary_node": "ch4_ethernet_frame",
+      "related_nodes": [
+        "ch4_ethernet_frame"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet 帧格式"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:54-55"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_service_model_01": {
+      "primary_node": "ch4_ethernet_service_model",
+      "related_nodes": [
+        "ch4_ethernet_service_model"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:56"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_service_model_02": {
+      "primary_node": "ch4_ethernet_service_model",
+      "related_nodes": [
+        "ch4_ethernet_service_model"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:56"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_service_model_03": {
+      "primary_node": "ch4_ethernet_service_model",
+      "related_nodes": [
+        "ch4_ethernet_service_model"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:56"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_standards_01": {
+      "primary_node": "ch4_ethernet_standards",
+      "related_nodes": [
+        "ch4_ethernet_standards"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:57"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_standards_02": {
+      "primary_node": "ch4_ethernet_standards",
+      "related_nodes": [
+        "ch4_ethernet_standards"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:57"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_standards_03": {
+      "primary_node": "ch4_ethernet_standards",
+      "related_nodes": [
+        "ch4_ethernet_standards"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#Ethernet：以太网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:57"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_switch_01": {
+      "primary_node": "ch4_ethernet_switch",
+      "related_nodes": [
+        "ch4_ethernet_switch"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:59"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_switch_02": {
+      "primary_node": "ch4_ethernet_switch",
+      "related_nodes": [
+        "ch4_ethernet_switch"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:59"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_ethernet_switch_03": {
+      "primary_node": "ch4_ethernet_switch",
+      "related_nodes": [
+        "ch4_ethernet_switch"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:59"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_collision_domain_01": {
+      "primary_node": "ch4_collision_domain",
+      "related_nodes": [
+        "ch4_collision_domain"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:60-61"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_collision_domain_02": {
+      "primary_node": "ch4_collision_domain",
+      "related_nodes": [
+        "ch4_collision_domain"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:60-61"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_collision_domain_03": {
+      "primary_node": "ch4_collision_domain",
+      "related_nodes": [
+        "ch4_collision_domain",
+        "ch4_ethernet_switch"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:60-61"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_table_01": {
+      "primary_node": "ch4_switch_table",
+      "related_nodes": [
+        "ch4_switch_table"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机转发表"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:62"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_table_02": {
+      "primary_node": "ch4_switch_table",
+      "related_nodes": [
+        "ch4_switch_table"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机转发表"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:62"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_table_03": {
+      "primary_node": "ch4_switch_table",
+      "related_nodes": [
+        "ch4_switch_table"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机转发表"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:62"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_self_learning_01": {
+      "primary_node": "ch4_switch_self_learning",
+      "related_nodes": [
+        "ch4_switch_self_learning"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机转发表"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:63"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_self_learning_02": {
+      "primary_node": "ch4_switch_self_learning",
+      "related_nodes": [
+        "ch4_switch_self_learning"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机转发表"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:63"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_self_learning_03": {
+      "primary_node": "ch4_switch_self_learning",
+      "related_nodes": [
+        "ch4_switch_self_learning"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机转发表"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:63"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_filter_forward_01": {
+      "primary_node": "ch4_switch_filter_forward",
+      "related_nodes": [
+        "ch4_switch_filter_forward"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#帧过滤 / 转发"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:64-65"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_filter_forward_02": {
+      "primary_node": "ch4_switch_filter_forward",
+      "related_nodes": [
+        "ch4_switch_filter_forward"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#帧过滤 / 转发"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:64-65"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_filter_forward_03": {
+      "primary_node": "ch4_switch_filter_forward",
+      "related_nodes": [
+        "ch4_switch_filter_forward"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#帧过滤 / 转发"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:64-65"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_interconnection_01": {
+      "primary_node": "ch4_switch_interconnection",
+      "related_nodes": [
+        "ch4_switch_interconnection"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:66-67"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_interconnection_02": {
+      "primary_node": "ch4_switch_interconnection",
+      "related_nodes": [
+        "ch4_switch_interconnection"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:66-67"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_interconnection_03": {
+      "primary_node": "ch4_switch_interconnection",
+      "related_nodes": [
+        "ch4_switch_interconnection"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:66-67"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_vs_router_01": {
+      "primary_node": "ch4_switch_vs_router",
+      "related_nodes": [
+        "ch4_switch_vs_router"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:68"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_vs_router_02": {
+      "primary_node": "ch4_switch_vs_router",
+      "related_nodes": [
+        "ch4_switch_vs_router"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:68"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_switch_vs_router_03": {
+      "primary_node": "ch4_switch_vs_router",
+      "related_nodes": [
+        "ch4_switch_vs_router"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#交换机"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:68"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark",
+        "umaine_ethernet"
+      ]
+    },
+    "q_fd_ch4_vlan_01": {
+      "primary_node": "ch4_vlan",
+      "related_nodes": [
+        "ch4_vlan"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:70-73"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_vlan_02": {
+      "primary_node": "ch4_vlan",
+      "related_nodes": [
+        "ch4_vlan"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:70-73"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_vlan_03": {
+      "primary_node": "ch4_vlan",
+      "related_nodes": [
+        "ch4_vlan"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:70-73"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_port_based_vlan_01": {
+      "primary_node": "ch4_port_based_vlan",
+      "related_nodes": [
+        "ch4_port_based_vlan"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:72-73"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_port_based_vlan_02": {
+      "primary_node": "ch4_port_based_vlan",
+      "related_nodes": [
+        "ch4_port_based_vlan"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:72-73"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_port_based_vlan_03": {
+      "primary_node": "ch4_port_based_vlan",
+      "related_nodes": [
+        "ch4_port_based_vlan"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:72-73"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_vlan_trunk_8021q_01": {
+      "primary_node": "ch4_vlan_trunk_8021q",
+      "related_nodes": [
+        "ch4_vlan_trunk_8021q"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:74-75"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_vlan_trunk_8021q_02": {
+      "primary_node": "ch4_vlan_trunk_8021q",
+      "related_nodes": [
+        "ch4_vlan_trunk_8021q"
+      ],
+      "question_type": "判断题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:74-75"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_vlan_trunk_8021q_03": {
+      "primary_node": "ch4_vlan_trunk_8021q",
+      "related_nodes": [
+        "ch4_vlan_trunk_8021q",
+        "ch4_vlan"
+      ],
+      "question_type": "计算题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#VLAN 虚拟局域网"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:74-75"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_datacenter_network_01": {
+      "primary_node": "ch4_datacenter_network",
+      "related_nodes": [
+        "ch4_datacenter_network"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#数据中心网络"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:77-79"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_datacenter_network_02": {
+      "primary_node": "ch4_datacenter_network",
+      "related_nodes": [
+        "ch4_datacenter_network"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#数据中心网络"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:77-79"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_datacenter_network_03": {
+      "primary_node": "ch4_datacenter_network",
+      "related_nodes": [
+        "ch4_datacenter_network"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#数据中心网络"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:77-79"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_datacenter_multipath_01": {
+      "primary_node": "ch4_datacenter_multipath",
+      "related_nodes": [
+        "ch4_datacenter_multipath"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#多路径"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:80"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_datacenter_multipath_02": {
+      "primary_node": "ch4_datacenter_multipath",
+      "related_nodes": [
+        "ch4_datacenter_multipath"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#多路径"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:80"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_datacenter_multipath_03": {
+      "primary_node": "ch4_datacenter_multipath",
+      "related_nodes": [
+        "ch4_datacenter_multipath"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#多路径"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:80"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_load_balancer_01": {
+      "primary_node": "ch4_load_balancer",
+      "related_nodes": [
+        "ch4_load_balancer"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#负载均衡器"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:81"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_load_balancer_02": {
+      "primary_node": "ch4_load_balancer",
+      "related_nodes": [
+        "ch4_load_balancer"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#负载均衡器"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:81"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_load_balancer_03": {
+      "primary_node": "ch4_load_balancer",
+      "related_nodes": [
+        "ch4_load_balancer"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [
+          "四、链路层和局域网.md#负载均衡器"
+        ],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:81"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_web_request_lifecycle_01": {
+      "primary_node": "ch4_web_request_lifecycle",
+      "related_nodes": [
+        "ch4_web_request_lifecycle"
+      ],
+      "question_type": "单选题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:83-90"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_web_request_lifecycle_02": {
+      "primary_node": "ch4_web_request_lifecycle",
+      "related_nodes": [
+        "ch4_web_request_lifecycle"
+      ],
+      "question_type": "填空题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:83-90"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    },
+    "q_fd_ch4_web_request_lifecycle_03": {
+      "primary_node": "ch4_web_request_lifecycle",
+      "related_nodes": [
+        "ch4_web_request_lifecycle"
+      ],
+      "question_type": "简答题",
+      "origin": "依据课程范围原创编写；公开资源只用于题型与事实校核，未直接复制题干。",
+      "local_evidence": {
+        "notes": [],
+        "slides": [
+          "Link_Layer20260320 (2).pptx:83-90"
+        ]
+      },
+      "reference_basis": [
+        "local_scope",
+        "ncre_sample",
+        "kurose_link_layer",
+        "kurose_wireshark"
+      ]
+    }
+  }
+}

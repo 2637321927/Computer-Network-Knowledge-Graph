@@ -4,8 +4,16 @@
     "title": "TCP 三次握手过程中，第二次握手报文包含的标志位是？",
     "type": "单选题",
     "chapter": "传输层",
-    "related_nodes": ["tcp_handshake", "tcp"],
-    "options": ["A. SYN", "B. ACK", "C. SYN+ACK", "D. FIN"],
+    "related_nodes": [
+      "tcp_handshake",
+      "tcp"
+    ],
+    "options": [
+      "A. SYN",
+      "B. ACK",
+      "C. SYN+ACK",
+      "D. FIN"
+    ],
     "answer": "C",
     "explanation": "第二次握手是服务器向客户端发送 SYN+ACK 报文，同时确认客户端的 SYN 并发送自己的 SYN。",
     "difficulty": 2
@@ -15,7 +23,10 @@
     "title": "设 TCP 的 ssthresh 初始值为 8（单位为报文段），当拥塞窗口上升到 12 时发生超时，TCP 开始慢启动和拥塞避免。试分别求出第 1 次到第 15 次传输的各拥塞窗口大小。",
     "type": "计算题",
     "chapter": "传输层",
-    "related_nodes": ["congestion_control", "tcp"],
+    "related_nodes": [
+      "congestion_control",
+      "tcp"
+    ],
     "options": [],
     "answer": "cwnd 变化：1→2→4→8→9→10→11→12→1→2→4→6→7→8→9",
     "explanation": "前 7 轮：慢启动(1→8)后拥塞避免(9→12)；超时后 ssthresh=6，重新慢启动(1→6)后拥塞避免(7→9)。",
@@ -26,7 +37,10 @@
     "title": "以下关于 TCP 和 UDP 的说法，正确的是？",
     "type": "多选题",
     "chapter": "传输层",
-    "related_nodes": ["tcp", "udp"],
+    "related_nodes": [
+      "tcp",
+      "udp"
+    ],
     "options": [
       "A. TCP 提供可靠传输，UDP 提供不可靠传输",
       "B. TCP 面向连接，UDP 无连接",
@@ -42,8 +56,16 @@
     "title": "TCP 四次挥手中，客户端收到服务器的 FIN 报文后，会进入什么状态？",
     "type": "单选题",
     "chapter": "传输层",
-    "related_nodes": ["tcp_wavehand", "tcp"],
-    "options": ["A. CLOSE_WAIT", "B. TIME_WAIT", "C. LAST_ACK", "D. FIN_WAIT_2"],
+    "related_nodes": [
+      "tcp_wavehand",
+      "tcp"
+    ],
+    "options": [
+      "A. CLOSE_WAIT",
+      "B. TIME_WAIT",
+      "C. LAST_ACK",
+      "D. FIN_WAIT_2"
+    ],
     "answer": "B",
     "explanation": "客户端收到服务器的 FIN 后发送 ACK，然后进入 TIME_WAIT 状态，等待 2MSL 时间。",
     "difficulty": 3
@@ -53,10 +75,6465 @@
     "title": "TCP 流量控制中，接收方通过什么字段告诉发送方自己的接收能力？",
     "type": "填空题",
     "chapter": "传输层",
-    "related_nodes": ["flow_control", "tcp"],
+    "related_nodes": [
+      "flow_control",
+      "tcp"
+    ],
     "options": [],
     "answer": "窗口大小（Window/rwnd）",
     "explanation": "TCP 报文段首部中的窗口字段（16 位）用于流量控制，表示接收方还能接收的字节数。",
     "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_protocol_01",
+    "name": "网络协议·基础题1",
+    "title": "下列关于“网络协议”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络协议”知识点的单选题。",
+    "keywords": [
+      "协议",
+      "消息格式",
+      "消息顺序",
+      "网络实体",
+      "网络协议"
+    ],
+    "related_nodes": [
+      "ch1_protocol"
+    ],
+    "options": [
+      "A. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "B. 分组交换把应用消息切成较小的packet，让不同用户按需共享链路资源。",
+      "C. 协议规定网络实体交换消息的格式、顺序，以及发送、接收消息或发生事件时采取的动作。",
+      "D. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。"
+    ],
+    "answer": "C",
+    "explanation": "协议规定网络实体交换消息的格式、顺序，以及发送、接收消息或发生事件时采取的动作。它就是网络通信双方共同遵守的“对话规则”。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_protocol_02",
+    "name": "网络协议·基础题2",
+    "title": "下列哪一项与“网络协议”的关系最直接？",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络协议”知识点的单选题。",
+    "keywords": [
+      "协议",
+      "消息格式",
+      "消息顺序",
+      "网络实体",
+      "网络协议"
+    ],
+    "related_nodes": [
+      "ch1_protocol"
+    ],
+    "options": [
+      "A. 协议",
+      "B. 物理介质",
+      "C. 端系统",
+      "D. 封装"
+    ],
+    "answer": "A",
+    "explanation": "“协议”是该知识点的核心关键词。协议规定网络实体交换消息的格式、顺序，以及发送、接收消息或发生事件时采取的动作。它就是网络通信双方共同遵守的“对话规则”。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_protocol_03",
+    "name": "网络协议·基础题3",
+    "title": "________规定网络实体交换消息的格式、顺序，以及发送、接收消息或发生事件时采取的动作。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络协议”知识点的填空题。",
+    "keywords": [
+      "协议",
+      "消息格式",
+      "消息顺序",
+      "网络实体",
+      "网络协议"
+    ],
+    "related_nodes": [
+      "ch1_protocol"
+    ],
+    "options": [],
+    "answer": "协议",
+    "explanation": "协议规定网络实体交换消息的格式、顺序，以及发送、接收消息或发生事件时采取的动作。它就是网络通信双方共同遵守的“对话规则”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_internet_overview_01",
+    "name": "Internet概览·基础题1",
+    "title": "下列关于“Internet概览”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet概览”知识点的单选题。",
+    "keywords": [
+      "Internet",
+      "网络之网",
+      "通信基础设施",
+      "分布式应用",
+      "Internet概览"
+    ],
+    "related_nodes": [
+      "ch1_internet_overview"
+    ],
+    "options": [
+      "A. Internet既是由主机、链路、路由器和互联ISP组成的网络之网，也是向分布式应用提供通信服务和编程接口的基础设施。",
+      "B. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "C. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "D. 流量强度La/R衡量输出队列负载。"
+    ],
+    "answer": "A",
+    "explanation": "Internet既是由主机、链路、路由器和互联ISP组成的网络之网，也是向分布式应用提供通信服务和编程接口的基础设施。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_internet_overview_02",
+    "name": "Internet概览·基础题2",
+    "title": "下列哪一项与“Internet概览”的关系最直接？",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet概览”知识点的单选题。",
+    "keywords": [
+      "Internet",
+      "网络之网",
+      "通信基础设施",
+      "分布式应用",
+      "Internet概览"
+    ],
+    "related_nodes": [
+      "ch1_internet_overview"
+    ],
+    "options": [
+      "A. Internet",
+      "B. 排队",
+      "C. 电路交换",
+      "D. 协议"
+    ],
+    "answer": "A",
+    "explanation": "“Internet”是该知识点的核心关键词。Internet既是由主机、链路、路由器和互联ISP组成的网络之网，也是向分布式应用提供通信服务和编程接口的基础设施。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_internet_overview_03",
+    "name": "Internet概览·基础题3",
+    "title": "________既是由主机、链路、路由器和互联ISP组成的网络之网，也是向分布式应用提供通信服务和编程接口的基础设施。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet概览”知识点的填空题。",
+    "keywords": [
+      "Internet",
+      "网络之网",
+      "通信基础设施",
+      "分布式应用",
+      "Internet概览"
+    ],
+    "related_nodes": [
+      "ch1_internet_overview"
+    ],
+    "options": [],
+    "answer": "Internet",
+    "explanation": "Internet既是由主机、链路、路由器和互联ISP组成的网络之网，也是向分布式应用提供通信服务和编程接口的基础设施。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_network_edge_01",
+    "name": "网络边缘·基础题1",
+    "title": "下列关于“网络边缘”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络边缘”知识点的单选题。",
+    "keywords": [
+      "端系统",
+      "主机",
+      "客户端",
+      "服务器",
+      "网络边缘"
+    ],
+    "related_nodes": [
+      "ch1_network_edge"
+    ],
+    "options": [
+      "A. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "B. 当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+      "C. 网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+      "D. 电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。"
+    ],
+    "answer": "C",
+    "explanation": "网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_network_edge_02",
+    "name": "网络边缘·基础题2",
+    "title": "下列哪一项与“网络边缘”的关系最直接？",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络边缘”知识点的单选题。",
+    "keywords": [
+      "端系统",
+      "主机",
+      "客户端",
+      "服务器",
+      "网络边缘"
+    ],
+    "related_nodes": [
+      "ch1_network_edge"
+    ],
+    "options": [
+      "A. routing",
+      "B. 端系统",
+      "C. Internet",
+      "D. 电路交换"
+    ],
+    "answer": "B",
+    "explanation": "“端系统”是该知识点的核心关键词。网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_network_edge_03",
+    "name": "网络边缘·基础题3",
+    "title": "网络边缘由________构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络边缘”知识点的填空题。",
+    "keywords": [
+      "端系统",
+      "主机",
+      "客户端",
+      "服务器",
+      "网络边缘"
+    ],
+    "related_nodes": [
+      "ch1_network_edge"
+    ],
+    "options": [],
+    "answer": "端系统",
+    "explanation": "网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_access_network_01",
+    "name": "接入网络·基础题1",
+    "title": "下列关于“接入网络”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“接入网络”知识点的单选题。",
+    "keywords": [
+      "接入网络",
+      "边缘路由器",
+      "有线接入",
+      "无线接入"
+    ],
+    "related_nodes": [
+      "ch1_access_network"
+    ],
+    "options": [
+      "A. 接入网络把端系统连接到边缘路由器，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。",
+      "B. 端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+      "C. 发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。",
+      "D. 电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。"
+    ],
+    "answer": "A",
+    "explanation": "接入网络把端系统连接到边缘路由器，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。共享式接入和专用式接入具有不同的带宽分配方式。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_access_network_02",
+    "name": "接入网络·基础题2",
+    "title": "下列哪一项与“接入网络”的关系最直接？",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“接入网络”知识点的单选题。",
+    "keywords": [
+      "接入网络",
+      "边缘路由器",
+      "有线接入",
+      "无线接入"
+    ],
+    "related_nodes": [
+      "ch1_access_network"
+    ],
+    "options": [
+      "A. 接入网络",
+      "B. 物理介质",
+      "C. 结点时延",
+      "D. 流量强度"
+    ],
+    "answer": "A",
+    "explanation": "“接入网络”是该知识点的核心关键词。接入网络把端系统连接到边缘路由器，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。共享式接入和专用式接入具有不同的带宽分配方式。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_access_network_03",
+    "name": "接入网络·基础题3",
+    "title": "接入网络把端系统连接到________，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“接入网络”知识点的填空题。",
+    "keywords": [
+      "接入网络",
+      "边缘路由器",
+      "有线接入",
+      "无线接入"
+    ],
+    "related_nodes": [
+      "ch1_access_network"
+    ],
+    "options": [],
+    "answer": "边缘路由器",
+    "explanation": "接入网络把端系统连接到边缘路由器，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。共享式接入和专用式接入具有不同的带宽分配方式。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_physical_media_01",
+    "name": "物理介质·基础题1",
+    "title": "下列关于“物理介质”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“物理介质”知识点的单选题。",
+    "keywords": [
+      "物理介质",
+      "导向介质",
+      "非导向介质",
+      "bit"
+    ],
+    "related_nodes": [
+      "ch1_physical_media"
+    ],
+    "options": [
+      "A. 物理介质承载bit传播。",
+      "B. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "C. 流量强度La/R衡量输出队列负载。",
+      "D. 发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。"
+    ],
+    "answer": "A",
+    "explanation": "物理介质承载bit传播。导向介质让信号沿铜线、同轴电缆或光纤传播；非导向介质让信号在开放空间以无线电波传播。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_physical_media_02",
+    "name": "物理介质·基础题2",
+    "title": "下列哪些术语或特征与“物理介质”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“物理介质”知识点的多选题。",
+    "keywords": [
+      "物理介质",
+      "导向介质",
+      "非导向介质",
+      "bit"
+    ],
+    "related_nodes": [
+      "ch1_physical_media"
+    ],
+    "options": [
+      "A. ISP",
+      "B. 导向介质",
+      "C. 物理介质",
+      "D. forwarding"
+    ],
+    "answer": "BC",
+    "explanation": "直接相关的关键词是“物理介质、导向介质”。物理介质承载bit传播。导向介质让信号沿铜线、同轴电缆或光纤传播；非导向介质让信号在开放空间以无线电波传播。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_physical_media_03",
+    "name": "物理介质·基础题3",
+    "title": "物理介质承载bit传播。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“物理介质”知识点的填空题。",
+    "keywords": [
+      "物理介质",
+      "导向介质",
+      "非导向介质",
+      "bit"
+    ],
+    "related_nodes": [
+      "ch1_physical_media"
+    ],
+    "options": [],
+    "answer": "导向介质",
+    "explanation": "物理介质承载bit传播。导向介质让信号沿铜线、同轴电缆或光纤传播；非导向介质让信号在开放空间以无线电波传播。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_network_core_01",
+    "name": "网络核心·基础题1",
+    "title": "下列关于“网络核心”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络核心”知识点的单选题。",
+    "keywords": [
+      "网络核心",
+      "路由器",
+      "网状结构",
+      "逐跳传输"
+    ],
+    "related_nodes": [
+      "ch1_network_core"
+    ],
+    "options": [
+      "A. 电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。",
+      "B. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "C. 当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+      "D. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。"
+    ],
+    "answer": "B",
+    "explanation": "网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。核心功能可以概括为路由与转发。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_network_core_02",
+    "name": "网络核心·基础题2",
+    "title": "下列哪些术语或特征与“网络核心”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络核心”知识点的多选题。",
+    "keywords": [
+      "网络核心",
+      "路由器",
+      "网状结构",
+      "逐跳传输"
+    ],
+    "related_nodes": [
+      "ch1_network_core"
+    ],
+    "options": [
+      "A. 网络核心",
+      "B. OSI",
+      "C. 结点时延",
+      "D. 路由器"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“网络核心、路由器”。网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。核心功能可以概括为路由与转发。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch1_network_core_03",
+    "name": "网络核心·基础题3",
+    "title": "网络核心是互联________形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络核心”知识点的填空题。",
+    "keywords": [
+      "网络核心",
+      "路由器",
+      "网状结构",
+      "逐跳传输"
+    ],
+    "related_nodes": [
+      "ch1_network_core"
+    ],
+    "options": [],
+    "answer": "路由器",
+    "explanation": "网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。核心功能可以概括为路由与转发。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_forwarding_01",
+    "name": "转发·基础题1",
+    "title": "下列关于“转发”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“转发”知识点的单选题。",
+    "keywords": [
+      "forwarding",
+      "转发表",
+      "输入链路",
+      "输出链路",
+      "转发"
+    ],
+    "related_nodes": [
+      "ch1_forwarding"
+    ],
+    "options": [
+      "A. 物理介质承载bit传播。",
+      "B. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "C. 当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+      "D. 网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。"
+    ],
+    "answer": "B",
+    "explanation": "转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_forwarding_02",
+    "name": "转发·基础题2",
+    "title": "下列哪些术语或特征与“转发”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“转发”知识点的多选题。",
+    "keywords": [
+      "forwarding",
+      "转发表",
+      "输入链路",
+      "输出链路",
+      "转发"
+    ],
+    "related_nodes": [
+      "ch1_forwarding"
+    ],
+    "options": [
+      "A. Internet",
+      "B. 物理介质",
+      "C. 转发表",
+      "D. forwarding"
+    ],
+    "answer": "CD",
+    "explanation": "直接相关的关键词是“forwarding、转发表”。转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_forwarding_03",
+    "name": "转发·基础题3",
+    "title": "转发是路由器的局部动作：根据________，把到达输入链路的分组移动到合适的输出链路。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“转发”知识点的填空题。",
+    "keywords": [
+      "forwarding",
+      "转发表",
+      "输入链路",
+      "输出链路",
+      "转发"
+    ],
+    "related_nodes": [
+      "ch1_forwarding"
+    ],
+    "options": [],
+    "answer": "转发表",
+    "explanation": "转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_routing_01",
+    "name": "路由·基础题1",
+    "title": "下列关于“路由”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“路由”知识点的单选题。",
+    "keywords": [
+      "routing",
+      "路径选择",
+      "路由算法",
+      "源到目的",
+      "路由"
+    ],
+    "related_nodes": [
+      "ch1_routing"
+    ],
+    "options": [
+      "A. 路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+      "B. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "C. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "D. 结点总时延由处理时延、排队时延、传输时延和传播时延组成：d_nodal=d_proc+d_queue+d_trans+d_prop。"
+    ],
+    "answer": "A",
+    "explanation": "路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_routing_02",
+    "name": "路由·基础题2",
+    "title": "下列哪些术语或特征与“路由”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“路由”知识点的多选题。",
+    "keywords": [
+      "routing",
+      "路径选择",
+      "路由算法",
+      "源到目的",
+      "路由"
+    ],
+    "related_nodes": [
+      "ch1_routing"
+    ],
+    "options": [
+      "A. routing",
+      "B. 吞吐量",
+      "C. 接入网络",
+      "D. 路径选择"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“routing、路径选择”。路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_routing_03",
+    "name": "路由·基础题3",
+    "title": "路由是全局________过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“路由”知识点的填空题。",
+    "keywords": [
+      "routing",
+      "路径选择",
+      "路由算法",
+      "源到目的",
+      "路由"
+    ],
+    "related_nodes": [
+      "ch1_routing"
+    ],
+    "options": [],
+    "answer": "路径选择",
+    "explanation": "路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_packet_switching_01",
+    "name": "分组交换·基础题1",
+    "title": "下列关于“分组交换”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“分组交换”知识点的单选题。",
+    "keywords": [
+      "分组交换",
+      "packet",
+      "资源共享",
+      "突发数据"
+    ],
+    "related_nodes": [
+      "ch1_packet_switching"
+    ],
+    "options": [
+      "A. 分组交换把应用消息切成较小的packet，让不同用户按需共享链路资源。",
+      "B. 存储转发要求路由器收到完整分组后才能向下一条链路发送。",
+      "C. Internet协议栈分为应用层、运输层、网络层、链路层和物理层。",
+      "D. 路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。"
+    ],
+    "answer": "A",
+    "explanation": "分组交换把应用消息切成较小的packet，让不同用户按需共享链路资源。它适合突发数据，但拥塞时会产生排队、时延和丢包。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_packet_switching_02",
+    "name": "分组交换·基础题2",
+    "title": "下列哪些术语或特征与“分组交换”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“分组交换”知识点的多选题。",
+    "keywords": [
+      "分组交换",
+      "packet",
+      "资源共享",
+      "突发数据"
+    ],
+    "related_nodes": [
+      "ch1_packet_switching"
+    ],
+    "options": [
+      "A. 端系统",
+      "B. 结点时延",
+      "C. 分组交换",
+      "D. packet"
+    ],
+    "answer": "CD",
+    "explanation": "直接相关的关键词是“分组交换、packet”。分组交换把应用消息切成较小的packet，让不同用户按需共享链路资源。它适合突发数据，但拥塞时会产生排队、时延和丢包。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_packet_switching_03",
+    "name": "分组交换·基础题3",
+    "title": "一条消息被划分为100个等长分组，每个分组12,000 bit，依次经过两条速率均为6 Mbps的链路。采用存储转发和流水传输，忽略传播、处理、排队时延及首部开销，发送完整消息至少需要多长时间？",
+    "type": "计算题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“分组交换”知识点的计算题。",
+    "keywords": [
+      "分组交换",
+      "packet",
+      "资源共享",
+      "突发数据"
+    ],
+    "related_nodes": [
+      "ch1_packet_switching",
+      "ch1_store_and_forward"
+    ],
+    "options": [],
+    "answer": "202 ms",
+    "explanation": "每个分组在一条链路上的发送时延为12000÷(6×10^6)=2 ms。100个分组通过2条链路的流水总时间为(2+100-1)×2=202 ms。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_store_and_forward_01",
+    "name": "存储转发·基础题1",
+    "title": "下列关于“存储转发”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“存储转发”知识点的单选题。",
+    "keywords": [
+      "存储转发",
+      "分组传输时延",
+      "L/R",
+      "路由器"
+    ],
+    "related_nodes": [
+      "ch1_store_and_forward"
+    ],
+    "options": [
+      "A. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "B. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "C. 接入网络把端系统连接到边缘路由器，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。",
+      "D. 存储转发要求路由器收到完整分组后才能向下一条链路发送。"
+    ],
+    "answer": "D",
+    "explanation": "存储转发要求路由器收到完整分组后才能向下一条链路发送。长度为L bit的分组在速率为R的链路上的发送时间为L/R。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_store_and_forward_02",
+    "name": "存储转发·基础题2",
+    "title": "下列哪些术语或特征与“存储转发”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“存储转发”知识点的多选题。",
+    "keywords": [
+      "存储转发",
+      "分组传输时延",
+      "L/R",
+      "路由器"
+    ],
+    "related_nodes": [
+      "ch1_store_and_forward"
+    ],
+    "options": [
+      "A. forwarding",
+      "B. 吞吐量",
+      "C. 存储转发",
+      "D. 分组传输时延"
+    ],
+    "answer": "CD",
+    "explanation": "直接相关的关键词是“存储转发、分组传输时延”。存储转发要求路由器收到完整分组后才能向下一条链路发送。长度为L bit的分组在速率为R的链路上的发送时间为L/R。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_store_and_forward_03",
+    "name": "存储转发·基础题3",
+    "title": "一个12,000 bit的分组经过3条速率均为6 Mbps的链路，采用存储转发。三条链路的传播时延之和为15 ms，忽略处理和排队时延，求端到端时延。",
+    "type": "计算题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“存储转发”知识点的计算题。",
+    "keywords": [
+      "存储转发",
+      "分组传输时延",
+      "L/R",
+      "路由器"
+    ],
+    "related_nodes": [
+      "ch1_store_and_forward",
+      "ch1_nodal_delay"
+    ],
+    "options": [],
+    "answer": "21 ms",
+    "explanation": "每条链路的发送时延为12000÷(6×10^6)=2 ms，3条链路共6 ms；加上传播时延15 ms，总时延为21 ms。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_queueing_packet_loss_01",
+    "name": "排队与分组丢失·基础题1",
+    "title": "下列关于“排队与分组丢失”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“排队与分组丢失”知识点的单选题。",
+    "keywords": [
+      "排队",
+      "缓冲区",
+      "分组丢失",
+      "拥塞",
+      "排队与分组丢失"
+    ],
+    "related_nodes": [
+      "ch1_queueing_packet_loss"
+    ],
+    "options": [
+      "A. 当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+      "B. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "C. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "D. 结点总时延由处理时延、排队时延、传输时延和传播时延组成：d_nodal=d_proc+d_queue+d_trans+d_prop。"
+    ],
+    "answer": "A",
+    "explanation": "当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_queueing_packet_loss_02",
+    "name": "排队与分组丢失·基础题2",
+    "title": "下列哪些术语或特征与“排队与分组丢失”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“排队与分组丢失”知识点的多选题。",
+    "keywords": [
+      "排队",
+      "缓冲区",
+      "分组丢失",
+      "拥塞",
+      "排队与分组丢失"
+    ],
+    "related_nodes": [
+      "ch1_queueing_packet_loss"
+    ],
+    "options": [
+      "A. 缓冲区",
+      "B. 结点时延",
+      "C. 排队",
+      "D. 分组嗅探"
+    ],
+    "answer": "AC",
+    "explanation": "直接相关的关键词是“排队、缓冲区”。当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_queueing_packet_loss_03",
+    "name": "排队与分组丢失·基础题3",
+    "title": "当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区________；缓冲区满后，新到分组会被丢弃。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“排队与分组丢失”知识点的填空题。",
+    "keywords": [
+      "排队",
+      "缓冲区",
+      "分组丢失",
+      "拥塞",
+      "排队与分组丢失"
+    ],
+    "related_nodes": [
+      "ch1_queueing_packet_loss"
+    ],
+    "options": [],
+    "answer": "排队",
+    "explanation": "当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_circuit_switching_01",
+    "name": "电路交换·基础题1",
+    "title": "下列关于“电路交换”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“电路交换”知识点的单选题。",
+    "keywords": [
+      "电路交换",
+      "资源预留",
+      "专用路径",
+      "FDM",
+      "TDM"
+    ],
+    "related_nodes": [
+      "ch1_circuit_switching"
+    ],
+    "options": [
+      "A. Internet协议栈分为应用层、运输层、网络层、链路层和物理层。",
+      "B. 电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。",
+      "C. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "D. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。"
+    ],
+    "answer": "B",
+    "explanation": "电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_circuit_switching_02",
+    "name": "电路交换·基础题2",
+    "title": "下列哪些术语或特征与“电路交换”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“电路交换”知识点的多选题。",
+    "keywords": [
+      "电路交换",
+      "资源预留",
+      "专用路径",
+      "FDM",
+      "TDM"
+    ],
+    "related_nodes": [
+      "ch1_circuit_switching"
+    ],
+    "options": [
+      "A. 电路交换",
+      "B. 协议",
+      "C. 资源预留",
+      "D. 网络核心"
+    ],
+    "answer": "AC",
+    "explanation": "直接相关的关键词是“电路交换、资源预留”。电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_circuit_switching_03",
+    "name": "电路交换·基础题3",
+    "title": "一条2 Mbps链路采用同步TDM为20个用户平均分配时隙。忽略开销，每个用户获得的固定传输速率是多少？",
+    "type": "计算题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“电路交换”知识点的计算题。",
+    "keywords": [
+      "电路交换",
+      "资源预留",
+      "专用路径",
+      "FDM",
+      "TDM"
+    ],
+    "related_nodes": [
+      "ch1_circuit_switching",
+      "ch2_tdm"
+    ],
+    "options": [],
+    "answer": "100 kbps",
+    "explanation": "同步TDM平均分配链路容量，每个用户速率为2 Mbps÷20=0.1 Mbps=100 kbps。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_internet_isp_structure_01",
+    "name": "Internet的ISP层次结构·基础题1",
+    "title": "下列关于“Internet的ISP层次结构”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet的ISP层次结构”知识点的单选题。",
+    "keywords": [
+      "ISP",
+      "IXP",
+      "一级ISP",
+      "内容提供商网络",
+      "Internet的ISP层次结构"
+    ],
+    "related_nodes": [
+      "ch1_internet_isp_structure"
+    ],
+    "options": [
+      "A. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "B. 分组交换把应用消息切成较小的packet，让不同用户按需共享链路资源。",
+      "C. 端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+      "D. 发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。"
+    ],
+    "answer": "C",
+    "explanation": "端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_internet_isp_structure_02",
+    "name": "Internet的ISP层次结构·基础题2",
+    "title": "下列哪些术语或特征与“Internet的ISP层次结构”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet的ISP层次结构”知识点的多选题。",
+    "keywords": [
+      "ISP",
+      "IXP",
+      "一级ISP",
+      "内容提供商网络",
+      "Internet的ISP层次结构"
+    ],
+    "related_nodes": [
+      "ch1_internet_isp_structure"
+    ],
+    "options": [
+      "A. ISP",
+      "B. 协议栈",
+      "C. 结点时延",
+      "D. IXP"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“ISP、IXP”。端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_internet_isp_structure_03",
+    "name": "Internet的ISP层次结构·基础题3",
+    "title": "端系统先连接接入________，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet的ISP层次结构”知识点的填空题。",
+    "keywords": [
+      "ISP",
+      "IXP",
+      "一级ISP",
+      "内容提供商网络",
+      "Internet的ISP层次结构"
+    ],
+    "related_nodes": [
+      "ch1_internet_isp_structure"
+    ],
+    "options": [],
+    "answer": "ISP",
+    "explanation": "端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_nodal_delay_01",
+    "name": "结点总时延·基础题1",
+    "title": "下列关于“结点总时延”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“结点总时延”知识点的单选题。",
+    "keywords": [
+      "结点时延",
+      "处理时延",
+      "排队时延",
+      "传输时延",
+      "传播时延",
+      "结点总时延"
+    ],
+    "related_nodes": [
+      "ch1_nodal_delay"
+    ],
+    "options": [
+      "A. 结点总时延由处理时延、排队时延、传输时延和传播时延组成：d_nodal=d_proc+d_queue+d_trans+d_prop。",
+      "B. 电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。",
+      "C. 存储转发要求路由器收到完整分组后才能向下一条链路发送。",
+      "D. 网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。"
+    ],
+    "answer": "A",
+    "explanation": "结点总时延由处理时延、排队时延、传输时延和传播时延组成：d_nodal=d_proc+d_queue+d_trans+d_prop。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_nodal_delay_02",
+    "name": "结点总时延·基础题2",
+    "title": "下列哪些术语或特征与“结点总时延”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“结点总时延”知识点的多选题。",
+    "keywords": [
+      "结点时延",
+      "处理时延",
+      "排队时延",
+      "传输时延",
+      "传播时延",
+      "结点总时延"
+    ],
+    "related_nodes": [
+      "ch1_nodal_delay"
+    ],
+    "options": [
+      "A. 结点时延",
+      "B. 封装",
+      "C. 协议栈",
+      "D. 处理时延"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“结点时延、处理时延”。结点总时延由处理时延、排队时延、传输时延和传播时延组成：d_nodal=d_proc+d_queue+d_trans+d_prop。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_nodal_delay_03",
+    "name": "结点总时延·基础题3",
+    "title": "某分组在一个结点的处理时延为1 ms、排队时延为4 ms。分组长12,000 bit，链路速率6 Mbps；链路长2,000 km，传播速率2×10^8 m/s。求该结点总时延。",
+    "type": "计算题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“结点总时延”知识点的计算题。",
+    "keywords": [
+      "结点时延",
+      "处理时延",
+      "排队时延",
+      "传输时延",
+      "传播时延",
+      "结点总时延"
+    ],
+    "related_nodes": [
+      "ch1_nodal_delay",
+      "ch1_store_and_forward"
+    ],
+    "options": [],
+    "answer": "17 ms",
+    "explanation": "传输时延为2 ms，传播时延为2000 km÷(2×10^8 m/s)=10 ms，所以总时延为1+4+2+10=17 ms。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_traffic_intensity_01",
+    "name": "流量强度·基础题1",
+    "title": "下列关于“流量强度”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“流量强度”知识点的单选题。",
+    "keywords": [
+      "流量强度",
+      "La/R",
+      "排队时延",
+      "链路负载"
+    ],
+    "related_nodes": [
+      "ch1_traffic_intensity"
+    ],
+    "options": [
+      "A. 存储转发要求路由器收到完整分组后才能向下一条链路发送。",
+      "B. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "C. 网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+      "D. 流量强度La/R衡量输出队列负载。"
+    ],
+    "answer": "D",
+    "explanation": "流量强度La/R衡量输出队列负载。它接近1时平均排队时延迅速增大，大于1时到达工作量长期超过服务能力。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_traffic_intensity_02",
+    "name": "流量强度·基础题2",
+    "title": "下列哪些术语或特征与“流量强度”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“流量强度”知识点的多选题。",
+    "keywords": [
+      "流量强度",
+      "La/R",
+      "排队时延",
+      "链路负载"
+    ],
+    "related_nodes": [
+      "ch1_traffic_intensity"
+    ],
+    "options": [
+      "A. ISP",
+      "B. 流量强度",
+      "C. Internet",
+      "D. La/R"
+    ],
+    "answer": "BD",
+    "explanation": "直接相关的关键词是“流量强度、La/R”。流量强度La/R衡量输出队列负载。它接近1时平均排队时延迅速增大，大于1时到达工作量长期超过服务能力。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_traffic_intensity_03",
+    "name": "流量强度·基础题3",
+    "title": "平均分组长度L=12,000 bit，平均到达率a=500 packet/s，输出链路速率R=10 Mbps。计算流量强度La/R，并判断队列是否处于长期过载状态。",
+    "type": "计算题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“流量强度”知识点的计算题。",
+    "keywords": [
+      "流量强度",
+      "La/R",
+      "排队时延",
+      "链路负载"
+    ],
+    "related_nodes": [
+      "ch1_traffic_intensity",
+      "ch1_queueing_packet_loss"
+    ],
+    "options": [],
+    "answer": "La/R=0.6，未处于长期过载状态",
+    "explanation": "La/R=12000×500÷10,000,000=0.6，小于1，平均到达工作量没有超过链路服务能力。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_throughput_bottleneck_01",
+    "name": "吞吐量与瓶颈链路·基础题1",
+    "title": "下列关于“吞吐量与瓶颈链路”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“吞吐量与瓶颈链路”知识点的单选题。",
+    "keywords": [
+      "吞吐量",
+      "瞬时吞吐量",
+      "平均吞吐量",
+      "瓶颈链路",
+      "吞吐量与瓶颈链路"
+    ],
+    "related_nodes": [
+      "ch1_throughput_bottleneck"
+    ],
+    "options": [
+      "A. 流量强度La/R衡量输出队列负载。",
+      "B. 物理介质承载bit传播。",
+      "C. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "D. 吞吐量是数据成功从发送方到达接收方的速率。"
+    ],
+    "answer": "D",
+    "explanation": "吞吐量是数据成功从发送方到达接收方的速率。端到端吞吐量受路径上最慢的瓶颈链路限制，多条连接共享瓶颈时每条连接的份额会下降。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_throughput_bottleneck_02",
+    "name": "吞吐量与瓶颈链路·基础题2",
+    "title": "下列哪些术语或特征与“吞吐量与瓶颈链路”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“吞吐量与瓶颈链路”知识点的多选题。",
+    "keywords": [
+      "吞吐量",
+      "瞬时吞吐量",
+      "平均吞吐量",
+      "瓶颈链路",
+      "吞吐量与瓶颈链路"
+    ],
+    "related_nodes": [
+      "ch1_throughput_bottleneck"
+    ],
+    "options": [
+      "A. 接入网络",
+      "B. 封装",
+      "C. 吞吐量",
+      "D. 瞬时吞吐量"
+    ],
+    "answer": "CD",
+    "explanation": "直接相关的关键词是“吞吐量、瞬时吞吐量”。吞吐量是数据成功从发送方到达接收方的速率。端到端吞吐量受路径上最慢的瓶颈链路限制，多条连接共享瓶颈时每条连接的份额会下降。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_throughput_bottleneck_03",
+    "name": "吞吐量与瓶颈链路·基础题3",
+    "title": "一条端到端连接依次经过40 Mbps接入链路、由4条连接公平共享的120 Mbps核心链路，以及50 Mbps接收链路。该连接可获得的端到端吞吐量是多少？",
+    "type": "计算题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“吞吐量与瓶颈链路”知识点的计算题。",
+    "keywords": [
+      "吞吐量",
+      "瞬时吞吐量",
+      "平均吞吐量",
+      "瓶颈链路",
+      "吞吐量与瓶颈链路"
+    ],
+    "related_nodes": [
+      "ch1_throughput_bottleneck",
+      "ch1_network_core"
+    ],
+    "options": [],
+    "answer": "30 Mbps",
+    "explanation": "核心链路中每条连接分得120÷4=30 Mbps。端到端吞吐量取40、30、50 Mbps中的最小值，因此为30 Mbps。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch1_network_security_01",
+    "name": "网络安全威胁与防御·基础题1",
+    "title": "下列关于“网络安全威胁与防御”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络安全威胁与防御”知识点的单选题。",
+    "keywords": [
+      "分组嗅探",
+      "IP欺骗",
+      "DoS",
+      "认证",
+      "加密",
+      "防火墙"
+    ],
+    "related_nodes": [
+      "ch1_network_security"
+    ],
+    "options": [
+      "A. 端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+      "B. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+      "C. 路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+      "D. 网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。"
+    ],
+    "answer": "B",
+    "explanation": "常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_network_security_02",
+    "name": "网络安全威胁与防御·基础题2",
+    "title": "下列哪些术语或特征与“网络安全威胁与防御”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络安全威胁与防御”知识点的多选题。",
+    "keywords": [
+      "分组嗅探",
+      "IP欺骗",
+      "DoS",
+      "认证",
+      "加密",
+      "防火墙"
+    ],
+    "related_nodes": [
+      "ch1_network_security"
+    ],
+    "options": [
+      "A. IP欺骗",
+      "B. OSI",
+      "C. 网络核心",
+      "D. 分组嗅探"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“分组嗅探、IP欺骗”。常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_network_security_03",
+    "name": "网络安全威胁与防御·基础题3",
+    "title": "常见威胁包括________、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“网络安全威胁与防御”知识点的填空题。",
+    "keywords": [
+      "分组嗅探",
+      "IP欺骗",
+      "DoS",
+      "认证",
+      "加密",
+      "防火墙"
+    ],
+    "related_nodes": [
+      "ch1_network_security"
+    ],
+    "options": [],
+    "answer": "分组嗅探",
+    "explanation": "常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_internet_protocol_stack_01",
+    "name": "Internet五层协议栈·基础题1",
+    "title": "下列关于“Internet五层协议栈”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet五层协议栈”知识点的单选题。",
+    "keywords": [
+      "协议栈",
+      "应用层",
+      "运输层",
+      "网络层",
+      "链路层",
+      "物理层"
+    ],
+    "related_nodes": [
+      "ch1_internet_protocol_stack"
+    ],
+    "options": [
+      "A. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "B. 发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。",
+      "C. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "D. Internet协议栈分为应用层、运输层、网络层、链路层和物理层。"
+    ],
+    "answer": "D",
+    "explanation": "Internet协议栈分为应用层、运输层、网络层、链路层和物理层。每层实现自己的服务，同时使用下一层提供的服务。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_internet_protocol_stack_02",
+    "name": "Internet五层协议栈·基础题2",
+    "title": "下列哪些术语或特征与“Internet五层协议栈”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet五层协议栈”知识点的多选题。",
+    "keywords": [
+      "协议栈",
+      "应用层",
+      "运输层",
+      "网络层",
+      "链路层",
+      "物理层"
+    ],
+    "related_nodes": [
+      "ch1_internet_protocol_stack"
+    ],
+    "options": [
+      "A. 应用层",
+      "B. Internet",
+      "C. 封装",
+      "D. 协议栈"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“协议栈、应用层”。Internet协议栈分为应用层、运输层、网络层、链路层和物理层。每层实现自己的服务，同时使用下一层提供的服务。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_internet_protocol_stack_03",
+    "name": "Internet五层协议栈·基础题3",
+    "title": "Internet________分为应用层、运输层、网络层、链路层和物理层。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“Internet五层协议栈”知识点的填空题。",
+    "keywords": [
+      "协议栈",
+      "应用层",
+      "运输层",
+      "网络层",
+      "链路层",
+      "物理层"
+    ],
+    "related_nodes": [
+      "ch1_internet_protocol_stack"
+    ],
+    "options": [],
+    "answer": "协议栈",
+    "explanation": "Internet协议栈分为应用层、运输层、网络层、链路层和物理层。每层实现自己的服务，同时使用下一层提供的服务。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_encapsulation_01",
+    "name": "封装与解封装·基础题1",
+    "title": "下列关于“封装与解封装”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“封装与解封装”知识点的单选题。",
+    "keywords": [
+      "封装",
+      "解封装",
+      "header",
+      "payload",
+      "frame",
+      "封装与解封装"
+    ],
+    "related_nodes": [
+      "ch1_encapsulation"
+    ],
+    "options": [
+      "A. 存储转发要求路由器收到完整分组后才能向下一条链路发送。",
+      "B. 网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。",
+      "C. 流量强度La/R衡量输出队列负载。",
+      "D. 发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。"
+    ],
+    "answer": "D",
+    "explanation": "发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_encapsulation_02",
+    "name": "封装与解封装·基础题2",
+    "title": "下列哪些术语或特征与“封装与解封装”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“封装与解封装”知识点的多选题。",
+    "keywords": [
+      "封装",
+      "解封装",
+      "header",
+      "payload",
+      "frame",
+      "封装与解封装"
+    ],
+    "related_nodes": [
+      "ch1_encapsulation"
+    ],
+    "options": [
+      "A. 解封装",
+      "B. Internet",
+      "C. 分组交换",
+      "D. 封装"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“封装、解封装”。发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_encapsulation_03",
+    "name": "封装与解封装·基础题3",
+    "title": "发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解________。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“封装与解封装”知识点的填空题。",
+    "keywords": [
+      "封装",
+      "解封装",
+      "header",
+      "payload",
+      "frame",
+      "封装与解封装"
+    ],
+    "related_nodes": [
+      "ch1_encapsulation"
+    ],
+    "options": [],
+    "answer": "封装",
+    "explanation": "发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_osi_reference_model_01",
+    "name": "OSI七层参考模型·基础题1",
+    "title": "下列关于“OSI七层参考模型”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“OSI七层参考模型”知识点的单选题。",
+    "keywords": [
+      "OSI",
+      "表示层",
+      "会话层",
+      "七层模型",
+      "OSI七层参考模型"
+    ],
+    "related_nodes": [
+      "ch1_osi_reference_model"
+    ],
+    "options": [
+      "A. OSI模型在Internet五层协议栈基础上增加表示层和会话层。",
+      "B. 转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+      "C. Internet协议栈分为应用层、运输层、网络层、链路层和物理层。",
+      "D. 常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。"
+    ],
+    "answer": "A",
+    "explanation": "OSI模型在Internet五层协议栈基础上增加表示层和会话层。表示层处理数据表示、加密和压缩，会话层处理同步、检查点和恢复。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_osi_reference_model_02",
+    "name": "OSI七层参考模型·基础题2",
+    "title": "下列哪些术语或特征与“OSI七层参考模型”直接相关？",
+    "type": "多选题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“OSI七层参考模型”知识点的多选题。",
+    "keywords": [
+      "OSI",
+      "表示层",
+      "会话层",
+      "七层模型",
+      "OSI七层参考模型"
+    ],
+    "related_nodes": [
+      "ch1_osi_reference_model"
+    ],
+    "options": [
+      "A. 表示层",
+      "B. OSI",
+      "C. 电路交换",
+      "D. 物理介质"
+    ],
+    "answer": "AB",
+    "explanation": "直接相关的关键词是“OSI、表示层”。OSI模型在Internet五层协议栈基础上增加表示层和会话层。表示层处理数据表示、加密和压缩，会话层处理同步、检查点和恢复。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch1_osi_reference_model_03",
+    "name": "OSI七层参考模型·基础题3",
+    "title": "________模型在Internet五层协议栈基础上增加表示层和会话层。",
+    "type": "填空题",
+    "chapter": "计算机网络概述",
+    "description": "基础篇“OSI七层参考模型”知识点的填空题。",
+    "keywords": [
+      "OSI",
+      "表示层",
+      "会话层",
+      "七层模型",
+      "OSI七层参考模型"
+    ],
+    "related_nodes": [
+      "ch1_osi_reference_model"
+    ],
+    "options": [],
+    "answer": "OSI",
+    "explanation": "OSI模型在Internet五层协议栈基础上增加表示层和会话层。表示层处理数据表示、加密和压缩，会话层处理同步、检查点和恢复。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_physical_layer_01",
+    "name": "物理层·基础题1",
+    "title": "下列关于“物理层”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“物理层”知识点的单选题。",
+    "keywords": [
+      "物理层",
+      "bit",
+      "传输介质",
+      "接口"
+    ],
+    "related_nodes": [
+      "ch2_physical_layer"
+    ],
+    "options": [
+      "A. 奈奎斯特准则给出理想低通信道中避免码间串扰时的最高码元传输速率。",
+      "B. QAM同时利用振幅和相位表示码元。",
+      "C. 香农公式C=Wlog2(1+S/N)给出带宽有限且存在高斯白噪声时的极限无差错信息传输速率。",
+      "D. 物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。"
+    ],
+    "answer": "D",
+    "explanation": "物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。它规定接口如何把比特流转换为可传输的信号。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_physical_layer_02",
+    "name": "物理层·基础题2",
+    "title": "下列哪些术语或特征与“物理层”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“物理层”知识点的多选题。",
+    "keywords": [
+      "物理层",
+      "bit",
+      "传输介质",
+      "接口"
+    ],
+    "related_nodes": [
+      "ch2_physical_layer"
+    ],
+    "options": [
+      "A. 基带信号",
+      "B. 物理层",
+      "C. 传输媒介",
+      "D. bit"
+    ],
+    "answer": "BD",
+    "explanation": "直接相关的关键词是“物理层、bit”。物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。它规定接口如何把比特流转换为可传输的信号。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_physical_layer_03",
+    "name": "物理层·基础题3",
+    "title": "物理层负责在传输介质上发送原始________，并尽量屏蔽不同介质和通信手段的差异。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“物理层”知识点的填空题。",
+    "keywords": [
+      "物理层",
+      "bit",
+      "传输介质",
+      "接口"
+    ],
+    "related_nodes": [
+      "ch2_physical_layer"
+    ],
+    "options": [],
+    "answer": "bit",
+    "explanation": "物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。它规定接口如何把比特流转换为可传输的信号。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_interface_characteristics_01",
+    "name": "物理层接口特性·基础题1",
+    "title": "下列关于“物理层接口特性”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“物理层接口特性”知识点的单选题。",
+    "keywords": [
+      "机械特性",
+      "电气特性",
+      "功能特性",
+      "过程特性",
+      "物理层接口特性"
+    ],
+    "related_nodes": [
+      "ch2_interface_characteristics"
+    ],
+    "options": [
+      "A. FTTx表示光纤铺设到不同位置的接入方案。",
+      "B. HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。",
+      "C. 终端必须通过接入网连接ISP。",
+      "D. 物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。"
+    ],
+    "answer": "D",
+    "explanation": "物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_interface_characteristics_02",
+    "name": "物理层接口特性·基础题2",
+    "title": "下列哪些术语或特征与“物理层接口特性”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“物理层接口特性”知识点的多选题。",
+    "keywords": [
+      "机械特性",
+      "电气特性",
+      "功能特性",
+      "过程特性",
+      "物理层接口特性"
+    ],
+    "related_nodes": [
+      "ch2_interface_characteristics"
+    ],
+    "options": [
+      "A. 机械特性",
+      "B. 电气特性",
+      "C. 数据",
+      "D. SNR"
+    ],
+    "answer": "AB",
+    "explanation": "直接相关的关键词是“机械特性、电气特性”。物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_interface_characteristics_03",
+    "name": "物理层接口特性·基础题3",
+    "title": "“________”是指：物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“物理层接口特性”知识点的填空题。",
+    "keywords": [
+      "机械特性",
+      "电气特性",
+      "功能特性",
+      "过程特性",
+      "物理层接口特性"
+    ],
+    "related_nodes": [
+      "ch2_interface_characteristics"
+    ],
+    "options": [],
+    "answer": "物理层接口特性",
+    "explanation": "物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_data_signal_system_01",
+    "name": "数据通信系统与信号·基础题1",
+    "title": "下列关于“数据通信系统与信号”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“数据通信系统与信号”知识点的单选题。",
+    "keywords": [
+      "数据",
+      "信号",
+      "模拟信号",
+      "数字信号",
+      "信源",
+      "信宿"
+    ],
+    "related_nodes": [
+      "ch2_data_signal_system"
+    ],
+    "options": [
+      "A. 物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+      "B. 信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+      "C. QAM同时利用振幅和相位表示码元。",
+      "D. 数据通信系统由源系统、传输系统和目的系统组成。"
+    ],
+    "answer": "D",
+    "explanation": "数据通信系统由源系统、传输系统和目的系统组成。数据是要传递的消息实体，信号是数据的电气或电磁表示，可分为模拟信号和数字信号。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_data_signal_system_02",
+    "name": "数据通信系统与信号·基础题2",
+    "title": "下列哪些术语或特征与“数据通信系统与信号”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“数据通信系统与信号”知识点的多选题。",
+    "keywords": [
+      "数据",
+      "信号",
+      "模拟信号",
+      "数字信号",
+      "信源",
+      "信宿"
+    ],
+    "related_nodes": [
+      "ch2_data_signal_system"
+    ],
+    "options": [
+      "A. DMT",
+      "B. 数据",
+      "C. 信号",
+      "D. 奈奎斯特准则"
+    ],
+    "answer": "BC",
+    "explanation": "直接相关的关键词是“数据、信号”。数据通信系统由源系统、传输系统和目的系统组成。数据是要传递的消息实体，信号是数据的电气或电磁表示，可分为模拟信号和数字信号。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_data_signal_system_03",
+    "name": "数据通信系统与信号·基础题3",
+    "title": "________通信系统由源系统、传输系统和目的系统组成。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“数据通信系统与信号”知识点的填空题。",
+    "keywords": [
+      "数据",
+      "信号",
+      "模拟信号",
+      "数字信号",
+      "信源",
+      "信宿"
+    ],
+    "related_nodes": [
+      "ch2_data_signal_system"
+    ],
+    "options": [],
+    "answer": "数据",
+    "explanation": "数据通信系统由源系统、传输系统和目的系统组成。数据是要传递的消息实体，信号是数据的电气或电磁表示，可分为模拟信号和数字信号。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_communication_modes_01",
+    "name": "单工、半双工与全双工·基础题1",
+    "title": "下列关于“单工、半双工与全双工”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“单工、半双工与全双工”知识点的单选题。",
+    "keywords": [
+      "单工",
+      "半双工",
+      "全双工",
+      "通信方向",
+      "单工、半双工与全双工"
+    ],
+    "related_nodes": [
+      "ch2_communication_modes"
+    ],
+    "options": [
+      "A. QAM同时利用振幅和相位表示码元。",
+      "B. FTTx表示光纤铺设到不同位置的接入方案。",
+      "C. 传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+      "D. 单工只能单向传输；半双工允许双方轮流发送但不能同时发送；全双工允许双方同时发送和接收。"
+    ],
+    "answer": "D",
+    "explanation": "单工只能单向传输；半双工允许双方轮流发送但不能同时发送；全双工允许双方同时发送和接收。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_communication_modes_02",
+    "name": "单工、半双工与全双工·基础题2",
+    "title": "下列哪些术语或特征与“单工、半双工与全双工”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“单工、半双工与全双工”知识点的多选题。",
+    "keywords": [
+      "单工",
+      "半双工",
+      "全双工",
+      "通信方向",
+      "单工、半双工与全双工"
+    ],
+    "related_nodes": [
+      "ch2_communication_modes"
+    ],
+    "options": [
+      "A. FDM",
+      "B. 半双工",
+      "C. 单工",
+      "D. FTTx"
+    ],
+    "answer": "BC",
+    "explanation": "直接相关的关键词是“单工、半双工”。单工只能单向传输；半双工允许双方轮流发送但不能同时发送；全双工允许双方同时发送和接收。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_communication_modes_03",
+    "name": "单工、半双工与全双工·基础题3",
+    "title": "________只能单向传输；半双工允许双方轮流发送但不能同时发送；全双工允许双方同时发送和接收。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“单工、半双工与全双工”知识点的填空题。",
+    "keywords": [
+      "单工",
+      "半双工",
+      "全双工",
+      "通信方向",
+      "单工、半双工与全双工"
+    ],
+    "related_nodes": [
+      "ch2_communication_modes"
+    ],
+    "options": [],
+    "answer": "单工",
+    "explanation": "单工只能单向传输；半双工允许双方轮流发送但不能同时发送；全双工允许双方同时发送和接收。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_baseband_signal_modulation_01",
+    "name": "基带信号与基带调制·基础题1",
+    "title": "下列关于“基带信号与基带调制”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“基带信号与基带调制”知识点的单选题。",
+    "keywords": [
+      "基带信号",
+      "基带调制",
+      "编码",
+      "低频分量",
+      "基带信号与基带调制"
+    ],
+    "related_nodes": [
+      "ch2_baseband_signal_modulation"
+    ],
+    "options": [
+      "A. 实际信道会受到带宽限制、距离、介质质量和干扰影响。",
+      "B. 带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+      "C. 基带信号直接来自信源，常含低频甚至直流分量。",
+      "D. FTTx表示光纤铺设到不同位置的接入方案。"
+    ],
+    "answer": "C",
+    "explanation": "基带信号直接来自信源，常含低频甚至直流分量。基带调制通过改变数字信号波形来适应信道，也称为编码，处理后仍是基带信号。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_baseband_signal_modulation_02",
+    "name": "基带信号与基带调制·基础题2",
+    "title": "下列哪些术语或特征与“基带信号与基带调制”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“基带信号与基带调制”知识点的多选题。",
+    "keywords": [
+      "基带信号",
+      "基带调制",
+      "编码",
+      "低频分量",
+      "基带信号与基带调制"
+    ],
+    "related_nodes": [
+      "ch2_baseband_signal_modulation"
+    ],
+    "options": [
+      "A. 无线电",
+      "B. 基带信号",
+      "C. 双绞线",
+      "D. 基带调制"
+    ],
+    "answer": "BD",
+    "explanation": "直接相关的关键词是“基带信号、基带调制”。基带信号直接来自信源，常含低频甚至直流分量。基带调制通过改变数字信号波形来适应信道，也称为编码，处理后仍是基带信号。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_baseband_signal_modulation_03",
+    "name": "基带信号与基带调制·基础题3",
+    "title": "________直接来自信源，常含低频甚至直流分量。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“基带信号与基带调制”知识点的填空题。",
+    "keywords": [
+      "基带信号",
+      "基带调制",
+      "编码",
+      "低频分量",
+      "基带信号与基带调制"
+    ],
+    "related_nodes": [
+      "ch2_baseband_signal_modulation"
+    ],
+    "options": [],
+    "answer": "基带信号",
+    "explanation": "基带信号直接来自信源，常含低频甚至直流分量。基带调制通过改变数字信号波形来适应信道，也称为编码，处理后仍是基带信号。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_line_coding_01",
+    "name": "数字线路编码·基础题1",
+    "title": "下列关于“数字线路编码”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“数字线路编码”知识点的单选题。",
+    "keywords": [
+      "不归零",
+      "归零",
+      "曼彻斯特编码",
+      "差分曼彻斯特",
+      "自同步",
+      "数字线路编码"
+    ],
+    "related_nodes": [
+      "ch2_line_coding"
+    ],
+    "options": [
+      "A. DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+      "B. 常见线路编码包括不归零、归零、曼彻斯特和差分曼彻斯特编码。",
+      "C. ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+      "D. 信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。"
+    ],
+    "answer": "B",
+    "explanation": "常见线路编码包括不归零、归零、曼彻斯特和差分曼彻斯特编码。曼彻斯特类编码利用比特中间跳变提供自同步，但需要更高的信号频率。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_line_coding_02",
+    "name": "数字线路编码·基础题2",
+    "title": "下列哪些术语或特征与“数字线路编码”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“数字线路编码”知识点的多选题。",
+    "keywords": [
+      "不归零",
+      "归零",
+      "曼彻斯特编码",
+      "差分曼彻斯特",
+      "自同步",
+      "数字线路编码"
+    ],
+    "related_nodes": [
+      "ch2_line_coding"
+    ],
+    "options": [
+      "A. 机械特性",
+      "B. 不归零",
+      "C. 归零",
+      "D. 香农公式"
+    ],
+    "answer": "BC",
+    "explanation": "直接相关的关键词是“不归零、归零”。常见线路编码包括不归零、归零、曼彻斯特和差分曼彻斯特编码。曼彻斯特类编码利用比特中间跳变提供自同步，但需要更高的信号频率。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_line_coding_03",
+    "name": "数字线路编码·基础题3",
+    "title": "常见线路编码包括________、归零、曼彻斯特和差分曼彻斯特编码。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“数字线路编码”知识点的填空题。",
+    "keywords": [
+      "不归零",
+      "归零",
+      "曼彻斯特编码",
+      "差分曼彻斯特",
+      "自同步",
+      "数字线路编码"
+    ],
+    "related_nodes": [
+      "ch2_line_coding"
+    ],
+    "options": [],
+    "answer": "不归零",
+    "explanation": "常见线路编码包括不归零、归零、曼彻斯特和差分曼彻斯特编码。曼彻斯特类编码利用比特中间跳变提供自同步，但需要更高的信号频率。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_bandpass_modulation_01",
+    "name": "带通调制·基础题1",
+    "title": "下列关于“带通调制”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“带通调制”知识点的单选题。",
+    "keywords": [
+      "带通调制",
+      "载波",
+      "调幅",
+      "调频",
+      "调相"
+    ],
+    "related_nodes": [
+      "ch2_bandpass_modulation"
+    ],
+    "options": [
+      "A. 终端必须通过接入网连接ISP。",
+      "B. 香农公式C=Wlog2(1+S/N)给出带宽有限且存在高斯白噪声时的极限无差错信息传输速率。",
+      "C. 导向媒介包括双绞线、同轴电缆和光纤。",
+      "D. 带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。"
+    ],
+    "answer": "D",
+    "explanation": "带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_bandpass_modulation_02",
+    "name": "带通调制·基础题2",
+    "title": "下列哪些术语或特征与“带通调制”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“带通调制”知识点的多选题。",
+    "keywords": [
+      "带通调制",
+      "载波",
+      "调幅",
+      "调频",
+      "调相"
+    ],
+    "related_nodes": [
+      "ch2_bandpass_modulation"
+    ],
+    "options": [
+      "A. TDM",
+      "B. FDM",
+      "C. 载波",
+      "D. 带通调制"
+    ],
+    "answer": "CD",
+    "explanation": "直接相关的关键词是“带通调制、载波”。带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_bandpass_modulation_03",
+    "name": "带通调制·基础题3",
+    "title": "带通调制利用________把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“带通调制”知识点的填空题。",
+    "keywords": [
+      "带通调制",
+      "载波",
+      "调幅",
+      "调频",
+      "调相"
+    ],
+    "related_nodes": [
+      "ch2_bandpass_modulation"
+    ],
+    "options": [],
+    "answer": "载波",
+    "explanation": "带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_qam_01",
+    "name": "正交振幅调制·基础题1",
+    "title": "下列关于“正交振幅调制”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“正交振幅调制”知识点的单选题。",
+    "keywords": [
+      "QAM",
+      "星座图",
+      "振幅",
+      "相位",
+      "码元",
+      "正交振幅调制"
+    ],
+    "related_nodes": [
+      "ch2_qam"
+    ],
+    "options": [
+      "A. ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+      "B. QAM同时利用振幅和相位表示码元。",
+      "C. 物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。",
+      "D. FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。"
+    ],
+    "answer": "B",
+    "explanation": "QAM同时利用振幅和相位表示码元。星座点越多，每个码元携带的bit越多，但点间距离变小，噪声下更容易误判。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_qam_02",
+    "name": "正交振幅调制·基础题2",
+    "title": "下列哪些术语或特征与“正交振幅调制”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“正交振幅调制”知识点的多选题。",
+    "keywords": [
+      "QAM",
+      "星座图",
+      "振幅",
+      "相位",
+      "码元",
+      "正交振幅调制"
+    ],
+    "related_nodes": [
+      "ch2_qam"
+    ],
+    "options": [
+      "A. 星座图",
+      "B. QAM",
+      "C. 信道复用",
+      "D. 香农公式"
+    ],
+    "answer": "AB",
+    "explanation": "直接相关的关键词是“QAM、星座图”。QAM同时利用振幅和相位表示码元。星座点越多，每个码元携带的bit越多，但点间距离变小，噪声下更容易误判。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_qam_03",
+    "name": "正交振幅调制·基础题3",
+    "title": "某通信系统采用64-QAM，码元速率为2,400 Baud。忽略编码开销，理论比特率是多少？",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“正交振幅调制”知识点的计算题。",
+    "keywords": [
+      "QAM",
+      "星座图",
+      "振幅",
+      "相位",
+      "码元",
+      "正交振幅调制"
+    ],
+    "related_nodes": [
+      "ch2_qam",
+      "ch2_bandpass_modulation"
+    ],
+    "options": [],
+    "answer": "14.4 kbps",
+    "explanation": "64个星座点可表示log2(64)=6 bit/码元，所以比特率为2400×6=14,400 bit/s。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_channel_distortion_01",
+    "name": "信道失真与码间串扰·基础题1",
+    "title": "下列关于“信道失真与码间串扰”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“信道失真与码间串扰”知识点的单选题。",
+    "keywords": [
+      "信道失真",
+      "码间串扰",
+      "码元速率",
+      "带宽",
+      "信道失真与码间串扰"
+    ],
+    "related_nodes": [
+      "ch2_channel_distortion"
+    ],
+    "options": [
+      "A. 物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+      "B. 非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。",
+      "C. FTTx表示光纤铺设到不同位置的接入方案。",
+      "D. 实际信道会受到带宽限制、距离、介质质量和干扰影响。"
+    ],
+    "answer": "D",
+    "explanation": "实际信道会受到带宽限制、距离、介质质量和干扰影响。码元速率过高时，相邻码元波形会互相重叠，形成码间串扰并增加判决错误。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_channel_distortion_02",
+    "name": "信道失真与码间串扰·基础题2",
+    "title": "下列哪些术语或特征与“信道失真与码间串扰”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“信道失真与码间串扰”知识点的多选题。",
+    "keywords": [
+      "信道失真",
+      "码间串扰",
+      "码元速率",
+      "带宽",
+      "信道失真与码间串扰"
+    ],
+    "related_nodes": [
+      "ch2_channel_distortion"
+    ],
+    "options": [
+      "A. 香农公式",
+      "B. 码间串扰",
+      "C. 物理层",
+      "D. 信道失真"
+    ],
+    "answer": "BD",
+    "explanation": "直接相关的关键词是“信道失真、码间串扰”。实际信道会受到带宽限制、距离、介质质量和干扰影响。码元速率过高时，相邻码元波形会互相重叠，形成码间串扰并增加判决错误。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_channel_distortion_03",
+    "name": "信道失真与码间串扰·基础题3",
+    "title": "实际信道会受到带宽限制、距离、介质质量和干扰影响。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“信道失真与码间串扰”知识点的填空题。",
+    "keywords": [
+      "信道失真",
+      "码间串扰",
+      "码元速率",
+      "带宽",
+      "信道失真与码间串扰"
+    ],
+    "related_nodes": [
+      "ch2_channel_distortion"
+    ],
+    "options": [],
+    "answer": "码间串扰",
+    "explanation": "实际信道会受到带宽限制、距离、介质质量和干扰影响。码元速率过高时，相邻码元波形会互相重叠，形成码间串扰并增加判决错误。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_nyquist_criterion_01",
+    "name": "奈奎斯特准则·基础题1",
+    "title": "下列关于“奈奎斯特准则”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“奈奎斯特准则”知识点的单选题。",
+    "keywords": [
+      "奈奎斯特准则",
+      "码元速率",
+      "理想信道",
+      "码间串扰"
+    ],
+    "related_nodes": [
+      "ch2_nyquist_criterion"
+    ],
+    "options": [
+      "A. 数据通信系统由源系统、传输系统和目的系统组成。",
+      "B. 奈奎斯特准则给出理想低通信道中避免码间串扰时的最高码元传输速率。",
+      "C. 信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+      "D. FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。"
+    ],
+    "answer": "B",
+    "explanation": "奈奎斯特准则给出理想低通信道中避免码间串扰时的最高码元传输速率。信道带宽越大，可无串扰传输的码元速率上限越高。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_nyquist_criterion_02",
+    "name": "奈奎斯特准则·基础题2",
+    "title": "下列哪些术语或特征与“奈奎斯特准则”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“奈奎斯特准则”知识点的多选题。",
+    "keywords": [
+      "奈奎斯特准则",
+      "码元速率",
+      "理想信道",
+      "码间串扰"
+    ],
+    "related_nodes": [
+      "ch2_nyquist_criterion"
+    ],
+    "options": [
+      "A. 码元速率",
+      "B. 无线电",
+      "C. 奈奎斯特准则",
+      "D. CDM"
+    ],
+    "answer": "AC",
+    "explanation": "直接相关的关键词是“奈奎斯特准则、码元速率”。奈奎斯特准则给出理想低通信道中避免码间串扰时的最高码元传输速率。信道带宽越大，可无串扰传输的码元速率上限越高。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_nyquist_criterion_03",
+    "name": "奈奎斯特准则·基础题3",
+    "title": "理想低通信道带宽为3 kHz，采用16种离散信号状态。根据奈奎斯特公式，最高数据传输速率是多少？",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“奈奎斯特准则”知识点的计算题。",
+    "keywords": [
+      "奈奎斯特准则",
+      "码元速率",
+      "理想信道",
+      "码间串扰"
+    ],
+    "related_nodes": [
+      "ch2_nyquist_criterion",
+      "ch2_channel_distortion"
+    ],
+    "options": [],
+    "answer": "24 kbps",
+    "explanation": "最高码元速率为2W，数据率为2Wlog2(M)=2×3000×log2(16)=24,000 bit/s。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_snr_01",
+    "name": "信噪比·基础题1",
+    "title": "下列关于“信噪比”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“信噪比”知识点的单选题。",
+    "keywords": [
+      "SNR",
+      "信噪比",
+      "分贝",
+      "噪声功率"
+    ],
+    "related_nodes": [
+      "ch2_snr"
+    ],
+    "options": [
+      "A. 信噪比S/N表示信号平均功率与噪声平均功率之比，常用SNR=10log10(S/N)换算为dB。",
+      "B. 数据通信系统由源系统、传输系统和目的系统组成。",
+      "C. 非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。",
+      "D. 物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。"
+    ],
+    "answer": "A",
+    "explanation": "信噪比S/N表示信号平均功率与噪声平均功率之比，常用SNR=10log10(S/N)换算为dB。信噪比越高，接收端越容易正确判决信号。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_snr_02",
+    "name": "信噪比·基础题2",
+    "title": "下列哪些术语或特征与“信噪比”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“信噪比”知识点的多选题。",
+    "keywords": [
+      "SNR",
+      "信噪比",
+      "分贝",
+      "噪声功率"
+    ],
+    "related_nodes": [
+      "ch2_snr"
+    ],
+    "options": [
+      "A. SNR",
+      "B. 信噪比",
+      "C. 奈奎斯特准则",
+      "D. HFC"
+    ],
+    "answer": "AB",
+    "explanation": "直接相关的关键词是“SNR、信噪比”。信噪比S/N表示信号平均功率与噪声平均功率之比，常用SNR=10log10(S/N)换算为dB。信噪比越高，接收端越容易正确判决信号。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_snr_03",
+    "name": "信噪比·基础题3",
+    "title": "某信道的信噪比为30 dB，求线性信噪比S/N。",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“信噪比”知识点的计算题。",
+    "keywords": [
+      "SNR",
+      "信噪比",
+      "分贝",
+      "噪声功率"
+    ],
+    "related_nodes": [
+      "ch2_snr"
+    ],
+    "options": [],
+    "answer": "S/N=1000",
+    "explanation": "由30=10log10(S/N)，得到S/N=10^(30/10)=1000。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_shannon_capacity_01",
+    "name": "香农信道容量·基础题1",
+    "title": "下列关于“香农信道容量”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“香农信道容量”知识点的单选题。",
+    "keywords": [
+      "香农公式",
+      "信道容量",
+      "带宽",
+      "高斯白噪声",
+      "香农信道容量"
+    ],
+    "related_nodes": [
+      "ch2_shannon_capacity"
+    ],
+    "options": [
+      "A. 香农公式C=Wlog2(1+S/N)给出带宽有限且存在高斯白噪声时的极限无差错信息传输速率。",
+      "B. CDM让用户在相同时间和频率上同时发送，但为每个站分配正交码片序列。",
+      "C. 传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+      "D. 实际信道会受到带宽限制、距离、介质质量和干扰影响。"
+    ],
+    "answer": "A",
+    "explanation": "香农公式C=Wlog2(1+S/N)给出带宽有限且存在高斯白噪声时的极限无差错信息传输速率。带宽或信噪比增大，容量上限随之提高。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_shannon_capacity_02",
+    "name": "香农信道容量·基础题2",
+    "title": "下列哪些术语或特征与“香农信道容量”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“香农信道容量”知识点的多选题。",
+    "keywords": [
+      "香农公式",
+      "信道容量",
+      "带宽",
+      "高斯白噪声",
+      "香农信道容量"
+    ],
+    "related_nodes": [
+      "ch2_shannon_capacity"
+    ],
+    "options": [
+      "A. 信道容量",
+      "B. 无线电",
+      "C. 机械特性",
+      "D. 香农公式"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“香农公式、信道容量”。香农公式C=Wlog2(1+S/N)给出带宽有限且存在高斯白噪声时的极限无差错信息传输速率。带宽或信噪比增大，容量上限随之提高。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_shannon_capacity_03",
+    "name": "香农信道容量·基础题3",
+    "title": "某信道带宽为3 kHz，信噪比为30 dB。根据香农公式计算理论极限容量。",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“香农信道容量”知识点的计算题。",
+    "keywords": [
+      "香农公式",
+      "信道容量",
+      "带宽",
+      "高斯白噪声",
+      "香农信道容量"
+    ],
+    "related_nodes": [
+      "ch2_shannon_capacity",
+      "ch2_snr"
+    ],
+    "options": [],
+    "answer": "约29.9 kbps",
+    "explanation": "30 dB对应S/N=1000，C=3000×log2(1+1000)≈29,902 bit/s，约为29.9 kbps。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_transmission_media_01",
+    "name": "传输媒介分类·基础题1",
+    "title": "下列关于“传输媒介分类”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“传输媒介分类”知识点的单选题。",
+    "keywords": [
+      "传输媒介",
+      "导向媒介",
+      "非导向媒介",
+      "物理路径",
+      "传输媒介分类"
+    ],
+    "related_nodes": [
+      "ch2_transmission_media"
+    ],
+    "options": [
+      "A. 传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+      "B. 物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+      "C. DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+      "D. 常见线路编码包括不归零、归零、曼彻斯特和差分曼彻斯特编码。"
+    ],
+    "answer": "A",
+    "explanation": "传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_transmission_media_02",
+    "name": "传输媒介分类·基础题2",
+    "title": "下列哪些术语或特征与“传输媒介分类”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“传输媒介分类”知识点的多选题。",
+    "keywords": [
+      "传输媒介",
+      "导向媒介",
+      "非导向媒介",
+      "物理路径",
+      "传输媒介分类"
+    ],
+    "related_nodes": [
+      "ch2_transmission_media"
+    ],
+    "options": [
+      "A. 传输媒介",
+      "B. 导向媒介",
+      "C. 数据",
+      "D. TDM"
+    ],
+    "answer": "AB",
+    "explanation": "直接相关的关键词是“传输媒介、导向媒介”。传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_transmission_media_03",
+    "name": "传输媒介分类·基础题3",
+    "title": "________是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“传输媒介分类”知识点的填空题。",
+    "keywords": [
+      "传输媒介",
+      "导向媒介",
+      "非导向媒介",
+      "物理路径",
+      "传输媒介分类"
+    ],
+    "related_nodes": [
+      "ch2_transmission_media"
+    ],
+    "options": [],
+    "answer": "传输媒介",
+    "explanation": "传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_guided_media_01",
+    "name": "导向传输媒介·基础题1",
+    "title": "下列关于“导向传输媒介”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“导向传输媒介”知识点的单选题。",
+    "keywords": [
+      "双绞线",
+      "同轴电缆",
+      "光纤",
+      "导向媒介",
+      "导向传输媒介"
+    ],
+    "related_nodes": [
+      "ch2_guided_media"
+    ],
+    "options": [
+      "A. ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+      "B. 实际信道会受到带宽限制、距离、介质质量和干扰影响。",
+      "C. 导向媒介包括双绞线、同轴电缆和光纤。",
+      "D. QAM同时利用振幅和相位表示码元。"
+    ],
+    "answer": "C",
+    "explanation": "导向媒介包括双绞线、同轴电缆和光纤。双绞线成本低，同轴电缆抗干扰较强，光纤容量大、损耗小且不受电磁干扰。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_guided_media_02",
+    "name": "导向传输媒介·基础题2",
+    "title": "下列哪些术语或特征与“导向传输媒介”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“导向传输媒介”知识点的多选题。",
+    "keywords": [
+      "双绞线",
+      "同轴电缆",
+      "光纤",
+      "导向媒介",
+      "导向传输媒介"
+    ],
+    "related_nodes": [
+      "ch2_guided_media"
+    ],
+    "options": [
+      "A. TDM",
+      "B. QAM",
+      "C. 双绞线",
+      "D. 同轴电缆"
+    ],
+    "answer": "CD",
+    "explanation": "直接相关的关键词是“双绞线、同轴电缆”。导向媒介包括双绞线、同轴电缆和光纤。双绞线成本低，同轴电缆抗干扰较强，光纤容量大、损耗小且不受电磁干扰。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_guided_media_03",
+    "name": "导向传输媒介·基础题3",
+    "title": "导向媒介包括________、同轴电缆和光纤。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“导向传输媒介”知识点的填空题。",
+    "keywords": [
+      "双绞线",
+      "同轴电缆",
+      "光纤",
+      "导向媒介",
+      "导向传输媒介"
+    ],
+    "related_nodes": [
+      "ch2_guided_media"
+    ],
+    "options": [],
+    "answer": "双绞线",
+    "explanation": "导向媒介包括双绞线、同轴电缆和光纤。双绞线成本低，同轴电缆抗干扰较强，光纤容量大、损耗小且不受电磁干扰。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_unguided_media_01",
+    "name": "非导向传输媒介·基础题1",
+    "title": "下列关于“非导向传输媒介”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“非导向传输媒介”知识点的单选题。",
+    "keywords": [
+      "无线电",
+      "微波",
+      "卫星",
+      "非导向媒介",
+      "ISM",
+      "非导向传输媒介"
+    ],
+    "related_nodes": [
+      "ch2_unguided_media"
+    ],
+    "options": [
+      "A. HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。",
+      "B. 非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。",
+      "C. 基带信号直接来自信源，常含低频甚至直流分量。",
+      "D. 信噪比S/N表示信号平均功率与噪声平均功率之比，常用SNR=10log10(S/N)换算为dB。"
+    ],
+    "answer": "B",
+    "explanation": "非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。传播会受到反射、遮挡、干扰和频谱管理规则影响。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_unguided_media_02",
+    "name": "非导向传输媒介·基础题2",
+    "title": "下列哪些术语或特征与“非导向传输媒介”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“非导向传输媒介”知识点的多选题。",
+    "keywords": [
+      "无线电",
+      "微波",
+      "卫星",
+      "非导向媒介",
+      "ISM",
+      "非导向传输媒介"
+    ],
+    "related_nodes": [
+      "ch2_unguided_media"
+    ],
+    "options": [
+      "A. DMT",
+      "B. 微波",
+      "C. SNR",
+      "D. 无线电"
+    ],
+    "answer": "BD",
+    "explanation": "直接相关的关键词是“无线电、微波”。非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。传播会受到反射、遮挡、干扰和频谱管理规则影响。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_unguided_media_03",
+    "name": "非导向传输媒介·基础题3",
+    "title": "非导向媒介以自由空间为传播路径，包括________、微波和卫星等。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“非导向传输媒介”知识点的填空题。",
+    "keywords": [
+      "无线电",
+      "微波",
+      "卫星",
+      "非导向媒介",
+      "ISM",
+      "非导向传输媒介"
+    ],
+    "related_nodes": [
+      "ch2_unguided_media"
+    ],
+    "options": [],
+    "answer": "无线电",
+    "explanation": "非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。传播会受到反射、遮挡、干扰和频谱管理规则影响。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_multiplexing_01",
+    "name": "信道复用·基础题1",
+    "title": "下列关于“信道复用”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“信道复用”知识点的单选题。",
+    "keywords": [
+      "信道复用",
+      "共享信道",
+      "FDM",
+      "TDM",
+      "CDM"
+    ],
+    "related_nodes": [
+      "ch2_multiplexing"
+    ],
+    "options": [
+      "A. 信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+      "B. QAM同时利用振幅和相位表示码元。",
+      "C. 带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+      "D. 终端必须通过接入网连接ISP。"
+    ],
+    "answer": "A",
+    "explanation": "信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_multiplexing_02",
+    "name": "信道复用·基础题2",
+    "title": "下列哪些术语或特征与“信道复用”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“信道复用”知识点的多选题。",
+    "keywords": [
+      "信道复用",
+      "共享信道",
+      "FDM",
+      "TDM",
+      "CDM"
+    ],
+    "related_nodes": [
+      "ch2_multiplexing"
+    ],
+    "options": [
+      "A. 单工",
+      "B. 信道复用",
+      "C. 宽带接入",
+      "D. 共享信道"
+    ],
+    "answer": "BD",
+    "explanation": "直接相关的关键词是“信道复用、共享信道”。信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_multiplexing_03",
+    "name": "信道复用·基础题3",
+    "title": "“________”是指：信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+    "type": "填空题",
+    "chapter": "物理层",
+    "description": "基础篇“信道复用”知识点的填空题。",
+    "keywords": [
+      "信道复用",
+      "共享信道",
+      "FDM",
+      "TDM",
+      "CDM"
+    ],
+    "related_nodes": [
+      "ch2_multiplexing"
+    ],
+    "options": [],
+    "answer": "信道复用",
+    "explanation": "信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_fdm_01",
+    "name": "频分复用·基础题1",
+    "title": "下列关于“频分复用”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“频分复用”知识点的单选题。",
+    "keywords": [
+      "FDM",
+      "频分复用",
+      "子频带",
+      "频谱"
+    ],
+    "related_nodes": [
+      "ch2_fdm"
+    ],
+    "options": [
+      "A. 信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+      "B. FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。",
+      "C. DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+      "D. 实际信道会受到带宽限制、距离、介质质量和干扰影响。"
+    ],
+    "answer": "B",
+    "explanation": "FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。空闲用户对应的频带通常也不能被其他用户使用。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_fdm_02",
+    "name": "频分复用·基础题2",
+    "title": "下列哪些术语或特征与“频分复用”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“频分复用”知识点的多选题。",
+    "keywords": [
+      "FDM",
+      "频分复用",
+      "子频带",
+      "频谱"
+    ],
+    "related_nodes": [
+      "ch2_fdm"
+    ],
+    "options": [
+      "A. FDM",
+      "B. 信道复用",
+      "C. 基带信号",
+      "D. 频分复用"
+    ],
+    "answer": "AD",
+    "explanation": "直接相关的关键词是“FDM、频分复用”。FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。空闲用户对应的频带通常也不能被其他用户使用。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_fdm_03",
+    "name": "频分复用·基础题3",
+    "title": "FDM系统为5个用户各分配20 kHz子频带，相邻子频带之间设置2 kHz保护带。整个系统至少需要多大总带宽？",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“频分复用”知识点的计算题。",
+    "keywords": [
+      "FDM",
+      "频分复用",
+      "子频带",
+      "频谱"
+    ],
+    "related_nodes": [
+      "ch2_fdm",
+      "ch2_multiplexing"
+    ],
+    "options": [],
+    "answer": "108 kHz",
+    "explanation": "5个用户频带共5×20=100 kHz，5个子频带之间有4个保护间隔，共4×2=8 kHz，总计108 kHz。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_tdm_01",
+    "name": "时分复用·基础题1",
+    "title": "下列关于“时分复用”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“时分复用”知识点的单选题。",
+    "keywords": [
+      "TDM",
+      "时分复用",
+      "时隙",
+      "TDM帧"
+    ],
+    "related_nodes": [
+      "ch2_tdm"
+    ],
+    "options": [
+      "A. 非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。",
+      "B. TDM把时间划分为周期性帧和时隙，每个用户在每帧中占用固定时隙。",
+      "C. FTTx表示光纤铺设到不同位置的接入方案。",
+      "D. 实际信道会受到带宽限制、距离、介质质量和干扰影响。"
+    ],
+    "answer": "B",
+    "explanation": "TDM把时间划分为周期性帧和时隙，每个用户在每帧中占用固定时隙。计算机数据具有突发性，固定分配时隙可能造成线路资源浪费。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_tdm_02",
+    "name": "时分复用·基础题2",
+    "title": "下列哪些术语或特征与“时分复用”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“时分复用”知识点的多选题。",
+    "keywords": [
+      "TDM",
+      "时分复用",
+      "时隙",
+      "TDM帧"
+    ],
+    "related_nodes": [
+      "ch2_tdm"
+    ],
+    "options": [
+      "A. 双绞线",
+      "B. TDM",
+      "C. 时分复用",
+      "D. FTTx"
+    ],
+    "answer": "BC",
+    "explanation": "直接相关的关键词是“TDM、时分复用”。TDM把时间划分为周期性帧和时隙，每个用户在每帧中占用固定时隙。计算机数据具有突发性，固定分配时隙可能造成线路资源浪费。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_tdm_03",
+    "name": "时分复用·基础题3",
+    "title": "同步TDM复用4路64 kbps数字信号，每帧给每路分配1 bit且忽略同步开销。复用链路速率和每帧持续时间分别是多少？",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“时分复用”知识点的计算题。",
+    "keywords": [
+      "TDM",
+      "时分复用",
+      "时隙",
+      "TDM帧"
+    ],
+    "related_nodes": [
+      "ch2_tdm",
+      "ch2_multiplexing"
+    ],
+    "options": [],
+    "answer": "256 kbps；15.625 μs",
+    "explanation": "复用速率为4×64=256 kbps。每路每帧发送1 bit，为保持64 kbit/s，每秒需64,000帧，帧时长为1/64000 s=15.625 μs。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_cdm_01",
+    "name": "码分复用·基础题1",
+    "title": "下列关于“码分复用”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“码分复用”知识点的单选题。",
+    "keywords": [
+      "CDM",
+      "CDMA",
+      "码片序列",
+      "正交",
+      "规格化内积",
+      "码分复用"
+    ],
+    "related_nodes": [
+      "ch2_cdm"
+    ],
+    "options": [
+      "A. 实际信道会受到带宽限制、距离、介质质量和干扰影响。",
+      "B. 带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+      "C. CDM让用户在相同时间和频率上同时发送，但为每个站分配正交码片序列。",
+      "D. 信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。"
+    ],
+    "answer": "C",
+    "explanation": "CDM让用户在相同时间和频率上同时发送，但为每个站分配正交码片序列。接收端将叠加信号与目标站码片做规格化内积来恢复该站比特。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_cdm_02",
+    "name": "码分复用·基础题2",
+    "title": "下列哪些术语或特征与“码分复用”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“码分复用”知识点的多选题。",
+    "keywords": [
+      "CDM",
+      "CDMA",
+      "码片序列",
+      "正交",
+      "规格化内积",
+      "码分复用"
+    ],
+    "related_nodes": [
+      "ch2_cdm"
+    ],
+    "options": [
+      "A. CDMA",
+      "B. DMT",
+      "C. CDM",
+      "D. 单工"
+    ],
+    "answer": "AC",
+    "explanation": "直接相关的关键词是“CDM、CDMA”。CDM让用户在相同时间和频率上同时发送，但为每个站分配正交码片序列。接收端将叠加信号与目标站码片做规格化内积来恢复该站比特。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_cdm_03",
+    "name": "码分复用·基础题3",
+    "title": "某CDM站点码片序列S=(-1,-1,-1,+1,+1,-1,+1,+1)，接收的合成信号恰好为-S。接收信号与S的规格化内积是多少？该站发送的是比特0还是1？",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“码分复用”知识点的计算题。",
+    "keywords": [
+      "CDM",
+      "CDMA",
+      "码片序列",
+      "正交",
+      "规格化内积",
+      "码分复用"
+    ],
+    "related_nodes": [
+      "ch2_cdm"
+    ],
+    "options": [],
+    "answer": "规格化内积为-1，发送比特0",
+    "explanation": "(-S)·S除以码片数等于-1。CDM约定S表示比特1，-S表示比特0。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_broadband_access_01",
+    "name": "宽带接入技术·基础题1",
+    "title": "下列关于“宽带接入技术”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“宽带接入技术”知识点的单选题。",
+    "keywords": [
+      "宽带接入",
+      "ISP",
+      "有线接入",
+      "无线接入",
+      "宽带接入技术"
+    ],
+    "related_nodes": [
+      "ch2_broadband_access"
+    ],
+    "options": [
+      "A. 物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。",
+      "B. HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。",
+      "C. 终端必须通过接入网连接ISP。",
+      "D. 数据通信系统由源系统、传输系统和目的系统组成。"
+    ],
+    "answer": "C",
+    "explanation": "终端必须通过接入网连接ISP。宽带接入按介质可分为有线和无线方案，有线方案包括ADSL、HFC和FTTx等。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_broadband_access_02",
+    "name": "宽带接入技术·基础题2",
+    "title": "下列哪些术语或特征与“宽带接入技术”直接相关？",
+    "type": "多选题",
+    "chapter": "物理层",
+    "description": "基础篇“宽带接入技术”知识点的多选题。",
+    "keywords": [
+      "宽带接入",
+      "ISP",
+      "有线接入",
+      "无线接入",
+      "宽带接入技术"
+    ],
+    "related_nodes": [
+      "ch2_broadband_access"
+    ],
+    "options": [
+      "A. 基带信号",
+      "B. 宽带接入",
+      "C. ISP",
+      "D. 香农公式"
+    ],
+    "answer": "BC",
+    "explanation": "直接相关的关键词是“宽带接入、ISP”。终端必须通过接入网连接ISP。宽带接入按介质可分为有线和无线方案，有线方案包括ADSL、HFC和FTTx等。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch2_broadband_access_03",
+    "name": "宽带接入技术·基础题3",
+    "title": "请简述“宽带接入技术”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "物理层",
+    "description": "基础篇“宽带接入技术”知识点的简答题。",
+    "keywords": [
+      "宽带接入",
+      "ISP",
+      "有线接入",
+      "无线接入",
+      "宽带接入技术"
+    ],
+    "related_nodes": [
+      "ch2_broadband_access"
+    ],
+    "options": [],
+    "answer": "终端必须通过接入网连接ISP。宽带接入按介质可分为有线和无线方案，有线方案包括ADSL、HFC和FTTx等。",
+    "explanation": "答案应覆盖这些要点：宽带接入、ISP、有线接入、无线接入。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_adsl_01",
+    "name": "ADSL非对称数字用户线路·基础题1",
+    "title": "下列关于“ADSL非对称数字用户线路”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“ADSL非对称数字用户线路”知识点的单选题。",
+    "keywords": [
+      "ADSL",
+      "电话线",
+      "非对称",
+      "上行",
+      "下行",
+      "ADSL非对称数字用户线路"
+    ],
+    "related_nodes": [
+      "ch2_adsl"
+    ],
+    "options": [
+      "A. DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+      "B. ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+      "C. FTTx表示光纤铺设到不同位置的接入方案。",
+      "D. 终端必须通过接入网连接ISP。"
+    ],
+    "answer": "B",
+    "explanation": "ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。下行频带和速率通常高于上行，实际速率受距离、线径和干扰影响。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_adsl_02",
+    "name": "ADSL非对称数字用户线路·基础题2",
+    "title": "ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+    "type": "判断题",
+    "chapter": "物理层",
+    "description": "基础篇“ADSL非对称数字用户线路”知识点的判断题。",
+    "keywords": [
+      "ADSL",
+      "电话线",
+      "非对称",
+      "上行",
+      "下行",
+      "ADSL非对称数字用户线路"
+    ],
+    "related_nodes": [
+      "ch2_adsl"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。下行频带和速率通常高于上行，实际速率受距离、线径和干扰影响。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_adsl_03",
+    "name": "ADSL非对称数字用户线路·基础题3",
+    "title": "请简述“ADSL非对称数字用户线路”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "物理层",
+    "description": "基础篇“ADSL非对称数字用户线路”知识点的简答题。",
+    "keywords": [
+      "ADSL",
+      "电话线",
+      "非对称",
+      "上行",
+      "下行",
+      "ADSL非对称数字用户线路"
+    ],
+    "related_nodes": [
+      "ch2_adsl"
+    ],
+    "options": [],
+    "answer": "ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。下行频带和速率通常高于上行，实际速率受距离、线径和干扰影响。",
+    "explanation": "答案应覆盖这些要点：ADSL、电话线、非对称、上行、下行。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_dmt_01",
+    "name": "DMT离散多音调制·基础题1",
+    "title": "下列关于“DMT离散多音调制”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“DMT离散多音调制”知识点的单选题。",
+    "keywords": [
+      "DMT",
+      "多载波",
+      "子信道",
+      "自适应调制",
+      "ADSL",
+      "DMT离散多音调制"
+    ],
+    "related_nodes": [
+      "ch2_dmt"
+    ],
+    "options": [
+      "A. TDM把时间划分为周期性帧和时隙，每个用户在每帧中占用固定时隙。",
+      "B. FTTx表示光纤铺设到不同位置的接入方案。",
+      "C. DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+      "D. 实际信道会受到带宽限制、距离、介质质量和干扰影响。"
+    ],
+    "answer": "C",
+    "explanation": "DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_dmt_02",
+    "name": "DMT离散多音调制·基础题2",
+    "title": "“DMT离散多音调制”的核心含义是：ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+    "type": "判断题",
+    "chapter": "物理层",
+    "description": "基础篇“DMT离散多音调制”知识点的判断题。",
+    "keywords": [
+      "DMT",
+      "多载波",
+      "子信道",
+      "自适应调制",
+      "ADSL",
+      "DMT离散多音调制"
+    ],
+    "related_nodes": [
+      "ch2_dmt"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_dmt_03",
+    "name": "DMT离散多音调制·基础题3",
+    "title": "某DMT系统有256个有效子信道，每个子信道每个码元承载15 bit，码元率均为4,000 Baud。若协议开销占10%，有效数据率是多少？",
+    "type": "计算题",
+    "chapter": "物理层",
+    "description": "基础篇“DMT离散多音调制”知识点的计算题。",
+    "keywords": [
+      "DMT",
+      "多载波",
+      "子信道",
+      "自适应调制",
+      "ADSL",
+      "DMT离散多音调制"
+    ],
+    "related_nodes": [
+      "ch2_dmt",
+      "ch2_adsl"
+    ],
+    "options": [],
+    "answer": "13.824 Mbps",
+    "explanation": "原始速率为256×15×4000=15.36 Mbps，扣除10%开销后为15.36×0.9=13.824 Mbps。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch2_hfc_cable_modem_01",
+    "name": "HFC与Cable Modem·基础题1",
+    "title": "下列关于“HFC与Cable Modem”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“HFC与Cable Modem”知识点的单选题。",
+    "keywords": [
+      "HFC",
+      "Cable Modem",
+      "光纤同轴",
+      "CATV",
+      "共享接入",
+      "HFC与Cable Modem"
+    ],
+    "related_nodes": [
+      "ch2_hfc_cable_modem"
+    ],
+    "options": [
+      "A. TDM把时间划分为周期性帧和时隙，每个用户在每帧中占用固定时隙。",
+      "B. 物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+      "C. 数据通信系统由源系统、传输系统和目的系统组成。",
+      "D. HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。"
+    ],
+    "answer": "D",
+    "explanation": "HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。用户通过Cable Modem接入共享的电缆网络。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_hfc_cable_modem_02",
+    "name": "HFC与Cable Modem·基础题2",
+    "title": "HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。",
+    "type": "判断题",
+    "chapter": "物理层",
+    "description": "基础篇“HFC与Cable Modem”知识点的判断题。",
+    "keywords": [
+      "HFC",
+      "Cable Modem",
+      "光纤同轴",
+      "CATV",
+      "共享接入",
+      "HFC与Cable Modem"
+    ],
+    "related_nodes": [
+      "ch2_hfc_cable_modem"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。用户通过Cable Modem接入共享的电缆网络。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_hfc_cable_modem_03",
+    "name": "HFC与Cable Modem·基础题3",
+    "title": "请简述“HFC与Cable Modem”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "物理层",
+    "description": "基础篇“HFC与Cable Modem”知识点的简答题。",
+    "keywords": [
+      "HFC",
+      "Cable Modem",
+      "光纤同轴",
+      "CATV",
+      "共享接入",
+      "HFC与Cable Modem"
+    ],
+    "related_nodes": [
+      "ch2_hfc_cable_modem"
+    ],
+    "options": [],
+    "answer": "HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。用户通过Cable Modem接入共享的电缆网络。",
+    "explanation": "答案应覆盖这些要点：HFC、Cable Modem、光纤同轴、CATV、共享接入。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch2_fttx_01",
+    "name": "FTTx光纤接入·基础题1",
+    "title": "下列关于“FTTx光纤接入”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "物理层",
+    "description": "基础篇“FTTx光纤接入”知识点的单选题。",
+    "keywords": [
+      "FTTx",
+      "FTTH",
+      "FTTB",
+      "光纤接入",
+      "FTTx光纤接入"
+    ],
+    "related_nodes": [
+      "ch2_fttx"
+    ],
+    "options": [
+      "A. 导向媒介包括双绞线、同轴电缆和光纤。",
+      "B. ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。",
+      "C. FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。",
+      "D. FTTx表示光纤铺设到不同位置的接入方案。"
+    ],
+    "answer": "D",
+    "explanation": "FTTx表示光纤铺设到不同位置的接入方案。FTTH把光纤延伸到家庭，FTTB把光纤铺到楼宇后再用铜缆向用户分配。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_fttx_02",
+    "name": "FTTx光纤接入·基础题2",
+    "title": "“FTTx光纤接入”的核心含义是：物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+    "type": "判断题",
+    "chapter": "物理层",
+    "description": "基础篇“FTTx光纤接入”知识点的判断题。",
+    "keywords": [
+      "FTTx",
+      "FTTH",
+      "FTTB",
+      "光纤接入",
+      "FTTx光纤接入"
+    ],
+    "related_nodes": [
+      "ch2_fttx"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "FTTx表示光纤铺设到不同位置的接入方案。FTTH把光纤延伸到家庭，FTTB把光纤铺到楼宇后再用铜缆向用户分配。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch2_fttx_03",
+    "name": "FTTx光纤接入·基础题3",
+    "title": "请简述“FTTx光纤接入”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "物理层",
+    "description": "基础篇“FTTx光纤接入”知识点的简答题。",
+    "keywords": [
+      "FTTx",
+      "FTTH",
+      "FTTB",
+      "光纤接入",
+      "FTTx光纤接入"
+    ],
+    "related_nodes": [
+      "ch2_fttx"
+    ],
+    "options": [],
+    "answer": "FTTx表示光纤铺设到不同位置的接入方案。FTTH把光纤延伸到家庭，FTTB把光纤铺到楼宇后再用铜缆向用户分配。",
+    "explanation": "答案应覆盖这些要点：FTTx、FTTH、FTTB、光纤接入。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_link_layer_01",
+    "name": "数据链路层·基础题1",
+    "title": "下列关于“数据链路层”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“数据链路层”知识点的单选题。",
+    "keywords": [
+      "链路层",
+      "相邻节点",
+      "一跳传输",
+      "链路协议",
+      "数据链路层"
+    ],
+    "related_nodes": [
+      "ch3_link_layer"
+    ],
+    "options": [
+      "A. 链路分为点对点链路和广播链路。",
+      "B. 链路层负责相邻节点之间的一跳数据传输。",
+      "C. 发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。",
+      "D. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。"
+    ],
+    "answer": "B",
+    "explanation": "链路层负责相邻节点之间的一跳数据传输。端到端路径上的不同链路可以使用不同协议，每条链路提供的可靠性和访问方式也可能不同。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch3_link_layer_02",
+    "name": "数据链路层·基础题2",
+    "title": "链路层负责相邻节点之间的一跳数据传输。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“数据链路层”知识点的判断题。",
+    "keywords": [
+      "链路层",
+      "相邻节点",
+      "一跳传输",
+      "链路协议",
+      "数据链路层"
+    ],
+    "related_nodes": [
+      "ch3_link_layer"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "链路层负责相邻节点之间的一跳数据传输。端到端路径上的不同链路可以使用不同协议，每条链路提供的可靠性和访问方式也可能不同。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch3_link_layer_03",
+    "name": "数据链路层·基础题3",
+    "title": "请简述“数据链路层”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“数据链路层”知识点的简答题。",
+    "keywords": [
+      "链路层",
+      "相邻节点",
+      "一跳传输",
+      "链路协议",
+      "数据链路层"
+    ],
+    "related_nodes": [
+      "ch3_link_layer"
+    ],
+    "options": [],
+    "answer": "链路层负责相邻节点之间的一跳数据传输。端到端路径上的不同链路可以使用不同协议，每条链路提供的可靠性和访问方式也可能不同。",
+    "explanation": "答案应覆盖这些要点：链路层、相邻节点、一跳传输、链路协议。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_frame_01",
+    "name": "链路层帧·基础题1",
+    "title": "下列关于“链路层帧”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“链路层帧”知识点的单选题。",
+    "keywords": [
+      "frame",
+      "帧",
+      "datagram",
+      "首部",
+      "尾部",
+      "链路层帧"
+    ],
+    "related_nodes": [
+      "ch3_frame"
+    ],
+    "options": [
+      "A. 链路分为点对点链路和广播链路。",
+      "B. 网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。",
+      "C. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。",
+      "D. 帧是链路层的协议数据单元。"
+    ],
+    "answer": "D",
+    "explanation": "帧是链路层的协议数据单元。发送端把网络层datagram封装在帧中并添加首部、尾部，接收端检查后再取出datagram。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_frame_02",
+    "name": "链路层帧·基础题2",
+    "title": "“链路层帧”的核心含义是：CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“链路层帧”知识点的判断题。",
+    "keywords": [
+      "frame",
+      "帧",
+      "datagram",
+      "首部",
+      "尾部",
+      "链路层帧"
+    ],
+    "related_nodes": [
+      "ch3_frame"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "帧是链路层的协议数据单元。发送端把网络层datagram封装在帧中并添加首部、尾部，接收端检查后再取出datagram。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_frame_03",
+    "name": "链路层帧·基础题3",
+    "title": "请简述“链路层帧”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“链路层帧”知识点的简答题。",
+    "keywords": [
+      "frame",
+      "帧",
+      "datagram",
+      "首部",
+      "尾部",
+      "链路层帧"
+    ],
+    "related_nodes": [
+      "ch3_frame"
+    ],
+    "options": [],
+    "answer": "帧是链路层的协议数据单元。发送端把网络层datagram封装在帧中并添加首部、尾部，接收端检查后再取出datagram。",
+    "explanation": "答案应覆盖这些要点：frame、帧、datagram、首部、尾部。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_link_services_01",
+    "name": "链路层服务·基础题1",
+    "title": "下列关于“链路层服务”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“链路层服务”知识点的单选题。",
+    "keywords": [
+      "成帧",
+      "链路访问",
+      "可靠交付",
+      "流量控制",
+      "差错检测",
+      "链路层服务"
+    ],
+    "related_nodes": [
+      "ch3_link_services"
+    ],
+    "options": [
+      "A. 令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。",
+      "B. 链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+      "C. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。",
+      "D. CSMA在发送前先侦听信道，空闲才发送、忙则推迟。"
+    ],
+    "answer": "B",
+    "explanation": "链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_link_services_02",
+    "name": "链路层服务·基础题2",
+    "title": "链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“链路层服务”知识点的判断题。",
+    "keywords": [
+      "成帧",
+      "链路访问",
+      "可靠交付",
+      "流量控制",
+      "差错检测",
+      "链路层服务"
+    ],
+    "related_nodes": [
+      "ch3_link_services"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_link_services_03",
+    "name": "链路层服务·基础题3",
+    "title": "请简述“链路层服务”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“链路层服务”知识点的简答题。",
+    "keywords": [
+      "成帧",
+      "链路访问",
+      "可靠交付",
+      "流量控制",
+      "差错检测",
+      "链路层服务"
+    ],
+    "related_nodes": [
+      "ch3_link_services"
+    ],
+    "options": [],
+    "answer": "链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+    "explanation": "答案应覆盖这些要点：成帧、链路访问、可靠交付、流量控制、差错检测。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_nic_01",
+    "name": "网络接口卡·基础题1",
+    "title": "下列关于“网络接口卡”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“网络接口卡”知识点的单选题。",
+    "keywords": [
+      "NIC",
+      "网卡",
+      "固件",
+      "链路层实现",
+      "网络接口卡"
+    ],
+    "related_nodes": [
+      "ch3_nic"
+    ],
+    "options": [
+      "A. 帧是链路层的协议数据单元。",
+      "B. 链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+      "C. 信道划分MAC把时间、频率或码空间预先分配给节点。",
+      "D. 网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。"
+    ],
+    "answer": "D",
+    "explanation": "网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_nic_02",
+    "name": "网络接口卡·基础题2",
+    "title": "“网络接口卡”的核心含义是：发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“网络接口卡”知识点的判断题。",
+    "keywords": [
+      "NIC",
+      "网卡",
+      "固件",
+      "链路层实现",
+      "网络接口卡"
+    ],
+    "related_nodes": [
+      "ch3_nic"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_nic_03",
+    "name": "网络接口卡·基础题3",
+    "title": "请简述“网络接口卡”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“网络接口卡”知识点的简答题。",
+    "keywords": [
+      "NIC",
+      "网卡",
+      "固件",
+      "链路层实现",
+      "网络接口卡"
+    ],
+    "related_nodes": [
+      "ch3_nic"
+    ],
+    "options": [],
+    "answer": "网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。",
+    "explanation": "答案应覆盖这些要点：NIC、网卡、固件、链路层实现。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_error_detection_01",
+    "name": "差错检测与纠正·基础题1",
+    "title": "下列关于“差错检测与纠正”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“差错检测与纠正”知识点的单选题。",
+    "keywords": [
+      "EDC",
+      "差错检测",
+      "差错纠正",
+      "冗余",
+      "差错检测与纠正"
+    ],
+    "related_nodes": [
+      "ch3_error_detection"
+    ],
+    "options": [
+      "A. 发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。",
+      "B. 发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。",
+      "C. 帧是链路层的协议数据单元。",
+      "D. 令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。"
+    ],
+    "answer": "B",
+    "explanation": "发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。更长的EDC通常有更强检测能力，但会增加传输开销，且检测并非百分之百可靠。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_error_detection_02",
+    "name": "差错检测与纠正·基础题2",
+    "title": "发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“差错检测与纠正”知识点的判断题。",
+    "keywords": [
+      "EDC",
+      "差错检测",
+      "差错纠正",
+      "冗余",
+      "差错检测与纠正"
+    ],
+    "related_nodes": [
+      "ch3_error_detection"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。更长的EDC通常有更强检测能力，但会增加传输开销，且检测并非百分之百可靠。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_error_detection_03",
+    "name": "差错检测与纠正·基础题3",
+    "title": "请简述“差错检测与纠正”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“差错检测与纠正”知识点的简答题。",
+    "keywords": [
+      "EDC",
+      "差错检测",
+      "差错纠正",
+      "冗余",
+      "差错检测与纠正"
+    ],
+    "related_nodes": [
+      "ch3_error_detection"
+    ],
+    "options": [],
+    "answer": "发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。更长的EDC通常有更强检测能力，但会增加传输开销，且检测并非百分之百可靠。",
+    "explanation": "答案应覆盖这些要点：EDC、差错检测、差错纠正、冗余。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_parity_01",
+    "name": "奇偶校验·基础题1",
+    "title": "下列关于“奇偶校验”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“奇偶校验”知识点的单选题。",
+    "keywords": [
+      "奇偶校验",
+      "一维奇偶校验",
+      "二维奇偶校验",
+      "单比特错误"
+    ],
+    "related_nodes": [
+      "ch3_parity"
+    ],
+    "options": [
+      "A. 帧是链路层的协议数据单元。",
+      "B. 一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+      "C. 令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。",
+      "D. 轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。"
+    ],
+    "answer": "B",
+    "explanation": "一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_parity_02",
+    "name": "奇偶校验·基础题2",
+    "title": "“奇偶校验”的核心含义是：CSMA在发送前先侦听信道，空闲才发送、忙则推迟。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“奇偶校验”知识点的判断题。",
+    "keywords": [
+      "奇偶校验",
+      "一维奇偶校验",
+      "二维奇偶校验",
+      "单比特错误"
+    ],
+    "related_nodes": [
+      "ch3_parity"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_parity_03",
+    "name": "奇偶校验·基础题3",
+    "title": "请简述“奇偶校验”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“奇偶校验”知识点的简答题。",
+    "keywords": [
+      "奇偶校验",
+      "一维奇偶校验",
+      "二维奇偶校验",
+      "单比特错误"
+    ],
+    "related_nodes": [
+      "ch3_parity"
+    ],
+    "options": [],
+    "answer": "一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+    "explanation": "答案应覆盖这些要点：奇偶校验、一维奇偶校验、二维奇偶校验、单比特错误。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_crc_01",
+    "name": "循环冗余校验·基础题1",
+    "title": "下列关于“循环冗余校验”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“循环冗余校验”知识点的单选题。",
+    "keywords": [
+      "CRC",
+      "生成多项式",
+      "模二除法",
+      "异或",
+      "余数",
+      "循环冗余校验"
+    ],
+    "related_nodes": [
+      "ch3_crc"
+    ],
+    "options": [
+      "A. 纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。",
+      "B. CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+      "C. 链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+      "D. 理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。"
+    ],
+    "answer": "B",
+    "explanation": "CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。接收端用G除收到的比特串，余数非零表示检测到错误。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_crc_02",
+    "name": "循环冗余校验·基础题2",
+    "title": "CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“循环冗余校验”知识点的判断题。",
+    "keywords": [
+      "CRC",
+      "生成多项式",
+      "模二除法",
+      "异或",
+      "余数",
+      "循环冗余校验"
+    ],
+    "related_nodes": [
+      "ch3_crc"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。接收端用G除收到的比特串，余数非零表示检测到错误。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch3_crc_03",
+    "name": "循环冗余校验·基础题3",
+    "title": "待发送数据D=1101011011，生成多项式对应序列G=1011。求CRC余数R。",
+    "type": "计算题",
+    "chapter": "数据链路层",
+    "description": "基础篇“循环冗余校验”知识点的计算题。",
+    "keywords": [
+      "CRC",
+      "生成多项式",
+      "模二除法",
+      "异或",
+      "余数",
+      "循环冗余校验"
+    ],
+    "related_nodes": [
+      "ch3_crc",
+      "ch3_error_detection"
+    ],
+    "options": [],
+    "answer": "100",
+    "explanation": "G为4 bit，先在D后补3个0，再以1011作模二除法，得到3 bit余数100。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch3_multiple_access_link_01",
+    "name": "多路访问链路·基础题1",
+    "title": "下列关于“多路访问链路”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“多路访问链路”知识点的单选题。",
+    "keywords": [
+      "点对点链路",
+      "广播链路",
+      "共享介质",
+      "冲突",
+      "多路访问链路"
+    ],
+    "related_nodes": [
+      "ch3_multiple_access_link"
+    ],
+    "options": [
+      "A. 链路分为点对点链路和广播链路。",
+      "B. CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+      "C. 理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。",
+      "D. CSMA在发送前先侦听信道，空闲才发送、忙则推迟。"
+    ],
+    "answer": "A",
+    "explanation": "链路分为点对点链路和广播链路。广播链路上多个节点共享介质，同时发送会产生干扰或冲突，因此需要多路访问协议协调。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_multiple_access_link_02",
+    "name": "多路访问链路·基础题2",
+    "title": "“多路访问链路”的核心含义是：发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“多路访问链路”知识点的判断题。",
+    "keywords": [
+      "点对点链路",
+      "广播链路",
+      "共享介质",
+      "冲突",
+      "多路访问链路"
+    ],
+    "related_nodes": [
+      "ch3_multiple_access_link"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "链路分为点对点链路和广播链路。广播链路上多个节点共享介质，同时发送会产生干扰或冲突，因此需要多路访问协议协调。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_multiple_access_link_03",
+    "name": "多路访问链路·基础题3",
+    "title": "请简述“多路访问链路”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“多路访问链路”知识点的简答题。",
+    "keywords": [
+      "点对点链路",
+      "广播链路",
+      "共享介质",
+      "冲突",
+      "多路访问链路"
+    ],
+    "related_nodes": [
+      "ch3_multiple_access_link"
+    ],
+    "options": [],
+    "answer": "链路分为点对点链路和广播链路。广播链路上多个节点共享介质，同时发送会产生干扰或冲突，因此需要多路访问协议协调。",
+    "explanation": "答案应覆盖这些要点：点对点链路、广播链路、共享介质、冲突。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_ideal_mac_01",
+    "name": "理想多路访问协议·基础题1",
+    "title": "下列关于“理想多路访问协议”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“理想多路访问协议”知识点的单选题。",
+    "keywords": [
+      "理想MAC",
+      "R/M",
+      "分布式",
+      "公平性",
+      "理想多路访问协议"
+    ],
+    "related_nodes": [
+      "ch3_ideal_mac"
+    ],
+    "options": [
+      "A. 链路层负责相邻节点之间的一跳数据传输。",
+      "B. 轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+      "C. 发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。",
+      "D. 理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。"
+    ],
+    "answer": "D",
+    "explanation": "理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_ideal_mac_02",
+    "name": "理想多路访问协议·基础题2",
+    "title": "理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“理想多路访问协议”知识点的判断题。",
+    "keywords": [
+      "理想MAC",
+      "R/M",
+      "分布式",
+      "公平性",
+      "理想多路访问协议"
+    ],
+    "related_nodes": [
+      "ch3_ideal_mac"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_ideal_mac_03",
+    "name": "理想多路访问协议·基础题3",
+    "title": "一条100 Mbps广播链路上有4个节点持续发送。按照理想MAC协议的公平性目标，每个节点平均应获得多少速率？",
+    "type": "计算题",
+    "chapter": "数据链路层",
+    "description": "基础篇“理想多路访问协议”知识点的计算题。",
+    "keywords": [
+      "理想MAC",
+      "R/M",
+      "分布式",
+      "公平性",
+      "理想多路访问协议"
+    ],
+    "related_nodes": [
+      "ch3_ideal_mac",
+      "ch3_multiple_access_link"
+    ],
+    "options": [],
+    "answer": "25 Mbps",
+    "explanation": "理想MAC在M个活跃节点之间平均分配速率R，因此每个节点获得R/M=100÷4=25 Mbps。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_mac_taxonomy_01",
+    "name": "MAC协议分类·基础题1",
+    "title": "下列关于“MAC协议分类”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“MAC协议分类”知识点的单选题。",
+    "keywords": [
+      "MAC协议",
+      "信道划分",
+      "随机访问",
+      "轮流访问",
+      "MAC协议分类"
+    ],
+    "related_nodes": [
+      "ch3_mac_taxonomy"
+    ],
+    "options": [
+      "A. 链路分为点对点链路和广播链路。",
+      "B. 一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+      "C. 信道划分MAC把时间、频率或码空间预先分配给节点。",
+      "D. MAC协议分为信道划分、随机访问和轮流访问三类：分别通过预分配资源、竞争后恢复以及轮流授权来共享广播信道。"
+    ],
+    "answer": "D",
+    "explanation": "MAC协议分为信道划分、随机访问和轮流访问三类：分别通过预分配资源、竞争后恢复以及轮流授权来共享广播信道。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_mac_taxonomy_02",
+    "name": "MAC协议分类·基础题2",
+    "title": "“MAC协议分类”的核心含义是：轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“MAC协议分类”知识点的判断题。",
+    "keywords": [
+      "MAC协议",
+      "信道划分",
+      "随机访问",
+      "轮流访问",
+      "MAC协议分类"
+    ],
+    "related_nodes": [
+      "ch3_mac_taxonomy"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "MAC协议分为信道划分、随机访问和轮流访问三类：分别通过预分配资源、竞争后恢复以及轮流授权来共享广播信道。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_mac_taxonomy_03",
+    "name": "MAC协议分类·基础题3",
+    "title": "请简述“MAC协议分类”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“MAC协议分类”知识点的简答题。",
+    "keywords": [
+      "MAC协议",
+      "信道划分",
+      "随机访问",
+      "轮流访问",
+      "MAC协议分类"
+    ],
+    "related_nodes": [
+      "ch3_mac_taxonomy"
+    ],
+    "options": [],
+    "answer": "MAC协议分为信道划分、随机访问和轮流访问三类：分别通过预分配资源、竞争后恢复以及轮流授权来共享广播信道。",
+    "explanation": "答案应覆盖这些要点：MAC协议、信道划分、随机访问、轮流访问。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_channel_partitioning_mac_01",
+    "name": "信道划分MAC·基础题1",
+    "title": "下列关于“信道划分MAC”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“信道划分MAC”知识点的单选题。",
+    "keywords": [
+      "信道划分MAC",
+      "TDMA",
+      "FDMA",
+      "资源预分配"
+    ],
+    "related_nodes": [
+      "ch3_channel_partitioning_mac"
+    ],
+    "options": [
+      "A. 信道划分MAC把时间、频率或码空间预先分配给节点。",
+      "B. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。",
+      "C. CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。",
+      "D. 纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。"
+    ],
+    "answer": "A",
+    "explanation": "信道划分MAC把时间、频率或码空间预先分配给节点。TDMA分配固定时隙，FDMA分配固定频带，高负载时公平但低负载时可能浪费资源。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_channel_partitioning_mac_02",
+    "name": "信道划分MAC·基础题2",
+    "title": "信道划分MAC把时间、频率或码空间预先分配给节点。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“信道划分MAC”知识点的判断题。",
+    "keywords": [
+      "信道划分MAC",
+      "TDMA",
+      "FDMA",
+      "资源预分配"
+    ],
+    "related_nodes": [
+      "ch3_channel_partitioning_mac"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "信道划分MAC把时间、频率或码空间预先分配给节点。TDMA分配固定时隙，FDMA分配固定频带，高负载时公平但低负载时可能浪费资源。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_channel_partitioning_mac_03",
+    "name": "信道划分MAC·基础题3",
+    "title": "请简述“信道划分MAC”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“信道划分MAC”知识点的简答题。",
+    "keywords": [
+      "信道划分MAC",
+      "TDMA",
+      "FDMA",
+      "资源预分配"
+    ],
+    "related_nodes": [
+      "ch3_channel_partitioning_mac"
+    ],
+    "options": [],
+    "answer": "信道划分MAC把时间、频率或码空间预先分配给节点。TDMA分配固定时隙，FDMA分配固定频带，高负载时公平但低负载时可能浪费资源。",
+    "explanation": "答案应覆盖这些要点：信道划分MAC、TDMA、FDMA、资源预分配。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_slotted_aloha_01",
+    "name": "时隙ALOHA·基础题1",
+    "title": "下列关于“时隙ALOHA”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“时隙ALOHA”知识点的单选题。",
+    "keywords": [
+      "时隙ALOHA",
+      "随机重传",
+      "概率p",
+      "37%"
+    ],
+    "related_nodes": [
+      "ch3_slotted_aloha"
+    ],
+    "options": [
+      "A. 令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。",
+      "B. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。",
+      "C. CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+      "D. 轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。"
+    ],
+    "answer": "B",
+    "explanation": "时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。大量节点持续发送时，最大信道利用率约为1/e，即37%。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_slotted_aloha_02",
+    "name": "时隙ALOHA·基础题2",
+    "title": "“时隙ALOHA”的核心含义是：信道划分MAC把时间、频率或码空间预先分配给节点。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“时隙ALOHA”知识点的判断题。",
+    "keywords": [
+      "时隙ALOHA",
+      "随机重传",
+      "概率p",
+      "37%"
+    ],
+    "related_nodes": [
+      "ch3_slotted_aloha"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。大量节点持续发送时，最大信道利用率约为1/e，即37%。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_slotted_aloha_03",
+    "name": "时隙ALOHA·基础题3",
+    "title": "时隙ALOHA的总尝试负载G=1。使用S=G×e^(-G)计算吞吐率，并说明它是否达到理论最大值。",
+    "type": "计算题",
+    "chapter": "数据链路层",
+    "description": "基础篇“时隙ALOHA”知识点的计算题。",
+    "keywords": [
+      "时隙ALOHA",
+      "随机重传",
+      "概率p",
+      "37%"
+    ],
+    "related_nodes": [
+      "ch3_slotted_aloha"
+    ],
+    "options": [],
+    "answer": "S=1/e≈0.368，达到理论最大值",
+    "explanation": "代入G=1得S=e^(-1)≈0.368。时隙ALOHA在G=1时达到最大吞吐率，约37%。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_pure_aloha_01",
+    "name": "纯ALOHA·基础题1",
+    "title": "下列关于“纯ALOHA”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“纯ALOHA”知识点的单选题。",
+    "keywords": [
+      "纯ALOHA",
+      "无时隙",
+      "冲突窗口",
+      "18%"
+    ],
+    "related_nodes": [
+      "ch3_pure_aloha"
+    ],
+    "options": [
+      "A. 一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+      "B. CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。",
+      "C. 链路分为点对点链路和广播链路。",
+      "D. 纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。"
+    ],
+    "answer": "D",
+    "explanation": "纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_pure_aloha_02",
+    "name": "纯ALOHA·基础题2",
+    "title": "纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“纯ALOHA”知识点的判断题。",
+    "keywords": [
+      "纯ALOHA",
+      "无时隙",
+      "冲突窗口",
+      "18%"
+    ],
+    "related_nodes": [
+      "ch3_pure_aloha"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_pure_aloha_03",
+    "name": "纯ALOHA·基础题3",
+    "title": "纯ALOHA的总尝试负载G=0.5。使用S=G×e^(-2G)计算吞吐率，并说明它是否达到理论最大值。",
+    "type": "计算题",
+    "chapter": "数据链路层",
+    "description": "基础篇“纯ALOHA”知识点的计算题。",
+    "keywords": [
+      "纯ALOHA",
+      "无时隙",
+      "冲突窗口",
+      "18%"
+    ],
+    "related_nodes": [
+      "ch3_pure_aloha"
+    ],
+    "options": [],
+    "answer": "S=0.5/e≈0.184，达到理论最大值",
+    "explanation": "代入G=0.5得S=0.5e^(-1)≈0.184。纯ALOHA在G=0.5时达到最大吞吐率，约18%。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_csma_01",
+    "name": "CSMA载波侦听多路访问·基础题1",
+    "title": "下列关于“CSMA载波侦听多路访问”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“CSMA载波侦听多路访问”知识点的单选题。",
+    "keywords": [
+      "CSMA",
+      "载波侦听",
+      "传播时延",
+      "碰撞",
+      "CSMA载波侦听多路访问"
+    ],
+    "related_nodes": [
+      "ch3_csma"
+    ],
+    "options": [
+      "A. 链路层负责相邻节点之间的一跳数据传输。",
+      "B. CSMA在发送前先侦听信道，空闲才发送、忙则推迟。",
+      "C. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。",
+      "D. 网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。"
+    ],
+    "answer": "B",
+    "explanation": "CSMA在发送前先侦听信道，空闲才发送、忙则推迟。但传播时延会让两个节点都误以为信道空闲，所以仍可能碰撞。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_csma_02",
+    "name": "CSMA载波侦听多路访问·基础题2",
+    "title": "“CSMA载波侦听多路访问”的核心含义是：令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“CSMA载波侦听多路访问”知识点的判断题。",
+    "keywords": [
+      "CSMA",
+      "载波侦听",
+      "传播时延",
+      "碰撞",
+      "CSMA载波侦听多路访问"
+    ],
+    "related_nodes": [
+      "ch3_csma"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "CSMA在发送前先侦听信道，空闲才发送、忙则推迟。但传播时延会让两个节点都误以为信道空闲，所以仍可能碰撞。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_csma_03",
+    "name": "CSMA载波侦听多路访问·基础题3",
+    "title": "请简述“CSMA载波侦听多路访问”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“CSMA载波侦听多路访问”知识点的简答题。",
+    "keywords": [
+      "CSMA",
+      "载波侦听",
+      "传播时延",
+      "碰撞",
+      "CSMA载波侦听多路访问"
+    ],
+    "related_nodes": [
+      "ch3_csma"
+    ],
+    "options": [],
+    "answer": "CSMA在发送前先侦听信道，空闲才发送、忙则推迟。但传播时延会让两个节点都误以为信道空闲，所以仍可能碰撞。",
+    "explanation": "答案应覆盖这些要点：CSMA、载波侦听、传播时延、碰撞。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_csma_cd_01",
+    "name": "CSMA/CD·基础题1",
+    "title": "下列关于“CSMA/CD”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“CSMA/CD”知识点的单选题。",
+    "keywords": [
+      "CSMA/CD",
+      "碰撞检测",
+      "最小帧长",
+      "往返传播时延"
+    ],
+    "related_nodes": [
+      "ch3_csma_cd"
+    ],
+    "options": [
+      "A. CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。",
+      "B. 时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。",
+      "C. 发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。",
+      "D. 链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。"
+    ],
+    "answer": "A",
+    "explanation": "CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。为检测最坏碰撞，帧发送时间必须不小于往返传播时延。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_csma_cd_02",
+    "name": "CSMA/CD·基础题2",
+    "title": "CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“CSMA/CD”知识点的判断题。",
+    "keywords": [
+      "CSMA/CD",
+      "碰撞检测",
+      "最小帧长",
+      "往返传播时延"
+    ],
+    "related_nodes": [
+      "ch3_csma_cd"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。为检测最坏碰撞，帧发送时间必须不小于往返传播时延。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch3_csma_cd_03",
+    "name": "CSMA/CD·基础题3",
+    "title": "某CSMA/CD总线网络速率为100 Mbps，最大单向传播时延为25 μs。为了检测最远端冲突，帧至少应有多少比特和多少字节？",
+    "type": "计算题",
+    "chapter": "数据链路层",
+    "description": "基础篇“CSMA/CD”知识点的计算题。",
+    "keywords": [
+      "CSMA/CD",
+      "碰撞检测",
+      "最小帧长",
+      "往返传播时延"
+    ],
+    "related_nodes": [
+      "ch3_csma_cd"
+    ],
+    "options": [],
+    "answer": "5000 bit，即625 byte",
+    "explanation": "帧发送时间至少等于往返传播时延，Lmin=2×25 μs×100 Mbps=5000 bit=625 byte。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch3_binary_exponential_backoff_01",
+    "name": "二进制指数退避·基础题1",
+    "title": "下列关于“二进制指数退避”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“二进制指数退避”知识点的单选题。",
+    "keywords": [
+      "二进制指数退避",
+      "随机退避",
+      "512 bit times",
+      "碰撞"
+    ],
+    "related_nodes": [
+      "ch3_binary_exponential_backoff"
+    ],
+    "options": [
+      "A. 发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。",
+      "B. 一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+      "C. 链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+      "D. CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。"
+    ],
+    "answer": "A",
+    "explanation": "发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。碰撞越多，随机等待范围越大。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch3_binary_exponential_backoff_02",
+    "name": "二进制指数退避·基础题2",
+    "title": "“二进制指数退避”的核心含义是：令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“二进制指数退避”知识点的判断题。",
+    "keywords": [
+      "二进制指数退避",
+      "随机退避",
+      "512 bit times",
+      "碰撞"
+    ],
+    "related_nodes": [
+      "ch3_binary_exponential_backoff"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。碰撞越多，随机等待范围越大。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch3_binary_exponential_backoff_03",
+    "name": "二进制指数退避·基础题3",
+    "title": "10 Mbps以太网中，某站经历第4次碰撞。按二进制指数退避算法，K的选择范围是什么？若随机变量均匀分布，平均退避时间是多少？",
+    "type": "计算题",
+    "chapter": "数据链路层",
+    "description": "基础篇“二进制指数退避”知识点的计算题。",
+    "keywords": [
+      "二进制指数退避",
+      "随机退避",
+      "512 bit times",
+      "碰撞"
+    ],
+    "related_nodes": [
+      "ch3_binary_exponential_backoff",
+      "ch3_csma_cd"
+    ],
+    "options": [],
+    "answer": "K∈[0,15]；平均退避时间0.384 ms",
+    "explanation": "第4次碰撞后K从0到2^4-1中选择，平均K为7.5。一个bit time为0.1 μs，因此平均退避为7.5×512×0.1 μs=384 μs=0.384 ms。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch3_polling_01",
+    "name": "轮询协议·基础题1",
+    "title": "下列关于“轮询协议”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“轮询协议”知识点的单选题。",
+    "keywords": [
+      "Polling",
+      "轮询",
+      "中心控制器",
+      "单点故障",
+      "轮询协议"
+    ],
+    "related_nodes": [
+      "ch3_polling"
+    ],
+    "options": [
+      "A. CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+      "B. 轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+      "C. 发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。",
+      "D. CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。"
+    ],
+    "answer": "B",
+    "explanation": "轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_polling_02",
+    "name": "轮询协议·基础题2",
+    "title": "轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“轮询协议”知识点的判断题。",
+    "keywords": [
+      "Polling",
+      "轮询",
+      "中心控制器",
+      "单点故障",
+      "轮询协议"
+    ],
+    "related_nodes": [
+      "ch3_polling"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_polling_03",
+    "name": "轮询协议·基础题3",
+    "title": "请简述“轮询协议”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“轮询协议”知识点的简答题。",
+    "keywords": [
+      "Polling",
+      "轮询",
+      "中心控制器",
+      "单点故障",
+      "轮询协议"
+    ],
+    "related_nodes": [
+      "ch3_polling"
+    ],
+    "options": [],
+    "answer": "轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+    "explanation": "答案应覆盖这些要点：Polling、轮询、中心控制器、单点故障。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_token_passing_01",
+    "name": "令牌传递·基础题1",
+    "title": "下列关于“令牌传递”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "数据链路层",
+    "description": "基础篇“令牌传递”知识点的单选题。",
+    "keywords": [
+      "Token Passing",
+      "令牌",
+      "轮流发送",
+      "令牌丢失",
+      "令牌传递"
+    ],
+    "related_nodes": [
+      "ch3_token_passing"
+    ],
+    "options": [
+      "A. CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。",
+      "B. 链路分为点对点链路和广播链路。",
+      "C. 一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+      "D. 令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。"
+    ],
+    "answer": "D",
+    "explanation": "令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。它避免碰撞，但有令牌开销、等待时延和令牌丢失问题。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_token_passing_02",
+    "name": "令牌传递·基础题2",
+    "title": "“令牌传递”的核心含义是：帧是链路层的协议数据单元。",
+    "type": "判断题",
+    "chapter": "数据链路层",
+    "description": "基础篇“令牌传递”知识点的判断题。",
+    "keywords": [
+      "Token Passing",
+      "令牌",
+      "轮流发送",
+      "令牌丢失",
+      "令牌传递"
+    ],
+    "related_nodes": [
+      "ch3_token_passing"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。它避免碰撞，但有令牌开销、等待时延和令牌丢失问题。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch3_token_passing_03",
+    "name": "令牌传递·基础题3",
+    "title": "请简述“令牌传递”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "数据链路层",
+    "description": "基础篇“令牌传递”知识点的简答题。",
+    "keywords": [
+      "Token Passing",
+      "令牌",
+      "轮流发送",
+      "令牌丢失",
+      "令牌传递"
+    ],
+    "related_nodes": [
+      "ch3_token_passing"
+    ],
+    "options": [],
+    "answer": "令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。它避免碰撞，但有令牌开销、等待时延和令牌丢失问题。",
+    "explanation": "答案应覆盖这些要点：Token Passing、令牌、轮流发送、令牌丢失。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_lan_01",
+    "name": "局域网·基础题1",
+    "title": "下列关于“局域网”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“局域网”知识点的单选题。",
+    "keywords": [
+      "LAN",
+      "局域网",
+      "MAC地址",
+      "以太网",
+      "交换机"
+    ],
+    "related_nodes": [
+      "ch4_lan"
+    ],
+    "options": [
+      "A. 数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+      "B. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "C. Trunk链路在交换机之间承载多个VLAN的帧。",
+      "D. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。"
+    ],
+    "answer": "B",
+    "explanation": "局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch4_lan_02",
+    "name": "局域网·基础题2",
+    "title": "局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“局域网”知识点的判断题。",
+    "keywords": [
+      "LAN",
+      "局域网",
+      "MAC地址",
+      "以太网",
+      "交换机"
+    ],
+    "related_nodes": [
+      "ch4_lan"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch4_lan_03",
+    "name": "局域网·基础题3",
+    "title": "请简述“局域网”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“局域网”知识点的简答题。",
+    "keywords": [
+      "LAN",
+      "局域网",
+      "MAC地址",
+      "以太网",
+      "交换机"
+    ],
+    "related_nodes": [
+      "ch4_lan"
+    ],
+    "options": [],
+    "answer": "局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+    "explanation": "答案应覆盖这些要点：LAN、局域网、MAC地址、以太网、交换机。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_mac_address_01",
+    "name": "MAC地址·基础题1",
+    "title": "下列关于“MAC地址”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“MAC地址”知识点的单选题。",
+    "keywords": [
+      "MAC地址",
+      "48 bit",
+      "链路层地址",
+      "接口"
+    ],
+    "related_nodes": [
+      "ch4_mac_address"
+    ],
+    "options": [
+      "A. MAC地址是链路层接口地址，通常为48 bit，用于在同一子网内把帧送到物理连接的接口。",
+      "B. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "C. 数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+      "D. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。"
+    ],
+    "answer": "A",
+    "explanation": "MAC地址是链路层接口地址，通常为48 bit，用于在同一子网内把帧送到物理连接的接口。它与网卡接口绑定，通常不随网络位置变化。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_mac_address_02",
+    "name": "MAC地址·基础题2",
+    "title": "“MAC地址”的核心含义是：交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“MAC地址”知识点的判断题。",
+    "keywords": [
+      "MAC地址",
+      "48 bit",
+      "链路层地址",
+      "接口"
+    ],
+    "related_nodes": [
+      "ch4_mac_address"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "MAC地址是链路层接口地址，通常为48 bit，用于在同一子网内把帧送到物理连接的接口。它与网卡接口绑定，通常不随网络位置变化。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_mac_address_03",
+    "name": "MAC地址·基础题3",
+    "title": "标准MAC地址长度为48 bit。它占多少字节？理论上共有多少种不同取值？",
+    "type": "计算题",
+    "chapter": "局域网原理",
+    "description": "基础篇“MAC地址”知识点的计算题。",
+    "keywords": [
+      "MAC地址",
+      "48 bit",
+      "链路层地址",
+      "接口"
+    ],
+    "related_nodes": [
+      "ch4_mac_address"
+    ],
+    "options": [],
+    "answer": "6 byte；2^48种",
+    "explanation": "8 bit为1 byte，所以48 bit=6 byte；48个二进制位理论上可组成2^48个不同地址。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_arp_01",
+    "name": "ARP地址解析协议·基础题1",
+    "title": "下列关于“ARP地址解析协议”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“ARP地址解析协议”知识点的单选题。",
+    "keywords": [
+      "ARP",
+      "IP地址",
+      "MAC地址",
+      "广播请求",
+      "单播回复",
+      "ARP地址解析协议"
+    ],
+    "related_nodes": [
+      "ch4_arp"
+    ],
+    "options": [
+      "A. 多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+      "B. 不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+      "C. 以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。",
+      "D. ARP用于在同一子网内根据IP地址查询MAC地址。"
+    ],
+    "answer": "D",
+    "explanation": "ARP用于在同一子网内根据IP地址查询MAC地址。请求以广播帧发送，目标主机用单播回复自己的MAC地址。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_arp_02",
+    "name": "ARP地址解析协议·基础题2",
+    "title": "ARP用于在同一子网内根据IP地址查询MAC地址。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“ARP地址解析协议”知识点的判断题。",
+    "keywords": [
+      "ARP",
+      "IP地址",
+      "MAC地址",
+      "广播请求",
+      "单播回复",
+      "ARP地址解析协议"
+    ],
+    "related_nodes": [
+      "ch4_arp"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "ARP用于在同一子网内根据IP地址查询MAC地址。请求以广播帧发送，目标主机用单播回复自己的MAC地址。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_arp_03",
+    "name": "ARP地址解析协议·基础题3",
+    "title": "请简述“ARP地址解析协议”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“ARP地址解析协议”知识点的简答题。",
+    "keywords": [
+      "ARP",
+      "IP地址",
+      "MAC地址",
+      "广播请求",
+      "单播回复",
+      "ARP地址解析协议"
+    ],
+    "related_nodes": [
+      "ch4_arp"
+    ],
+    "options": [],
+    "answer": "ARP用于在同一子网内根据IP地址查询MAC地址。请求以广播帧发送，目标主机用单播回复自己的MAC地址。",
+    "explanation": "答案应覆盖这些要点：ARP、IP地址、MAC地址、广播请求、单播回复。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_arp_table_01",
+    "name": "ARP表·基础题1",
+    "title": "下列关于“ARP表”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“ARP表”知识点的单选题。",
+    "keywords": [
+      "ARP表",
+      "地址映射",
+      "TTL",
+      "缓存"
+    ],
+    "related_nodes": [
+      "ch4_arp_table"
+    ],
+    "options": [
+      "A. 跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+      "B. 数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+      "C. 多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+      "D. ARP表缓存IP地址、MAC地址和TTL的映射。"
+    ],
+    "answer": "D",
+    "explanation": "ARP表缓存IP地址、MAC地址和TTL的映射。条目到期后被遗忘，避免网络变化后长期使用过时映射。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_arp_table_02",
+    "name": "ARP表·基础题2",
+    "title": "“ARP表”的核心含义是：交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“ARP表”知识点的判断题。",
+    "keywords": [
+      "ARP表",
+      "地址映射",
+      "TTL",
+      "缓存"
+    ],
+    "related_nodes": [
+      "ch4_arp_table"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "ARP表缓存IP地址、MAC地址和TTL的映射。条目到期后被遗忘，避免网络变化后长期使用过时映射。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_arp_table_03",
+    "name": "ARP表·基础题3",
+    "title": "请简述“ARP表”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“ARP表”知识点的简答题。",
+    "keywords": [
+      "ARP表",
+      "地址映射",
+      "TTL",
+      "缓存"
+    ],
+    "related_nodes": [
+      "ch4_arp_table"
+    ],
+    "options": [],
+    "answer": "ARP表缓存IP地址、MAC地址和TTL的映射。条目到期后被遗忘，避免网络变化后长期使用过时映射。",
+    "explanation": "答案应覆盖这些要点：ARP表、地址映射、TTL、缓存。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_cross_subnet_delivery_01",
+    "name": "跨子网帧交付·基础题1",
+    "title": "下列关于“跨子网帧交付”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“跨子网帧交付”知识点的单选题。",
+    "keywords": [
+      "跨子网",
+      "下一跳",
+      "IP地址",
+      "MAC地址",
+      "重新封装",
+      "跨子网帧交付"
+    ],
+    "related_nodes": [
+      "ch4_cross_subnet_delivery"
+    ],
+    "options": [
+      "A. VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。",
+      "B. 目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+      "C. 跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+      "D. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。"
+    ],
+    "answer": "C",
+    "explanation": "跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_cross_subnet_delivery_02",
+    "name": "跨子网帧交付·基础题2",
+    "title": "跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“跨子网帧交付”知识点的判断题。",
+    "keywords": [
+      "跨子网",
+      "下一跳",
+      "IP地址",
+      "MAC地址",
+      "重新封装",
+      "跨子网帧交付"
+    ],
+    "related_nodes": [
+      "ch4_cross_subnet_delivery"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch4_cross_subnet_delivery_03",
+    "name": "跨子网帧交付·基础题3",
+    "title": "请简述“跨子网帧交付”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“跨子网帧交付”知识点的简答题。",
+    "keywords": [
+      "跨子网",
+      "下一跳",
+      "IP地址",
+      "MAC地址",
+      "重新封装",
+      "跨子网帧交付"
+    ],
+    "related_nodes": [
+      "ch4_cross_subnet_delivery"
+    ],
+    "options": [],
+    "answer": "跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+    "explanation": "答案应覆盖这些要点：跨子网、下一跳、IP地址、MAC地址、重新封装。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch4_ethernet_01",
+    "name": "以太网·基础题1",
+    "title": "下列关于“以太网”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网”知识点的单选题。",
+    "keywords": [
+      "Ethernet",
+      "以太网",
+      "有线局域网",
+      "IEEE 802.3"
+    ],
+    "related_nodes": [
+      "ch4_ethernet"
+    ],
+    "options": [
+      "A. 主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+      "B. 基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。",
+      "C. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "D. 以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。"
+    ],
+    "answer": "D",
+    "explanation": "以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。现代以太网通常采用中心交换机连接各主机。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch4_ethernet_02",
+    "name": "以太网·基础题2",
+    "title": "“以太网”的核心含义是：基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网”知识点的判断题。",
+    "keywords": [
+      "Ethernet",
+      "以太网",
+      "有线局域网",
+      "IEEE 802.3"
+    ],
+    "related_nodes": [
+      "ch4_ethernet"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。现代以太网通常采用中心交换机连接各主机。",
+    "difficulty": 1
+  },
+  {
+    "id": "q_fd_ch4_ethernet_03",
+    "name": "以太网·基础题3",
+    "title": "请简述“以太网”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网”知识点的简答题。",
+    "keywords": [
+      "Ethernet",
+      "以太网",
+      "有线局域网",
+      "IEEE 802.3"
+    ],
+    "related_nodes": [
+      "ch4_ethernet"
+    ],
+    "options": [],
+    "answer": "以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。现代以太网通常采用中心交换机连接各主机。",
+    "explanation": "答案应覆盖这些要点：Ethernet、以太网、有线局域网、IEEE 802.3。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_topology_01",
+    "name": "以太网物理拓扑·基础题1",
+    "title": "下列关于“以太网物理拓扑”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网物理拓扑”知识点的单选题。",
+    "keywords": [
+      "总线拓扑",
+      "交换式以太网",
+      "星形拓扑",
+      "碰撞域",
+      "以太网物理拓扑"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_topology"
+    ],
+    "options": [
+      "A. 跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+      "B. 早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+      "C. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+      "D. 以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。"
+    ],
+    "answer": "B",
+    "explanation": "早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_topology_02",
+    "name": "以太网物理拓扑·基础题2",
+    "title": "早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网物理拓扑”知识点的判断题。",
+    "keywords": [
+      "总线拓扑",
+      "交换式以太网",
+      "星形拓扑",
+      "碰撞域",
+      "以太网物理拓扑"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_topology"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_topology_03",
+    "name": "以太网物理拓扑·基础题3",
+    "title": "请简述“以太网物理拓扑”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网物理拓扑”知识点的简答题。",
+    "keywords": [
+      "总线拓扑",
+      "交换式以太网",
+      "星形拓扑",
+      "碰撞域",
+      "以太网物理拓扑"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_topology"
+    ],
+    "options": [],
+    "answer": "早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+    "explanation": "答案应覆盖这些要点：总线拓扑、交换式以太网、星形拓扑、碰撞域。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_frame_01",
+    "name": "以太网帧格式·基础题1",
+    "title": "下列关于“以太网帧格式”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网帧格式”知识点的单选题。",
+    "keywords": [
+      "以太网帧",
+      "前导码",
+      "MAC地址",
+      "类型字段",
+      "CRC",
+      "以太网帧格式"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_frame"
+    ],
+    "options": [
+      "A. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+      "B. 以太网帧包含前导码、目的MAC、源MAC、类型、数据和CRC。",
+      "C. 交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+      "D. 基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。"
+    ],
+    "answer": "B",
+    "explanation": "以太网帧包含前导码、目的MAC、源MAC、类型、数据和CRC。前导码用于时钟同步，类型字段标识上层协议，CRC用于差错检测。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_ethernet_frame_02",
+    "name": "以太网帧格式·基础题2",
+    "title": "“以太网帧格式”的核心含义是：不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网帧格式”知识点的判断题。",
+    "keywords": [
+      "以太网帧",
+      "前导码",
+      "MAC地址",
+      "类型字段",
+      "CRC",
+      "以太网帧格式"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_frame"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "以太网帧包含前导码、目的MAC、源MAC、类型、数据和CRC。前导码用于时钟同步，类型字段标识上层协议，CRC用于差错检测。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_ethernet_frame_03",
+    "name": "以太网帧格式·基础题3",
+    "title": "一个以太网帧的数据字段为100 byte。忽略前导码和帧间间隔，只计算目的MAC、源MAC、类型、数据和CRC，帧长是多少？",
+    "type": "计算题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网帧格式”知识点的计算题。",
+    "keywords": [
+      "以太网帧",
+      "前导码",
+      "MAC地址",
+      "类型字段",
+      "CRC",
+      "以太网帧格式"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_frame"
+    ],
+    "options": [],
+    "answer": "118 byte",
+    "explanation": "帧长为6+6+2+100+4=118 byte。100 byte数据大于最小数据字段，不需要额外填充。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_ethernet_service_model_01",
+    "name": "以太网服务模型·基础题1",
+    "title": "下列关于“以太网服务模型”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网服务模型”知识点的单选题。",
+    "keywords": [
+      "无连接",
+      "不可靠",
+      "ACK",
+      "NAK",
+      "CSMA/CD",
+      "以太网服务模型"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_service_model"
+    ],
+    "options": [
+      "A. 以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。",
+      "B. 交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+      "C. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "D. 跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。"
+    ],
+    "answer": "A",
+    "explanation": "以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。丢失帧只有在上层协议提供可靠传输时才可能恢复。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_service_model_02",
+    "name": "以太网服务模型·基础题2",
+    "title": "以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网服务模型”知识点的判断题。",
+    "keywords": [
+      "无连接",
+      "不可靠",
+      "ACK",
+      "NAK",
+      "CSMA/CD",
+      "以太网服务模型"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_service_model"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。丢失帧只有在上层协议提供可靠传输时才可能恢复。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_service_model_03",
+    "name": "以太网服务模型·基础题3",
+    "title": "请简述“以太网服务模型”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网服务模型”知识点的简答题。",
+    "keywords": [
+      "无连接",
+      "不可靠",
+      "ACK",
+      "NAK",
+      "CSMA/CD",
+      "以太网服务模型"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_service_model"
+    ],
+    "options": [],
+    "answer": "以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。丢失帧只有在上层协议提供可靠传输时才可能恢复。",
+    "explanation": "答案应覆盖这些要点：无连接、不可靠、ACK、NAK、CSMA/CD。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_standards_01",
+    "name": "IEEE 802.3以太网标准·基础题1",
+    "title": "下列关于“IEEE 802.3以太网标准”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“IEEE 802.3以太网标准”知识点的单选题。",
+    "keywords": [
+      "IEEE 802.3",
+      "以太网标准",
+      "MAC协议",
+      "物理介质",
+      "IEEE 802.3以太网标准"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_standards"
+    ],
+    "options": [
+      "A. 以太网帧包含前导码、目的MAC、源MAC、类型、数据和CRC。",
+      "B. 数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+      "C. 不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+      "D. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。"
+    ],
+    "answer": "C",
+    "explanation": "不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_standards_02",
+    "name": "IEEE 802.3以太网标准·基础题2",
+    "title": "“IEEE 802.3以太网标准”的核心含义是：Trunk链路在交换机之间承载多个VLAN的帧。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“IEEE 802.3以太网标准”知识点的判断题。",
+    "keywords": [
+      "IEEE 802.3",
+      "以太网标准",
+      "MAC协议",
+      "物理介质",
+      "IEEE 802.3以太网标准"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_standards"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_standards_03",
+    "name": "IEEE 802.3以太网标准·基础题3",
+    "title": "请简述“IEEE 802.3以太网标准”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“IEEE 802.3以太网标准”知识点的简答题。",
+    "keywords": [
+      "IEEE 802.3",
+      "以太网标准",
+      "MAC协议",
+      "物理介质",
+      "IEEE 802.3以太网标准"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_standards"
+    ],
+    "options": [],
+    "answer": "不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+    "explanation": "答案应覆盖这些要点：IEEE 802.3、以太网标准、MAC协议、物理介质。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_switch_01",
+    "name": "以太网交换机·基础题1",
+    "title": "下列关于“以太网交换机”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网交换机”知识点的单选题。",
+    "keywords": [
+      "交换机",
+      "链路层设备",
+      "存储转发",
+      "透明",
+      "即插即用",
+      "以太网交换机"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_switch"
+    ],
+    "options": [
+      "A. 主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+      "B. 交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+      "C. 交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+      "D. ARP表缓存IP地址、MAC地址和TTL的映射。"
+    ],
+    "answer": "B",
+    "explanation": "交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_switch_02",
+    "name": "以太网交换机·基础题2",
+    "title": "交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网交换机”知识点的判断题。",
+    "keywords": [
+      "交换机",
+      "链路层设备",
+      "存储转发",
+      "透明",
+      "即插即用",
+      "以太网交换机"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_switch"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_ethernet_switch_03",
+    "name": "以太网交换机·基础题3",
+    "title": "请简述“以太网交换机”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“以太网交换机”知识点的简答题。",
+    "keywords": [
+      "交换机",
+      "链路层设备",
+      "存储转发",
+      "透明",
+      "即插即用",
+      "以太网交换机"
+    ],
+    "related_nodes": [
+      "ch4_ethernet_switch"
+    ],
+    "options": [],
+    "answer": "交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+    "explanation": "答案应覆盖这些要点：交换机、链路层设备、存储转发、透明、即插即用。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_collision_domain_01",
+    "name": "碰撞域与全双工交换·基础题1",
+    "title": "下列关于“碰撞域与全双工交换”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“碰撞域与全双工交换”知识点的单选题。",
+    "keywords": [
+      "碰撞域",
+      "全双工",
+      "并行传输",
+      "输出端口",
+      "碰撞域与全双工交换"
+    ],
+    "related_nodes": [
+      "ch4_collision_domain"
+    ],
+    "options": [
+      "A. 交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+      "B. ARP用于在同一子网内根据IP地址查询MAC地址。",
+      "C. 以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。",
+      "D. ARP表缓存IP地址、MAC地址和TTL的映射。"
+    ],
+    "answer": "A",
+    "explanation": "交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_collision_domain_02",
+    "name": "碰撞域与全双工交换·基础题2",
+    "title": "“碰撞域与全双工交换”的核心含义是：交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“碰撞域与全双工交换”知识点的判断题。",
+    "keywords": [
+      "碰撞域",
+      "全双工",
+      "并行传输",
+      "输出端口",
+      "碰撞域与全双工交换"
+    ],
+    "related_nodes": [
+      "ch4_collision_domain"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_collision_domain_03",
+    "name": "碰撞域与全双工交换·基础题3",
+    "title": "12台主机分别通过独立全双工链路接入一台交换机的12个端口。按端口链路划分，共有多少个独立碰撞域？正常全双工通信中会发生多少次CSMA/CD碰撞？",
+    "type": "计算题",
+    "chapter": "局域网原理",
+    "description": "基础篇“碰撞域与全双工交换”知识点的计算题。",
+    "keywords": [
+      "碰撞域",
+      "全双工",
+      "并行传输",
+      "输出端口",
+      "碰撞域与全双工交换"
+    ],
+    "related_nodes": [
+      "ch4_collision_domain",
+      "ch4_ethernet_switch"
+    ],
+    "options": [],
+    "answer": "12个独立碰撞域；正常情况下0次碰撞",
+    "explanation": "交换机的每条端口链路构成独立碰撞域；全双工链路没有共享介质竞争，因此不使用CSMA/CD且不会发生碰撞。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_table_01",
+    "name": "交换机转发表·基础题1",
+    "title": "下列关于“交换机转发表”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机转发表”知识点的单选题。",
+    "keywords": [
+      "交换机转发表",
+      "MAC地址",
+      "接口号",
+      "时间戳"
+    ],
+    "related_nodes": [
+      "ch4_switch_table"
+    ],
+    "options": [
+      "A. 交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+      "B. ARP表缓存IP地址、MAC地址和TTL的映射。",
+      "C. 两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+      "D. 负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。"
+    ],
+    "answer": "A",
+    "explanation": "交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_switch_table_02",
+    "name": "交换机转发表·基础题2",
+    "title": "交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机转发表”知识点的判断题。",
+    "keywords": [
+      "交换机转发表",
+      "MAC地址",
+      "接口号",
+      "时间戳"
+    ],
+    "related_nodes": [
+      "ch4_switch_table"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_switch_table_03",
+    "name": "交换机转发表·基础题3",
+    "title": "请简述“交换机转发表”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机转发表”知识点的简答题。",
+    "keywords": [
+      "交换机转发表",
+      "MAC地址",
+      "接口号",
+      "时间戳"
+    ],
+    "related_nodes": [
+      "ch4_switch_table"
+    ],
+    "options": [],
+    "answer": "交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "explanation": "答案应覆盖这些要点：交换机转发表、MAC地址、接口号、时间戳。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_switch_self_learning_01",
+    "name": "交换机自学习·基础题1",
+    "title": "下列关于“交换机自学习”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机自学习”知识点的单选题。",
+    "keywords": [
+      "自学习",
+      "源MAC",
+      "进入接口",
+      "转发表更新",
+      "交换机自学习"
+    ],
+    "related_nodes": [
+      "ch4_switch_self_learning"
+    ],
+    "options": [
+      "A. ARP用于在同一子网内根据IP地址查询MAC地址。",
+      "B. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+      "C. 多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+      "D. ARP表缓存IP地址、MAC地址和TTL的映射。"
+    ],
+    "answer": "B",
+    "explanation": "交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_self_learning_02",
+    "name": "交换机自学习·基础题2",
+    "title": "“交换机自学习”的核心含义是：早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机自学习”知识点的判断题。",
+    "keywords": [
+      "自学习",
+      "源MAC",
+      "进入接口",
+      "转发表更新",
+      "交换机自学习"
+    ],
+    "related_nodes": [
+      "ch4_switch_self_learning"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_self_learning_03",
+    "name": "交换机自学习·基础题3",
+    "title": "请简述“交换机自学习”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机自学习”知识点的简答题。",
+    "keywords": [
+      "自学习",
+      "源MAC",
+      "进入接口",
+      "转发表更新",
+      "交换机自学习"
+    ],
+    "related_nodes": [
+      "ch4_switch_self_learning"
+    ],
+    "options": [],
+    "answer": "交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+    "explanation": "答案应覆盖这些要点：自学习、源MAC、进入接口、转发表更新。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_filter_forward_01",
+    "name": "交换机过滤、转发与泛洪·基础题1",
+    "title": "下列关于“交换机过滤、转发与泛洪”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机过滤、转发与泛洪”知识点的单选题。",
+    "keywords": [
+      "过滤",
+      "定向转发",
+      "泛洪",
+      "未知目的MAC",
+      "交换机过滤、转发与泛洪"
+    ],
+    "related_nodes": [
+      "ch4_switch_filter_forward"
+    ],
+    "options": [
+      "A. 主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+      "B. 交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+      "C. 目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+      "D. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。"
+    ],
+    "answer": "C",
+    "explanation": "目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_filter_forward_02",
+    "name": "交换机过滤、转发与泛洪·基础题2",
+    "title": "目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机过滤、转发与泛洪”知识点的判断题。",
+    "keywords": [
+      "过滤",
+      "定向转发",
+      "泛洪",
+      "未知目的MAC",
+      "交换机过滤、转发与泛洪"
+    ],
+    "related_nodes": [
+      "ch4_switch_filter_forward"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_filter_forward_03",
+    "name": "交换机过滤、转发与泛洪·基础题3",
+    "title": "请简述“交换机过滤、转发与泛洪”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机过滤、转发与泛洪”知识点的简答题。",
+    "keywords": [
+      "过滤",
+      "定向转发",
+      "泛洪",
+      "未知目的MAC",
+      "交换机过滤、转发与泛洪"
+    ],
+    "related_nodes": [
+      "ch4_switch_filter_forward"
+    ],
+    "options": [],
+    "answer": "目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+    "explanation": "答案应覆盖这些要点：过滤、定向转发、泛洪、未知目的MAC。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_interconnection_01",
+    "name": "多交换机互联·基础题1",
+    "title": "下列关于“多交换机互联”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“多交换机互联”知识点的单选题。",
+    "keywords": [
+      "交换机互联",
+      "级联",
+      "自学习",
+      "远端主机",
+      "多交换机互联"
+    ],
+    "related_nodes": [
+      "ch4_switch_interconnection"
+    ],
+    "options": [
+      "A. 主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+      "B. ARP用于在同一子网内根据IP地址查询MAC地址。",
+      "C. 多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+      "D. ARP表缓存IP地址、MAC地址和TTL的映射。"
+    ],
+    "answer": "C",
+    "explanation": "多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_interconnection_02",
+    "name": "多交换机互联·基础题2",
+    "title": "“多交换机互联”的核心含义是：目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“多交换机互联”知识点的判断题。",
+    "keywords": [
+      "交换机互联",
+      "级联",
+      "自学习",
+      "远端主机",
+      "多交换机互联"
+    ],
+    "related_nodes": [
+      "ch4_switch_interconnection"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_interconnection_03",
+    "name": "多交换机互联·基础题3",
+    "title": "请简述“多交换机互联”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“多交换机互联”知识点的简答题。",
+    "keywords": [
+      "交换机互联",
+      "级联",
+      "自学习",
+      "远端主机",
+      "多交换机互联"
+    ],
+    "related_nodes": [
+      "ch4_switch_interconnection"
+    ],
+    "options": [],
+    "answer": "多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+    "explanation": "答案应覆盖这些要点：交换机互联、级联、自学习、远端主机。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_vs_router_01",
+    "name": "交换机与路由器对比·基础题1",
+    "title": "下列关于“交换机与路由器对比”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机与路由器对比”知识点的单选题。",
+    "keywords": [
+      "交换机",
+      "路由器",
+      "MAC地址",
+      "IP地址",
+      "转发表",
+      "交换机与路由器对比"
+    ],
+    "related_nodes": [
+      "ch4_switch_vs_router"
+    ],
+    "options": [
+      "A. MAC地址是链路层接口地址，通常为48 bit，用于在同一子网内把帧送到物理连接的接口。",
+      "B. 两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+      "C. 目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+      "D. 交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。"
+    ],
+    "answer": "B",
+    "explanation": "两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_vs_router_02",
+    "name": "交换机与路由器对比·基础题2",
+    "title": "两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机与路由器对比”知识点的判断题。",
+    "keywords": [
+      "交换机",
+      "路由器",
+      "MAC地址",
+      "IP地址",
+      "转发表",
+      "交换机与路由器对比"
+    ],
+    "related_nodes": [
+      "ch4_switch_vs_router"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_switch_vs_router_03",
+    "name": "交换机与路由器对比·基础题3",
+    "title": "请简述“交换机与路由器对比”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“交换机与路由器对比”知识点的简答题。",
+    "keywords": [
+      "交换机",
+      "路由器",
+      "MAC地址",
+      "IP地址",
+      "转发表",
+      "交换机与路由器对比"
+    ],
+    "related_nodes": [
+      "ch4_switch_vs_router"
+    ],
+    "options": [],
+    "answer": "两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+    "explanation": "答案应覆盖这些要点：交换机、路由器、MAC地址、IP地址、转发表。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_vlan_01",
+    "name": "虚拟局域网·基础题1",
+    "title": "下列关于“虚拟局域网”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“虚拟局域网”知识点的单选题。",
+    "keywords": [
+      "VLAN",
+      "逻辑局域网",
+      "广播域",
+      "流量隔离",
+      "虚拟局域网"
+    ],
+    "related_nodes": [
+      "ch4_vlan"
+    ],
+    "options": [
+      "A. VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。",
+      "B. 以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。",
+      "C. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "D. 交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。"
+    ],
+    "answer": "A",
+    "explanation": "VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_vlan_02",
+    "name": "虚拟局域网·基础题2",
+    "title": "“虚拟局域网”的核心含义是：交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“虚拟局域网”知识点的判断题。",
+    "keywords": [
+      "VLAN",
+      "逻辑局域网",
+      "广播域",
+      "流量隔离",
+      "虚拟局域网"
+    ],
+    "related_nodes": [
+      "ch4_vlan"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_vlan_03",
+    "name": "虚拟局域网·基础题3",
+    "title": "请简述“虚拟局域网”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“虚拟局域网”知识点的简答题。",
+    "keywords": [
+      "VLAN",
+      "逻辑局域网",
+      "广播域",
+      "流量隔离",
+      "虚拟局域网"
+    ],
+    "related_nodes": [
+      "ch4_vlan"
+    ],
+    "options": [],
+    "answer": "VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。",
+    "explanation": "答案应覆盖这些要点：VLAN、逻辑局域网、广播域、流量隔离。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_port_based_vlan_01",
+    "name": "基于端口的VLAN·基础题1",
+    "title": "下列关于“基于端口的VLAN”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“基于端口的VLAN”知识点的单选题。",
+    "keywords": [
+      "端口VLAN",
+      "端口分组",
+      "动态成员",
+      "流量隔离",
+      "基于端口的VLAN"
+    ],
+    "related_nodes": [
+      "ch4_port_based_vlan"
+    ],
+    "options": [
+      "A. 以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。",
+      "B. 基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。",
+      "C. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "D. Trunk链路在交换机之间承载多个VLAN的帧。"
+    ],
+    "answer": "B",
+    "explanation": "基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。端口也可以动态改变VLAN归属。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_port_based_vlan_02",
+    "name": "基于端口的VLAN·基础题2",
+    "title": "基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“基于端口的VLAN”知识点的判断题。",
+    "keywords": [
+      "端口VLAN",
+      "端口分组",
+      "动态成员",
+      "流量隔离",
+      "基于端口的VLAN"
+    ],
+    "related_nodes": [
+      "ch4_port_based_vlan"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "正确",
+    "explanation": "基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。端口也可以动态改变VLAN归属。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_port_based_vlan_03",
+    "name": "基于端口的VLAN·基础题3",
+    "title": "请简述“基于端口的VLAN”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“基于端口的VLAN”知识点的简答题。",
+    "keywords": [
+      "端口VLAN",
+      "端口分组",
+      "动态成员",
+      "流量隔离",
+      "基于端口的VLAN"
+    ],
+    "related_nodes": [
+      "ch4_port_based_vlan"
+    ],
+    "options": [],
+    "answer": "基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。端口也可以动态改变VLAN归属。",
+    "explanation": "答案应覆盖这些要点：端口VLAN、端口分组、动态成员、流量隔离。",
+    "difficulty": 2
+  },
+  {
+    "id": "q_fd_ch4_vlan_trunk_8021q_01",
+    "name": "VLAN Trunk与802.1Q·基础题1",
+    "title": "下列关于“VLAN Trunk与802.1Q”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“VLAN Trunk与802.1Q”知识点的单选题。",
+    "keywords": [
+      "trunk",
+      "802.1Q",
+      "VLAN ID",
+      "VLAN标签",
+      "CRC",
+      "VLAN Trunk与802.1Q"
+    ],
+    "related_nodes": [
+      "ch4_vlan_trunk_8021q"
+    ],
+    "options": [
+      "A. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+      "B. ARP表缓存IP地址、MAC地址和TTL的映射。",
+      "C. Trunk链路在交换机之间承载多个VLAN的帧。",
+      "D. VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。"
+    ],
+    "answer": "C",
+    "explanation": "Trunk链路在交换机之间承载多个VLAN的帧。802.1Q为帧加入包含VLAN ID和优先级的标签，并因帧内容变化重新计算CRC。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_vlan_trunk_8021q_02",
+    "name": "VLAN Trunk与802.1Q·基础题2",
+    "title": "“VLAN Trunk与802.1Q”的核心含义是：不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+    "type": "判断题",
+    "chapter": "局域网原理",
+    "description": "基础篇“VLAN Trunk与802.1Q”知识点的判断题。",
+    "keywords": [
+      "trunk",
+      "802.1Q",
+      "VLAN ID",
+      "VLAN标签",
+      "CRC",
+      "VLAN Trunk与802.1Q"
+    ],
+    "related_nodes": [
+      "ch4_vlan_trunk_8021q"
+    ],
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": "错误",
+    "explanation": "Trunk链路在交换机之间承载多个VLAN的帧。802.1Q为帧加入包含VLAN ID和优先级的标签，并因帧内容变化重新计算CRC。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch4_vlan_trunk_8021q_03",
+    "name": "VLAN Trunk与802.1Q·基础题3",
+    "title": "802.1Q标签中的VLAN ID字段为12 bit。理论上可表示多少个编号？扣除0和4095两个保留值后，常规可用VLAN ID有多少个？",
+    "type": "计算题",
+    "chapter": "局域网原理",
+    "description": "基础篇“VLAN Trunk与802.1Q”知识点的计算题。",
+    "keywords": [
+      "trunk",
+      "802.1Q",
+      "VLAN ID",
+      "VLAN标签",
+      "CRC",
+      "VLAN Trunk与802.1Q"
+    ],
+    "related_nodes": [
+      "ch4_vlan_trunk_8021q",
+      "ch4_vlan"
+    ],
+    "options": [],
+    "answer": "理论4096个；常规可用4094个",
+    "explanation": "12 bit可表示2^12=4096个编号；0和4095保留，因此常规可用编号为1～4094，共4094个。",
+    "difficulty": 4
+  },
+  {
+    "id": "q_fd_ch4_datacenter_network_01",
+    "name": "数据中心网络·基础题1",
+    "title": "下列关于“数据中心网络”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“数据中心网络”知识点的单选题。",
+    "keywords": [
+      "数据中心",
+      "服务器机架",
+      "TOR交换机",
+      "网络瓶颈",
+      "数据中心网络"
+    ],
+    "related_nodes": [
+      "ch4_datacenter_network"
+    ],
+    "options": [
+      "A. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+      "B. 数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+      "C. 局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+      "D. 以太网帧包含前导码、目的MAC、源MAC、类型、数据和CRC。"
+    ],
+    "answer": "B",
+    "explanation": "数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_datacenter_network_02",
+    "name": "数据中心网络·基础题2",
+    "title": "“________”是指：数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+    "type": "填空题",
+    "chapter": "局域网原理",
+    "description": "基础篇“数据中心网络”知识点的填空题。",
+    "keywords": [
+      "数据中心",
+      "服务器机架",
+      "TOR交换机",
+      "网络瓶颈",
+      "数据中心网络"
+    ],
+    "related_nodes": [
+      "ch4_datacenter_network"
+    ],
+    "options": [],
+    "answer": "数据中心网络",
+    "explanation": "数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_datacenter_network_03",
+    "name": "数据中心网络·基础题3",
+    "title": "请简述“数据中心网络”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“数据中心网络”知识点的简答题。",
+    "keywords": [
+      "数据中心",
+      "服务器机架",
+      "TOR交换机",
+      "网络瓶颈",
+      "数据中心网络"
+    ],
+    "related_nodes": [
+      "ch4_datacenter_network"
+    ],
+    "options": [],
+    "answer": "数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+    "explanation": "答案应覆盖这些要点：数据中心、服务器机架、TOR交换机、网络瓶颈。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_datacenter_multipath_01",
+    "name": "数据中心多路径·基础题1",
+    "title": "下列关于“数据中心多路径”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“数据中心多路径”知识点的单选题。",
+    "keywords": [
+      "多路径",
+      "吞吐量",
+      "冗余",
+      "可靠性",
+      "数据中心多路径"
+    ],
+    "related_nodes": [
+      "ch4_datacenter_multipath"
+    ],
+    "options": [
+      "A. 以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。",
+      "B. 数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+      "C. 不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+      "D. ARP用于在同一子网内根据IP地址查询MAC地址。"
+    ],
+    "answer": "B",
+    "explanation": "数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_datacenter_multipath_02",
+    "name": "数据中心多路径·基础题2",
+    "title": "“________”是指：数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+    "type": "填空题",
+    "chapter": "局域网原理",
+    "description": "基础篇“数据中心多路径”知识点的填空题。",
+    "keywords": [
+      "多路径",
+      "吞吐量",
+      "冗余",
+      "可靠性",
+      "数据中心多路径"
+    ],
+    "related_nodes": [
+      "ch4_datacenter_multipath"
+    ],
+    "options": [],
+    "answer": "数据中心多路径",
+    "explanation": "数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_datacenter_multipath_03",
+    "name": "数据中心多路径·基础题3",
+    "title": "请简述“数据中心多路径”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“数据中心多路径”知识点的简答题。",
+    "keywords": [
+      "多路径",
+      "吞吐量",
+      "冗余",
+      "可靠性",
+      "数据中心多路径"
+    ],
+    "related_nodes": [
+      "ch4_datacenter_multipath"
+    ],
+    "options": [],
+    "answer": "数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+    "explanation": "答案应覆盖这些要点：多路径、吞吐量、冗余、可靠性。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_load_balancer_01",
+    "name": "负载均衡器·基础题1",
+    "title": "下列关于“负载均衡器”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“负载均衡器”知识点的单选题。",
+    "keywords": [
+      "负载均衡器",
+      "应用层路由",
+      "服务器",
+      "工作负载"
+    ],
+    "related_nodes": [
+      "ch4_load_balancer"
+    ],
+    "options": [
+      "A. 交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+      "B. 数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+      "C. 不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+      "D. 负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。"
+    ],
+    "answer": "D",
+    "explanation": "负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_load_balancer_02",
+    "name": "负载均衡器·基础题2",
+    "title": "“________”是指：负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。",
+    "type": "填空题",
+    "chapter": "局域网原理",
+    "description": "基础篇“负载均衡器”知识点的填空题。",
+    "keywords": [
+      "负载均衡器",
+      "应用层路由",
+      "服务器",
+      "工作负载"
+    ],
+    "related_nodes": [
+      "ch4_load_balancer"
+    ],
+    "options": [],
+    "answer": "负载均衡器",
+    "explanation": "负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_load_balancer_03",
+    "name": "负载均衡器·基础题3",
+    "title": "请简述“负载均衡器”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“负载均衡器”知识点的简答题。",
+    "keywords": [
+      "负载均衡器",
+      "应用层路由",
+      "服务器",
+      "工作负载"
+    ],
+    "related_nodes": [
+      "ch4_load_balancer"
+    ],
+    "options": [],
+    "answer": "负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。",
+    "explanation": "答案应覆盖这些要点：负载均衡器、应用层路由、服务器、工作负载。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_web_request_lifecycle_01",
+    "name": "Web请求的跨层工作流程·基础题1",
+    "title": "下列关于“Web请求的跨层工作流程”的表述，正确的是：",
+    "type": "单选题",
+    "chapter": "局域网原理",
+    "description": "基础篇“Web请求的跨层工作流程”知识点的单选题。",
+    "keywords": [
+      "DHCP",
+      "ARP",
+      "DNS",
+      "TCP",
+      "HTTP",
+      "跨层流程"
+    ],
+    "related_nodes": [
+      "ch4_web_request_lifecycle"
+    ],
+    "options": [
+      "A. 以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。",
+      "B. ARP表缓存IP地址、MAC地址和TTL的映射。",
+      "C. 主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+      "D. 基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。"
+    ],
+    "answer": "C",
+    "explanation": "主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+    "difficulty": 3
+  },
+  {
+    "id": "q_fd_ch4_web_request_lifecycle_02",
+    "name": "Web请求的跨层工作流程·基础题2",
+    "title": "“________”是指：主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+    "type": "填空题",
+    "chapter": "局域网原理",
+    "description": "基础篇“Web请求的跨层工作流程”知识点的填空题。",
+    "keywords": [
+      "DHCP",
+      "ARP",
+      "DNS",
+      "TCP",
+      "HTTP",
+      "跨层流程"
+    ],
+    "related_nodes": [
+      "ch4_web_request_lifecycle"
+    ],
+    "options": [],
+    "answer": "Web请求的跨层工作流程",
+    "explanation": "主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+    "difficulty": 5
+  },
+  {
+    "id": "q_fd_ch4_web_request_lifecycle_03",
+    "name": "Web请求的跨层工作流程·基础题3",
+    "title": "请简述“Web请求的跨层工作流程”的核心含义，并说明它描述或解决的主要问题。",
+    "type": "简答题",
+    "chapter": "局域网原理",
+    "description": "基础篇“Web请求的跨层工作流程”知识点的简答题。",
+    "keywords": [
+      "DHCP",
+      "ARP",
+      "DNS",
+      "TCP",
+      "HTTP",
+      "跨层流程"
+    ],
+    "related_nodes": [
+      "ch4_web_request_lifecycle"
+    ],
+    "options": [],
+    "answer": "主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+    "explanation": "答案应覆盖这些要点：DHCP、ARP、DNS、TCP、HTTP、跨层流程。",
+    "difficulty": 5
   }
 ]

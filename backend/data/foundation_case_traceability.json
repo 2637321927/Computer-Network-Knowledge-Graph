@@ -1,0 +1,565 @@
+{
+  "scope": "基础篇案例：计算机网络概述、物理层、数据链路层、局域网原理",
+  "pdf_requirement": "案例库建议覆盖不少于20个典型网络问题；基础篇按4/10章比例贡献8个案例。",
+  "generation": {
+    "script": "scripts/generate_foundation_cases.py",
+    "managed_case_prefix": "case_fd_",
+    "managed_edge_prefix": "edge_cfd_",
+    "case_count": 8,
+    "case_node_count": 8,
+    "case_edge_count": 43,
+    "chapter_counts": {
+      "计算机网络概述": 1,
+      "物理层": 2,
+      "数据链路层": 2,
+      "局域网原理": 3
+    }
+  },
+  "source_catalog": {
+    "local_scope": {
+      "description": "课程PPT决定范围，个人Markdown笔记决定中文表述与知识密度。",
+      "trace_file": "backend/data/foundation_traceability.json"
+    },
+    "kurose_delay": {
+      "description": "Kurose/Ross官方时延与吞吐量知识检查。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/knowledgechecks/problem.php?c=1&s=4"
+    },
+    "njit_line_coding": {
+      "description": "NJIT ECE489线路编码实验。",
+      "url": "https://web.njit.edu/~gilhc/ECE489/ece489-XI.htm"
+    },
+    "etsu_line_coding": {
+      "description": "ETSU开放课程：极性与双极性线路编码。",
+      "url": "https://dc.etsu.edu/computer-organization-design-oer/27/"
+    },
+    "uf_transmission": {
+      "description": "University of Florida计算机网络物理层传输资料。",
+      "url": "https://www.cise.ufl.edu/~nemo/cen4500/transmission.html"
+    },
+    "bucknell_design": {
+      "description": "Bucknell University数字通信系统设计练习。",
+      "url": "https://www.eg.bucknell.edu/~kozick/elec470/digdes.html"
+    },
+    "kurose_crc": {
+      "description": "Kurose/Ross官方CRC交互练习。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/interactive/CRC.php"
+    },
+    "kurose_aloha": {
+      "description": "Kurose/Ross官方ALOHA交互练习。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/interactive/aloha.php"
+    },
+    "kurose_wireshark": {
+      "description": "Kurose/Ross官方Wireshark Ethernet与ARP实验。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/wireshark.php/interactive/interactive/interactive/"
+    },
+    "rfc826": {
+      "description": "ARP协议规范。",
+      "url": "https://datatracker.ietf.org/doc/html/rfc826"
+    },
+    "kurose_switch": {
+      "description": "Kurose/Ross官方自学习交换机交互练习。",
+      "url": "https://gaia.cs.umass.edu/kurose_ross/interactive/learning_switch_basic.php"
+    },
+    "cisco_switching": {
+      "description": "Cisco LAN交换环境与转发、过滤、泛洪排障资料。",
+      "url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html"
+    },
+    "cisco_trunk_lab": {
+      "description": "Cisco Networking Academy Packet Tracer Trunk实验。",
+      "url": "https://www.netacad.com/content/srwe/1.0/courses/content/m3/en-US/assets/3.4.5-packet-tracer---configure-trunks.pdf"
+    }
+  },
+  "cases": {
+    "case_fd_ch1_delay_bottleneck": {
+      "title": "校园网视频下载变慢：时延、排队与瓶颈分析",
+      "chapter": "计算机网络概述",
+      "related_nodes": [
+        "ch1_packet_switching",
+        "ch1_queueing_packet_loss",
+        "ch1_circuit_switching",
+        "ch1_nodal_delay",
+        "ch1_traffic_intensity",
+        "ch1_throughput_bottleneck"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch1_packet_switching": {
+          "notes": [
+            "一、导论.md#分组交换"
+          ],
+          "slides": [
+            "Chapter_1_v8.2.pptx:26,30-32"
+          ]
+        },
+        "ch1_queueing_packet_loss": {
+          "notes": [
+            "一、导论.md#分组交换"
+          ],
+          "slides": [
+            "Chapter_1_v8.2.pptx:31-32,47,55"
+          ]
+        },
+        "ch1_circuit_switching": {
+          "notes": [
+            "一、导论.md#电路交换"
+          ],
+          "slides": [
+            "Chapter_1_v8.2.pptx:33-34"
+          ]
+        },
+        "ch1_nodal_delay": {
+          "notes": [
+            "一、导论.md#分组延时的四种来源"
+          ],
+          "slides": [
+            "Chapter_1_v8.2.pptx:48-51"
+          ]
+        },
+        "ch1_traffic_intensity": {
+          "notes": [
+            "一、导论.md#排队延时"
+          ],
+          "slides": [
+            "Chapter_1_v8.2.pptx:52"
+          ]
+        },
+        "ch1_throughput_bottleneck": {
+          "notes": [
+            "一、导论.md#吞吐量"
+          ],
+          "slides": [
+            "Chapter_1_v8.2.pptx:56-58"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "kurose_delay"
+      ]
+    },
+    "case_fd_ch2_line_coding_sync": {
+      "title": "长串比特传输失败：线路编码与时钟同步",
+      "chapter": "物理层",
+      "related_nodes": [
+        "ch2_data_signal_system",
+        "ch2_baseband_signal_modulation",
+        "ch2_line_coding",
+        "ch2_channel_distortion"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch2_data_signal_system": {
+          "notes": [
+            "二、物理层.md#数据通信基本知识"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:5,7"
+          ]
+        },
+        "ch2_baseband_signal_modulation": {
+          "notes": [
+            "二、物理层.md#调制"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:8-9"
+          ]
+        },
+        "ch2_line_coding": {
+          "notes": [],
+          "slides": [
+            "Physical_Layer20260320.pptx:10"
+          ]
+        },
+        "ch2_channel_distortion": {
+          "notes": [
+            "二、物理层.md#信道的极限容量"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:13-15"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "njit_line_coding",
+        "etsu_line_coding"
+      ]
+    },
+    "case_fd_ch2_adsl_capacity": {
+      "title": "ADSL线路速率下降：信噪比与信道容量评估",
+      "chapter": "物理层",
+      "related_nodes": [
+        "ch2_snr",
+        "ch2_shannon_capacity",
+        "ch2_nyquist_criterion",
+        "ch2_guided_media",
+        "ch2_adsl",
+        "ch2_dmt",
+        "ch2_fttx"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch2_snr": {
+          "notes": [
+            "二、物理层.md#信道的极限容量"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:16"
+          ]
+        },
+        "ch2_shannon_capacity": {
+          "notes": [
+            "二、物理层.md#香农公式"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:17-18"
+          ]
+        },
+        "ch2_nyquist_criterion": {
+          "notes": [],
+          "slides": [
+            "Physical_Layer20260320.pptx:15"
+          ]
+        },
+        "ch2_guided_media": {
+          "notes": [
+            "二、物理层.md#物理层下的传输媒介"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:22-26"
+          ]
+        },
+        "ch2_adsl": {
+          "notes": [
+            "二、物理层.md#ADSL 非对称数字用户线路"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:39-45"
+          ]
+        },
+        "ch2_dmt": {
+          "notes": [
+            "二、物理层.md#DMT"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:42-44"
+          ]
+        },
+        "ch2_fttx": {
+          "notes": [
+            "二、物理层.md#FFx"
+          ],
+          "slides": [
+            "Physical_Layer20260320.pptx:51"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "uf_transmission",
+        "bucknell_design"
+      ]
+    },
+    "case_fd_ch3_crc_burst_error": {
+      "title": "传输途中发生突发差错：CRC检测实验",
+      "chapter": "数据链路层",
+      "related_nodes": [
+        "ch3_frame",
+        "ch3_error_detection",
+        "ch3_parity",
+        "ch3_crc"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch3_frame": {
+          "notes": [
+            "四、链路层和局域网.md#链路层实现"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:4,7,10"
+          ]
+        },
+        "ch3_error_detection": {
+          "notes": [
+            "四、链路层和局域网.md#错误检测"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:12"
+          ]
+        },
+        "ch3_parity": {
+          "notes": [
+            "四、链路层和局域网.md#奇偶校验"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:13"
+          ]
+        },
+        "ch3_crc": {
+          "notes": [
+            "四、链路层和局域网.md#CRC：循环冗余检测"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:14-15"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "kurose_crc"
+      ]
+    },
+    "case_fd_ch3_shared_channel_collision": {
+      "title": "多台主机同时发送：从ALOHA到CSMA/CD",
+      "chapter": "数据链路层",
+      "related_nodes": [
+        "ch3_multiple_access_link",
+        "ch3_mac_taxonomy",
+        "ch3_slotted_aloha",
+        "ch3_pure_aloha",
+        "ch3_csma",
+        "ch3_csma_cd",
+        "ch3_binary_exponential_backoff"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch3_multiple_access_link": {
+          "notes": [
+            "四、链路层和局域网.md#多路访问协议"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:17-18"
+          ]
+        },
+        "ch3_mac_taxonomy": {
+          "notes": [
+            "四、链路层和局域网.md#MAC 协议"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:20,36"
+          ]
+        },
+        "ch3_slotted_aloha": {
+          "notes": [
+            "四、链路层和局域网.md#随机访问 MAC"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:24-26"
+          ]
+        },
+        "ch3_pure_aloha": {
+          "notes": [
+            "四、链路层和局域网.md#随机访问 MAC"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:27,93"
+          ]
+        },
+        "ch3_csma": {
+          "notes": [
+            "四、链路层和局域网.md#随机访问 MAC"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:28-29"
+          ]
+        },
+        "ch3_csma_cd": {
+          "notes": [
+            "四、链路层和局域网.md#随机访问 MAC"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:28-32"
+          ]
+        },
+        "ch3_binary_exponential_backoff": {
+          "notes": [
+            "四、链路层和局域网.md#随机访问 MAC"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:31"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "kurose_aloha"
+      ]
+    },
+    "case_fd_ch4_wireshark_arp": {
+      "title": "Wireshark捕获Ethernet与ARP报文",
+      "chapter": "局域网原理",
+      "related_nodes": [
+        "ch4_mac_address",
+        "ch4_arp",
+        "ch4_arp_table",
+        "ch4_cross_subnet_delivery",
+        "ch4_ethernet_frame"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch4_mac_address": {
+          "notes": [
+            "四、链路层和局域网.md#MAC 地址"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:38-40"
+          ]
+        },
+        "ch4_arp": {
+          "notes": [
+            "四、链路层和局域网.md#ARP：地址解析协议"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:41-44"
+          ]
+        },
+        "ch4_arp_table": {
+          "notes": [
+            "四、链路层和局域网.md#ARP：地址解析协议"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:41"
+          ]
+        },
+        "ch4_cross_subnet_delivery": {
+          "notes": [
+            "四、链路层和局域网.md#跨子网传输"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:45-50"
+          ]
+        },
+        "ch4_ethernet_frame": {
+          "notes": [
+            "四、链路层和局域网.md#Ethernet 帧格式"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:54-55"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "kurose_wireshark",
+        "rfc826"
+      ]
+    },
+    "case_fd_ch4_switch_learning": {
+      "title": "交换机为什么先泛洪后定向转发",
+      "chapter": "局域网原理",
+      "related_nodes": [
+        "ch4_ethernet_switch",
+        "ch4_switch_table",
+        "ch4_switch_self_learning",
+        "ch4_switch_filter_forward",
+        "ch4_switch_interconnection"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch4_ethernet_switch": {
+          "notes": [
+            "四、链路层和局域网.md#交换机"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:59"
+          ]
+        },
+        "ch4_switch_table": {
+          "notes": [
+            "四、链路层和局域网.md#交换机转发表"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:62"
+          ]
+        },
+        "ch4_switch_self_learning": {
+          "notes": [
+            "四、链路层和局域网.md#交换机转发表"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:63"
+          ]
+        },
+        "ch4_switch_filter_forward": {
+          "notes": [
+            "四、链路层和局域网.md#帧过滤 / 转发"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:64-65"
+          ]
+        },
+        "ch4_switch_interconnection": {
+          "notes": [
+            "四、链路层和局域网.md#交换机"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:66-67"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "kurose_switch",
+        "cisco_switching"
+      ]
+    },
+    "case_fd_ch4_vlan_trunk": {
+      "title": "同VLAN主机无法跨交换机通信：802.1Q Trunk排障",
+      "chapter": "局域网原理",
+      "related_nodes": [
+        "ch4_ethernet_frame",
+        "ch4_switch_interconnection",
+        "ch4_vlan",
+        "ch4_port_based_vlan",
+        "ch4_vlan_trunk_8021q"
+      ],
+      "origin": "依据课程范围原创编写；公开资料用于案例形式和机制校核，未直接复制案例正文。",
+      "local_evidence": {
+        "ch4_ethernet_frame": {
+          "notes": [
+            "四、链路层和局域网.md#Ethernet 帧格式"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:54-55"
+          ]
+        },
+        "ch4_switch_interconnection": {
+          "notes": [
+            "四、链路层和局域网.md#交换机"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:66-67"
+          ]
+        },
+        "ch4_vlan": {
+          "notes": [
+            "四、链路层和局域网.md#VLAN 虚拟局域网"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:70-73"
+          ]
+        },
+        "ch4_port_based_vlan": {
+          "notes": [
+            "四、链路层和局域网.md#VLAN 虚拟局域网"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:72-73"
+          ]
+        },
+        "ch4_vlan_trunk_8021q": {
+          "notes": [
+            "四、链路层和局域网.md#VLAN 虚拟局域网"
+          ],
+          "slides": [
+            "Link_Layer20260320 (2).pptx:74-75"
+          ]
+        }
+      },
+      "reference_basis": [
+        "local_scope",
+        "cisco_trunk_lab"
+      ]
+    }
+  }
+}
