@@ -278,5 +278,1498 @@
       "水平分割"
     ],
     "difficulty": 3
+  },
+  {
+    "id": "ch1_protocol",
+    "name": "网络协议",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "协议规定网络实体交换消息的格式、顺序，以及发送、接收消息或发生事件时采取的动作。它就是网络通信双方共同遵守的“对话规则”。",
+    "keywords": [
+      "协议",
+      "消息格式",
+      "消息顺序",
+      "网络实体"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_internet_overview",
+    "name": "Internet概览",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "Internet既是由主机、链路、路由器和互联ISP组成的网络之网，也是向分布式应用提供通信服务和编程接口的基础设施。",
+    "keywords": [
+      "Internet",
+      "网络之网",
+      "通信基础设施",
+      "分布式应用"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_network_edge",
+    "name": "网络边缘",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "网络边缘由端系统构成，包括用户主机、客户端和服务器；服务器通常集中部署在数据中心。",
+    "keywords": [
+      "端系统",
+      "主机",
+      "客户端",
+      "服务器"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_access_network",
+    "name": "接入网络",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "接入网络把端系统连接到边缘路由器，可以是家庭有线接入、企业以太网、WiFi或蜂窝网络。共享式接入和专用式接入具有不同的带宽分配方式。",
+    "keywords": [
+      "接入网络",
+      "边缘路由器",
+      "有线接入",
+      "无线接入"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_physical_media",
+    "name": "物理介质",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "物理介质承载bit传播。导向介质让信号沿铜线、同轴电缆或光纤传播；非导向介质让信号在开放空间以无线电波传播。",
+    "keywords": [
+      "物理介质",
+      "导向介质",
+      "非导向介质",
+      "bit"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_network_core",
+    "name": "网络核心",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "网络核心是互联路由器形成的网状结构，负责让分组沿端到端路径逐跳通过。核心功能可以概括为路由与转发。",
+    "keywords": [
+      "网络核心",
+      "路由器",
+      "网状结构",
+      "逐跳传输"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_forwarding",
+    "name": "转发",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "转发是路由器的局部动作：根据转发表，把到达输入链路的分组移动到合适的输出链路。",
+    "keywords": [
+      "forwarding",
+      "转发表",
+      "输入链路",
+      "输出链路"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_routing",
+    "name": "路由",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "路由是全局路径选择过程，通过路由算法决定分组从源到目的地应经过的路径；一句话就是“算路”。",
+    "keywords": [
+      "routing",
+      "路径选择",
+      "路由算法",
+      "源到目的"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_packet_switching",
+    "name": "分组交换",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "分组交换把应用消息切成较小的packet，让不同用户按需共享链路资源。它适合突发数据，但拥塞时会产生排队、时延和丢包。",
+    "keywords": [
+      "分组交换",
+      "packet",
+      "资源共享",
+      "突发数据"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_store_and_forward",
+    "name": "存储转发",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "存储转发要求路由器收到完整分组后才能向下一条链路发送。长度为L bit的分组在速率为R的链路上的发送时间为L/R。",
+    "keywords": [
+      "存储转发",
+      "分组传输时延",
+      "L/R",
+      "路由器"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_queueing_packet_loss",
+    "name": "排队与分组丢失",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "当分组到达输出链路的速率暂时超过链路发送能力时，分组进入缓冲区排队；缓冲区满后，新到分组会被丢弃。",
+    "keywords": [
+      "排队",
+      "缓冲区",
+      "分组丢失",
+      "拥塞"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_circuit_switching",
+    "name": "电路交换",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "电路交换在通信前建立端到端专用路径并预留资源，通信期间独占相应频带或时隙，结束后再释放。",
+    "keywords": [
+      "电路交换",
+      "资源预留",
+      "专用路径",
+      "FDM",
+      "TDM"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_internet_isp_structure",
+    "name": "Internet的ISP层次结构",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "端系统先连接接入ISP，接入ISP再通过区域ISP、一级ISP、IXP和内容提供商网络互联，最终形成可扩展的“网络之网”。",
+    "keywords": [
+      "ISP",
+      "IXP",
+      "一级ISP",
+      "内容提供商网络"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_nodal_delay",
+    "name": "结点总时延",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "结点总时延由处理时延、排队时延、传输时延和传播时延组成：d_nodal=d_proc+d_queue+d_trans+d_prop。",
+    "keywords": [
+      "结点时延",
+      "处理时延",
+      "排队时延",
+      "传输时延",
+      "传播时延"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_traffic_intensity",
+    "name": "流量强度",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "流量强度La/R衡量输出队列负载。它接近1时平均排队时延迅速增大，大于1时到达工作量长期超过服务能力。",
+    "keywords": [
+      "流量强度",
+      "La/R",
+      "排队时延",
+      "链路负载"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_throughput_bottleneck",
+    "name": "吞吐量与瓶颈链路",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "吞吐量是数据成功从发送方到达接收方的速率。端到端吞吐量受路径上最慢的瓶颈链路限制，多条连接共享瓶颈时每条连接的份额会下降。",
+    "keywords": [
+      "吞吐量",
+      "瞬时吞吐量",
+      "平均吞吐量",
+      "瓶颈链路"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_network_security",
+    "name": "网络安全威胁与防御",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "常见威胁包括分组嗅探、IP欺骗和拒绝服务攻击；防御手段包括认证、加密、完整性检查、访问限制和防火墙。",
+    "keywords": [
+      "分组嗅探",
+      "IP欺骗",
+      "DoS",
+      "认证",
+      "加密",
+      "防火墙"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_internet_protocol_stack",
+    "name": "Internet五层协议栈",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "Internet协议栈分为应用层、运输层、网络层、链路层和物理层。每层实现自己的服务，同时使用下一层提供的服务。",
+    "keywords": [
+      "协议栈",
+      "应用层",
+      "运输层",
+      "网络层",
+      "链路层",
+      "物理层"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_encapsulation",
+    "name": "封装与解封装",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "发送端把上层数据作为下层payload并逐层添加header，形成message、segment、datagram和frame；接收端按相反顺序解封装。",
+    "keywords": [
+      "封装",
+      "解封装",
+      "header",
+      "payload",
+      "frame"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch1_osi_reference_model",
+    "name": "OSI七层参考模型",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "计算机网络概述",
+    "description": "OSI模型在Internet五层协议栈基础上增加表示层和会话层。表示层处理数据表示、加密和压缩，会话层处理同步、检查点和恢复。",
+    "keywords": [
+      "OSI",
+      "表示层",
+      "会话层",
+      "七层模型"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_physical_layer",
+    "name": "物理层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "物理层负责在传输介质上发送原始bit，并尽量屏蔽不同介质和通信手段的差异。它规定接口如何把比特流转换为可传输的信号。",
+    "keywords": [
+      "物理层",
+      "bit",
+      "传输介质",
+      "接口"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_interface_characteristics",
+    "name": "物理层接口特性",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "物理层接口由机械、电气、功能和过程四类特性共同规定，分别说明连接器形态、电压范围、信号意义和事件顺序。",
+    "keywords": [
+      "机械特性",
+      "电气特性",
+      "功能特性",
+      "过程特性"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_data_signal_system",
+    "name": "数据通信系统与信号",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "数据通信系统由源系统、传输系统和目的系统组成。数据是要传递的消息实体，信号是数据的电气或电磁表示，可分为模拟信号和数字信号。",
+    "keywords": [
+      "数据",
+      "信号",
+      "模拟信号",
+      "数字信号",
+      "信源",
+      "信宿"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_communication_modes",
+    "name": "单工、半双工与全双工",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "单工只能单向传输；半双工允许双方轮流发送但不能同时发送；全双工允许双方同时发送和接收。",
+    "keywords": [
+      "单工",
+      "半双工",
+      "全双工",
+      "通信方向"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_baseband_signal_modulation",
+    "name": "基带信号与基带调制",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "基带信号直接来自信源，常含低频甚至直流分量。基带调制通过改变数字信号波形来适应信道，也称为编码，处理后仍是基带信号。",
+    "keywords": [
+      "基带信号",
+      "基带调制",
+      "编码",
+      "低频分量"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_line_coding",
+    "name": "数字线路编码",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "常见线路编码包括不归零、归零、曼彻斯特和差分曼彻斯特编码。曼彻斯特类编码利用比特中间跳变提供自同步，但需要更高的信号频率。",
+    "keywords": [
+      "不归零",
+      "归零",
+      "曼彻斯特编码",
+      "差分曼彻斯特",
+      "自同步"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_bandpass_modulation",
+    "name": "带通调制",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "带通调制利用载波把基带信号搬移到较高频段并转换成模拟信号，基本方式包括调幅、调频和调相。",
+    "keywords": [
+      "带通调制",
+      "载波",
+      "调幅",
+      "调频",
+      "调相"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_qam",
+    "name": "正交振幅调制",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "QAM同时利用振幅和相位表示码元。星座点越多，每个码元携带的bit越多，但点间距离变小，噪声下更容易误判。",
+    "keywords": [
+      "QAM",
+      "星座图",
+      "振幅",
+      "相位",
+      "码元"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_channel_distortion",
+    "name": "信道失真与码间串扰",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "实际信道会受到带宽限制、距离、介质质量和干扰影响。码元速率过高时，相邻码元波形会互相重叠，形成码间串扰并增加判决错误。",
+    "keywords": [
+      "信道失真",
+      "码间串扰",
+      "码元速率",
+      "带宽"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_nyquist_criterion",
+    "name": "奈奎斯特准则",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "奈奎斯特准则给出理想低通信道中避免码间串扰时的最高码元传输速率。信道带宽越大，可无串扰传输的码元速率上限越高。",
+    "keywords": [
+      "奈奎斯特准则",
+      "码元速率",
+      "理想信道",
+      "码间串扰"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_snr",
+    "name": "信噪比",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "信噪比S/N表示信号平均功率与噪声平均功率之比，常用SNR=10log10(S/N)换算为dB。信噪比越高，接收端越容易正确判决信号。",
+    "keywords": [
+      "SNR",
+      "信噪比",
+      "分贝",
+      "噪声功率"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_shannon_capacity",
+    "name": "香农信道容量",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "香农公式C=Wlog2(1+S/N)给出带宽有限且存在高斯白噪声时的极限无差错信息传输速率。带宽或信噪比增大，容量上限随之提高。",
+    "keywords": [
+      "香农公式",
+      "信道容量",
+      "带宽",
+      "高斯白噪声"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_transmission_media",
+    "name": "传输媒介分类",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "传输媒介是发送端和接收端之间的物理路径，分为沿实体介质传播的导向媒介，以及在自由空间传播的非导向媒介。",
+    "keywords": [
+      "传输媒介",
+      "导向媒介",
+      "非导向媒介",
+      "物理路径"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_guided_media",
+    "name": "导向传输媒介",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "导向媒介包括双绞线、同轴电缆和光纤。双绞线成本低，同轴电缆抗干扰较强，光纤容量大、损耗小且不受电磁干扰。",
+    "keywords": [
+      "双绞线",
+      "同轴电缆",
+      "光纤",
+      "导向媒介"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_unguided_media",
+    "name": "非导向传输媒介",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "非导向媒介以自由空间为传播路径，包括无线电、微波和卫星等。传播会受到反射、遮挡、干扰和频谱管理规则影响。",
+    "keywords": [
+      "无线电",
+      "微波",
+      "卫星",
+      "非导向媒介",
+      "ISM"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_multiplexing",
+    "name": "信道复用",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "信道复用让多个用户共享同一条高容量信道，通过频率、时间或码片维度区分用户，从而降低成本并提高资源利用率。",
+    "keywords": [
+      "信道复用",
+      "共享信道",
+      "FDM",
+      "TDM",
+      "CDM"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_fdm",
+    "name": "频分复用",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "FDM把信道总频带划分成多个互不重叠的子频带，每个用户在通信期间持续占用自己的频带。空闲用户对应的频带通常也不能被其他用户使用。",
+    "keywords": [
+      "FDM",
+      "频分复用",
+      "子频带",
+      "频谱"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_tdm",
+    "name": "时分复用",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "TDM把时间划分为周期性帧和时隙，每个用户在每帧中占用固定时隙。计算机数据具有突发性，固定分配时隙可能造成线路资源浪费。",
+    "keywords": [
+      "TDM",
+      "时分复用",
+      "时隙",
+      "TDM帧"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_cdm",
+    "name": "码分复用",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "CDM让用户在相同时间和频率上同时发送，但为每个站分配正交码片序列。接收端将叠加信号与目标站码片做规格化内积来恢复该站比特。",
+    "keywords": [
+      "CDM",
+      "CDMA",
+      "码片序列",
+      "正交",
+      "规格化内积"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_broadband_access",
+    "name": "宽带接入技术",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "终端必须通过接入网连接ISP。宽带接入按介质可分为有线和无线方案，有线方案包括ADSL、HFC和FTTx等。",
+    "keywords": [
+      "宽带接入",
+      "ISP",
+      "有线接入",
+      "无线接入"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_adsl",
+    "name": "ADSL非对称数字用户线路",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "ADSL利用现有电话线的高频部分传输数据，低频部分保留给传统电话。下行频带和速率通常高于上行，实际速率受距离、线径和干扰影响。",
+    "keywords": [
+      "ADSL",
+      "电话线",
+      "非对称",
+      "上行",
+      "下行"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_dmt",
+    "name": "DMT离散多音调制",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "DMT是ADSL使用的多载波调制方式，本质上用FDM把高频频谱切成许多子信道，并根据各子信道质量自适应分配传输能力。",
+    "keywords": [
+      "DMT",
+      "多载波",
+      "子信道",
+      "自适应调制",
+      "ADSL"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_hfc_cable_modem",
+    "name": "HFC与Cable Modem",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "HFC在有线电视网基础上以光纤作为骨干、同轴电缆完成用户侧分配，并支持双向数据业务。用户通过Cable Modem接入共享的电缆网络。",
+    "keywords": [
+      "HFC",
+      "Cable Modem",
+      "光纤同轴",
+      "CATV",
+      "共享接入"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch2_fttx",
+    "name": "FTTx光纤接入",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "物理层",
+    "description": "FTTx表示光纤铺设到不同位置的接入方案。FTTH把光纤延伸到家庭，FTTB把光纤铺到楼宇后再用铜缆向用户分配。",
+    "keywords": [
+      "FTTx",
+      "FTTH",
+      "FTTB",
+      "光纤接入"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_link_layer",
+    "name": "数据链路层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "链路层负责相邻节点之间的一跳数据传输。端到端路径上的不同链路可以使用不同协议，每条链路提供的可靠性和访问方式也可能不同。",
+    "keywords": [
+      "链路层",
+      "相邻节点",
+      "一跳传输",
+      "链路协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_frame",
+    "name": "链路层帧",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "帧是链路层的协议数据单元。发送端把网络层datagram封装在帧中并添加首部、尾部，接收端检查后再取出datagram。",
+    "keywords": [
+      "frame",
+      "帧",
+      "datagram",
+      "首部",
+      "尾部"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_link_services",
+    "name": "链路层服务",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "链路层可能提供成帧、链路访问、MAC寻址、可靠交付、流量控制、差错检测与纠正以及半双工/全双工等服务，但具体协议不一定全部实现。",
+    "keywords": [
+      "成帧",
+      "链路访问",
+      "可靠交付",
+      "流量控制",
+      "差错检测"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_nic",
+    "name": "网络接口卡",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "网卡NIC通常以硬件、固件和驱动组合实现链路层与物理层功能，负责发送端封装、差错位生成，以及接收端检查和解封装。",
+    "keywords": [
+      "NIC",
+      "网卡",
+      "固件",
+      "链路层实现"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_error_detection",
+    "name": "差错检测与纠正",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "发送端在数据D后附加冗余的EDC，接收端按相同规则检测错误。更长的EDC通常有更强检测能力，但会增加传输开销，且检测并非百分之百可靠。",
+    "keywords": [
+      "EDC",
+      "差错检测",
+      "差错纠正",
+      "冗余"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_parity",
+    "name": "奇偶校验",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "一维奇偶校验通过增加校验位检测单bit错误；二维奇偶校验对行列分别校验，可以定位并纠正单bit错误。",
+    "keywords": [
+      "奇偶校验",
+      "一维奇偶校验",
+      "二维奇偶校验",
+      "单比特错误"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_crc",
+    "name": "循环冗余校验",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "CRC把数据D左移r位后用生成多项式G做模二除法，余数R作为校验位。接收端用G除收到的比特串，余数非零表示检测到错误。",
+    "keywords": [
+      "CRC",
+      "生成多项式",
+      "模二除法",
+      "异或",
+      "余数"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_multiple_access_link",
+    "name": "多路访问链路",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "链路分为点对点链路和广播链路。广播链路上多个节点共享介质，同时发送会产生干扰或冲突，因此需要多路访问协议协调。",
+    "keywords": [
+      "点对点链路",
+      "广播链路",
+      "共享介质",
+      "冲突"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_ideal_mac",
+    "name": "理想多路访问协议",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "理想MAC协议应让单个活跃节点获得速率R，M个活跃节点平均各得R/M，同时做到分布式、无需全局时钟并保持简单低开销。",
+    "keywords": [
+      "理想MAC",
+      "R/M",
+      "分布式",
+      "公平性"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_mac_taxonomy",
+    "name": "MAC协议分类",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "MAC协议分为信道划分、随机访问和轮流访问三类：分别通过预分配资源、竞争后恢复以及轮流授权来共享广播信道。",
+    "keywords": [
+      "MAC协议",
+      "信道划分",
+      "随机访问",
+      "轮流访问"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_channel_partitioning_mac",
+    "name": "信道划分MAC",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "信道划分MAC把时间、频率或码空间预先分配给节点。TDMA分配固定时隙，FDMA分配固定频带，高负载时公平但低负载时可能浪费资源。",
+    "keywords": [
+      "信道划分MAC",
+      "TDMA",
+      "FDMA",
+      "资源预分配"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_slotted_aloha",
+    "name": "时隙ALOHA",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "时隙ALOHA要求节点只在时隙开始发送；冲突后每个节点以概率p重传。大量节点持续发送时，最大信道利用率约为1/e，即37%。",
+    "keywords": [
+      "时隙ALOHA",
+      "随机重传",
+      "概率p",
+      "37%"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_pure_aloha",
+    "name": "纯ALOHA",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "纯ALOHA不划分时隙，节点有帧就立即发送，任何落在两倍帧发送时间窗口内的其他发送都可能冲突，最大效率约18%。",
+    "keywords": [
+      "纯ALOHA",
+      "无时隙",
+      "冲突窗口",
+      "18%"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_csma",
+    "name": "CSMA载波侦听多路访问",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "CSMA在发送前先侦听信道，空闲才发送、忙则推迟。但传播时延会让两个节点都误以为信道空闲，所以仍可能碰撞。",
+    "keywords": [
+      "CSMA",
+      "载波侦听",
+      "传播时延",
+      "碰撞"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_csma_cd",
+    "name": "CSMA/CD",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "CSMA/CD在载波侦听基础上边发边检测碰撞，检测到碰撞就中止并发送强化信号。为检测最坏碰撞，帧发送时间必须不小于往返传播时延。",
+    "keywords": [
+      "CSMA/CD",
+      "碰撞检测",
+      "最小帧长",
+      "往返传播时延"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_binary_exponential_backoff",
+    "name": "二进制指数退避",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "发生第m次碰撞后，节点从0到2^m-1中随机选K，等待K×512 bit times后重试。碰撞越多，随机等待范围越大。",
+    "keywords": [
+      "二进制指数退避",
+      "随机退避",
+      "512 bit times",
+      "碰撞"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_polling",
+    "name": "轮询协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "轮询由中心控制器依次邀请节点发送，不会发生竞争碰撞，但存在轮询开销、等待时延和中心控制器单点故障。",
+    "keywords": [
+      "Polling",
+      "轮询",
+      "中心控制器",
+      "单点故障"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch3_token_passing",
+    "name": "令牌传递",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "数据链路层",
+    "description": "令牌传递让节点只有拿到token时才能发送，发送后再把令牌交给下一节点。它避免碰撞，但有令牌开销、等待时延和令牌丢失问题。",
+    "keywords": [
+      "Token Passing",
+      "令牌",
+      "轮流发送",
+      "令牌丢失"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_lan",
+    "name": "局域网",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "局域网在有限地理范围内连接主机和网络设备，链路层通过MAC地址、以太网帧和交换机完成同一LAN内的数据交付。",
+    "keywords": [
+      "LAN",
+      "局域网",
+      "MAC地址",
+      "以太网",
+      "交换机"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_mac_address",
+    "name": "MAC地址",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "MAC地址是链路层接口地址，通常为48 bit，用于在同一子网内把帧送到物理连接的接口。它与网卡接口绑定，通常不随网络位置变化。",
+    "keywords": [
+      "MAC地址",
+      "48 bit",
+      "链路层地址",
+      "接口"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_arp",
+    "name": "ARP地址解析协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "ARP用于在同一子网内根据IP地址查询MAC地址。请求以广播帧发送，目标主机用单播回复自己的MAC地址。",
+    "keywords": [
+      "ARP",
+      "IP地址",
+      "MAC地址",
+      "广播请求",
+      "单播回复"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_arp_table",
+    "name": "ARP表",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "ARP表缓存IP地址、MAC地址和TTL的映射。条目到期后被遗忘，避免网络变化后长期使用过时映射。",
+    "keywords": [
+      "ARP表",
+      "地址映射",
+      "TTL",
+      "缓存"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_cross_subnet_delivery",
+    "name": "跨子网帧交付",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "跨子网发送时，IP源和目的地址端到端保持不变，但每经过一段链路，路由器都会去掉旧帧并用下一跳接口的MAC地址重新封装。",
+    "keywords": [
+      "跨子网",
+      "下一跳",
+      "IP地址",
+      "MAC地址",
+      "重新封装"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_ethernet",
+    "name": "以太网",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "以太网是主流有线局域网技术，具有实现简单、成本低和速率演进快等特点。现代以太网通常采用中心交换机连接各主机。",
+    "keywords": [
+      "Ethernet",
+      "以太网",
+      "有线局域网",
+      "IEEE 802.3"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_ethernet_topology",
+    "name": "以太网物理拓扑",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "早期以太网常用共享总线，所有节点处在同一碰撞域；现代以太网采用交换式星形结构，每条主机到交换机的链路形成独立碰撞域。",
+    "keywords": [
+      "总线拓扑",
+      "交换式以太网",
+      "星形拓扑",
+      "碰撞域"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_ethernet_frame",
+    "name": "以太网帧格式",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "以太网帧包含前导码、目的MAC、源MAC、类型、数据和CRC。前导码用于时钟同步，类型字段标识上层协议，CRC用于差错检测。",
+    "keywords": [
+      "以太网帧",
+      "前导码",
+      "MAC地址",
+      "类型字段",
+      "CRC"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_ethernet_service_model",
+    "name": "以太网服务模型",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "以太网无连接且不可靠，网卡之间不握手，也不发送ACK或NAK。丢失帧只有在上层协议提供可靠传输时才可能恢复。",
+    "keywords": [
+      "无连接",
+      "不可靠",
+      "ACK",
+      "NAK",
+      "CSMA/CD"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_ethernet_standards",
+    "name": "IEEE 802.3以太网标准",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "不同802.3以太网标准可以使用不同速率和物理介质，但共享相同的MAC思想与基本帧格式。",
+    "keywords": [
+      "IEEE 802.3",
+      "以太网标准",
+      "MAC协议",
+      "物理介质"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_ethernet_switch",
+    "name": "以太网交换机",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "交换机是透明、即插即用的链路层设备，存储并转发以太网帧，根据目的MAC地址选择一个或多个输出接口。",
+    "keywords": [
+      "交换机",
+      "链路层设备",
+      "存储转发",
+      "透明",
+      "即插即用"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_collision_domain",
+    "name": "碰撞域与全双工交换",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "交换式以太网中每条端口链路都是独立碰撞域，主机可与交换机全双工通信，不同端口对可以并行传输；竞争同一输出端口的帧仍需排队。",
+    "keywords": [
+      "碰撞域",
+      "全双工",
+      "并行传输",
+      "输出端口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_switch_table",
+    "name": "交换机转发表",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "交换机转发表保存主机MAC地址、到达该主机的接口以及时间戳，用于决定帧的定向转发、过滤或泛洪。",
+    "keywords": [
+      "交换机转发表",
+      "MAC地址",
+      "接口号",
+      "时间戳"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_switch_self_learning",
+    "name": "交换机自学习",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "交换机收到帧时，根据源MAC地址和进入接口学习发送主机的位置，并更新转发表；不需要额外的路由协议或人工配置。",
+    "keywords": [
+      "自学习",
+      "源MAC",
+      "进入接口",
+      "转发表更新"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_switch_filter_forward",
+    "name": "交换机过滤、转发与泛洪",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "目的MAC已知且不在来向接口时定向转发；与来向接口同侧时过滤丢弃；目的MAC未知时除来向接口外向其他接口泛洪。",
+    "keywords": [
+      "过滤",
+      "定向转发",
+      "泛洪",
+      "未知目的MAC"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_switch_interconnection",
+    "name": "多交换机互联",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "多个自学习交换机可以级联，学习机制会沿交换网络自动建立到远端主机的转发表项，不需要主机感知中间交换机。",
+    "keywords": [
+      "交换机互联",
+      "级联",
+      "自学习",
+      "远端主机"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_switch_vs_router",
+    "name": "交换机与路由器对比",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "两者都采用存储转发并维护转发表，但交换机检查链路层首部、按MAC地址自学习；路由器检查网络层首部、按IP地址和路由算法计算路径。",
+    "keywords": [
+      "交换机",
+      "路由器",
+      "MAC地址",
+      "IP地址",
+      "转发表"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_vlan",
+    "name": "虚拟局域网",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "VLAN在同一物理交换基础设施上划分多个逻辑广播域，以减少广播范围并改善管理、安全和隐私；不同VLAN间通信需要网络层路由。",
+    "keywords": [
+      "VLAN",
+      "逻辑局域网",
+      "广播域",
+      "流量隔离"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_port_based_vlan",
+    "name": "基于端口的VLAN",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "基于端口的VLAN由交换机管理软件把端口分组，同组端口属于同一逻辑LAN。端口也可以动态改变VLAN归属。",
+    "keywords": [
+      "端口VLAN",
+      "端口分组",
+      "动态成员",
+      "流量隔离"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_vlan_trunk_8021q",
+    "name": "VLAN Trunk与802.1Q",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "Trunk链路在交换机之间承载多个VLAN的帧。802.1Q为帧加入包含VLAN ID和优先级的标签，并因帧内容变化重新计算CRC。",
+    "keywords": [
+      "trunk",
+      "802.1Q",
+      "VLAN ID",
+      "VLAN标签",
+      "CRC"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_datacenter_network",
+    "name": "数据中心网络",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "数据中心网络连接大量服务器、机架顶部交换机和更高层交换机，需要同时处理大规模请求、可靠性、负载均衡和网络瓶颈。",
+    "keywords": [
+      "数据中心",
+      "服务器机架",
+      "TOR交换机",
+      "网络瓶颈"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_datacenter_multipath",
+    "name": "数据中心多路径",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "数据中心交换机和机架之间通常提供多条可选路径，以并行利用带宽提高吞吐量，并在链路或设备故障时通过冗余提高可靠性。",
+    "keywords": [
+      "多路径",
+      "吞吐量",
+      "冗余",
+      "可靠性"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_load_balancer",
+    "name": "负载均衡器",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "负载均衡器接收外部客户端请求，选择数据中心内的服务器或服务器组处理，并把结果返回给客户端，同时隐藏内部结构。",
+    "keywords": [
+      "负载均衡器",
+      "应用层路由",
+      "服务器",
+      "工作负载"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch4_web_request_lifecycle",
+    "name": "Web请求的跨层工作流程",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "局域网原理",
+    "description": "主机接入网络后依次使用DHCP获取配置、ARP解析下一跳MAC、DNS解析域名、TCP建立连接并通过HTTP交换网页，过程中数据逐层封装和转发。",
+    "keywords": [
+      "DHCP",
+      "ARP",
+      "DNS",
+      "TCP",
+      "HTTP",
+      "跨层流程"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
   }
 ]

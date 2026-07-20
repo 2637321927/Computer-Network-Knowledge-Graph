@@ -1,0 +1,3417 @@
+{
+  "scope": "基础篇：计算机网络概述、物理层、数据链路层、局域网原理",
+  "generation": {
+    "script": "scripts/generate_foundation_graph.py",
+    "managed_node_prefixes": [
+      "ch1_",
+      "ch2_",
+      "ch3_",
+      "ch4_"
+    ],
+    "managed_edge_prefix": "edge_fd_",
+    "node_count": 86,
+    "edge_count": 118
+  },
+  "source_catalog": {
+    "一、导论.md": "<user-home>/Desktop/大二下笔记/已考完/计算机网络笔记/一、导论.md",
+    "二、物理层.md": "<user-home>/Desktop/大二下笔记/已考完/计算机网络笔记/二、物理层.md",
+    "四、链路层和局域网.md": "<user-home>/Desktop/大二下笔记/已考完/计算机网络笔记/四、链路层和局域网.md",
+    "Chapter_1_v8.2.pptx": "<user-home>/Documents/WeChat Files/.../2026-03/Chapter_1_v8.2.pptx",
+    "Physical_Layer20260320.pptx": "<user-home>/Documents/WeChat Files/.../2026-03/Physical_Layer20260320.pptx",
+    "Link_Layer20260320 (2).pptx": "<user-home>/Documents/WeChat Files/.../2026-04/Link_Layer20260320 (2).pptx"
+  },
+  "nodes": {
+    "ch1_protocol": {
+      "notes": [
+        "一、导论.md#协议"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:7-8"
+      ]
+    },
+    "ch1_internet_overview": {
+      "notes": [
+        "一、导论.md#网络三层结构"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:4-6"
+      ]
+    },
+    "ch1_network_edge": {
+      "notes": [
+        "一、导论.md#网络三层结构"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:10-12"
+      ]
+    },
+    "ch1_access_network": {
+      "notes": [
+        "一、导论.md#接入网络和物理介质"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:13-20"
+      ]
+    },
+    "ch1_physical_media": {
+      "notes": [
+        "一、导论.md#物理介质"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:22-24"
+      ]
+    },
+    "ch1_network_core": {
+      "notes": [
+        "一、导论.md#网络核心"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:26-29"
+      ]
+    },
+    "ch1_forwarding": {
+      "notes": [
+        "一、导论.md#网络核心两个关键功能"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:27,29"
+      ]
+    },
+    "ch1_routing": {
+      "notes": [
+        "一、导论.md#网络核心两个关键功能"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:27-28"
+      ]
+    },
+    "ch1_packet_switching": {
+      "notes": [
+        "一、导论.md#分组交换"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:26,30-32"
+      ]
+    },
+    "ch1_store_and_forward": {
+      "notes": [
+        "一、导论.md#分组交换"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:30"
+      ]
+    },
+    "ch1_queueing_packet_loss": {
+      "notes": [
+        "一、导论.md#分组交换"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:31-32,47,55"
+      ]
+    },
+    "ch1_circuit_switching": {
+      "notes": [
+        "一、导论.md#电路交换"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:33-34"
+      ]
+    },
+    "ch1_internet_isp_structure": {
+      "notes": [
+        "一、导论.md#Internet 结构"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:37-45"
+      ]
+    },
+    "ch1_nodal_delay": {
+      "notes": [
+        "一、导论.md#分组延时的四种来源"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:48-51"
+      ]
+    },
+    "ch1_traffic_intensity": {
+      "notes": [
+        "一、导论.md#排队延时"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:52"
+      ]
+    },
+    "ch1_throughput_bottleneck": {
+      "notes": [
+        "一、导论.md#吞吐量"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:56-58"
+      ]
+    },
+    "ch1_network_security": {
+      "notes": [
+        "一、导论.md#网络安全"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:60-65"
+      ]
+    },
+    "ch1_internet_protocol_stack": {
+      "notes": [
+        "一、导论.md#协议层和参考模型"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:67-71"
+      ]
+    },
+    "ch1_encapsulation": {
+      "notes": [
+        "一、导论.md#封装"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:72-77,89"
+      ]
+    },
+    "ch1_osi_reference_model": {
+      "notes": [
+        "一、导论.md#ISO/OSI模型"
+      ],
+      "slides": [
+        "Chapter_1_v8.2.pptx:88"
+      ]
+    },
+    "ch2_physical_layer": {
+      "notes": [
+        "二、物理层.md#基本概念"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:3"
+      ]
+    },
+    "ch2_interface_characteristics": {
+      "notes": [
+        "二、物理层.md#主要任务"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:4"
+      ]
+    },
+    "ch2_data_signal_system": {
+      "notes": [
+        "二、物理层.md#数据通信基本知识"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:5,7"
+      ]
+    },
+    "ch2_communication_modes": {
+      "notes": [
+        "二、物理层.md#数据通信基本知识"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:8"
+      ]
+    },
+    "ch2_baseband_signal_modulation": {
+      "notes": [
+        "二、物理层.md#调制"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:8-9"
+      ]
+    },
+    "ch2_line_coding": {
+      "notes": [],
+      "slides": [
+        "Physical_Layer20260320.pptx:10"
+      ]
+    },
+    "ch2_bandpass_modulation": {
+      "notes": [
+        "二、物理层.md#调制"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:9,11"
+      ]
+    },
+    "ch2_qam": {
+      "notes": [
+        "二、物理层.md#调制"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:12"
+      ]
+    },
+    "ch2_channel_distortion": {
+      "notes": [
+        "二、物理层.md#信道的极限容量"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:13-15"
+      ]
+    },
+    "ch2_nyquist_criterion": {
+      "notes": [],
+      "slides": [
+        "Physical_Layer20260320.pptx:15"
+      ]
+    },
+    "ch2_snr": {
+      "notes": [
+        "二、物理层.md#信道的极限容量"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:16"
+      ]
+    },
+    "ch2_shannon_capacity": {
+      "notes": [
+        "二、物理层.md#香农公式"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:17-18"
+      ]
+    },
+    "ch2_transmission_media": {
+      "notes": [
+        "二、物理层.md#物理层下的传输媒介"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:20-21"
+      ]
+    },
+    "ch2_guided_media": {
+      "notes": [
+        "二、物理层.md#物理层下的传输媒介"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:22-26"
+      ]
+    },
+    "ch2_unguided_media": {
+      "notes": [
+        "二、物理层.md#物理层下的传输媒介"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:27-28"
+      ]
+    },
+    "ch2_multiplexing": {
+      "notes": [
+        "二、物理层.md#信道复用技术"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:30"
+      ]
+    },
+    "ch2_fdm": {
+      "notes": [
+        "二、物理层.md#FDM 频分复用"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:31"
+      ]
+    },
+    "ch2_tdm": {
+      "notes": [
+        "二、物理层.md#TDM 时分复用"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:32-33"
+      ]
+    },
+    "ch2_cdm": {
+      "notes": [
+        "二、物理层.md#CDM 码分复用"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:34-36"
+      ]
+    },
+    "ch2_broadband_access": {
+      "notes": [
+        "二、物理层.md#宽带接入技术"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:38"
+      ]
+    },
+    "ch2_adsl": {
+      "notes": [
+        "二、物理层.md#ADSL 非对称数字用户线路"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:39-45"
+      ]
+    },
+    "ch2_dmt": {
+      "notes": [
+        "二、物理层.md#DMT"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:42-44"
+      ]
+    },
+    "ch2_hfc_cable_modem": {
+      "notes": [
+        "二、物理层.md#HFC 混合光纤同轴网络"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:47-50"
+      ]
+    },
+    "ch2_fttx": {
+      "notes": [
+        "二、物理层.md#FFx"
+      ],
+      "slides": [
+        "Physical_Layer20260320.pptx:51"
+      ]
+    },
+    "ch3_link_layer": {
+      "notes": [
+        "四、链路层和局域网.md#简介"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:4-6"
+      ]
+    },
+    "ch3_frame": {
+      "notes": [
+        "四、链路层和局域网.md#链路层实现"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:4,7,10"
+      ]
+    },
+    "ch3_link_services": {
+      "notes": [
+        "四、链路层和局域网.md#链路层服务"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:7-8"
+      ]
+    },
+    "ch3_nic": {
+      "notes": [
+        "四、链路层和局域网.md#链路层实现"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:9-10"
+      ]
+    },
+    "ch3_error_detection": {
+      "notes": [
+        "四、链路层和局域网.md#错误检测"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:12"
+      ]
+    },
+    "ch3_parity": {
+      "notes": [
+        "四、链路层和局域网.md#奇偶校验"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:13"
+      ]
+    },
+    "ch3_crc": {
+      "notes": [
+        "四、链路层和局域网.md#CRC：循环冗余检测"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:14-15"
+      ]
+    },
+    "ch3_multiple_access_link": {
+      "notes": [
+        "四、链路层和局域网.md#多路访问协议"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:17-18"
+      ]
+    },
+    "ch3_ideal_mac": {
+      "notes": [
+        "四、链路层和局域网.md#理想多路访问协议"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:19"
+      ]
+    },
+    "ch3_mac_taxonomy": {
+      "notes": [
+        "四、链路层和局域网.md#MAC 协议"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:20,36"
+      ]
+    },
+    "ch3_channel_partitioning_mac": {
+      "notes": [
+        "四、链路层和局域网.md#信道划分 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:21-22"
+      ]
+    },
+    "ch3_slotted_aloha": {
+      "notes": [
+        "四、链路层和局域网.md#随机访问 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:24-26"
+      ]
+    },
+    "ch3_pure_aloha": {
+      "notes": [
+        "四、链路层和局域网.md#随机访问 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:27,93"
+      ]
+    },
+    "ch3_csma": {
+      "notes": [
+        "四、链路层和局域网.md#随机访问 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:28-29"
+      ]
+    },
+    "ch3_csma_cd": {
+      "notes": [
+        "四、链路层和局域网.md#随机访问 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:28-32"
+      ]
+    },
+    "ch3_binary_exponential_backoff": {
+      "notes": [
+        "四、链路层和局域网.md#随机访问 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:31"
+      ]
+    },
+    "ch3_polling": {
+      "notes": [
+        "四、链路层和局域网.md#轮流协议 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:33-34"
+      ]
+    },
+    "ch3_token_passing": {
+      "notes": [
+        "四、链路层和局域网.md#轮流协议 MAC"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:33,35"
+      ]
+    },
+    "ch4_lan": {
+      "notes": [
+        "四、链路层和局域网.md#局域网：LAN"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:37-40"
+      ]
+    },
+    "ch4_mac_address": {
+      "notes": [
+        "四、链路层和局域网.md#MAC 地址"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:38-40"
+      ]
+    },
+    "ch4_arp": {
+      "notes": [
+        "四、链路层和局域网.md#ARP：地址解析协议"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:41-44"
+      ]
+    },
+    "ch4_arp_table": {
+      "notes": [
+        "四、链路层和局域网.md#ARP：地址解析协议"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:41"
+      ]
+    },
+    "ch4_cross_subnet_delivery": {
+      "notes": [
+        "四、链路层和局域网.md#跨子网传输"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:45-50"
+      ]
+    },
+    "ch4_ethernet": {
+      "notes": [
+        "四、链路层和局域网.md#Ethernet：以太网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:52"
+      ]
+    },
+    "ch4_ethernet_topology": {
+      "notes": [
+        "四、链路层和局域网.md#Ethernet：以太网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:53"
+      ]
+    },
+    "ch4_ethernet_frame": {
+      "notes": [
+        "四、链路层和局域网.md#Ethernet 帧格式"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:54-55"
+      ]
+    },
+    "ch4_ethernet_service_model": {
+      "notes": [
+        "四、链路层和局域网.md#Ethernet：以太网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:56"
+      ]
+    },
+    "ch4_ethernet_standards": {
+      "notes": [
+        "四、链路层和局域网.md#Ethernet：以太网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:57"
+      ]
+    },
+    "ch4_ethernet_switch": {
+      "notes": [
+        "四、链路层和局域网.md#交换机"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:59"
+      ]
+    },
+    "ch4_collision_domain": {
+      "notes": [
+        "四、链路层和局域网.md#交换机"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:60-61"
+      ]
+    },
+    "ch4_switch_table": {
+      "notes": [
+        "四、链路层和局域网.md#交换机转发表"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:62"
+      ]
+    },
+    "ch4_switch_self_learning": {
+      "notes": [
+        "四、链路层和局域网.md#交换机转发表"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:63"
+      ]
+    },
+    "ch4_switch_filter_forward": {
+      "notes": [
+        "四、链路层和局域网.md#帧过滤 / 转发"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:64-65"
+      ]
+    },
+    "ch4_switch_interconnection": {
+      "notes": [
+        "四、链路层和局域网.md#交换机"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:66-67"
+      ]
+    },
+    "ch4_switch_vs_router": {
+      "notes": [
+        "四、链路层和局域网.md#交换机"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:68"
+      ]
+    },
+    "ch4_vlan": {
+      "notes": [
+        "四、链路层和局域网.md#VLAN 虚拟局域网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:70-73"
+      ]
+    },
+    "ch4_port_based_vlan": {
+      "notes": [
+        "四、链路层和局域网.md#VLAN 虚拟局域网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:72-73"
+      ]
+    },
+    "ch4_vlan_trunk_8021q": {
+      "notes": [
+        "四、链路层和局域网.md#VLAN 虚拟局域网"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:74-75"
+      ]
+    },
+    "ch4_datacenter_network": {
+      "notes": [
+        "四、链路层和局域网.md#数据中心网络"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:77-79"
+      ]
+    },
+    "ch4_datacenter_multipath": {
+      "notes": [
+        "四、链路层和局域网.md#多路径"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:80"
+      ]
+    },
+    "ch4_load_balancer": {
+      "notes": [
+        "四、链路层和局域网.md#负载均衡器"
+      ],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:81"
+      ]
+    },
+    "ch4_web_request_lifecycle": {
+      "notes": [],
+      "slides": [
+        "Link_Layer20260320 (2).pptx:83-90"
+      ]
+    }
+  },
+  "edges": {
+    "edge_fd_001": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_protocol",
+      "relation": "包含",
+      "rationale": "Internet中的通信活动由协议约束",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:7-8"
+        }
+      ]
+    },
+    "edge_fd_002": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_network_edge",
+      "relation": "包含",
+      "rationale": "Internet结构包含网络边缘",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:10-12"
+        }
+      ]
+    },
+    "edge_fd_003": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_access_network",
+      "relation": "包含",
+      "rationale": "Internet结构包含接入网络",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#接入网络和物理介质"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:13-20"
+        }
+      ]
+    },
+    "edge_fd_004": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_network_core",
+      "relation": "包含",
+      "rationale": "Internet结构包含网络核心",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26-29"
+        }
+      ]
+    },
+    "edge_fd_005": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_internet_isp_structure",
+      "relation": "包含",
+      "rationale": "Internet由多层ISP和内容网络互联",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#Internet 结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:37-45"
+        }
+      ]
+    },
+    "edge_fd_006": {
+      "source": "ch1_access_network",
+      "target": "ch1_physical_media",
+      "relation": "包含",
+      "rationale": "接入网络通过有线或无线物理介质连接端系统",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#接入网络和物理介质"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:13-20"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#物理介质"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:22-24"
+        }
+      ]
+    },
+    "edge_fd_007": {
+      "source": "ch1_network_core",
+      "target": "ch1_forwarding",
+      "relation": "包含",
+      "rationale": "网络核心中的路由器执行局部转发",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26-29"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心两个关键功能"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:27,29"
+        }
+      ]
+    },
+    "edge_fd_008": {
+      "source": "ch1_network_core",
+      "target": "ch1_routing",
+      "relation": "包含",
+      "rationale": "网络核心通过路由算法选择端到端路径",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26-29"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心两个关键功能"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:27-28"
+        }
+      ]
+    },
+    "edge_fd_009": {
+      "source": "ch1_forwarding",
+      "target": "ch1_routing",
+      "relation": "对比",
+      "rationale": "转发是局部按表移动，路由是全局路径计算",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心两个关键功能"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:27,29"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:27-28"
+        }
+      ]
+    },
+    "edge_fd_010": {
+      "source": "ch1_network_core",
+      "target": "ch1_packet_switching",
+      "relation": "包含",
+      "rationale": "Internet核心主要采用分组交换",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26-29"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26,30-32"
+        }
+      ]
+    },
+    "edge_fd_011": {
+      "source": "ch1_packet_switching",
+      "target": "ch1_store_and_forward",
+      "relation": "包含",
+      "rationale": "分组交换路由器采用存储转发",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26,30-32"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:30"
+        }
+      ]
+    },
+    "edge_fd_012": {
+      "source": "ch1_packet_switching",
+      "target": "ch1_queueing_packet_loss",
+      "relation": "包含",
+      "rationale": "分组交换在拥塞时出现排队和丢包",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26,30-32"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:31-32,47,55"
+        }
+      ]
+    },
+    "edge_fd_013": {
+      "source": "ch1_packet_switching",
+      "target": "ch1_circuit_switching",
+      "relation": "对比",
+      "rationale": "分组交换共享资源，电路交换预留专用资源",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26,30-32"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#电路交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:33-34"
+        }
+      ]
+    },
+    "edge_fd_014": {
+      "source": "ch1_store_and_forward",
+      "target": "ch1_nodal_delay",
+      "relation": "应用于",
+      "rationale": "存储转发产生链路传输时延",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:30"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组延时的四种来源"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:48-51"
+        }
+      ]
+    },
+    "edge_fd_015": {
+      "source": "ch1_queueing_packet_loss",
+      "target": "ch1_nodal_delay",
+      "relation": "应用于",
+      "rationale": "排队是结点总时延的重要组成",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:31-32,47,55"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组延时的四种来源"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:48-51"
+        }
+      ]
+    },
+    "edge_fd_016": {
+      "source": "ch1_traffic_intensity",
+      "target": "ch1_queueing_packet_loss",
+      "relation": "前置知识",
+      "rationale": "流量强度决定排队时延和拥塞趋势",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#排队延时"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:52"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:31-32,47,55"
+        }
+      ]
+    },
+    "edge_fd_017": {
+      "source": "ch1_physical_media",
+      "target": "ch1_nodal_delay",
+      "relation": "应用于",
+      "rationale": "链路距离和信号速度决定传播时延",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#物理介质"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:22-24"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组延时的四种来源"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:48-51"
+        }
+      ]
+    },
+    "edge_fd_018": {
+      "source": "ch1_packet_switching",
+      "target": "ch1_throughput_bottleneck",
+      "relation": "应用于",
+      "rationale": "共享链路和瓶颈限制端到端吞吐量",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#分组交换"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:26,30-32"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#吞吐量"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:56-58"
+        }
+      ]
+    },
+    "edge_fd_019": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_network_security",
+      "relation": "包含",
+      "rationale": "Internet体系需要考虑攻击与防御",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络安全"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:60-65"
+        }
+      ]
+    },
+    "edge_fd_020": {
+      "source": "ch1_internet_overview",
+      "target": "ch1_internet_protocol_stack",
+      "relation": "包含",
+      "rationale": "Internet使用分层协议栈组织复杂功能",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络三层结构"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议层和参考模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:67-71"
+        }
+      ]
+    },
+    "edge_fd_021": {
+      "source": "ch1_protocol",
+      "target": "ch1_internet_protocol_stack",
+      "relation": "前置知识",
+      "rationale": "理解协议是理解协议分层的前提",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:7-8"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议层和参考模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:67-71"
+        }
+      ]
+    },
+    "edge_fd_022": {
+      "source": "ch1_internet_protocol_stack",
+      "target": "ch1_encapsulation",
+      "relation": "包含",
+      "rationale": "分层通信通过逐层封装实现",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议层和参考模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:67-71"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#封装"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:72-77,89"
+        }
+      ]
+    },
+    "edge_fd_023": {
+      "source": "ch1_internet_protocol_stack",
+      "target": "ch1_osi_reference_model",
+      "relation": "对比",
+      "rationale": "Internet五层栈与OSI七层模型层次不同",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议层和参考模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:67-71"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#ISO/OSI模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:88"
+        }
+      ]
+    },
+    "edge_fd_024": {
+      "source": "ch1_network_security",
+      "target": "ch1_internet_protocol_stack",
+      "relation": "应用于",
+      "rationale": "安全机制需要在协议栈各层考虑",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络安全"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:60-65"
+        },
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议层和参考模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:67-71"
+        }
+      ]
+    },
+    "edge_fd_025": {
+      "source": "ch1_physical_media",
+      "target": "ch2_physical_layer",
+      "relation": "前置知识",
+      "rationale": "概述中的物理介质引出物理层的详细机制",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#物理介质"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:22-24"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#基本概念"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:3"
+        }
+      ]
+    },
+    "edge_fd_026": {
+      "source": "ch1_access_network",
+      "target": "ch2_broadband_access",
+      "relation": "前置知识",
+      "rationale": "接入网络概念是学习宽带接入技术的基础",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#接入网络和物理介质"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:13-20"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#宽带接入技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:38"
+        }
+      ]
+    },
+    "edge_fd_027": {
+      "source": "ch2_physical_layer",
+      "target": "ch2_interface_characteristics",
+      "relation": "包含",
+      "rationale": "物理层协议规定四类接口特性",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#基本概念"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:3"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#主要任务"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:4"
+        }
+      ]
+    },
+    "edge_fd_028": {
+      "source": "ch2_physical_layer",
+      "target": "ch2_data_signal_system",
+      "relation": "包含",
+      "rationale": "物理层处理数据与信号的转换和传输",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#基本概念"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:3"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#数据通信基本知识"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:5,7"
+        }
+      ]
+    },
+    "edge_fd_029": {
+      "source": "ch2_data_signal_system",
+      "target": "ch2_communication_modes",
+      "relation": "包含",
+      "rationale": "通信系统可以采用单工、半双工或全双工",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#数据通信基本知识"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:5,7"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:8"
+        }
+      ]
+    },
+    "edge_fd_030": {
+      "source": "ch2_data_signal_system",
+      "target": "ch2_baseband_signal_modulation",
+      "relation": "包含",
+      "rationale": "信源产生的基带信号需要适配信道",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#数据通信基本知识"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:5,7"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#调制"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:8-9"
+        }
+      ]
+    },
+    "edge_fd_031": {
+      "source": "ch2_baseband_signal_modulation",
+      "target": "ch2_line_coding",
+      "relation": "包含",
+      "rationale": "线路编码是典型基带调制方式",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#调制"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:8-9"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:10"
+        }
+      ]
+    },
+    "edge_fd_032": {
+      "source": "ch2_baseband_signal_modulation",
+      "target": "ch2_bandpass_modulation",
+      "relation": "对比",
+      "rationale": "基带调制改变波形，带通调制搬移频谱",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#调制"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:8-9"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:9,11"
+        }
+      ]
+    },
+    "edge_fd_033": {
+      "source": "ch2_bandpass_modulation",
+      "target": "ch2_qam",
+      "relation": "包含",
+      "rationale": "QAM是同时利用振幅和相位的带通调制",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#调制"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:9,11"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:12"
+        }
+      ]
+    },
+    "edge_fd_034": {
+      "source": "ch2_channel_distortion",
+      "target": "ch2_nyquist_criterion",
+      "relation": "包含",
+      "rationale": "奈奎斯特准则描述带宽限制下的码元速率上限",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道的极限容量"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:13-15"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:15"
+        }
+      ]
+    },
+    "edge_fd_035": {
+      "source": "ch2_channel_distortion",
+      "target": "ch2_snr",
+      "relation": "包含",
+      "rationale": "噪声强弱是影响接收判决的重要因素",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道的极限容量"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:13-15"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:16"
+        }
+      ]
+    },
+    "edge_fd_036": {
+      "source": "ch2_snr",
+      "target": "ch2_shannon_capacity",
+      "relation": "前置知识",
+      "rationale": "香农公式使用线性信噪比S/N计算容量",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道的极限容量"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:16"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#香农公式"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:17-18"
+        }
+      ]
+    },
+    "edge_fd_037": {
+      "source": "ch2_nyquist_criterion",
+      "target": "ch2_shannon_capacity",
+      "relation": "对比",
+      "rationale": "奈奎斯特关注无噪声码元上限，香农关注有噪声信息容量",
+      "evidence": [
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:15"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#香农公式"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:17-18"
+        }
+      ]
+    },
+    "edge_fd_038": {
+      "source": "ch2_physical_layer",
+      "target": "ch2_transmission_media",
+      "relation": "包含",
+      "rationale": "物理层bit依赖传输媒介传播",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#基本概念"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:3"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:20-21"
+        }
+      ]
+    },
+    "edge_fd_039": {
+      "source": "ch2_transmission_media",
+      "target": "ch2_guided_media",
+      "relation": "包含",
+      "rationale": "传输媒介包括导向介质",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:20-21"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:22-26"
+        }
+      ]
+    },
+    "edge_fd_040": {
+      "source": "ch2_transmission_media",
+      "target": "ch2_unguided_media",
+      "relation": "包含",
+      "rationale": "传输媒介包括非导向介质",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:20-21"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:27-28"
+        }
+      ]
+    },
+    "edge_fd_041": {
+      "source": "ch2_physical_layer",
+      "target": "ch2_multiplexing",
+      "relation": "包含",
+      "rationale": "物理层使用复用技术共享信道",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#基本概念"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:3"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道复用技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:30"
+        }
+      ]
+    },
+    "edge_fd_042": {
+      "source": "ch2_multiplexing",
+      "target": "ch2_fdm",
+      "relation": "包含",
+      "rationale": "频分复用按频带区分用户",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道复用技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:30"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#FDM 频分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:31"
+        }
+      ]
+    },
+    "edge_fd_043": {
+      "source": "ch2_multiplexing",
+      "target": "ch2_tdm",
+      "relation": "包含",
+      "rationale": "时分复用按周期时隙区分用户",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道复用技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:30"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#TDM 时分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:32-33"
+        }
+      ]
+    },
+    "edge_fd_044": {
+      "source": "ch2_multiplexing",
+      "target": "ch2_cdm",
+      "relation": "包含",
+      "rationale": "码分复用按正交码片区分用户",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#信道复用技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:30"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#CDM 码分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:34-36"
+        }
+      ]
+    },
+    "edge_fd_045": {
+      "source": "ch2_fdm",
+      "target": "ch2_tdm",
+      "relation": "对比",
+      "rationale": "FDM让用户同时占不同频带，TDM让用户轮流占同一频带",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#FDM 频分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:31"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#TDM 时分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:32-33"
+        }
+      ]
+    },
+    "edge_fd_046": {
+      "source": "ch2_fdm",
+      "target": "ch2_dmt",
+      "relation": "前置知识",
+      "rationale": "DMT以频分方式划分大量子载波",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#FDM 频分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:31"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#DMT"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:42-44"
+        }
+      ]
+    },
+    "edge_fd_047": {
+      "source": "ch2_broadband_access",
+      "target": "ch2_adsl",
+      "relation": "包含",
+      "rationale": "ADSL是利用电话线的有线宽带接入",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#宽带接入技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:38"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#ADSL 非对称数字用户线路"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:39-45"
+        }
+      ]
+    },
+    "edge_fd_048": {
+      "source": "ch2_broadband_access",
+      "target": "ch2_hfc_cable_modem",
+      "relation": "包含",
+      "rationale": "HFC是基于有线电视网的宽带接入",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#宽带接入技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:38"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#HFC 混合光纤同轴网络"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:47-50"
+        }
+      ]
+    },
+    "edge_fd_049": {
+      "source": "ch2_broadband_access",
+      "target": "ch2_fttx",
+      "relation": "包含",
+      "rationale": "FTTx是光纤宽带接入方案",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#宽带接入技术"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:38"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#FFx"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:51"
+        }
+      ]
+    },
+    "edge_fd_050": {
+      "source": "ch2_adsl",
+      "target": "ch2_dmt",
+      "relation": "包含",
+      "rationale": "ADSL采用DMT多载波调制",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#ADSL 非对称数字用户线路"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:39-45"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#DMT"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:42-44"
+        }
+      ]
+    },
+    "edge_fd_051": {
+      "source": "ch2_guided_media",
+      "target": "ch2_adsl",
+      "relation": "应用于",
+      "rationale": "ADSL使用铜质电话双绞线",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:22-26"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#ADSL 非对称数字用户线路"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:39-45"
+        }
+      ]
+    },
+    "edge_fd_052": {
+      "source": "ch2_guided_media",
+      "target": "ch2_hfc_cable_modem",
+      "relation": "应用于",
+      "rationale": "HFC结合光纤和同轴电缆",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:22-26"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#HFC 混合光纤同轴网络"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:47-50"
+        }
+      ]
+    },
+    "edge_fd_053": {
+      "source": "ch2_guided_media",
+      "target": "ch2_fttx",
+      "relation": "应用于",
+      "rationale": "FTTx以光纤作为主要接入介质",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:22-26"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#FFx"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:51"
+        }
+      ]
+    },
+    "edge_fd_054": {
+      "source": "ch2_adsl",
+      "target": "ch2_hfc_cable_modem",
+      "relation": "对比",
+      "rationale": "ADSL通常独享用户线，HFC用户共享电缆接入段",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#ADSL 非对称数字用户线路"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:39-45"
+        },
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#HFC 混合光纤同轴网络"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:47-50"
+        }
+      ]
+    },
+    "edge_fd_055": {
+      "source": "ch1_internet_protocol_stack",
+      "target": "ch3_link_layer",
+      "relation": "包含",
+      "rationale": "链路层是Internet五层协议栈的一层",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#协议层和参考模型"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:67-71"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#简介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4-6"
+        }
+      ]
+    },
+    "edge_fd_056": {
+      "source": "ch1_encapsulation",
+      "target": "ch3_frame",
+      "relation": "应用于",
+      "rationale": "网络层datagram在链路层被封装为frame",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#封装"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:72-77,89"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层实现"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4,7,10"
+        }
+      ]
+    },
+    "edge_fd_057": {
+      "source": "ch2_physical_layer",
+      "target": "ch3_link_layer",
+      "relation": "前置知识",
+      "rationale": "链路层使用物理层提供的bit传输服务",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#基本概念"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:3"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#简介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4-6"
+        }
+      ]
+    },
+    "edge_fd_058": {
+      "source": "ch3_link_layer",
+      "target": "ch3_frame",
+      "relation": "包含",
+      "rationale": "链路层以帧为协议数据单元",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#简介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层实现"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4,7,10"
+        }
+      ]
+    },
+    "edge_fd_059": {
+      "source": "ch3_link_layer",
+      "target": "ch3_link_services",
+      "relation": "包含",
+      "rationale": "链路层可提供成帧、访问、可靠性和差错处理等服务",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#简介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层服务"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:7-8"
+        }
+      ]
+    },
+    "edge_fd_060": {
+      "source": "ch3_link_layer",
+      "target": "ch3_nic",
+      "relation": "包含",
+      "rationale": "主机的链路层功能主要由NIC实现",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#简介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层实现"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:9-10"
+        }
+      ]
+    },
+    "edge_fd_061": {
+      "source": "ch3_link_services",
+      "target": "ch3_error_detection",
+      "relation": "包含",
+      "rationale": "差错检测与纠正属于链路层服务",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层服务"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:7-8"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#错误检测"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:12"
+        }
+      ]
+    },
+    "edge_fd_062": {
+      "source": "ch3_error_detection",
+      "target": "ch3_parity",
+      "relation": "包含",
+      "rationale": "奇偶校验是一类基础差错检测方法",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#错误检测"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:12"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#奇偶校验"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:13"
+        }
+      ]
+    },
+    "edge_fd_063": {
+      "source": "ch3_error_detection",
+      "target": "ch3_crc",
+      "relation": "包含",
+      "rationale": "CRC是链路中广泛使用的差错检测方法",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#错误检测"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:12"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#CRC：循环冗余检测"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:14-15"
+        }
+      ]
+    },
+    "edge_fd_064": {
+      "source": "ch3_parity",
+      "target": "ch3_crc",
+      "relation": "对比",
+      "rationale": "奇偶校验简单但能力弱，CRC可检测多类突发错误",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#奇偶校验"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:13"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#CRC：循环冗余检测"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:14-15"
+        }
+      ]
+    },
+    "edge_fd_065": {
+      "source": "ch3_link_services",
+      "target": "ch3_multiple_access_link",
+      "relation": "包含",
+      "rationale": "共享广播链路需要链路访问控制",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层服务"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:7-8"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#多路访问协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:17-18"
+        }
+      ]
+    },
+    "edge_fd_066": {
+      "source": "ch3_multiple_access_link",
+      "target": "ch3_ideal_mac",
+      "relation": "包含",
+      "rationale": "理想MAC给出共享信道的目标性质",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#多路访问协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:17-18"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#理想多路访问协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:19"
+        }
+      ]
+    },
+    "edge_fd_067": {
+      "source": "ch3_multiple_access_link",
+      "target": "ch3_mac_taxonomy",
+      "relation": "包含",
+      "rationale": "多路访问协议按资源分配方式分为三类",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#多路访问协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:17-18"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        }
+      ]
+    },
+    "edge_fd_068": {
+      "source": "ch3_mac_taxonomy",
+      "target": "ch3_channel_partitioning_mac",
+      "relation": "包含",
+      "rationale": "信道划分是MAC协议的一类",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#信道划分 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:21-22"
+        }
+      ]
+    },
+    "edge_fd_069": {
+      "source": "ch3_mac_taxonomy",
+      "target": "ch3_slotted_aloha",
+      "relation": "包含",
+      "rationale": "时隙ALOHA属于随机访问MAC",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:24-26"
+        }
+      ]
+    },
+    "edge_fd_070": {
+      "source": "ch3_mac_taxonomy",
+      "target": "ch3_pure_aloha",
+      "relation": "包含",
+      "rationale": "纯ALOHA属于随机访问MAC",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:27,93"
+        }
+      ]
+    },
+    "edge_fd_071": {
+      "source": "ch3_slotted_aloha",
+      "target": "ch3_pure_aloha",
+      "relation": "对比",
+      "rationale": "时隙ALOHA通过同步时隙缩小冲突窗口并提高效率",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:24-26"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:27,93"
+        }
+      ]
+    },
+    "edge_fd_072": {
+      "source": "ch3_mac_taxonomy",
+      "target": "ch3_csma",
+      "relation": "包含",
+      "rationale": "CSMA属于载波侦听随机访问MAC",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:28-29"
+        }
+      ]
+    },
+    "edge_fd_073": {
+      "source": "ch3_csma",
+      "target": "ch3_csma_cd",
+      "relation": "前置知识",
+      "rationale": "CSMA/CD在CSMA基础上增加碰撞检测",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:28-29"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:28-32"
+        }
+      ]
+    },
+    "edge_fd_074": {
+      "source": "ch3_csma_cd",
+      "target": "ch3_binary_exponential_backoff",
+      "relation": "包含",
+      "rationale": "碰撞后的重传等待采用二进制指数退避",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:28-32"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:31"
+        }
+      ]
+    },
+    "edge_fd_075": {
+      "source": "ch3_mac_taxonomy",
+      "target": "ch3_polling",
+      "relation": "包含",
+      "rationale": "轮询属于轮流访问MAC",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#轮流协议 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:33-34"
+        }
+      ]
+    },
+    "edge_fd_076": {
+      "source": "ch3_mac_taxonomy",
+      "target": "ch3_token_passing",
+      "relation": "包含",
+      "rationale": "令牌传递属于轮流访问MAC",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:20,36"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#轮流协议 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:33,35"
+        }
+      ]
+    },
+    "edge_fd_077": {
+      "source": "ch3_polling",
+      "target": "ch3_token_passing",
+      "relation": "对比",
+      "rationale": "轮询依赖中心控制器，令牌传递依赖分布式token",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#轮流协议 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:33-34"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:33,35"
+        }
+      ]
+    },
+    "edge_fd_078": {
+      "source": "ch2_tdm",
+      "target": "ch3_channel_partitioning_mac",
+      "relation": "应用于",
+      "rationale": "TDMA把TDM思想用于多节点信道访问",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#TDM 时分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:32-33"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#信道划分 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:21-22"
+        }
+      ]
+    },
+    "edge_fd_079": {
+      "source": "ch2_fdm",
+      "target": "ch3_channel_partitioning_mac",
+      "relation": "应用于",
+      "rationale": "FDMA把FDM思想用于多节点信道访问",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#FDM 频分复用"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:31"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#信道划分 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:21-22"
+        }
+      ]
+    },
+    "edge_fd_080": {
+      "source": "ch3_link_layer",
+      "target": "ch4_lan",
+      "relation": "应用于",
+      "rationale": "局域网是链路层技术的主要应用场景",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#简介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4-6"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#局域网：LAN"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:37-40"
+        }
+      ]
+    },
+    "edge_fd_081": {
+      "source": "ch4_lan",
+      "target": "ch4_mac_address",
+      "relation": "包含",
+      "rationale": "LAN接口使用MAC地址完成本地寻址",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#局域网：LAN"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:37-40"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 地址"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:38-40"
+        }
+      ]
+    },
+    "edge_fd_082": {
+      "source": "ch4_mac_address",
+      "target": "ch4_arp",
+      "relation": "前置知识",
+      "rationale": "ARP把IP地址解析为链路层MAC地址",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#MAC 地址"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:38-40"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#ARP：地址解析协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:41-44"
+        }
+      ]
+    },
+    "edge_fd_083": {
+      "source": "ch4_arp",
+      "target": "ch4_arp_table",
+      "relation": "包含",
+      "rationale": "ARP使用缓存表保存IP与MAC映射",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#ARP：地址解析协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:41-44"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:41"
+        }
+      ]
+    },
+    "edge_fd_084": {
+      "source": "ch4_arp",
+      "target": "ch4_cross_subnet_delivery",
+      "relation": "应用于",
+      "rationale": "跨子网发送前需要解析下一跳接口MAC地址",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#ARP：地址解析协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:41-44"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#跨子网传输"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:45-50"
+        }
+      ]
+    },
+    "edge_fd_085": {
+      "source": "ch1_encapsulation",
+      "target": "ch4_cross_subnet_delivery",
+      "relation": "应用于",
+      "rationale": "每一跳都重新进行链路层封装和解封装",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#封装"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:72-77,89"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#跨子网传输"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:45-50"
+        }
+      ]
+    },
+    "edge_fd_086": {
+      "source": "ch4_lan",
+      "target": "ch4_ethernet",
+      "relation": "包含",
+      "rationale": "以太网是主流有线LAN技术",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#局域网：LAN"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:37-40"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        }
+      ]
+    },
+    "edge_fd_087": {
+      "source": "ch4_ethernet",
+      "target": "ch4_ethernet_topology",
+      "relation": "包含",
+      "rationale": "以太网经历了共享总线到交换式拓扑的演进",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:53"
+        }
+      ]
+    },
+    "edge_fd_088": {
+      "source": "ch4_ethernet",
+      "target": "ch4_ethernet_frame",
+      "relation": "包含",
+      "rationale": "以太网定义统一的链路层帧格式",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet 帧格式"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:54-55"
+        }
+      ]
+    },
+    "edge_fd_089": {
+      "source": "ch3_frame",
+      "target": "ch4_ethernet_frame",
+      "relation": "应用于",
+      "rationale": "以太网帧是链路层frame的具体实现",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#链路层实现"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:4,7,10"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet 帧格式"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:54-55"
+        }
+      ]
+    },
+    "edge_fd_090": {
+      "source": "ch3_crc",
+      "target": "ch4_ethernet_frame",
+      "relation": "应用于",
+      "rationale": "以太网帧尾部使用CRC检测差错",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#CRC：循环冗余检测"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:14-15"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet 帧格式"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:54-55"
+        }
+      ]
+    },
+    "edge_fd_091": {
+      "source": "ch4_ethernet",
+      "target": "ch4_ethernet_service_model",
+      "relation": "包含",
+      "rationale": "以太网提供无连接、不可靠的链路层服务",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:56"
+        }
+      ]
+    },
+    "edge_fd_092": {
+      "source": "ch3_csma_cd",
+      "target": "ch4_ethernet_service_model",
+      "relation": "应用于",
+      "rationale": "共享式以太网使用CSMA/CD访问介质",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#随机访问 MAC"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:28-32"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:56"
+        }
+      ]
+    },
+    "edge_fd_093": {
+      "source": "ch4_ethernet",
+      "target": "ch4_ethernet_standards",
+      "relation": "包含",
+      "rationale": "IEEE 802.3包含多种速率和介质标准",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:57"
+        }
+      ]
+    },
+    "edge_fd_094": {
+      "source": "ch2_transmission_media",
+      "target": "ch4_ethernet_standards",
+      "relation": "应用于",
+      "rationale": "不同以太网标准采用铜缆或光纤等介质",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "二、物理层.md#物理层下的传输媒介"
+        },
+        {
+          "kind": "slides",
+          "ref": "Physical_Layer20260320.pptx:20-21"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:57"
+        }
+      ]
+    },
+    "edge_fd_095": {
+      "source": "ch4_ethernet",
+      "target": "ch4_ethernet_switch",
+      "relation": "包含",
+      "rationale": "现代以太网使用交换机转发帧",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:59"
+        }
+      ]
+    },
+    "edge_fd_096": {
+      "source": "ch4_ethernet_topology",
+      "target": "ch4_collision_domain",
+      "relation": "包含",
+      "rationale": "交换式拓扑把每条端口链路分成独立碰撞域",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:53"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:60-61"
+        }
+      ]
+    },
+    "edge_fd_097": {
+      "source": "ch4_ethernet_switch",
+      "target": "ch4_collision_domain",
+      "relation": "包含",
+      "rationale": "交换机支持独立碰撞域和全双工并行通信",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:59"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:60-61"
+        }
+      ]
+    },
+    "edge_fd_098": {
+      "source": "ch4_ethernet_switch",
+      "target": "ch4_switch_table",
+      "relation": "包含",
+      "rationale": "交换机依据转发表选择输出接口",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:59"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机转发表"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:62"
+        }
+      ]
+    },
+    "edge_fd_099": {
+      "source": "ch4_switch_table",
+      "target": "ch4_switch_self_learning",
+      "relation": "依赖",
+      "rationale": "转发表内容由源MAC自学习产生和更新",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机转发表"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:62"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:63"
+        }
+      ]
+    },
+    "edge_fd_100": {
+      "source": "ch4_switch_table",
+      "target": "ch4_switch_filter_forward",
+      "relation": "依赖",
+      "rationale": "过滤、定向转发和泛洪决策依赖转发表查询",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机转发表"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:62"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#帧过滤 / 转发"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:64-65"
+        }
+      ]
+    },
+    "edge_fd_101": {
+      "source": "ch4_switch_self_learning",
+      "target": "ch4_switch_filter_forward",
+      "relation": "前置知识",
+      "rationale": "先理解表项学习，才能理解目的地址转发决策",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机转发表"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:63"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#帧过滤 / 转发"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:64-65"
+        }
+      ]
+    },
+    "edge_fd_102": {
+      "source": "ch4_ethernet_switch",
+      "target": "ch4_switch_interconnection",
+      "relation": "包含",
+      "rationale": "自学习交换机可以透明互联",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:59"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:66-67"
+        }
+      ]
+    },
+    "edge_fd_103": {
+      "source": "ch4_switch_self_learning",
+      "target": "ch4_switch_interconnection",
+      "relation": "应用于",
+      "rationale": "多交换机网络仍通过源MAC自学习建立路径",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机转发表"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:63"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:66-67"
+        }
+      ]
+    },
+    "edge_fd_104": {
+      "source": "ch1_forwarding",
+      "target": "ch4_switch_vs_router",
+      "relation": "应用于",
+      "rationale": "交换机和路由器都会执行存储转发",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心两个关键功能"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:27,29"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:68"
+        }
+      ]
+    },
+    "edge_fd_105": {
+      "source": "ch1_routing",
+      "target": "ch4_switch_vs_router",
+      "relation": "应用于",
+      "rationale": "路由器使用路由算法计算IP转发表，交换机通过自学习建立MAC表",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#网络核心两个关键功能"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:27-28"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:68"
+        }
+      ]
+    },
+    "edge_fd_106": {
+      "source": "ch4_ethernet_switch",
+      "target": "ch4_switch_vs_router",
+      "relation": "对比",
+      "rationale": "交换机工作在链路层，路由器工作在网络层",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:59"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:68"
+        }
+      ]
+    },
+    "edge_fd_107": {
+      "source": "ch4_lan",
+      "target": "ch4_vlan",
+      "relation": "包含",
+      "rationale": "VLAN在物理LAN之上划分逻辑广播域",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#局域网：LAN"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:37-40"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#VLAN 虚拟局域网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:70-73"
+        }
+      ]
+    },
+    "edge_fd_108": {
+      "source": "ch4_vlan",
+      "target": "ch4_port_based_vlan",
+      "relation": "包含",
+      "rationale": "端口分组是VLAN的常见实现方式",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#VLAN 虚拟局域网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:70-73"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:72-73"
+        }
+      ]
+    },
+    "edge_fd_109": {
+      "source": "ch4_vlan",
+      "target": "ch4_vlan_trunk_8021q",
+      "relation": "包含",
+      "rationale": "跨交换机VLAN使用Trunk和802.1Q标签",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#VLAN 虚拟局域网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:70-73"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:74-75"
+        }
+      ]
+    },
+    "edge_fd_110": {
+      "source": "ch4_ethernet_frame",
+      "target": "ch4_vlan_trunk_8021q",
+      "relation": "前置知识",
+      "rationale": "802.1Q在标准以太网帧中插入标签并重算CRC",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet 帧格式"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:54-55"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#VLAN 虚拟局域网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:74-75"
+        }
+      ]
+    },
+    "edge_fd_111": {
+      "source": "ch4_lan",
+      "target": "ch4_datacenter_network",
+      "relation": "应用于",
+      "rationale": "数据中心由大规模高速交换网络连接服务器",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#局域网：LAN"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:37-40"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#数据中心网络"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:77-79"
+        }
+      ]
+    },
+    "edge_fd_112": {
+      "source": "ch4_datacenter_network",
+      "target": "ch4_datacenter_multipath",
+      "relation": "包含",
+      "rationale": "数据中心使用多路径提升吞吐和可靠性",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#数据中心网络"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:77-79"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#多路径"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:80"
+        }
+      ]
+    },
+    "edge_fd_113": {
+      "source": "ch4_datacenter_network",
+      "target": "ch4_load_balancer",
+      "relation": "包含",
+      "rationale": "负载均衡器负责把外部请求分配给内部服务器",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#数据中心网络"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:77-79"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#负载均衡器"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:81"
+        }
+      ]
+    },
+    "edge_fd_114": {
+      "source": "ch1_throughput_bottleneck",
+      "target": "ch4_datacenter_multipath",
+      "relation": "应用于",
+      "rationale": "多路径可分散瓶颈并提高机架间吞吐量",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#吞吐量"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:56-58"
+        },
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#多路径"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:80"
+        }
+      ]
+    },
+    "edge_fd_115": {
+      "source": "ch4_arp",
+      "target": "ch4_web_request_lifecycle",
+      "relation": "应用于",
+      "rationale": "Web请求发送前通过ARP获得首跳MAC地址",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#ARP：地址解析协议"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:41-44"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:83-90"
+        }
+      ]
+    },
+    "edge_fd_116": {
+      "source": "ch4_ethernet",
+      "target": "ch4_web_request_lifecycle",
+      "relation": "应用于",
+      "rationale": "DHCP、DNS、TCP和HTTP报文在LAN内封装进以太网帧",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#Ethernet：以太网"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:52"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:83-90"
+        }
+      ]
+    },
+    "edge_fd_117": {
+      "source": "ch4_ethernet_switch",
+      "target": "ch4_web_request_lifecycle",
+      "relation": "应用于",
+      "rationale": "交换机在主机和首跳路由器之间转发帧",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "四、链路层和局域网.md#交换机"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:59"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:83-90"
+        }
+      ]
+    },
+    "edge_fd_118": {
+      "source": "ch1_encapsulation",
+      "target": "ch4_web_request_lifecycle",
+      "relation": "应用于",
+      "rationale": "Web访问展示应用到物理层的逐层封装与解封装",
+      "evidence": [
+        {
+          "kind": "notes",
+          "ref": "一、导论.md#封装"
+        },
+        {
+          "kind": "slides",
+          "ref": "Chapter_1_v8.2.pptx:72-77,89"
+        },
+        {
+          "kind": "slides",
+          "ref": "Link_Layer20260320 (2).pptx:83-90"
+        }
+      ]
+    }
+  }
+}

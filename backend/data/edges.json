@@ -145,5 +145,831 @@
     "target": "q_tcp_005",
     "relation": "关联试题",
     "description": "TCP流量控制字段相关试题"
+  },
+  {
+    "id": "edge_fd_001",
+    "source": "ch1_internet_overview",
+    "target": "ch1_protocol",
+    "relation": "包含",
+    "description": "Internet中的通信活动由协议约束"
+  },
+  {
+    "id": "edge_fd_002",
+    "source": "ch1_internet_overview",
+    "target": "ch1_network_edge",
+    "relation": "包含",
+    "description": "Internet结构包含网络边缘"
+  },
+  {
+    "id": "edge_fd_003",
+    "source": "ch1_internet_overview",
+    "target": "ch1_access_network",
+    "relation": "包含",
+    "description": "Internet结构包含接入网络"
+  },
+  {
+    "id": "edge_fd_004",
+    "source": "ch1_internet_overview",
+    "target": "ch1_network_core",
+    "relation": "包含",
+    "description": "Internet结构包含网络核心"
+  },
+  {
+    "id": "edge_fd_005",
+    "source": "ch1_internet_overview",
+    "target": "ch1_internet_isp_structure",
+    "relation": "包含",
+    "description": "Internet由多层ISP和内容网络互联"
+  },
+  {
+    "id": "edge_fd_006",
+    "source": "ch1_access_network",
+    "target": "ch1_physical_media",
+    "relation": "包含",
+    "description": "接入网络通过有线或无线物理介质连接端系统"
+  },
+  {
+    "id": "edge_fd_007",
+    "source": "ch1_network_core",
+    "target": "ch1_forwarding",
+    "relation": "包含",
+    "description": "网络核心中的路由器执行局部转发"
+  },
+  {
+    "id": "edge_fd_008",
+    "source": "ch1_network_core",
+    "target": "ch1_routing",
+    "relation": "包含",
+    "description": "网络核心通过路由算法选择端到端路径"
+  },
+  {
+    "id": "edge_fd_009",
+    "source": "ch1_forwarding",
+    "target": "ch1_routing",
+    "relation": "对比",
+    "description": "转发是局部按表移动，路由是全局路径计算"
+  },
+  {
+    "id": "edge_fd_010",
+    "source": "ch1_network_core",
+    "target": "ch1_packet_switching",
+    "relation": "包含",
+    "description": "Internet核心主要采用分组交换"
+  },
+  {
+    "id": "edge_fd_011",
+    "source": "ch1_packet_switching",
+    "target": "ch1_store_and_forward",
+    "relation": "包含",
+    "description": "分组交换路由器采用存储转发"
+  },
+  {
+    "id": "edge_fd_012",
+    "source": "ch1_packet_switching",
+    "target": "ch1_queueing_packet_loss",
+    "relation": "包含",
+    "description": "分组交换在拥塞时出现排队和丢包"
+  },
+  {
+    "id": "edge_fd_013",
+    "source": "ch1_packet_switching",
+    "target": "ch1_circuit_switching",
+    "relation": "对比",
+    "description": "分组交换共享资源，电路交换预留专用资源"
+  },
+  {
+    "id": "edge_fd_014",
+    "source": "ch1_store_and_forward",
+    "target": "ch1_nodal_delay",
+    "relation": "应用于",
+    "description": "存储转发产生链路传输时延"
+  },
+  {
+    "id": "edge_fd_015",
+    "source": "ch1_queueing_packet_loss",
+    "target": "ch1_nodal_delay",
+    "relation": "应用于",
+    "description": "排队是结点总时延的重要组成"
+  },
+  {
+    "id": "edge_fd_016",
+    "source": "ch1_traffic_intensity",
+    "target": "ch1_queueing_packet_loss",
+    "relation": "前置知识",
+    "description": "流量强度决定排队时延和拥塞趋势"
+  },
+  {
+    "id": "edge_fd_017",
+    "source": "ch1_physical_media",
+    "target": "ch1_nodal_delay",
+    "relation": "应用于",
+    "description": "链路距离和信号速度决定传播时延"
+  },
+  {
+    "id": "edge_fd_018",
+    "source": "ch1_packet_switching",
+    "target": "ch1_throughput_bottleneck",
+    "relation": "应用于",
+    "description": "共享链路和瓶颈限制端到端吞吐量"
+  },
+  {
+    "id": "edge_fd_019",
+    "source": "ch1_internet_overview",
+    "target": "ch1_network_security",
+    "relation": "包含",
+    "description": "Internet体系需要考虑攻击与防御"
+  },
+  {
+    "id": "edge_fd_020",
+    "source": "ch1_internet_overview",
+    "target": "ch1_internet_protocol_stack",
+    "relation": "包含",
+    "description": "Internet使用分层协议栈组织复杂功能"
+  },
+  {
+    "id": "edge_fd_021",
+    "source": "ch1_protocol",
+    "target": "ch1_internet_protocol_stack",
+    "relation": "前置知识",
+    "description": "理解协议是理解协议分层的前提"
+  },
+  {
+    "id": "edge_fd_022",
+    "source": "ch1_internet_protocol_stack",
+    "target": "ch1_encapsulation",
+    "relation": "包含",
+    "description": "分层通信通过逐层封装实现"
+  },
+  {
+    "id": "edge_fd_023",
+    "source": "ch1_internet_protocol_stack",
+    "target": "ch1_osi_reference_model",
+    "relation": "对比",
+    "description": "Internet五层栈与OSI七层模型层次不同"
+  },
+  {
+    "id": "edge_fd_024",
+    "source": "ch1_network_security",
+    "target": "ch1_internet_protocol_stack",
+    "relation": "应用于",
+    "description": "安全机制需要在协议栈各层考虑"
+  },
+  {
+    "id": "edge_fd_025",
+    "source": "ch1_physical_media",
+    "target": "ch2_physical_layer",
+    "relation": "前置知识",
+    "description": "概述中的物理介质引出物理层的详细机制"
+  },
+  {
+    "id": "edge_fd_026",
+    "source": "ch1_access_network",
+    "target": "ch2_broadband_access",
+    "relation": "前置知识",
+    "description": "接入网络概念是学习宽带接入技术的基础"
+  },
+  {
+    "id": "edge_fd_027",
+    "source": "ch2_physical_layer",
+    "target": "ch2_interface_characteristics",
+    "relation": "包含",
+    "description": "物理层协议规定四类接口特性"
+  },
+  {
+    "id": "edge_fd_028",
+    "source": "ch2_physical_layer",
+    "target": "ch2_data_signal_system",
+    "relation": "包含",
+    "description": "物理层处理数据与信号的转换和传输"
+  },
+  {
+    "id": "edge_fd_029",
+    "source": "ch2_data_signal_system",
+    "target": "ch2_communication_modes",
+    "relation": "包含",
+    "description": "通信系统可以采用单工、半双工或全双工"
+  },
+  {
+    "id": "edge_fd_030",
+    "source": "ch2_data_signal_system",
+    "target": "ch2_baseband_signal_modulation",
+    "relation": "包含",
+    "description": "信源产生的基带信号需要适配信道"
+  },
+  {
+    "id": "edge_fd_031",
+    "source": "ch2_baseband_signal_modulation",
+    "target": "ch2_line_coding",
+    "relation": "包含",
+    "description": "线路编码是典型基带调制方式"
+  },
+  {
+    "id": "edge_fd_032",
+    "source": "ch2_baseband_signal_modulation",
+    "target": "ch2_bandpass_modulation",
+    "relation": "对比",
+    "description": "基带调制改变波形，带通调制搬移频谱"
+  },
+  {
+    "id": "edge_fd_033",
+    "source": "ch2_bandpass_modulation",
+    "target": "ch2_qam",
+    "relation": "包含",
+    "description": "QAM是同时利用振幅和相位的带通调制"
+  },
+  {
+    "id": "edge_fd_034",
+    "source": "ch2_channel_distortion",
+    "target": "ch2_nyquist_criterion",
+    "relation": "包含",
+    "description": "奈奎斯特准则描述带宽限制下的码元速率上限"
+  },
+  {
+    "id": "edge_fd_035",
+    "source": "ch2_channel_distortion",
+    "target": "ch2_snr",
+    "relation": "包含",
+    "description": "噪声强弱是影响接收判决的重要因素"
+  },
+  {
+    "id": "edge_fd_036",
+    "source": "ch2_snr",
+    "target": "ch2_shannon_capacity",
+    "relation": "前置知识",
+    "description": "香农公式使用线性信噪比S/N计算容量"
+  },
+  {
+    "id": "edge_fd_037",
+    "source": "ch2_nyquist_criterion",
+    "target": "ch2_shannon_capacity",
+    "relation": "对比",
+    "description": "奈奎斯特关注无噪声码元上限，香农关注有噪声信息容量"
+  },
+  {
+    "id": "edge_fd_038",
+    "source": "ch2_physical_layer",
+    "target": "ch2_transmission_media",
+    "relation": "包含",
+    "description": "物理层bit依赖传输媒介传播"
+  },
+  {
+    "id": "edge_fd_039",
+    "source": "ch2_transmission_media",
+    "target": "ch2_guided_media",
+    "relation": "包含",
+    "description": "传输媒介包括导向介质"
+  },
+  {
+    "id": "edge_fd_040",
+    "source": "ch2_transmission_media",
+    "target": "ch2_unguided_media",
+    "relation": "包含",
+    "description": "传输媒介包括非导向介质"
+  },
+  {
+    "id": "edge_fd_041",
+    "source": "ch2_physical_layer",
+    "target": "ch2_multiplexing",
+    "relation": "包含",
+    "description": "物理层使用复用技术共享信道"
+  },
+  {
+    "id": "edge_fd_042",
+    "source": "ch2_multiplexing",
+    "target": "ch2_fdm",
+    "relation": "包含",
+    "description": "频分复用按频带区分用户"
+  },
+  {
+    "id": "edge_fd_043",
+    "source": "ch2_multiplexing",
+    "target": "ch2_tdm",
+    "relation": "包含",
+    "description": "时分复用按周期时隙区分用户"
+  },
+  {
+    "id": "edge_fd_044",
+    "source": "ch2_multiplexing",
+    "target": "ch2_cdm",
+    "relation": "包含",
+    "description": "码分复用按正交码片区分用户"
+  },
+  {
+    "id": "edge_fd_045",
+    "source": "ch2_fdm",
+    "target": "ch2_tdm",
+    "relation": "对比",
+    "description": "FDM让用户同时占不同频带，TDM让用户轮流占同一频带"
+  },
+  {
+    "id": "edge_fd_046",
+    "source": "ch2_fdm",
+    "target": "ch2_dmt",
+    "relation": "前置知识",
+    "description": "DMT以频分方式划分大量子载波"
+  },
+  {
+    "id": "edge_fd_047",
+    "source": "ch2_broadband_access",
+    "target": "ch2_adsl",
+    "relation": "包含",
+    "description": "ADSL是利用电话线的有线宽带接入"
+  },
+  {
+    "id": "edge_fd_048",
+    "source": "ch2_broadband_access",
+    "target": "ch2_hfc_cable_modem",
+    "relation": "包含",
+    "description": "HFC是基于有线电视网的宽带接入"
+  },
+  {
+    "id": "edge_fd_049",
+    "source": "ch2_broadband_access",
+    "target": "ch2_fttx",
+    "relation": "包含",
+    "description": "FTTx是光纤宽带接入方案"
+  },
+  {
+    "id": "edge_fd_050",
+    "source": "ch2_adsl",
+    "target": "ch2_dmt",
+    "relation": "包含",
+    "description": "ADSL采用DMT多载波调制"
+  },
+  {
+    "id": "edge_fd_051",
+    "source": "ch2_guided_media",
+    "target": "ch2_adsl",
+    "relation": "应用于",
+    "description": "ADSL使用铜质电话双绞线"
+  },
+  {
+    "id": "edge_fd_052",
+    "source": "ch2_guided_media",
+    "target": "ch2_hfc_cable_modem",
+    "relation": "应用于",
+    "description": "HFC结合光纤和同轴电缆"
+  },
+  {
+    "id": "edge_fd_053",
+    "source": "ch2_guided_media",
+    "target": "ch2_fttx",
+    "relation": "应用于",
+    "description": "FTTx以光纤作为主要接入介质"
+  },
+  {
+    "id": "edge_fd_054",
+    "source": "ch2_adsl",
+    "target": "ch2_hfc_cable_modem",
+    "relation": "对比",
+    "description": "ADSL通常独享用户线，HFC用户共享电缆接入段"
+  },
+  {
+    "id": "edge_fd_055",
+    "source": "ch1_internet_protocol_stack",
+    "target": "ch3_link_layer",
+    "relation": "包含",
+    "description": "链路层是Internet五层协议栈的一层"
+  },
+  {
+    "id": "edge_fd_056",
+    "source": "ch1_encapsulation",
+    "target": "ch3_frame",
+    "relation": "应用于",
+    "description": "网络层datagram在链路层被封装为frame"
+  },
+  {
+    "id": "edge_fd_057",
+    "source": "ch2_physical_layer",
+    "target": "ch3_link_layer",
+    "relation": "前置知识",
+    "description": "链路层使用物理层提供的bit传输服务"
+  },
+  {
+    "id": "edge_fd_058",
+    "source": "ch3_link_layer",
+    "target": "ch3_frame",
+    "relation": "包含",
+    "description": "链路层以帧为协议数据单元"
+  },
+  {
+    "id": "edge_fd_059",
+    "source": "ch3_link_layer",
+    "target": "ch3_link_services",
+    "relation": "包含",
+    "description": "链路层可提供成帧、访问、可靠性和差错处理等服务"
+  },
+  {
+    "id": "edge_fd_060",
+    "source": "ch3_link_layer",
+    "target": "ch3_nic",
+    "relation": "包含",
+    "description": "主机的链路层功能主要由NIC实现"
+  },
+  {
+    "id": "edge_fd_061",
+    "source": "ch3_link_services",
+    "target": "ch3_error_detection",
+    "relation": "包含",
+    "description": "差错检测与纠正属于链路层服务"
+  },
+  {
+    "id": "edge_fd_062",
+    "source": "ch3_error_detection",
+    "target": "ch3_parity",
+    "relation": "包含",
+    "description": "奇偶校验是一类基础差错检测方法"
+  },
+  {
+    "id": "edge_fd_063",
+    "source": "ch3_error_detection",
+    "target": "ch3_crc",
+    "relation": "包含",
+    "description": "CRC是链路中广泛使用的差错检测方法"
+  },
+  {
+    "id": "edge_fd_064",
+    "source": "ch3_parity",
+    "target": "ch3_crc",
+    "relation": "对比",
+    "description": "奇偶校验简单但能力弱，CRC可检测多类突发错误"
+  },
+  {
+    "id": "edge_fd_065",
+    "source": "ch3_link_services",
+    "target": "ch3_multiple_access_link",
+    "relation": "包含",
+    "description": "共享广播链路需要链路访问控制"
+  },
+  {
+    "id": "edge_fd_066",
+    "source": "ch3_multiple_access_link",
+    "target": "ch3_ideal_mac",
+    "relation": "包含",
+    "description": "理想MAC给出共享信道的目标性质"
+  },
+  {
+    "id": "edge_fd_067",
+    "source": "ch3_multiple_access_link",
+    "target": "ch3_mac_taxonomy",
+    "relation": "包含",
+    "description": "多路访问协议按资源分配方式分为三类"
+  },
+  {
+    "id": "edge_fd_068",
+    "source": "ch3_mac_taxonomy",
+    "target": "ch3_channel_partitioning_mac",
+    "relation": "包含",
+    "description": "信道划分是MAC协议的一类"
+  },
+  {
+    "id": "edge_fd_069",
+    "source": "ch3_mac_taxonomy",
+    "target": "ch3_slotted_aloha",
+    "relation": "包含",
+    "description": "时隙ALOHA属于随机访问MAC"
+  },
+  {
+    "id": "edge_fd_070",
+    "source": "ch3_mac_taxonomy",
+    "target": "ch3_pure_aloha",
+    "relation": "包含",
+    "description": "纯ALOHA属于随机访问MAC"
+  },
+  {
+    "id": "edge_fd_071",
+    "source": "ch3_slotted_aloha",
+    "target": "ch3_pure_aloha",
+    "relation": "对比",
+    "description": "时隙ALOHA通过同步时隙缩小冲突窗口并提高效率"
+  },
+  {
+    "id": "edge_fd_072",
+    "source": "ch3_mac_taxonomy",
+    "target": "ch3_csma",
+    "relation": "包含",
+    "description": "CSMA属于载波侦听随机访问MAC"
+  },
+  {
+    "id": "edge_fd_073",
+    "source": "ch3_csma",
+    "target": "ch3_csma_cd",
+    "relation": "前置知识",
+    "description": "CSMA/CD在CSMA基础上增加碰撞检测"
+  },
+  {
+    "id": "edge_fd_074",
+    "source": "ch3_csma_cd",
+    "target": "ch3_binary_exponential_backoff",
+    "relation": "包含",
+    "description": "碰撞后的重传等待采用二进制指数退避"
+  },
+  {
+    "id": "edge_fd_075",
+    "source": "ch3_mac_taxonomy",
+    "target": "ch3_polling",
+    "relation": "包含",
+    "description": "轮询属于轮流访问MAC"
+  },
+  {
+    "id": "edge_fd_076",
+    "source": "ch3_mac_taxonomy",
+    "target": "ch3_token_passing",
+    "relation": "包含",
+    "description": "令牌传递属于轮流访问MAC"
+  },
+  {
+    "id": "edge_fd_077",
+    "source": "ch3_polling",
+    "target": "ch3_token_passing",
+    "relation": "对比",
+    "description": "轮询依赖中心控制器，令牌传递依赖分布式token"
+  },
+  {
+    "id": "edge_fd_078",
+    "source": "ch2_tdm",
+    "target": "ch3_channel_partitioning_mac",
+    "relation": "应用于",
+    "description": "TDMA把TDM思想用于多节点信道访问"
+  },
+  {
+    "id": "edge_fd_079",
+    "source": "ch2_fdm",
+    "target": "ch3_channel_partitioning_mac",
+    "relation": "应用于",
+    "description": "FDMA把FDM思想用于多节点信道访问"
+  },
+  {
+    "id": "edge_fd_080",
+    "source": "ch3_link_layer",
+    "target": "ch4_lan",
+    "relation": "应用于",
+    "description": "局域网是链路层技术的主要应用场景"
+  },
+  {
+    "id": "edge_fd_081",
+    "source": "ch4_lan",
+    "target": "ch4_mac_address",
+    "relation": "包含",
+    "description": "LAN接口使用MAC地址完成本地寻址"
+  },
+  {
+    "id": "edge_fd_082",
+    "source": "ch4_mac_address",
+    "target": "ch4_arp",
+    "relation": "前置知识",
+    "description": "ARP把IP地址解析为链路层MAC地址"
+  },
+  {
+    "id": "edge_fd_083",
+    "source": "ch4_arp",
+    "target": "ch4_arp_table",
+    "relation": "包含",
+    "description": "ARP使用缓存表保存IP与MAC映射"
+  },
+  {
+    "id": "edge_fd_084",
+    "source": "ch4_arp",
+    "target": "ch4_cross_subnet_delivery",
+    "relation": "应用于",
+    "description": "跨子网发送前需要解析下一跳接口MAC地址"
+  },
+  {
+    "id": "edge_fd_085",
+    "source": "ch1_encapsulation",
+    "target": "ch4_cross_subnet_delivery",
+    "relation": "应用于",
+    "description": "每一跳都重新进行链路层封装和解封装"
+  },
+  {
+    "id": "edge_fd_086",
+    "source": "ch4_lan",
+    "target": "ch4_ethernet",
+    "relation": "包含",
+    "description": "以太网是主流有线LAN技术"
+  },
+  {
+    "id": "edge_fd_087",
+    "source": "ch4_ethernet",
+    "target": "ch4_ethernet_topology",
+    "relation": "包含",
+    "description": "以太网经历了共享总线到交换式拓扑的演进"
+  },
+  {
+    "id": "edge_fd_088",
+    "source": "ch4_ethernet",
+    "target": "ch4_ethernet_frame",
+    "relation": "包含",
+    "description": "以太网定义统一的链路层帧格式"
+  },
+  {
+    "id": "edge_fd_089",
+    "source": "ch3_frame",
+    "target": "ch4_ethernet_frame",
+    "relation": "应用于",
+    "description": "以太网帧是链路层frame的具体实现"
+  },
+  {
+    "id": "edge_fd_090",
+    "source": "ch3_crc",
+    "target": "ch4_ethernet_frame",
+    "relation": "应用于",
+    "description": "以太网帧尾部使用CRC检测差错"
+  },
+  {
+    "id": "edge_fd_091",
+    "source": "ch4_ethernet",
+    "target": "ch4_ethernet_service_model",
+    "relation": "包含",
+    "description": "以太网提供无连接、不可靠的链路层服务"
+  },
+  {
+    "id": "edge_fd_092",
+    "source": "ch3_csma_cd",
+    "target": "ch4_ethernet_service_model",
+    "relation": "应用于",
+    "description": "共享式以太网使用CSMA/CD访问介质"
+  },
+  {
+    "id": "edge_fd_093",
+    "source": "ch4_ethernet",
+    "target": "ch4_ethernet_standards",
+    "relation": "包含",
+    "description": "IEEE 802.3包含多种速率和介质标准"
+  },
+  {
+    "id": "edge_fd_094",
+    "source": "ch2_transmission_media",
+    "target": "ch4_ethernet_standards",
+    "relation": "应用于",
+    "description": "不同以太网标准采用铜缆或光纤等介质"
+  },
+  {
+    "id": "edge_fd_095",
+    "source": "ch4_ethernet",
+    "target": "ch4_ethernet_switch",
+    "relation": "包含",
+    "description": "现代以太网使用交换机转发帧"
+  },
+  {
+    "id": "edge_fd_096",
+    "source": "ch4_ethernet_topology",
+    "target": "ch4_collision_domain",
+    "relation": "包含",
+    "description": "交换式拓扑把每条端口链路分成独立碰撞域"
+  },
+  {
+    "id": "edge_fd_097",
+    "source": "ch4_ethernet_switch",
+    "target": "ch4_collision_domain",
+    "relation": "包含",
+    "description": "交换机支持独立碰撞域和全双工并行通信"
+  },
+  {
+    "id": "edge_fd_098",
+    "source": "ch4_ethernet_switch",
+    "target": "ch4_switch_table",
+    "relation": "包含",
+    "description": "交换机依据转发表选择输出接口"
+  },
+  {
+    "id": "edge_fd_099",
+    "source": "ch4_switch_table",
+    "target": "ch4_switch_self_learning",
+    "relation": "依赖",
+    "description": "转发表内容由源MAC自学习产生和更新"
+  },
+  {
+    "id": "edge_fd_100",
+    "source": "ch4_switch_table",
+    "target": "ch4_switch_filter_forward",
+    "relation": "依赖",
+    "description": "过滤、定向转发和泛洪决策依赖转发表查询"
+  },
+  {
+    "id": "edge_fd_101",
+    "source": "ch4_switch_self_learning",
+    "target": "ch4_switch_filter_forward",
+    "relation": "前置知识",
+    "description": "先理解表项学习，才能理解目的地址转发决策"
+  },
+  {
+    "id": "edge_fd_102",
+    "source": "ch4_ethernet_switch",
+    "target": "ch4_switch_interconnection",
+    "relation": "包含",
+    "description": "自学习交换机可以透明互联"
+  },
+  {
+    "id": "edge_fd_103",
+    "source": "ch4_switch_self_learning",
+    "target": "ch4_switch_interconnection",
+    "relation": "应用于",
+    "description": "多交换机网络仍通过源MAC自学习建立路径"
+  },
+  {
+    "id": "edge_fd_104",
+    "source": "ch1_forwarding",
+    "target": "ch4_switch_vs_router",
+    "relation": "应用于",
+    "description": "交换机和路由器都会执行存储转发"
+  },
+  {
+    "id": "edge_fd_105",
+    "source": "ch1_routing",
+    "target": "ch4_switch_vs_router",
+    "relation": "应用于",
+    "description": "路由器使用路由算法计算IP转发表，交换机通过自学习建立MAC表"
+  },
+  {
+    "id": "edge_fd_106",
+    "source": "ch4_ethernet_switch",
+    "target": "ch4_switch_vs_router",
+    "relation": "对比",
+    "description": "交换机工作在链路层，路由器工作在网络层"
+  },
+  {
+    "id": "edge_fd_107",
+    "source": "ch4_lan",
+    "target": "ch4_vlan",
+    "relation": "包含",
+    "description": "VLAN在物理LAN之上划分逻辑广播域"
+  },
+  {
+    "id": "edge_fd_108",
+    "source": "ch4_vlan",
+    "target": "ch4_port_based_vlan",
+    "relation": "包含",
+    "description": "端口分组是VLAN的常见实现方式"
+  },
+  {
+    "id": "edge_fd_109",
+    "source": "ch4_vlan",
+    "target": "ch4_vlan_trunk_8021q",
+    "relation": "包含",
+    "description": "跨交换机VLAN使用Trunk和802.1Q标签"
+  },
+  {
+    "id": "edge_fd_110",
+    "source": "ch4_ethernet_frame",
+    "target": "ch4_vlan_trunk_8021q",
+    "relation": "前置知识",
+    "description": "802.1Q在标准以太网帧中插入标签并重算CRC"
+  },
+  {
+    "id": "edge_fd_111",
+    "source": "ch4_lan",
+    "target": "ch4_datacenter_network",
+    "relation": "应用于",
+    "description": "数据中心由大规模高速交换网络连接服务器"
+  },
+  {
+    "id": "edge_fd_112",
+    "source": "ch4_datacenter_network",
+    "target": "ch4_datacenter_multipath",
+    "relation": "包含",
+    "description": "数据中心使用多路径提升吞吐和可靠性"
+  },
+  {
+    "id": "edge_fd_113",
+    "source": "ch4_datacenter_network",
+    "target": "ch4_load_balancer",
+    "relation": "包含",
+    "description": "负载均衡器负责把外部请求分配给内部服务器"
+  },
+  {
+    "id": "edge_fd_114",
+    "source": "ch1_throughput_bottleneck",
+    "target": "ch4_datacenter_multipath",
+    "relation": "应用于",
+    "description": "多路径可分散瓶颈并提高机架间吞吐量"
+  },
+  {
+    "id": "edge_fd_115",
+    "source": "ch4_arp",
+    "target": "ch4_web_request_lifecycle",
+    "relation": "应用于",
+    "description": "Web请求发送前通过ARP获得首跳MAC地址"
+  },
+  {
+    "id": "edge_fd_116",
+    "source": "ch4_ethernet",
+    "target": "ch4_web_request_lifecycle",
+    "relation": "应用于",
+    "description": "DHCP、DNS、TCP和HTTP报文在LAN内封装进以太网帧"
+  },
+  {
+    "id": "edge_fd_117",
+    "source": "ch4_ethernet_switch",
+    "target": "ch4_web_request_lifecycle",
+    "relation": "应用于",
+    "description": "交换机在主机和首跳路由器之间转发帧"
+  },
+  {
+    "id": "edge_fd_118",
+    "source": "ch1_encapsulation",
+    "target": "ch4_web_request_lifecycle",
+    "relation": "应用于",
+    "description": "Web访问展示应用到物理层的逐层封装与解封装"
   }
 ]
