@@ -1,0 +1,260 @@
+[
+  {
+    "id": "core_case_tcp_congestion",
+    "title": "TCP拥塞控制分析",
+    "description": "根据cwnd、ssthresh和ACK序列识别慢开始、拥塞避免、快重传与快恢复。",
+    "background": "在可控网络中传输大文件并捕获TCP流，结合时间-序列图观察丢包前后的窗口变化。",
+    "steps": [
+      "使用Wireshark捕获单条TCP连接并导出序号、ACK和重传事件",
+      "根据RTT分组绘制cwnd近似变化曲线",
+      "区分超时与三个重复ACK两类拥塞信号",
+      "计算新的ssthresh并解释恢复阶段"
+    ],
+    "related_nodes": [
+      "core_ch6_tcp",
+      "core_ch6_congestion",
+      "core_ch6_slow_start",
+      "core_ch6_congestion_avoidance",
+      "core_ch6_fast_retransmit",
+      "core_ch6_fast_recovery"
+    ],
+    "analysis": "cwnd在慢开始中近似按RTT指数增长，在拥塞避免中线性增长；超时通常导致更激进的窗口回退，重复ACK则允许快重传和快恢复。",
+    "chapter": "传输层",
+    "difficulty": 4,
+    "content": "# TCP拥塞控制分析\n\n## 背景\n在可控网络中传输大文件并捕获TCP流，结合时间-序列图观察丢包前后的窗口变化。\n\n## 实施步骤\n1. 使用Wireshark捕获单条TCP连接并导出序号、ACK和重传事件\n2. 根据RTT分组绘制cwnd近似变化曲线\n3. 区分超时与三个重复ACK两类拥塞信号\n4. 计算新的ssthresh并解释恢复阶段\n\n## 分析\ncwnd在慢开始中近似按RTT指数增长，在拥塞避免中线性增长；超时通常导致更激进的窗口回退，重复ACK则允许快重传和快恢复。",
+    "tags": [
+      "TCP",
+      "拥塞控制",
+      "Wireshark",
+      "cwnd"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_routing_simulation",
+    "title": "路由算法模拟",
+    "description": "在同一拓扑上模拟距离向量与链路状态算法并比较收敛过程。",
+    "background": "构造五路由器加权拓扑，在链路故障前后观察各节点路由表变化。",
+    "steps": [
+      "建立带链路代价的邻接表",
+      "运行Bellman-Ford式距离向量迭代并记录每轮结果",
+      "泛洪链路状态后运行Dijkstra算法",
+      "断开一条链路，比较收敛时间和路由环路风险"
+    ],
+    "related_nodes": [
+      "core_ch5_routing_algorithm",
+      "core_ch5_distance_vector",
+      "core_ch5_link_state",
+      "core_ch5_rip",
+      "core_ch5_ospf"
+    ],
+    "analysis": "距离向量只依赖邻居信息，可能出现慢收敛和计数到无穷；链路状态需要维护全网拓扑，但通常能更快得到一致最短路径。",
+    "chapter": "网络层",
+    "difficulty": 4,
+    "content": "# 路由算法模拟\n\n## 背景\n构造五路由器加权拓扑，在链路故障前后观察各节点路由表变化。\n\n## 实施步骤\n1. 建立带链路代价的邻接表\n2. 运行Bellman-Ford式距离向量迭代并记录每轮结果\n3. 泛洪链路状态后运行Dijkstra算法\n4. 断开一条链路，比较收敛时间和路由环路风险\n\n## 分析\n距离向量只依赖邻居信息，可能出现慢收敛和计数到无穷；链路状态需要维护全网拓扑，但通常能更快得到一致最短路径。",
+    "tags": [
+      "路由算法",
+      "Bellman-Ford",
+      "Dijkstra",
+      "收敛"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_http_capture",
+    "title": "HTTP协议抓包分析",
+    "description": "通过浏览器访问测试站点，分析HTTP请求、响应、状态码、首部与连接复用。",
+    "background": "使用浏览器开发者工具或Wireshark捕获一次页面加载，比较HTTP与HTTPS下可见信息。",
+    "steps": [
+      "清空浏览器缓存并开始抓包",
+      "过滤HTTP或TCP流并定位GET请求",
+      "检查Host、Cookie、Content-Type和缓存首部",
+      "比较持续连接下多个对象的连接复用",
+      "访问HTTPS站点并说明TLS加密后的可见边界"
+    ],
+    "related_nodes": [
+      "core_ch7_http",
+      "core_ch7_http_message",
+      "core_ch7_persistent_http",
+      "core_ch7_cookie_session",
+      "core_ch7_https_tls"
+    ],
+    "analysis": "明文HTTP可直接观察请求行和首部；HTTPS只能看到TLS握手和加密记录。持续连接减少重复TCP握手，但HTTP/1.1仍可能受应用层队头等待影响。",
+    "chapter": "应用层",
+    "difficulty": 4,
+    "content": "# HTTP协议抓包分析\n\n## 背景\n使用浏览器开发者工具或Wireshark捕获一次页面加载，比较HTTP与HTTPS下可见信息。\n\n## 实施步骤\n1. 清空浏览器缓存并开始抓包\n2. 过滤HTTP或TCP流并定位GET请求\n3. 检查Host、Cookie、Content-Type和缓存首部\n4. 比较持续连接下多个对象的连接复用\n5. 访问HTTPS站点并说明TLS加密后的可见边界\n\n## 分析\n明文HTTP可直接观察请求行和首部；HTTPS只能看到TLS握手和加密记录。持续连接减少重复TCP握手，但HTTP/1.1仍可能受应用层队头等待影响。",
+    "tags": [
+      "HTTP",
+      "抓包",
+      "状态码",
+      "TLS"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_dns_resolution",
+    "title": "DNS解析过程",
+    "description": "跟踪从本地缓存到根、顶级域和权威服务器的完整域名解析链路。",
+    "background": "选择一个未缓存域名，使用nslookup或dig分别执行递归查询和迭代跟踪。",
+    "steps": [
+      "清理本地DNS缓存并记录配置的递归解析器",
+      "查询A与AAAA记录并记录TTL",
+      "使用迭代跟踪观察根、TLD和权威服务器转介",
+      "重复查询比较缓存命中时延",
+      "等待或推算TTL过期后的行为"
+    ],
+    "related_nodes": [
+      "core_ch7_dns",
+      "core_ch7_dns_hierarchy",
+      "core_ch7_dns_resolution",
+      "core_ch7_dns_cache",
+      "core_ch7_dns_rr"
+    ],
+    "analysis": "客户端通常向本地解析器发递归请求，解析器再执行迭代查询。缓存显著降低时延，但TTL期间可能暂时返回尚未更新的记录。",
+    "chapter": "应用层",
+    "difficulty": 4,
+    "content": "# DNS解析过程\n\n## 背景\n选择一个未缓存域名，使用nslookup或dig分别执行递归查询和迭代跟踪。\n\n## 实施步骤\n1. 清理本地DNS缓存并记录配置的递归解析器\n2. 查询A与AAAA记录并记录TTL\n3. 使用迭代跟踪观察根、TLD和权威服务器转介\n4. 重复查询比较缓存命中时延\n5. 等待或推算TTL过期后的行为\n\n## 分析\n客户端通常向本地解析器发递归请求，解析器再执行迭代查询。缓存显著降低时延，但TTL期间可能暂时返回尚未更新的记录。",
+    "tags": [
+      "DNS",
+      "递归",
+      "迭代",
+      "TTL"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_tcp_lifecycle",
+    "title": "TCP三次握手与四次挥手",
+    "description": "抓取完整TCP连接，逐项核对序号、确认号、标志位和TIME_WAIT。",
+    "background": "运行短连接客户端和服务器，保存从SYN到最终ACK的全部报文。",
+    "steps": [
+      "过滤指定TCP四元组",
+      "标记SYN、SYN+ACK、ACK并验证确认号",
+      "确认数据阶段序号按字节增长",
+      "标记FIN与ACK并区分两个方向关闭",
+      "在主动关闭端检查TIME_WAIT持续时间"
+    ],
+    "related_nodes": [
+      "core_ch6_handshake",
+      "core_ch6_seq_ack",
+      "core_ch6_connection_release",
+      "core_ch6_time_wait",
+      "core_ch6_tcp_header"
+    ],
+    "analysis": "三次握手同步双方初始序号；四次挥手源于全双工两个方向独立关闭；TIME_WAIT保证最终ACK可重传并隔离旧连接报文。",
+    "chapter": "传输层",
+    "difficulty": 4,
+    "content": "# TCP三次握手与四次挥手\n\n## 背景\n运行短连接客户端和服务器，保存从SYN到最终ACK的全部报文。\n\n## 实施步骤\n1. 过滤指定TCP四元组\n2. 标记SYN、SYN+ACK、ACK并验证确认号\n3. 确认数据阶段序号按字节增长\n4. 标记FIN与ACK并区分两个方向关闭\n5. 在主动关闭端检查TIME_WAIT持续时间\n\n## 分析\n三次握手同步双方初始序号；四次挥手源于全双工两个方向独立关闭；TIME_WAIT保证最终ACK可重传并隔离旧连接报文。",
+    "tags": [
+      "三次握手",
+      "四次挥手",
+      "序号",
+      "TIME_WAIT"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_subnetting",
+    "title": "子网划分计算",
+    "description": "为部门网络分配VLSM地址块并验证网络地址、广播地址与可用主机范围。",
+    "background": "某单位获得192.168.10.0/24，需要为60、30、12台主机的三个部门分配互不重叠子网。",
+    "steps": [
+      "按主机需求从大到小排序",
+      "为60台主机选择/26地址块",
+      "为30台主机选择/27地址块",
+      "为12台主机选择/28地址块",
+      "计算每块网络地址、首末可用地址和广播地址",
+      "用最长前缀匹配验证转发"
+    ],
+    "related_nodes": [
+      "core_ch5_ipv4_addressing",
+      "core_ch5_subnet_mask",
+      "core_ch5_subnetting",
+      "core_ch5_cidr",
+      "core_ch5_longest_prefix"
+    ],
+    "analysis": "从大块开始分配可避免碎片。示例可依次使用192.168.10.0/26、192.168.10.64/27和192.168.10.96/28，剩余地址仍可继续划分。",
+    "chapter": "网络层",
+    "difficulty": 4,
+    "content": "# 子网划分计算\n\n## 背景\n某单位获得192.168.10.0/24，需要为60、30、12台主机的三个部门分配互不重叠子网。\n\n## 实施步骤\n1. 按主机需求从大到小排序\n2. 为60台主机选择/26地址块\n3. 为30台主机选择/27地址块\n4. 为12台主机选择/28地址块\n5. 计算每块网络地址、首末可用地址和广播地址\n6. 用最长前缀匹配验证转发\n\n## 分析\n从大块开始分配可避免碎片。示例可依次使用192.168.10.0/26、192.168.10.64/27和192.168.10.96/28，剩余地址仍可继续划分。",
+    "tags": [
+      "子网划分",
+      "VLSM",
+      "CIDR",
+      "广播地址"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_nat",
+    "title": "NAT工作原理",
+    "description": "观察多台私网主机共享公网地址时地址与端口的转换表。",
+    "background": "两台内网主机同时访问同一Web服务器，边界路由器执行NAPT。",
+    "steps": [
+      "记录两台主机的私网四元组",
+      "在内外接口同时抓取报文",
+      "对比源IP与源端口变化",
+      "建立并验证NAT映射表",
+      "模拟映射超时后再次连接",
+      "讨论入站连接和端到端原则限制"
+    ],
+    "related_nodes": [
+      "core_ch5_nat",
+      "core_ch5_ipv4_addressing",
+      "core_ch5_router",
+      "core_ch6_port",
+      "core_ch6_socket"
+    ],
+    "analysis": "NAPT用不同公网端口区分内部连接。转换节省IPv4地址，但改变端到端可达性，入站服务通常需要静态映射或端口转发。",
+    "chapter": "网络层",
+    "difficulty": 4,
+    "content": "# NAT工作原理\n\n## 背景\n两台内网主机同时访问同一Web服务器，边界路由器执行NAPT。\n\n## 实施步骤\n1. 记录两台主机的私网四元组\n2. 在内外接口同时抓取报文\n3. 对比源IP与源端口变化\n4. 建立并验证NAT映射表\n5. 模拟映射超时后再次连接\n6. 讨论入站连接和端到端原则限制\n\n## 分析\nNAPT用不同公网端口区分内部连接。转换节省IPv4地址，但改变端到端可达性，入站服务通常需要静态映射或端口转发。",
+    "tags": [
+      "NAT",
+      "NAPT",
+      "端口映射",
+      "私网"
+    ],
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_socket",
+    "title": "Socket编程实践",
+    "description": "实现TCP回显与UDP查询程序，比较连接管理、报文边界和异常处理。",
+    "background": "使用Python标准socket库编写本地客户端与服务器，不依赖第三方网络框架。",
+    "steps": [
+      "实现TCP服务器的socket、bind、listen、accept流程",
+      "实现TCP客户端connect并循环收发多条消息",
+      "正确处理半包、粘包和连接关闭",
+      "实现UDP服务器recvfrom与客户端sendto",
+      "加入超时、日志和并发测试",
+      "用抓包验证TCP字节流与UDP数据报边界"
+    ],
+    "related_nodes": [
+      "core_ch7_socket_programming",
+      "core_ch6_socket",
+      "core_ch6_tcp",
+      "core_ch6_udp",
+      "core_ch6_multiplexing"
+    ],
+    "analysis": "TCP需要连接建立并提供可靠字节流，应用必须自行定义消息边界；UDP保留数据报边界但不保证到达。端口和地址共同把报文分用给正确进程。",
+    "chapter": "应用层",
+    "difficulty": 4,
+    "content": "# Socket编程实践\n\n## 背景\n使用Python标准socket库编写本地客户端与服务器，不依赖第三方网络框架。\n\n## 实施步骤\n1. 实现TCP服务器的socket、bind、listen、accept流程\n2. 实现TCP客户端connect并循环收发多条消息\n3. 正确处理半包、粘包和连接关闭\n4. 实现UDP服务器recvfrom与客户端sendto\n5. 加入超时、日志和并发测试\n6. 用抓包验证TCP字节流与UDP数据报边界\n\n## 分析\nTCP需要连接建立并提供可靠字节流，应用必须自行定义消息边界；UDP保留数据报边界但不保证到达。端口和地址共同把报文分用给正确进程。",
+    "tags": [
+      "Socket",
+      "TCP",
+      "UDP",
+      "编程"
+    ],
+    "image_urls": [],
+    "video_url": null
+  }
+]

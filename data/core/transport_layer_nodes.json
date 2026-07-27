@@ -1,0 +1,461 @@
+[
+  {
+    "id": "core_ch6_transport_layer",
+    "name": "传输层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层在端系统中为应用进程提供端到端逻辑通信，并完成复用分用、差错检测与可选的可靠传输。",
+    "keywords": [
+      "进程通信",
+      "端到端",
+      "复用分用",
+      "可靠传输"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_process_communication",
+    "name": "进程到进程通信",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层把网络层的主机到主机交付扩展为应用进程之间的逻辑通信。",
+    "keywords": [
+      "进程",
+      "逻辑通信",
+      "端系统",
+      "应用数据"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_multiplexing",
+    "name": "复用与分用",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "发送端把多个套接字的数据复用到传输层报文，接收端依据端口及连接标识把报文分用给正确进程。",
+    "keywords": [
+      "复用",
+      "分用",
+      "套接字",
+      "连接标识"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_port",
+    "name": "端口号",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "端口号是16位进程标识，0到1023通常为熟知端口，客户端常使用临时端口。",
+    "keywords": [
+      "16位",
+      "熟知端口",
+      "临时端口",
+      "进程标识"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_socket",
+    "name": "套接字端点",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层套接字是应用进程使用网络服务的端点，TCP连接通常由源和目的IP地址、端口号四元组标识。",
+    "keywords": [
+      "套接字",
+      "四元组",
+      "IP地址",
+      "端口号"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_udp",
+    "name": "UDP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP提供无连接、面向报文的尽最大努力交付，首部开销小且应用可直接控制发送时机。",
+    "keywords": [
+      "无连接",
+      "面向报文",
+      "低开销",
+      "尽最大努力"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_udp_header",
+    "name": "UDP数据报首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP首部固定8字节，依次包含源端口、目的端口、长度和检验和四个16位字段。",
+    "keywords": [
+      "8字节",
+      "源端口",
+      "长度",
+      "检验和"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_udp_checksum",
+    "name": "UDP检验和",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP检验和对伪首部、UDP首部和数据进行反码求和，用于检测端到端传输中的比特差错。",
+    "keywords": [
+      "伪首部",
+      "反码求和",
+      "差错检测",
+      "端到端"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_tcp",
+    "name": "TCP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP提供面向连接、可靠、全双工的字节流服务，并实现流量控制和拥塞控制。",
+    "keywords": [
+      "面向连接",
+      "可靠",
+      "字节流",
+      "全双工"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_tcp_header",
+    "name": "TCP报文段首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP首部至少20字节，包含端口、序号、确认号、标志位、窗口、检验和与选项等字段。",
+    "keywords": [
+      "序号",
+      "确认号",
+      "标志位",
+      "接收窗口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_seq_ack",
+    "name": "序号与确认号",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP按字节编号；确认号表示期望收到的下一个字节序号，累积确认此前连续数据均已收到。",
+    "keywords": [
+      "字节编号",
+      "累计确认",
+      "确认号",
+      "有序交付"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_handshake",
+    "name": "TCP三次握手",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP以SYN、SYN+ACK、ACK三次报文交换同步双方初始序号并确认双向通信能力。",
+    "keywords": [
+      "SYN",
+      "ACK",
+      "初始序号",
+      "连接建立"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_connection_release",
+    "name": "TCP四次挥手",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP全双工连接的两个方向需分别关闭，典型过程为FIN、ACK、FIN、ACK。",
+    "keywords": [
+      "FIN",
+      "半关闭",
+      "连接释放",
+      "全双工"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_time_wait",
+    "name": "TIME_WAIT状态",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "主动关闭方在最终ACK后保持TIME_WAIT，通常等待2MSL，以便重传最终ACK并让旧报文在网络中消失。",
+    "keywords": [
+      "2MSL",
+      "最终ACK",
+      "旧报文",
+      "主动关闭"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_reliable",
+    "name": "可靠数据传输",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "可靠传输综合使用差错检测、序号、确认、定时器和重传，对上层呈现无差错且有序的数据流。",
+    "keywords": [
+      "确认",
+      "重传",
+      "定时器",
+      "有序交付"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_checksum",
+    "name": "传输层检验和",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "检验和把报文按16位字进行反码求和，接收端据此发现传输中的比特差错，但不能纠错。",
+    "keywords": [
+      "16位字",
+      "反码",
+      "差错检测",
+      "伪首部"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_stop_wait",
+    "name": "停止等待协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "停止等待协议每发送一个分组便等待确认，逻辑简单但在带宽时延积较大的链路上利用率低。",
+    "keywords": [
+      "停止等待",
+      "确认",
+      "超时重传",
+      "信道利用率"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_pipelining",
+    "name": "流水线可靠传输",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "流水线允许多个未确认分组同时在途，通过扩大序号空间和缓存提高链路利用率。",
+    "keywords": [
+      "流水线",
+      "在途分组",
+      "序号空间",
+      "缓存"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_sliding_window",
+    "name": "滑动窗口",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "滑动窗口限制发送方未确认数据范围，确认到达后窗口向前移动，实现流水线与发送速率约束。",
+    "keywords": [
+      "发送窗口",
+      "接收窗口",
+      "累计确认",
+      "窗口滑动"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_flow_control",
+    "name": "TCP流量控制",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "接收方在首部中通告接收窗口rwnd，发送方限制未确认数据，避免接收缓存溢出。",
+    "keywords": [
+      "rwnd",
+      "接收缓存",
+      "窗口通告",
+      "零窗口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_rtt_rto",
+    "name": "RTT估计与重传超时",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP以指数加权平均估计RTT，并结合RTT偏差设置RTO，使超时既能响应丢包又不过于敏感。",
+    "keywords": [
+      "SampleRTT",
+      "EstimatedRTT",
+      "DevRTT",
+      "RTO"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_congestion",
+    "name": "TCP拥塞控制",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP根据拥塞窗口cwnd和慢启动门限调节在途数据，以适应网络可用容量并避免拥塞崩溃。",
+    "keywords": [
+      "cwnd",
+      "ssthresh",
+      "AIMD",
+      "拥塞窗口"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_slow_start",
+    "name": "慢开始",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "慢开始阶段每收到一个新的确认就增加cwnd，使拥塞窗口在每个RTT近似翻倍，直到门限或拥塞事件。",
+    "keywords": [
+      "指数增长",
+      "cwnd",
+      "ssthresh",
+      "RTT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_congestion_avoidance",
+    "name": "拥塞避免",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "拥塞避免采用加性增大，使cwnd每个RTT大约增加一个MSS，谨慎探测剩余带宽。",
+    "keywords": [
+      "加性增大",
+      "AIMD",
+      "MSS",
+      "线性增长"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_fast_retransmit",
+    "name": "快重传",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "发送方收到三个重复ACK时，不等待超时便重传推测丢失的报文段，从而缩短丢包恢复时间。",
+    "keywords": [
+      "三个重复ACK",
+      "重传",
+      "丢包",
+      "无需超时"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_fast_recovery",
+    "name": "快恢复",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "快恢复在重复ACK触发丢包后降低拥塞窗口但避免回到一个MSS，使连接较快恢复发送。",
+    "keywords": [
+      "重复ACK",
+      "门限",
+      "窗口减小",
+      "恢复"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_tcp_udp_compare",
+    "name": "TCP与UDP对比",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP强调连接、可靠性与拥塞控制；UDP强调报文边界、低时延和由应用自行控制可靠策略。",
+    "keywords": [
+      "可靠性",
+      "连接",
+      "开销",
+      "应用选择"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  }
+]

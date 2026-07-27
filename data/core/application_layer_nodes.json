@@ -1,0 +1,461 @@
+[
+  {
+    "id": "core_ch7_application_layer",
+    "name": "应用层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "应用层定义网络应用进程交换的报文类型、语义、格式和交互规则，直接为用户应用提供服务。",
+    "keywords": [
+      "应用协议",
+      "报文",
+      "进程",
+      "交互规则"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_architecture",
+    "name": "网络应用体系结构",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "网络应用通常采用客户-服务器、对等或混合体系结构，体系结构决定进程组织和资源分布方式。",
+    "keywords": [
+      "客户-服务器",
+      "P2P",
+      "进程组织",
+      "体系结构"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_client_server",
+    "name": "客户-服务器模式",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "客户进程主动请求服务，服务器在固定地址持续运行并响应多个客户，便于集中管理。",
+    "keywords": [
+      "客户",
+      "服务器",
+      "请求响应",
+      "固定地址"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_p2p",
+    "name": "对等P2P模式",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "P2P中对等方既可请求也可提供资源，具有自扩展性，但管理、安全和可用性更复杂。",
+    "keywords": [
+      "对等方",
+      "自扩展",
+      "去中心化",
+      "资源共享"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_socket_programming",
+    "name": "Socket编程",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "Socket API使应用选择TCP或UDP，通过地址和端口建立通信端点并执行发送、接收操作。",
+    "keywords": [
+      "Socket API",
+      "bind",
+      "connect",
+      "send/receive"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns",
+    "name": "域名系统DNS",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DNS是分布式、层次化命名系统，把域名解析为IP地址，并支持别名、邮件交换和负载分配。",
+    "keywords": [
+      "域名解析",
+      "分布式数据库",
+      "53端口",
+      "资源记录"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_hierarchy",
+    "name": "DNS层次结构",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DNS由根域、顶级域和权威域名服务器形成层次结构，区域数据由相应权威服务器维护。",
+    "keywords": [
+      "根服务器",
+      "顶级域",
+      "权威服务器",
+      "区域"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_resolution",
+    "name": "递归与迭代解析",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "递归查询要求被询问服务器完成后续解析；迭代查询则返回下一步应询问的服务器地址。",
+    "keywords": [
+      "递归查询",
+      "迭代查询",
+      "本地域名服务器",
+      "转介"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_cache",
+    "name": "DNS缓存",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "解析器和域名服务器按TTL缓存资源记录，减少查询时延与根、顶级服务器负载。",
+    "keywords": [
+      "TTL",
+      "缓存命中",
+      "过期",
+      "查询时延"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_rr",
+    "name": "DNS资源记录",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DNS资源记录以名称、值、类型和TTL表示，常见类型包括A、AAAA、NS、CNAME和MX。",
+    "keywords": [
+      "A记录",
+      "AAAA",
+      "CNAME",
+      "MX"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http",
+    "name": "HTTP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP是Web的应用层协议，采用请求-响应模型，通常运行于TCP之上且本身无状态。",
+    "keywords": [
+      "请求响应",
+      "无状态",
+      "Web",
+      "TCP"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http_message",
+    "name": "HTTP报文",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP请求报文包含请求行、首部和可选实体；响应报文包含状态行、首部和可选实体。",
+    "keywords": [
+      "请求行",
+      "状态行",
+      "首部",
+      "实体"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_persistent_http",
+    "name": "持续连接HTTP",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "持续连接允许同一TCP连接传输多个HTTP对象，减少重复握手开销和额外RTT。",
+    "keywords": [
+      "持久连接",
+      "RTT",
+      "连接复用",
+      "流水线"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_cookie_session",
+    "name": "Cookie与会话",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "Cookie由服务器通过响应首部设置并由浏览器后续携带，配合服务端会话状态识别用户。",
+    "keywords": [
+      "Set-Cookie",
+      "Cookie",
+      "会话标识",
+      "状态管理"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_web_cache",
+    "name": "Web缓存与代理",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "Web缓存保存可复用响应并代表客户向源服务器请求，能降低访问时延和出口链路流量。",
+    "keywords": [
+      "代理服务器",
+      "缓存命中",
+      "条件GET",
+      "访问时延"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_https_tls",
+    "name": "HTTPS与TLS",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTPS在HTTP与传输层之间使用TLS，提供服务器认证、机密性和报文完整性。",
+    "keywords": [
+      "TLS",
+      "证书",
+      "加密",
+      "完整性"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http2",
+    "name": "HTTP/2",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP/2在一个TCP连接中使用二进制分帧、多路复用和首部压缩，减少应用层队头等待。",
+    "keywords": [
+      "二进制分帧",
+      "多路复用",
+      "HPACK",
+      "单TCP连接"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http3",
+    "name": "HTTP/3",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP/3运行在基于UDP的QUIC之上，把可靠流和TLS 1.3结合，降低连接建立及跨流队头阻塞。",
+    "keywords": [
+      "QUIC",
+      "UDP",
+      "TLS 1.3",
+      "多流"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_ftp",
+    "name": "FTP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "FTP使用独立的控制连接和数据连接传输文件，控制连接通常使用TCP 21端口。",
+    "keywords": [
+      "控制连接",
+      "数据连接",
+      "21端口",
+      "文件传输"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_email",
+    "name": "电子邮件系统",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "电子邮件系统由用户代理、邮件服务器和邮件传输协议组成，采用存储转发方式传递邮件。",
+    "keywords": [
+      "用户代理",
+      "邮件服务器",
+      "存储转发",
+      "消息队列"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_smtp",
+    "name": "SMTP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "SMTP用于邮件服务器之间以及客户端到服务器的邮件提交，基于TCP并采用命令-响应交互。",
+    "keywords": [
+      "邮件发送",
+      "TCP",
+      "命令响应",
+      "存储转发"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_mime",
+    "name": "MIME",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "MIME扩展电子邮件格式，用Content-Type和编码方式承载非ASCII文本、图片与附件。",
+    "keywords": [
+      "Content-Type",
+      "附件",
+      "编码",
+      "多媒体邮件"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_pop3",
+    "name": "POP3协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "POP3以下载并可删除服务器邮件为主要模式，功能简单，适合单一终端离线阅读。",
+    "keywords": [
+      "邮件读取",
+      "下载删除",
+      "110端口",
+      "离线"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_imap",
+    "name": "IMAP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "IMAP在服务器保留邮件和文件夹状态，支持多终端同步、服务器搜索与按需获取。",
+    "keywords": [
+      "服务器存储",
+      "多端同步",
+      "文件夹",
+      "按需获取"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dhcp",
+    "name": "DHCP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DHCP通过发现、提供、请求、确认过程动态分配IP地址、掩码、默认网关和DNS服务器。",
+    "keywords": [
+      "DORA",
+      "地址租约",
+      "默认网关",
+      "UDP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_url_uri",
+    "name": "URI与URL",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "URI统一标识资源，URL是URI的常见子集，说明访问资源所用方案、主机、端口与路径。",
+    "keywords": [
+      "URI",
+      "URL",
+      "scheme",
+      "资源定位"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_websocket",
+    "name": "WebSocket协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "WebSocket先经HTTP Upgrade握手建立连接，随后在单一TCP连接上提供全双工消息通信。",
+    "keywords": [
+      "Upgrade",
+      "全双工",
+      "长连接",
+      "消息帧"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  }
+]

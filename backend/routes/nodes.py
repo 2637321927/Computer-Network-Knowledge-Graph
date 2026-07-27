@@ -1,10 +1,11 @@
 """节点相关API路由"""
 from fastapi import APIRouter, HTTPException, Query
 from typing import Optional, List
-from models import Node, NodeCreate, NodeUpdate
+from models import Case, Node, NodeCreate, NodeUpdate, Question
 from database import (
     get_all_nodes, get_node_by_id, search_nodes,
-    create_node, update_node, delete_node, get_node_neighbors
+    create_node, update_node, delete_node, get_node_neighbors,
+    get_cases_for_node, get_questions_for_node
 )
 
 router = APIRouter(prefix="/api/nodes", tags=["节点管理"])
@@ -60,3 +61,19 @@ async def get_neighbors(node_id: str):
     if not result["node"]:
         raise HTTPException(status_code=404, detail="知识点不存在")
     return result
+
+
+@router.get("/{node_id}/questions", response_model=List[Question])
+async def get_node_questions(node_id: str):
+    """获取指定知识点关联的全部试题。"""
+    if not get_node_by_id(node_id):
+        raise HTTPException(status_code=404, detail="知识点不存在")
+    return get_questions_for_node(node_id)
+
+
+@router.get("/{node_id}/cases", response_model=List[Case])
+async def get_node_cases(node_id: str):
+    """获取指定知识点关联的全部典型案例。"""
+    if not get_node_by_id(node_id):
+        raise HTTPException(status_code=404, detail="知识点不存在")
+    return get_cases_for_node(node_id)

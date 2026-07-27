@@ -44,6 +44,16 @@ export async function fetchNeighbors(id: string): Promise<NeighborData> {
   return data;
 }
 
+export async function fetchNodeQuestions(id: string): Promise<QuestionItem[]> {
+  const { data } = await api.get(`/nodes/${id}/questions`);
+  return data;
+}
+
+export async function fetchNodeCases(id: string): Promise<CaseItem[]> {
+  const { data } = await api.get(`/nodes/${id}/cases`);
+  return data;
+}
+
 // 关系 API
 
 export async function fetchEdges(): Promise<Edge[]> {
@@ -93,6 +103,11 @@ export async function fetchQuestionById(id: string): Promise<QuestionItem> {
 
 export async function fetchGraph(params?: { chapter?: string; layer?: string }): Promise<GraphData> {
   const { data } = await api.get('/graph', { params });
+  return data;
+}
+
+export async function fetchLayerGraph(layerNumber: 5 | 6 | 7): Promise<GraphData> {
+  const { data } = await api.get(`/graph/layer/${layerNumber}`);
   return data;
 }
 

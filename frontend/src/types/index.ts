@@ -1,6 +1,6 @@
 // 枚举
 
-export type NodeType = '概念' | '案例' | '问题' | '协议' | '算法' | '原理' | '技术';
+export type NodeType = '概念' | '案例' | '问题' | '协议' | '算法' | '原理' | '技术' | '设备' | '服务';
 
 export type RelationType = '包含' | '前置知识' | '属于层' | '相关案例' | '关联试题' | '应用于' | '对比' | '依赖';
 
@@ -73,6 +73,9 @@ export interface CaseItem {
   chapter: Chapter;
   difficulty: number;
   related_nodes: string[];
+  background?: string;
+  steps?: string[];
+  analysis?: string;
   content: string;
   tags: string[];
   image_urls?: string[];
@@ -85,15 +88,19 @@ export interface QuestionItem {
   id: string;
   name: string;
   title: string;
+  question?: string;
   type: QuestionType;
   chapter: Chapter;
   description: string;
   keywords: string[];
   related_nodes: string[];
+  knowledge_point_id?: string;
   options: string[];
   answer: string;
   explanation: string;
+  analysis?: string;
   difficulty: number;
+  difficulty_label?: '易' | '中' | '难';
 }
 
 // 图谱
