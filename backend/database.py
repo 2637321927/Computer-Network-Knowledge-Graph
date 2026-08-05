@@ -301,7 +301,7 @@ def get_graph_stats() -> Dict:
         edges_by_relation[rel] = edges_by_relation.get(rel, 0) + 1
     
     return {
-        "total_nodes": len(nodes),
+        "total_nodes": sum(1 for n in nodes if n.get("layer") == "概念层"),
         "total_edges": len(edges),
         "total_cases": len(cases),
         "total_questions": len(questions),
