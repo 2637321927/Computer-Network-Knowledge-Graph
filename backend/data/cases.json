@@ -451,5 +451,113 @@
     ],
     "image_urls": [],
     "video_url": null
+  },
+  {
+    "id": "case_ch8_cdn_accelerate",
+    "title": "视频网站CDN加速前后对比",
+    "chapter": "网络性能优化",
+    "description": "某视频网站在部署CDN前后，对比全国不同地区用户的视频首帧耗时和卡顿率。分析CDN如何通过边缘缓存减少跨运营商延迟。",
+    "related_nodes": [
+      "ch8_cdn",
+      "ch8_load_balance",
+      "ch8_qos"
+    ],
+    "tags": [
+      "CDN",
+      "视频加速",
+      "延迟优化",
+      "缓存命中率"
+    ],
+    "difficulty": 2,
+    "content": "# 视频网站 CDN 加速实验\n\n## 背景\n某视频平台用户反馈非一线城市播放卡顿严重。源站位于北京，华南用户需跨越多跳 ISP 路由。\n\n## 部署前指标\n| 地区 | 首帧耗时 | 卡顿率 |\n|------|---------|--------|\n| 北京 | 0.8s | 0.5% |\n| 广州 | 4.2s | 12% |\n| 成都 | 3.5s | 8% |\n\n## CDN 方案\n- 在全国 6 个核心城市部署 CDN 边缘节点\n- DNS 智能解析：用户域名解析到最近节点 IP\n- 热点视频预推送到各节点\n\n## 部署后\n| 地区 | 首帧耗时 | 卡顿率 |\n|------|---------|--------|\n| 北京 | 0.6s | 0.3% |\n| 广州 | 1.1s | 1.5% |\n| 成都 | 0.9s | 1.0% |\n\n## 结论\n- 边缘缓存消除长途传输，平均延迟下降 60%+\n- CDN 本质是用存储换带宽和延迟\n- 缓存命中率是 CDN 效果的核心指标",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch8_token_bucket_limit",
+    "title": "ISP流量整形：令牌桶限速案例分析",
+    "chapter": "网络性能优化",
+    "description": "某校园网出口部署令牌桶算法限制P2P下载带宽为5Mbps，允许突发到10Mbps持续2秒。分析参数配置对用户体验的影响。",
+    "related_nodes": [
+      "ch8_token_bucket",
+      "ch8_traffic_shaping",
+      "ch8_leaky_bucket"
+    ],
+    "tags": [
+      "令牌桶",
+      "流量整形",
+      "P2P限速",
+      "QoS"
+    ],
+    "difficulty": 3,
+    "content": "# 令牌桶限速实验\n\n## 场景\n校园网 1Gbps 出口，P2P 下载占 70% 带宽影响教学。在出口路由器配置令牌桶限制 P2P 流量。\n\n## 参数\n- 令牌生成速率 r = 5 Mbps (625 KB/s)\n- 桶容量 b = 10 Mb (1.25 MB)\n- 即允许突发 2 秒\n\n## 测试\n下载一个 100 MB 文件：\n```text\n前 2 秒：以 10 Mbps 突发下载 = 2.5 MB\n之后：以 5 Mbps 持续 = 剩余 97.5 MB 需 156 秒\n总计：约 158 秒\n```\n对比不限速（约 0.8 秒），延长了近 200 倍。\n\n## 如果改为漏桶\n无突发，全程 5 Mbps，下载需 160 秒。对小文件影响更大（无法利用突发加速）。\n\n## 结论\n- 令牌桶介于严格限制和完全放开之间\n- b 越大短期体验越好，但可能短时挤占其他流量\n- 实际部署常结合分类——网页浏览给大桶，P2P 给小桶",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch9_mininet_sdn",
+    "title": "Mininet搭建SDN网络：自定义流表路由",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "使用Mininet创建3交换机+6主机的胖树拓扑，通过Ryu控制器下发自定义流表实现流量工程，对比传统最短路径与负载均衡路由的效果。",
+    "related_nodes": [
+      "ch9_mininet",
+      "ch9_openflow",
+      "ch9_sdn",
+      "ch9_sdn_controller"
+    ],
+    "tags": [
+      "Mininet",
+      "OpenFlow",
+      "SDN",
+      "流表",
+      "Ryu"
+    ],
+    "difficulty": 4,
+    "content": "# Mininet SDN 实验\n\n## 拓扑\n```text\n        c0(Ryu控制器)\n       /  |  \\\n     s1  s2  s3\n    / \\  / \\  / \\\n   h1 h2 h3 h4 h5 h6\n```\n\n## 创建拓扑\n```bash\nsudo mn --topo tree,depth=2,fanout=3 \\\n  --controller=remote,ip=127.0.0.1,port=6653 \\\n  --switch=ovsk,protocols=OpenFlow13\n```\n\n## 实验一：默认行为\n控制器未下发流表时，交换机不知道如何处理包→Packet-In 到控制器→控制器泛洪→学习 MAC→下发流表。相当于自学习交换机。\n\n## 实验二：自定义最短路径\n```python\n# Ryu 应用：计算最短路径并下发流表\n@set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)\ndef packet_in_handler(self, ev):\n    # Dijkstra 计算最短路径\n    path = nx.shortest_path(graph, src, dst)\n    # 沿路径下发流表\n    for switch in path:\n        self.add_flow(switch, match, actions)\n```\n\n## 实验三：负载均衡\n同时有两条等价路径时轮询分配流，吞吐量提升约 45%。传统网络需手动配置 ECMP。\n\n## 结论\n- SDN 使流量工程从\"协议决定\"变为\"编程决定\"\n- 无需修改硬件，只改控制器代码即可改变全网行为",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch9_edge_face",
+    "title": "边缘AI：智能摄像头实时人脸识别",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "对比云端方案和边缘方案在人脸识别场景的延迟和带宽消耗，分析边缘计算在实时视频分析中的优势与挑战。",
+    "related_nodes": [
+      "ch9_edge_computing",
+      "ch9_edge_ai",
+      "ch9_mec"
+    ],
+    "tags": [
+      "边缘计算",
+      "AI推理",
+      "人脸识别",
+      "延迟",
+      "带宽"
+    ],
+    "difficulty": 2,
+    "content": "# 边缘 AI 人脸识别对比\n\n## 场景\n商场入口智能摄像头，每秒 30 帧 1080p 视频流，需实时识别 VIP 客户并推送欢迎信息。\n\n## 云端方案\n```text\n摄像头 → 编码 → 互联网 → 云端GPU推理 → 结果返回\n延迟：200-500ms（编解码+传输+推理）\n带宽：~4Mbps 持续上传\n```\n\n## 边缘方案\n```text\n摄像头 → 本地 NPU/GPU 推理 → 本地推送\n延迟：<50ms（无网络传输）\n带宽：仅上传识别结果(事件)，<1Kbps\n```\n\n## 关键对比\n| 指标 | 云端 | 边缘 |\n|------|------|------|\n| 延迟 | 200-500ms | <50ms |\n| 带宽 | 4Mbps/路 | <1Kbps |\n| 离线可用 | ❌ | ✅ |\n| 模型更新 | 容易 | 需OTA |\n| 硬件成本 | 低(摄像头) | 高(边缘算力) |\n\n## 结论\n- 对实时性要求高的场景边缘方案优势明显\n- 边缘不是替代云，而是互补——云端训练+边缘推理",
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch10_campus_network",
+    "title": "校园网规划与设计综合案例",
+    "chapter": "课程综合项目",
+    "description": "为某新建校区(5000人规模)设计完整的校园网络方案，覆盖需求分析、拓扑设计、VLAN规划、IP编址、安全策略、冗余设计全流程。",
+    "related_nodes": [
+      "ch10_network_design",
+      "ch10_packet_tracer_project"
+    ],
+    "tags": [
+      "校园网",
+      "网络设计",
+      "VLAN",
+      "OSPF",
+      "综合项目"
+    ],
+    "difficulty": 4,
+    "content": "# 校园网规划综合设计\n\n## 需求分析\n- 5000 名学生 + 500 教职工\n- 教学楼 10 栋、宿舍楼 15 栋、图书馆、行政楼\n- 每人 3 个设备(手机、笔记本、平板)\n- 核心业务：教务系统、在线教学、视频监控、一卡通\n\n## 逻辑设计\n### VLAN 规划\n| VLAN | 用途 | 网段 |\n|------|------|------|\n| 10 | 教务管理 | 10.10.0.0/16 |\n| 20 | 学生宿舍 | 10.20.0.0/16 |\n| 30 | 视频监控 | 10.30.0.0/16 |\n| 99 | 管理VLAN | 172.16.0.0/24 |\n\n### 路由设计\n- 核心层：OSPF Area 0（双核心交换机冗余）\n- 汇聚层：每栋楼一台三层交换机，运行 OSPF\n- 出口：NAT + 防火墙 + 多 ISP 链路负载均衡\n\n## 安全设计\n- ACL 禁止宿舍网段访问教务系统\n- 802.1X 认证 + MAC 地址绑定\n- 出口防火墙 IPS/IDS\n- 访客 VLAN 仅允许出站 Internet\n\n## 关键决策\n- 选三层架构(核心-汇聚-接入)而非扁平，提升扩展性\n- 视频监控独立 VLAN 避免广播风暴影响教学流量\n- 双核心 VRRP 冗余，任一路故障不中断",
+    "image_urls": [],
+    "video_url": null
   }
 ]

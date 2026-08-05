@@ -47,6 +47,7 @@ export default function NodesPage() {
   const [editingNode, setEditingNode] = useState<KnowledgeNode | null>(null);
   const [form] = Form.useForm();
   const [chapterFilter, setChapterFilter] = useState<string | undefined>(undefined);
+  const [layerFilter, setLayerFilter] = useState<string>('概念层');
   const [pagination, setPagination] = useState({ current: 1, pageSize: 15 });
 
   // 预览
@@ -61,7 +62,7 @@ export default function NodesPage() {
   const loadNodes = async () => {
     setLoading(true);
     try {
-      const data = await fetchNodes({ chapter: chapterFilter as any });
+      const data = await fetchNodes({ chapter: chapterFilter as any, layer: layerFilter as any });
       setNodes(data);
       const edges = await fetchEdges();
       setAllEdges(edges);
@@ -72,10 +73,10 @@ export default function NodesPage() {
     }
   };
 
-  useEffect(() => { loadNodes(); }, [chapterFilter]);
+  useEffect(() => { loadNodes(); }, [chapterFilter, layerFilter]);
   
   // 切换筛选时重置分页
-  useEffect(() => { setPagination(prev => ({ ...prev, current: 1 })); }, [chapterFilter]);
+  useEffect(() => { setPagination(prev => ({ ...prev, current: 1 })); }, [chapterFilter, layerFilter]);
 
   // 加载某节点的关联关系
   const loadNodeEdges = async (nodeId: string) => {
@@ -219,6 +220,14 @@ export default function NodesPage() {
         title="知识点管理"
         extra={
           <Space>
+            <Select
+              allowClear
+              placeholder="按层级筛选"
+              style={{ width: 120 }}
+              value={layerFilter}
+              onChange={(val) => setLayerFilter(val || '')}
+              options={layers.map(l => ({ label: l, value: l }))}
+            />
             <Select
               allowClear
               placeholder="按章节筛选"

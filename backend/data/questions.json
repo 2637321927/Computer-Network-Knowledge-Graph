@@ -13170,5 +13170,687 @@
     "explanation": "答案应说明作用，并覆盖Upgrade、全双工等要点。",
     "difficulty": 5,
     "difficulty_label": "难"
+  },
+  {
+    "id": "q_ch8_qos_01",
+    "title": "以下哪项不是QoS的关键性能指标？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 带宽",
+      "B. 时延",
+      "C. 颜色深度",
+      "D. 丢包率"
+    ],
+    "answer": "C",
+    "difficulty": 1,
+    "explanation": "QoS 四大指标是带宽、时延(延迟)、抖动和丢包率。颜色深度是图像属性。"
+  },
+  {
+    "id": "q_ch8_qos_02",
+    "title": "简述 IntServ 和 DiffServ 两种 QoS 模型的核心区别及适用场景。",
+    "chapter": "网络性能优化",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 3,
+    "explanation": "IntServ(集成服务)：通过RSVP为每条流预留端到端资源，提供严格QoS保证，但可扩展性差(核心路由器需维护每条流状态)，适用于企业VoIP等小规模场景。DiffServ(区分服务)：将流量分类标记(DSCP)，路由器按类调度(PHB)，不维护单流状态，可扩展性好，是互联网QoS的主流方案。"
+  },
+  {
+    "id": "q_ch8_qos_03",
+    "title": "IntServ 模型中用于资源预留的协议是 _____（英文缩写全称）。",
+    "chapter": "网络性能优化",
+    "type": "填空题",
+    "options": [],
+    "answer": "RSVP(Resource Reservation Protocol)",
+    "difficulty": 2,
+    "explanation": "RSVP = Resource Reservation Protocol，资源预留协议。"
+  },
+  {
+    "id": "q_ch8_token_01",
+    "title": "令牌桶算法和漏桶算法都能允许一定程度的突发流量。",
+    "chapter": "网络性能优化",
+    "type": "判断题",
+    "options": [],
+    "answer": "错误",
+    "difficulty": 2,
+    "explanation": "令牌桶允许突发(桶越大突发能力越强)；漏桶输出速率完全恒定，不允许任何突发。"
+  },
+  {
+    "id": "q_ch8_token_02",
+    "title": "某令牌桶的令牌生成速率 r=2Mbps，桶容量 b=4Mb。求：(1)最大突发时长；(2)最大突发数据量。",
+    "chapter": "网络性能优化",
+    "type": "计算题",
+    "options": [],
+    "answer": "(1) 2秒；(2) 4Mb = 0.5MB",
+    "difficulty": 3,
+    "explanation": "最大突发时长 = b/r = 4Mb/2Mbps = 2s；最大突发数据量 = b = 4Mb。注意令牌桶允许积蓄的最大突发就是桶容量本身。"
+  },
+  {
+    "id": "q_ch8_cdn_01",
+    "title": "CDN 实现用户就近访问的核心技术是？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. TCP加速",
+      "B. DNS智能解析(GSLB)",
+      "C. HTTP缓存头",
+      "D. 负载均衡"
+    ],
+    "answer": "B",
+    "difficulty": 2,
+    "explanation": "CDN 通过 DNS 智能解析(全局负载均衡 GSLB)将用户请求导向最近的边缘节点。"
+  },
+  {
+    "id": "q_ch8_cdn_02",
+    "title": "CDN 和边缘计算有什么本质区别？",
+    "chapter": "网络性能优化",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 3,
+    "explanation": "CDN 主要做内容缓存和分发(静态资源、视频)，计算能力有限；边缘计算在靠近用户侧提供通用计算能力(可运行自定义代码、AI推理等)，不限于内容分发。CDN可视为边缘计算在内容分发领域的特化应用。"
+  },
+  {
+    "id": "q_ch8_load_01",
+    "title": "以下哪些是常见的负载均衡算法？（多选）",
+    "chapter": "网络性能优化",
+    "type": "多选题",
+    "options": [
+      "A. 轮询(Round Robin)",
+      "B. 冒泡排序",
+      "C. 最少连接(Least Connections)",
+      "D. IP哈希",
+      "E. 二分查找"
+    ],
+    "answer": "ACD",
+    "difficulty": 1,
+    "explanation": "轮询、最少连接和 IP 哈希是常见负载均衡算法。冒泡排序和二分查找是排序/搜索算法，属于干扰项。"
+  },
+  {
+    "id": "q_ch8_congestion_01",
+    "title": "RED(Random Early Detection)的核心思想是？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 队列满后再丢包",
+      "B. 在队列满之前随机丢包预警",
+      "C. 按优先级丢包",
+      "D. 永不丢包"
+    ],
+    "answer": "B",
+    "difficulty": 2,
+    "explanation": "RED 在队列长度达到阈值前就随机选择连接丢包，使发送端提前减小拥塞窗口，避免全局同步(TCP Global Synchronization)。"
+  },
+  {
+    "id": "q_ch8_bdp_01",
+    "title": "一条链路带宽 100Mbps，RTT=50ms。求 BDP 是多少比特？TCP 窗口至少多大才能跑满带宽？",
+    "chapter": "网络性能优化",
+    "type": "计算题",
+    "options": [],
+    "answer": "BDP = 100×10^6 × 50×10^-3 = 5×10^6 bit = 5 Mb = 625 KB。TCP窗口需 ≥ 625 KB。",
+    "difficulty": 3,
+    "explanation": "BDP = 带宽 × RTT = 100Mbps × 50ms = 5Mb。当TCP窗口 < BDP 时，发送方必须等ACK才能继续发，链路利用率不足。"
+  },
+  {
+    "id": "q_ch9_sdn_01",
+    "title": "SDN 最核心的设计思想是？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 用更快的路由器",
+      "B. 控制平面与数据平面分离",
+      "C. 用IPv6替代IPv4",
+      "D. 所有流量加密"
+    ],
+    "answer": "B",
+    "difficulty": 1,
+    "explanation": "SDN 的本质是将网络设备的控制平面(决策)与数据平面(转发)分离，控制平面集中到控制器实现可编程管理。"
+  },
+  {
+    "id": "q_ch9_sdn_02",
+    "title": "OpenFlow 交换机根据什么决定如何转发数据包？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 路由表",
+      "B. ARP表",
+      "C. 流表(Flow Table)",
+      "D. MAC地址表"
+    ],
+    "answer": "C",
+    "difficulty": 1,
+    "explanation": "OpenFlow 交换机通过流表匹配数据包并执行动作。流表由控制器下发，包含匹配域和对应的转发/丢弃/修改动作。"
+  },
+  {
+    "id": "q_ch9_sdn_03",
+    "title": "SDN 架构中，控制器与交换机之间的接口称为____，控制器与应用层之间的接口称为____。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "填空题",
+    "options": [],
+    "answer": "南向接口(Southbound API)；北向接口(Northbound API)",
+    "difficulty": 2,
+    "explanation": "南向接口(如OpenFlow)控制交换机，北向接口供上层应用调用网络能力。"
+  },
+  {
+    "id": "q_ch9_nfv_01",
+    "title": "NFV 是 SDN 的子集，必须依赖 SDN 才能实现。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "判断题",
+    "options": [],
+    "answer": "错误",
+    "difficulty": 2,
+    "explanation": "NFV 和 SDN 是独立互补的概念。NFV 关注用软件替代硬件网络功能，可以不依赖 SDN；但两者结合能发挥更大价值。"
+  },
+  {
+    "id": "q_ch9_sdwan_01",
+    "title": "相比传统 MPLS 专线，SD-WAN 的优势包括？（多选）",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "多选题",
+    "options": [
+      "A. 成本更低",
+      "B. 零接触部署",
+      "C. 应用感知路由",
+      "D. 物理线路更稳定"
+    ],
+    "answer": "ABC",
+    "difficulty": 2,
+    "explanation": "SD-WAN 可用普通宽带替代昂贵 MPLS，支持远程自动配置，能识别应用类型选择最优路径。物理线路稳定性取决于运营商，非 SD-WAN 特有。"
+  },
+  {
+    "id": "q_ch9_edge_01",
+    "title": "以下哪些是边缘计算的典型应用场景？（多选）",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "多选题",
+    "options": [
+      "A. 自动驾驶实时决策",
+      "B. 离线文档编辑",
+      "C. 工业IoT实时控制",
+      "D. AR/VR低延迟渲染",
+      "E. 大规模离线数据备份"
+    ],
+    "answer": "ACD",
+    "difficulty": 2,
+    "explanation": "自动驾驶、工业IoT和AR/VR都对延迟极度敏感，是边缘计算的典型场景。离线文档编辑不需要网络，数据备份不敏感于延迟可用云端。"
+  },
+  {
+    "id": "q_ch9_edge_02",
+    "title": "简述边缘计算、雾计算和云计算三者之间的层次关系。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 3,
+    "explanation": "层次从近到远：边缘计算(Edge)→雾计算(Fog)→云计算(Cloud)。边缘最近数据源(终端侧)，延迟最低算力最弱；雾计算处于中间层聚合多边缘节点；云计算在远程数据中心，算力最强延迟最高。三者互补形成\"端-边-雾-云\"协同架构。"
+  },
+  {
+    "id": "q_ch9_mininet_01",
+    "title": "Mininet 的主要用途是？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 商业网络部署",
+      "B. SDN网络仿真和教学实验",
+      "C. DDoS攻击工具",
+      "D. 防火墙配置"
+    ],
+    "answer": "B",
+    "difficulty": 1,
+    "explanation": "Mininet 是轻量级 SDN 网络仿真器，广泛用于教学和研究，可在一台机器上创建完整的虚拟 SDN 网络。"
+  },
+  {
+    "id": "q_ch10_design_01",
+    "title": "网络设计中，应最先完成哪个步骤？",
+    "chapter": "课程综合项目",
+    "type": "单选题",
+    "options": [
+      "A. 设备选型",
+      "B. 需求分析",
+      "C. IP地址分配",
+      "D. 布线施工"
+    ],
+    "answer": "B",
+    "difficulty": 1,
+    "explanation": "网络设计遵循自顶向下方法，需求分析是第一步骤，后续的逻辑设计、物理设计都基于需求。"
+  },
+  {
+    "id": "q_ch10_design_02",
+    "title": "大型企业网络通常采用三层架构，从下到上依次为____层、____层、____层。",
+    "chapter": "课程综合项目",
+    "type": "填空题",
+    "options": [],
+    "answer": "接入层、汇聚层(分布层)、核心层",
+    "difficulty": 2,
+    "explanation": "接入层连接终端用户，汇聚层聚合接入层流量并实施策略，核心层提供高速骨干转发。"
+  },
+  {
+    "id": "q_ch10_design_03",
+    "title": "设计一个文件传输工具，应该选择 TCP 还是 UDP？请说明理由。如果改为视频直播呢？",
+    "chapter": "课程综合项目",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 2,
+    "explanation": "文件传输必须可靠完整，应选 TCP(保证顺序、无丢失、无重复)。视频直播对实时性要求高，可容忍少量丢包，应选 UDP(低延迟、无队头阻塞)。实际直播常用 UDP + 应用层 FEC 或基于 UDP 的 QUIC。"
+  },
+  {
+    "id": "q_ch10_wireshark_01",
+    "title": "在 Wireshark 中，只显示 TCP 端口 443 的流量，显示过滤器应写为？",
+    "chapter": "课程综合项目",
+    "type": "单选题",
+    "options": [
+      "A. tcp.port==443",
+      "B. port 443",
+      "C. tcp port 443",
+      "D. 以上都可以"
+    ],
+    "answer": "A",
+    "difficulty": 1,
+    "explanation": "Wireshark 显示过滤器语法为 tcp.port==443。注意与抓包过滤器(bpf语法 \"tcp port 443\")的区别。"
+  },
+  {
+    "id": "q_ch10_socket_01",
+    "title": "TCP 服务器处理多个客户端连接，可使用哪些并发模型？（多选）",
+    "chapter": "课程综合项目",
+    "type": "多选题",
+    "options": [
+      "A. 每连接一线程",
+      "B. 线程池",
+      "C. select/poll IO多路复用",
+      "D. epoll(仅Linux)",
+      "E. 递归调用"
+    ],
+    "answer": "ABCD",
+    "difficulty": 3,
+    "explanation": "多线程、线程池、select/poll、epoll 都是常见的并发模型。C10K问题推动从多线程转向IO多路复用。"
+  },
+  {
+    "id": "q_ch10_vlan_01",
+    "title": "不同 VLAN 之间的主机可以直接互相通信，只要它们在同一台交换机上。",
+    "chapter": "课程综合项目",
+    "type": "判断题",
+    "options": [],
+    "answer": "错误",
+    "difficulty": 2,
+    "explanation": "VLAN 隔离广播域，即使在同一交换机上的不同 VLAN 也不能直接通信，必须通过三层设备(路由器或三层交换机)进行 VLAN 间路由。"
+  },
+  {
+    "id": "q_ch8_queue_01",
+    "title": "以下关于 WFQ(加权公平队列)的描述，正确的是？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 所有流平等分配带宽",
+      "B. 按IP优先级严格排队",
+      "C. 按权重比例分配带宽，兼顾公平和优先级",
+      "D. 只适用于UDP流量"
+    ],
+    "answer": "C",
+    "difficulty": 2,
+    "explanation": "WFQ 根据权重(通常基于IP优先级)按比例分配带宽，低权重流仍能获得一定带宽，不会饿死。"
+  },
+  {
+    "id": "q_ch8_queue_02",
+    "title": "FIFO(先进先出)队列能区分不同类型流量的优先级。",
+    "chapter": "网络性能优化",
+    "type": "判断题",
+    "options": [],
+    "answer": "错误",
+    "difficulty": 1,
+    "explanation": "FIFO是最简单的排队策略，所有分组按到达顺序处理，不区分优先级。突发流量可能导致对延迟敏感的应用(如VoIP)性能下降。"
+  },
+  {
+    "id": "q_ch8_te_01",
+    "title": "MPLS 流量工程中，数据沿显式指定的____路径转发，而非依赖IGP的最短路径。",
+    "chapter": "网络性能优化",
+    "type": "填空题",
+    "options": [],
+    "answer": "LSP(Label Switched Path，标签交换路径)",
+    "difficulty": 2,
+    "explanation": "MPLS-TE 通过显式路由(explicit route)建立 LSP(标签交换路径)，使流量可按网络管理者规划的路径转发。"
+  },
+  {
+    "id": "q_ch8_ha_01",
+    "title": "VRRP 协议实现网关冗余的核心机制是？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 多台路由器同时转发流量",
+      "B. 虚拟IP在Master和Backup之间切换",
+      "C. 使用BGP多路径",
+      "D. 动态修改DNS记录"
+    ],
+    "answer": "B",
+    "difficulty": 1,
+    "explanation": "VRRP(虚拟路由冗余协议)多台路由器共享一个虚拟IP，只有Master负责转发。Master故障时Backup自动接管。"
+  },
+  {
+    "id": "q_ch8_ha_02",
+    "title": "链路聚合(LACP)的优点包括？（多选）",
+    "chapter": "网络性能优化",
+    "type": "多选题",
+    "options": [
+      "A. 增加带宽",
+      "B. 链路冗余",
+      "C. 加密数据",
+      "D. 负载分担"
+    ],
+    "answer": "ABD",
+    "difficulty": 1,
+    "explanation": "链路聚合(LACP)将多物理链路捆绑为逻辑链路，可增加总带宽、提供链路级冗余和负载分担。加密不是LACP的功能。"
+  },
+  {
+    "id": "q_ch8_dns_01",
+    "title": "DNS 预解析(dns-prefetch)的作用是？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 在用户点击链接前提前解析域名",
+      "B. 缓存所有DNS记录",
+      "C. 加密DNS查询",
+      "D. 减少DNS服务器数量"
+    ],
+    "answer": "A",
+    "difficulty": 1,
+    "explanation": "DNS 预解析在用户可能点击链接前，由浏览器提前解析该链接的域名IP，减少实际点击后的等待时间。"
+  },
+  {
+    "id": "q_ch8_dns_02",
+    "title": "简述 Anycast 技术在 DNS 部署中的优势。",
+    "chapter": "网络性能优化",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 3,
+    "explanation": "Anycast 允许多台 DNS 服务器共享同一IP地址，用户请求被路由到拓扑最近的服务器。优势：1) 就近响应降低延迟；2) 自动负载分散避免单点过载；3) 天然抗DDoS——攻击流量被分散到多个节点。Google Public DNS(8.8.8.8)就是典型Anycast部署。"
+  },
+  {
+    "id": "q_ch8_tls_01",
+    "title": "TLS 1.2 完整握手需要几个RTT？TLS 1.3 呢？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 1-RTT / 0-RTT",
+      "B. 2-RTT / 1-RTT",
+      "C. 3-RTT / 2-RTT",
+      "D. 2-RTT / 2-RTT"
+    ],
+    "answer": "B",
+    "difficulty": 2,
+    "explanation": "TLS 1.2 完整握手需 2-RTT(TCP握手不算在内)，TLS 1.3 简化到 1-RTT。结合TCP 3次握手，TLS 1.2+TCP=3-RTT，TLS 1.3+TCP=2-RTT。"
+  },
+  {
+    "id": "q_ch8_tls_02",
+    "title": "TLS Session Resumption(会话恢复)可以跳过证书验证和密钥交换，直接使用之前协商的密钥。",
+    "chapter": "网络性能优化",
+    "type": "判断题",
+    "options": [],
+    "answer": "正确",
+    "difficulty": 2,
+    "explanation": "Session Resumption 通过 Session ID 或 Session Ticket 缓存之前握手协商的主密钥，后续连接可直接复用，避免完整的非对称加密开销。"
+  },
+  {
+    "id": "q_ch8_comp_01",
+    "title": "相比 Gzip，Brotli 压缩算法的优势是？",
+    "chapter": "网络性能优化",
+    "type": "单选题",
+    "options": [
+      "A. 压缩速度更快",
+      "B. 压缩率更高(更小体积)",
+      "C. 不需要解压",
+      "D. 支持加密"
+    ],
+    "answer": "B",
+    "difficulty": 2,
+    "explanation": "Brotli 在相同压缩级别下压缩率比 Gzip 高 20-30%(即输出更小)，但压缩速度较慢。适合静态资源预压缩场景(CDN/build时压缩)。"
+  },
+  {
+    "id": "q_ch8_comp_02",
+    "title": "TLS 层压缩已被禁用，原因是____攻击和____攻击可以利用压缩比推断明文内容。",
+    "chapter": "网络性能优化",
+    "type": "填空题",
+    "options": [],
+    "answer": "CRIME、BREACH",
+    "difficulty": 3,
+    "explanation": "CRIME(2012)和BREACH(2013)攻击利用压缩后密文长度变化推测明文中的敏感字段(如Cookie中的CSRF token)。TLS 1.3 完全移除压缩支持。"
+  },
+  {
+    "id": "q_ch8_perf_overall_01",
+    "title": "用户访问HTTPS网页的端到端延迟包含哪些部分？（多选）",
+    "chapter": "网络性能优化",
+    "type": "多选题",
+    "options": [
+      "A. DNS解析延迟",
+      "B. TCP握手延迟",
+      "C. TLS握手延迟",
+      "D. HTTP请求-响应延迟",
+      "E. 页面渲染延迟"
+    ],
+    "answer": "ABCDE",
+    "difficulty": 2,
+    "explanation": "完整页面加载包括DNS解析+TCP握手+TLS握手+HTTP请求+响应传输+浏览器渲染。优化需关注每一环节。"
+  },
+  {
+    "id": "q_ch8_perf_overall_02",
+    "title": "某跨洋链路带宽1Gbps，RTT=200ms，BDP是多少？若TCP窗口为64KB，链路利用率是多少？",
+    "chapter": "网络性能优化",
+    "type": "计算题",
+    "options": [],
+    "answer": "BDP=1Gbps*200ms=200Mb=25MB。TCP窗口64KB<<25MB，利用率=64KB/25MB≈0.25%。",
+    "difficulty": 3,
+    "explanation": "窗口远小于BDP时链路近乎闲置——发送方发完64KB后必须等200ms ACK才能继续。高性能跨洋传输需大窗口(TCP Window Scaling)。"
+  },
+  {
+    "id": "q_ch8_perf_overall_03",
+    "title": "用Wireshark分析一次慢HTTP请求，如何区分延迟发生在TCP握手、TLS握手还是应用层？",
+    "chapter": "网络性能优化",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 3,
+    "explanation": "通过Wireshark的Time列和TCP Stream Graph：1)SYN到SYN+ACK的间隔=网络RTT；2)Client Hello到Server Hello的间隔=TLS握手+1RTT；3)HTTP GET到第一个数据包(Time to First Byte)包含应用处理时间。Wireshark的Statistics>TCP Stream Graphs>Time-Sequence图可视化各阶段。"
+  },
+  {
+    "id": "q_ch9_flow_01",
+    "title": "OpenFlow 流表项包含哪些字段？（多选）",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "多选题",
+    "options": [
+      "A. 匹配域(Match Fields)",
+      "B. 优先级(Priority)",
+      "C. 计数器(Counters)",
+      "D. 指令(Instructions)",
+      "E. 密码(Password)"
+    ],
+    "answer": "ABCD",
+    "difficulty": 2,
+    "explanation": "OpenFlow流表项包含匹配域、优先级、计数器、指令和超时时间。密码不是流表字段。"
+  },
+  {
+    "id": "q_ch9_flow_02",
+    "title": "OpenFlow 交换机收到无匹配流表的包时，默认行为是？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 直接丢弃",
+      "B. 泛洪到所有端口",
+      "C. 封装为 Packet-In 上报控制器",
+      "D. 广播ARP请求"
+    ],
+    "answer": "C",
+    "difficulty": 2,
+    "explanation": "Table-miss时交换机将分组封装为Packet-In消息发送给控制器，由控制器决定如何处理(下发流表或丢弃)。"
+  },
+  {
+    "id": "q_ch9_slice_01",
+    "title": "5G 三大场景中，____切片面向超低延迟(如自动驾驶)，____切片面向海量连接(如智能抄表)。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "填空题",
+    "options": [],
+    "answer": "URLLC、mMTC",
+    "difficulty": 2,
+    "explanation": "eMBB增强移动宽带(大带宽)、URLLC超高可靠低延迟(自动驾驶/远程手术)、mMTC大规模机器通信(海量IoT)。"
+  },
+  {
+    "id": "q_ch9_slice_02",
+    "title": "网络切片的核心特征是？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 所有用户共享同一网络配置",
+      "B. 在共享物理网络上创建逻辑隔离的虚拟网络",
+      "C. 每个用户分配独立物理设备",
+      "D. 完全取代5G基站"
+    ],
+    "answer": "B",
+    "difficulty": 2,
+    "explanation": "网络切片在共享物理基础设施上创建多个逻辑隔离的端到端虚拟网络，每个切片独立配置和优化。"
+  },
+  {
+    "id": "q_ch9_ibn_01",
+    "title": "意图网络(IBN)与传统SDN的最大区别是？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. IBN使用更快的交换机",
+      "B. IBN声明意图而非配置细节，系统自动翻译和验证",
+      "C. IBN不需要控制器",
+      "D. IBN只支持无线网络"
+    ],
+    "answer": "B",
+    "difficulty": 2,
+    "explanation": "IBN关键是声明式管理：管理员说「要什么」而非「怎么做」，系统自动翻译为配置、持续验证并在偏离时自愈。"
+  },
+  {
+    "id": "q_ch9_spine_01",
+    "title": "Spine-Leaf 架构中，任意两台服务器之间最多经过几跳？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 1跳",
+      "B. 2跳",
+      "C. 3跳(Leaf->Spine->Leaf)",
+      "D. 取决于网络规模"
+    ],
+    "answer": "C",
+    "difficulty": 1,
+    "explanation": "Spine-Leaf中所有Leaf都连接到所有Spine，路径固定为Leaf->Spine->Leaf(3跳)，延迟可预测。"
+  },
+  {
+    "id": "q_ch9_spine_02",
+    "title": "传统三层架构对比Spine-Leaf架构，正确描述是？（多选）",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "多选题",
+    "options": [
+      "A. 传统架构存在STP阻塞端口浪费带宽",
+      "B. Spine-Leaf任意Leaf间跳数固定",
+      "C. Spine-Leaf更适合东西向流量",
+      "D. 传统架构更适合云数据中心"
+    ],
+    "answer": "ABC",
+    "difficulty": 3,
+    "explanation": "传统三层STP会阻塞冗余链路，且偏南北向优化不适应云数据中心大量东西向流量。Spine-Leaf扁平化+ECMP更适合现代DC。"
+  },
+  {
+    "id": "q_ch9_vxlan_01",
+    "title": "VXLAN 使用____位 VNI 标识符，理论上支持____个虚拟网络，远超 VLAN 的 4096 限制。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "填空题",
+    "options": [],
+    "answer": "24位、1600万(2^24=16,777,216)",
+    "difficulty": 2,
+    "explanation": "VXLAN用24位VNI，支持约1600万个虚拟网络。VLAN只有12位，最多4096个。"
+  },
+  {
+    "id": "q_ch9_vxlan_02",
+    "title": "VXLAN 封装方式是将二层以太网帧封装在____协议中传输。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "填空题",
+    "options": [],
+    "answer": "UDP(MAC-in-UDP)",
+    "difficulty": 2,
+    "explanation": "VXLAN采用MAC-in-UDP封装，原始二层帧作为UDP载荷，外层加IP头，UDP目的端口固定4789。"
+  },
+  {
+    "id": "q_ch9_offload_01",
+    "title": "以下哪些因素影响计算卸载决策？（多选）",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "多选题",
+    "options": [
+      "A. 任务计算量",
+      "B. 数据传输量",
+      "C. 终端电量",
+      "D. 网络延迟",
+      "E. 屏幕分辨率"
+    ],
+    "answer": "ABCD",
+    "difficulty": 2,
+    "explanation": "计算卸载决策需权衡计算量、数据量、延迟、能耗。屏幕分辨率与卸载无关。"
+  },
+  {
+    "id": "q_ch9_offload_02",
+    "title": "DNN 分区卸载（部分边缘推理+部分云端推理）属于哪种策略？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 全部本地执行",
+      "B. 全部卸载",
+      "C. 部分卸载",
+      "D. 不卸载"
+    ],
+    "answer": "C",
+    "difficulty": 1,
+    "explanation": "DNN分区将浅层放边缘(特征提取)、深层放云端(复杂推理)，属于部分卸载，在延迟和算力间折中。"
+  },
+  {
+    "id": "q_ch9_iot_01",
+    "title": "IoT 边缘网关的主要功能包括？（多选）",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "多选题",
+    "options": [
+      "A. 协议转换(MQTT->HTTP)",
+      "B. 数据过滤与聚合",
+      "C. 本地规则引擎",
+      "D. 替代云端所有功能",
+      "E. 设备管理"
+    ],
+    "answer": "ABCE",
+    "difficulty": 2,
+    "explanation": "边缘网关负责协议转换、预处理、本地控制和设备管理，不替代云端(云端负责长期存储、大数据分析、AI训练)。"
+  },
+  {
+    "id": "q_ch9_iot_02",
+    "title": "为什么 IoT 场景不适合将所有数据直接上传云端？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 2,
+    "explanation": "原因：1)带宽成本高(海量传感器数据)；2)延迟(实时控制不能等云端往返)；3)可靠性(网络中断时本地需自治)；4)隐私(敏感数据不出本地)。边缘计算在近端过滤处理后再上传有效数据。"
+  },
+  {
+    "id": "q_ch9_sdnsec_01",
+    "title": "SDN 集中控制架构带来的主要安全挑战是？",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "单选题",
+    "options": [
+      "A. 交换机容易被盗",
+      "B. 控制器成为单点攻击目标",
+      "C. 光纤被窃听",
+      "D. 无线信号被干扰"
+    ],
+    "answer": "B",
+    "difficulty": 1,
+    "explanation": "SDN控制器是网络大脑，集中控制意味着控制器被攻破则全网沦陷。南北向接口须用TLS加密认证，控制器需高可用部署。"
+  },
+  {
+    "id": "q_ch9_sdnsec_02",
+    "title": "简述利用SDN实现MTD(Moving Target Defense)动态防御的核心思路。",
+    "chapter": "软件定义网络与边缘计算",
+    "type": "简答题",
+    "options": [],
+    "answer": "",
+    "difficulty": 3,
+    "explanation": "MTD通过不断变化系统属性(IP、端口、路由)增加攻击者侦查难度。SDN全局视图和可编程性使MTD易实现：控制器定期随机更换主机IP并更新流表，攻击者刚扫描到的信息很快失效。"
   }
 ]

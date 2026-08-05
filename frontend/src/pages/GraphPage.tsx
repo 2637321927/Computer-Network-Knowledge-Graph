@@ -185,6 +185,40 @@ export default function GraphPage() {
     if (mode === '3d') {
       if (graph3dRef.current) { try { graph3dRef.current._destructor(); } catch(e) {} }
       if (!container3dRef.current) return;
+
+      // 计算传递包含度（3D也用同样逻辑）
+      const tcAdj: Record<string, string[]> = {};
+      data.nodes.forEach(n => { tcAdj[n.id] = []; });
+      data.edges.forEach(e => {
+        if (e.relation === '包含') {
+          if (!tcAdj[e.source]) tcAdj[e.source] = [];
+          tcAdj[e.source].push(e.target);
+        }
+      });
+      const tcCount: Record<string, number> = {};
+      const tcCalc = (nodeId: string, visited: Set<string>): number => {
+        if (tcCount[nodeId] !== undefined) return tcCount[nodeId];
+        let c = 0;
+        for (const child of tcAdj[nodeId] || []) {
+          if (!visited.has(child)) {
+            visited.add(child);
+            c += 1 + tcCalc(child, visited);
+          }
+        }
+        tcCount[nodeId] = c;
+        return c;
+      };
+      data.nodes.forEach(n => {
+        if (tcCount[n.id] === undefined) tcCalc(n.id, new Set<string>());
+      });
+      const tcVals = Object.values(tcCount);
+      const tcMax = Math.max(...tcVals, 1);
+      const tcMin = Math.min(...tcVals);
+      const sphereSize3d = (c: number) => {
+        if (tcMax === tcMin) return 2.5;
+        return 1.5 + ((c - tcMin) / (tcMax - tcMin)) * 4;
+      };
+
       const gData = {
         nodes: data.nodes.map(n => ({
           id: n.id,
@@ -193,6 +227,7 @@ export default function GraphPage() {
           nodeType: n.type,
           chapter: n.chapter,
           color: getNodeColor(n),
+          size3d: sphereSize3d(tcCount[n.id] || 0),
         })),
         links: data.edges.map(e => ({
           source: e.source,
@@ -207,8 +242,8 @@ export default function GraphPage() {
         .nodeLabel((n: any) => `<b>${n.name}</b><br>类型：${n.nodeType}<br>章节：${n.chapter}`)
         .nodeThreeObject((node: any) => {
           const group = new THREE.Group();
-          // 小球
-          const sphereGeom = new THREE.SphereGeometry(2);
+          const radius = node.size3d || 2;
+          const sphereGeom = new THREE.SphereGeometry(radius);
           const sphereMat = new THREE.MeshBasicMaterial({ color: node.color });
           const sphere = new THREE.Mesh(sphereGeom, sphereMat);
           group.add(sphere);
@@ -253,25 +288,69 @@ export default function GraphPage() {
       return;
     }
 
-    // 2D模式（力导向/按层次）
+    // 2D模式
     const network = networkRef.current;
     if (!network) return;
 
+    // ---- 计算"包含"传递闭包出度 ----
+    // 构建包含关系邻接表
+    const containsAdj: Record<string, string[]> = {};
+    data.nodes.forEach(n => { containsAdj[n.id] = []; });
+    data.edges.forEach(e => {
+      if (e.relation === '包含') {
+        if (!containsAdj[e.source]) containsAdj[e.source] = [];
+        containsAdj[e.source].push(e.target);
+      }
+    });
+
+    // DFS 计算每个节点的传递包含数量
+    const transitiveCount: Record<string, number> = {};
+    const calcTransitive = (nodeId: string, visited: Set<string>): number => {
+      if (transitiveCount[nodeId] !== undefined) return transitiveCount[nodeId];
+      let count = 0;
+      for (const child of containsAdj[nodeId] || []) {
+        if (!visited.has(child)) {
+          visited.add(child);
+          count += 1 + calcTransitive(child, visited);
+        }
+      }
+      transitiveCount[nodeId] = count;
+      return count;
+    };
+
+    data.nodes.forEach(n => {
+      if (transitiveCount[n.id] === undefined) {
+        calcTransitive(n.id, new Set<string>());
+      }
+    });
+
+    const counts = Object.values(transitiveCount);
+    const maxCount = Math.max(...counts, 1);
+    const minCount = Math.min(...counts);
+    const mapSize = (c: number) => {
+      if (maxCount === minCount) return 22;
+      return 10 + ((c - minCount) / (maxCount - minCount)) * 35;
+    };
+
     const visNodes = new DataSet(
-      data.nodes.map(n => ({
-        id: n.id,
-        label: n.name,
-        title: `<b>${n.name}</b><br>类型：${n.type}<br>章节：${n.chapter}<br>点击查看详情`,
-        color: {
-          background: getNodeColor(n),
-          border: '#fff',
-          highlight: { background: getNodeColor(n), border: '#333' },
-        },
-        font: { color: '#333', size: 14 },
-        borderWidth: 2,
-        shape: 'dot',
-        size: 18,
-      }))
+      data.nodes.map(n => {
+        const tc = transitiveCount[n.id] || 0;
+        const size = mapSize(tc);
+        return {
+          id: n.id,
+          label: n.name,
+          title: `<b>${n.name}</b><br>类型：${n.type}<br>章节：${n.chapter}<br>📦 包含：${tc} 个<br>点击查看详情`,
+          color: {
+            background: getNodeColor(n),
+            border: '#fff',
+            highlight: { background: getNodeColor(n), border: '#333' },
+          },
+          font: { color: '#333', size: Math.max(11, Math.min(16, 10 + size / 4)) },
+          borderWidth: 2,
+          shape: 'dot',
+          size: size,
+        };
+      })
     );
 
     const visEdges = new DataSet(
