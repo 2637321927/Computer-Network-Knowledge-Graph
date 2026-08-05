@@ -1,285 +1,5 @@
 [
   {
-    "id": "ch6_overview",
-    "name": "传输层概述",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "传输层为应用进程之间提供端到端的逻辑通信，主要功能包括复用/分用、可靠传输、流量控制、拥塞控制等。",
-    "keywords": [
-      "端到端",
-      "复用",
-      "分用",
-      "逻辑通信"
-    ],
-    "difficulty": 2,
-    "image_urls": []
-  },
-  {
-    "id": "tcp",
-    "name": "TCP 协议",
-    "type": "协议",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "传输控制协议（TCP）是一种面向连接的、可靠的、基于字节流的传输层通信协议。提供全双工通信、流量控制、拥塞控制等机制。",
-    "keywords": [
-      "面向连接",
-      "可靠传输",
-      "字节流",
-      "全双工"
-    ],
-    "difficulty": 3,
-    "image_urls": [
-      "https://img-blog.csdnimg.cn/63b02186165b44c283ea2f3fbd6a7980.png",
-      "https://pic1.zhimg.com/v2-a45ed86c41f785103da8f611941ea5be_1440w.jpg"
-    ],
-    "video_url": "https://www.bilibili.com/video/BV1kV411j7hA/?spm_id_from=333.337.search-card.all.click"
-  },
-  {
-    "id": "udp",
-    "name": "UDP 协议",
-    "type": "协议",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "用户数据报协议（UDP）是一种无连接的传输层协议，提供不可靠的数据传输服务，但具有低延迟、低开销的特点。",
-    "keywords": [
-      "无连接",
-      "不可靠",
-      "低延迟",
-      "数据报"
-    ],
-    "difficulty": 2
-  },
-  {
-    "id": "tcp_handshake",
-    "name": "TCP 三次握手",
-    "type": "原理",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "TCP 建立连接需要三次握手：SYN → SYN+ACK → ACK，确保双方收发能力正常，防止已失效的连接请求到达服务器。",
-    "keywords": [
-      "SYN",
-      "ACK",
-      "连接建立",
-      "序列号"
-    ],
-    "difficulty": 3
-  },
-  {
-    "id": "tcp_wavehand",
-    "name": "TCP 四次挥手",
-    "type": "原理",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "TCP 释放连接需要四次挥手：FIN → ACK → FIN → ACK，因为 TCP 是全双工的，每个方向需要单独关闭。",
-    "keywords": [
-      "FIN",
-      "连接释放",
-      "全双工",
-      "TIME_WAIT"
-    ],
-    "difficulty": 3
-  },
-  {
-    "id": "congestion_control",
-    "name": "TCP 拥塞控制",
-    "type": "算法",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "TCP 拥塞控制包括慢启动、拥塞避免、快重传、快恢复四种算法，通过拥塞窗口 cwnd 和慢启动门限 ssthresh 来控制发送速率。",
-    "keywords": [
-      "慢启动",
-      "拥塞避免",
-      "快重传",
-      "快恢复",
-      "cwnd",
-      "ssthresh"
-    ],
-    "difficulty": 4
-  },
-  {
-    "id": "flow_control",
-    "name": "TCP 流量控制",
-    "type": "原理",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "TCP 使用滑动窗口机制进行流量控制，接收方通过rwnd（接收窗口）告诉发送方自己还能接收多少数据，防止发送方发送过快导致接收方缓冲区溢出。",
-    "keywords": [
-      "滑动窗口",
-      "rwnd",
-      "接收窗口",
-      "缓冲区"
-    ],
-    "difficulty": 3
-  },
-  {
-    "id": "tcp_header",
-    "name": "TCP 报文段格式",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "TCP 报文段由首部和数据两部分组成，首部包括源端口、目的端口、序号、确认号、数据偏移、标志位、窗口、检验和、紧急指针等字段。",
-    "keywords": [
-      "首部",
-      "序号",
-      "确认号",
-      "标志位",
-      "检验和"
-    ],
-    "difficulty": 2
-  },
-  {
-    "id": "udp_header",
-    "name": "UDP 数据报格式",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "UDP 数据报由首部和数据组成，首部仅8字节：源端口、目的端口、长度、检验和，结构简单、开销小。",
-    "keywords": [
-      "首部",
-      "端口",
-      "检验和",
-      "8字节"
-    ],
-    "difficulty": 1
-  },
-  {
-    "id": "port",
-    "name": "端口号",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "传输层",
-    "description": "端口是传输层用于标识应用进程的16位编号，分为熟知端口(0-1023)、注册端口(1024-49151)、动态端口(49152-65535)。",
-    "keywords": [
-      "16位",
-      "熟知端口",
-      "注册端口",
-      "动态端口",
-      "套接字"
-    ],
-    "difficulty": 2
-  },
-  {
-    "id": "case_tcp_congestion",
-    "name": "TCP 拥塞控制案例分析",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "传输层",
-    "description": "通过 Wireshark 抓包分析 TCP 拥塞控制过程，观察 cwnd 的动态变化、慢启动阶段的指数增长和拥塞避免阶段的线性增长。",
-    "keywords": [
-      "Wireshark",
-      "拥塞窗口",
-      "抓包分析",
-      "吞吐量"
-    ],
-    "difficulty": 4
-  },
-  {
-    "id": "case_tcp_wireshark",
-    "name": "Wireshark TCP 协议分析",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "传输层",
-    "description": "使用 Wireshark 捕获 TCP 通信报文，分析三次握手、数据传输、四次挥手过程，验证序列号和确认号的变化规律。",
-    "keywords": [
-      "Wireshark",
-      "抓包",
-      "三次握手",
-      "四次挥手",
-      "序号分析"
-    ],
-    "difficulty": 3
-  },
-  {
-    "id": "q_tcp_001",
-    "name": "TCP 三次握手过程",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "传输层",
-    "description": "关于 TCP 三次握手中 SYN 和 ACK 标志位变化的题目",
-    "keywords": [
-      "三次握手",
-      "SYN",
-      "ACK"
-    ],
-    "difficulty": 2
-  },
-  {
-    "id": "q_tcp_002",
-    "name": "TCP 拥塞控制计算",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "传输层",
-    "description": "给定初始 cwnd 和 ssthresh，计算经过若干轮次后的拥塞窗口大小",
-    "keywords": [
-      "拥塞控制",
-      "cwnd",
-      "ssthresh",
-      "慢启动"
-    ],
-    "difficulty": 4
-  },
-  {
-    "id": "q_tcp_003",
-    "name": "TCP 与 UDP 对比",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "传输层",
-    "description": "比较 TCP 和 UDP 的特点、适用场景及优缺点",
-    "keywords": [
-      "TCP",
-      "UDP",
-      "对比",
-      "可靠传输"
-    ],
-    "difficulty": 2
-  },
-  {
-    "id": "q_tcp_004",
-    "name": "TCP 四次挥手状态",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "传输层",
-    "description": "TCP 四次挥手中各状态转换的题目",
-    "keywords": [
-      "四次挥手",
-      "TIME_WAIT",
-      "FIN",
-      "状态转换"
-    ],
-    "difficulty": 3
-  },
-  {
-    "id": "q_tcp_005",
-    "name": "TCP 流量控制字段",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "传输层",
-    "description": "TCP 流量控制中窗口字段相关的题目",
-    "keywords": [
-      "流量控制",
-      "窗口",
-      "rwnd",
-      "滑动窗口"
-    ],
-    "difficulty": 2
-  },
-  {
-    "id": "case_router_loop",
-    "name": "路由环路检测与预防",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "网络层",
-    "description": "分析 RIP 协议中路由环路产生的原因及解决机制：水平分割、毒性反转、触发更新、抑制计时器。",
-    "keywords": [
-      "路由环路",
-      "RIP",
-      "距离向量",
-      "水平分割"
-    ],
-    "difficulty": 3
-  },
-  {
     "id": "ch1_protocol",
     "name": "网络协议",
     "type": "概念",
@@ -6558,6 +6278,5890 @@
       "802.1Q",
       "Packet Tracer",
       "故障排查"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_network_layer",
+    "name": "网络层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "网络层负责把分组从源主机逐跳交付到目的主机，核心任务包括逻辑寻址、路由选择和分组转发。",
+    "keywords": [
+      "分组交付",
+      "逻辑寻址",
+      "路由",
+      "转发"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ip_service",
+    "name": "IP数据报服务",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "网际协议向上层提供无连接、尽最大努力交付的数据报服务，不保证可靠性、顺序或时延。",
+    "keywords": [
+      "无连接",
+      "尽最大努力",
+      "数据报",
+      "不可靠交付"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv4",
+    "name": "IPv4协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv4使用32位地址标识接口，并通过数据报首部支持分片、生存时间和上层协议标识等功能。",
+    "keywords": [
+      "32位地址",
+      "数据报",
+      "TTL",
+      "分片"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv4_header",
+    "name": "IPv4数据报首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv4首部通常为20字节，包含版本、首部长度、总长度、标识、分片字段、TTL、协议和首部检验和等。",
+    "keywords": [
+      "总长度",
+      "TTL",
+      "首部检验和",
+      "分片偏移"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv4_addressing",
+    "name": "IPv4地址",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv4地址由网络前缀和主机号组成，采用点分十进制表示，并分配给网络接口而非抽象主机本身。",
+    "keywords": [
+      "网络前缀",
+      "主机号",
+      "点分十进制",
+      "接口"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_classful_addressing",
+    "name": "分类编址",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "分类编址把IPv4单播地址划分为A、B、C类网络，网络号长度固定，容易产生地址空间浪费。",
+    "keywords": [
+      "A类",
+      "B类",
+      "C类",
+      "网络号"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_subnet_mask",
+    "name": "子网掩码",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "子网掩码以连续的1标识网络前缀，以连续的0标识主机部分，可与IPv4地址按位与得到网络地址。",
+    "keywords": [
+      "按位与",
+      "网络地址",
+      "前缀长度",
+      "掩码"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_subnetting",
+    "name": "子网划分",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "子网划分从主机号借位形成子网号，使一个地址块可按组织结构拆分为多个更小广播域。",
+    "keywords": [
+      "借位",
+      "子网号",
+      "可用主机",
+      "广播地址"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_cidr",
+    "name": "无分类域间路由CIDR",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "CIDR使用可变长度前缀a.b.c.d/x描述地址块，支持路由聚合并提高IPv4地址利用率。",
+    "keywords": [
+      "CIDR",
+      "可变长前缀",
+      "地址块",
+      "路由聚合"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_longest_prefix",
+    "name": "最长前缀匹配",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "路由器在多条匹配路由中选择网络前缀最长的一条，使更具体的路由优先于聚合路由。",
+    "keywords": [
+      "最长匹配",
+      "转发表",
+      "具体路由",
+      "下一跳"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv6",
+    "name": "IPv6协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv6使用128位地址和固定40字节基本首部，扩大地址空间并简化中间路由器处理。",
+    "keywords": [
+      "128位地址",
+      "固定首部",
+      "扩展首部",
+      "下一首部"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv6_header",
+    "name": "IPv6基本首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv6基本首部包含版本、流量类别、流标签、有效载荷长度、下一首部和跳数限制等字段，不含首部检验和。",
+    "keywords": [
+      "流标签",
+      "跳数限制",
+      "下一首部",
+      "有效载荷长度"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_transition",
+    "name": "IPv4向IPv6过渡",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "双协议栈、隧道和协议转换可使IPv4与IPv6网络在长期过渡阶段互通。",
+    "keywords": [
+      "双协议栈",
+      "隧道",
+      "协议转换",
+      "过渡机制"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_arp",
+    "name": "地址解析协议ARP",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "ARP在同一链路上依据IPv4地址查询对应MAC地址，请求通常广播，响应通常单播，并将结果缓存。",
+    "keywords": [
+      "IP到MAC",
+      "广播请求",
+      "单播响应",
+      "ARP缓存"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_icmp",
+    "name": "网际控制报文协议ICMP",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "ICMP封装在IP数据报中传递差错报告和询问信息，例如目的不可达、超时与回显请求。",
+    "keywords": [
+      "差错报告",
+      "目的不可达",
+      "超时",
+      "回显"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ping",
+    "name": "Ping诊断",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "Ping利用ICMP回显请求与回显回答测试目的主机可达性，并估计往返时间和丢包情况。",
+    "keywords": [
+      "回显请求",
+      "回显回答",
+      "RTT",
+      "可达性"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_traceroute",
+    "name": "Traceroute路径探测",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "Traceroute逐步增加TTL或跳数限制，利用中间路由器返回的ICMP超时报文识别路径上的各跳。",
+    "keywords": [
+      "TTL",
+      "逐跳探测",
+      "ICMP超时",
+      "路径"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_nat",
+    "name": "网络地址转换NAT",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "NAT在边界设备上改写私网地址与端口，使多台内部主机共享少量公网IPv4地址。",
+    "keywords": [
+      "私网地址",
+      "公网地址",
+      "端口映射",
+      "NAPT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_router",
+    "name": "路由器",
+    "type": "设备",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "路由器连接不同网络，依据转发表执行逐包转发，并通过路由协议学习或计算可达路径。",
+    "keywords": [
+      "路由器",
+      "输入端口",
+      "交换结构",
+      "输出端口"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_forwarding_table",
+    "name": "转发表",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "转发表记录目的前缀、下一跳和输出接口，是路由器数据平面实施转发决策的直接依据。",
+    "keywords": [
+      "目的前缀",
+      "下一跳",
+      "输出接口",
+      "数据平面"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_routing_algorithm",
+    "name": "路由选择算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "路由选择算法依据拓扑和链路代价计算源到目的的较优路径，并把结果用于生成转发表。",
+    "keywords": [
+      "路径选择",
+      "链路代价",
+      "拓扑",
+      "控制平面"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_distance_vector",
+    "name": "距离向量算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "距离向量算法依据Bellman-Ford思想与邻居交换距离向量，分布式迭代更新到各目的网络的代价。",
+    "keywords": [
+      "Bellman-Ford",
+      "距离向量",
+      "邻居交换",
+      "计数到无穷"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_link_state",
+    "name": "链路状态算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "链路状态算法通过泛洪获得全网拓扑，再在本地运行Dijkstra算法计算最短路径树。",
+    "keywords": [
+      "链路状态",
+      "泛洪",
+      "Dijkstra",
+      "最短路径树"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_rip",
+    "name": "RIP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "RIP是基于距离向量的内部网关协议，以跳数为度量，最大有效距离为15跳并周期交换路由信息。",
+    "keywords": [
+      "距离向量",
+      "跳数",
+      "15跳",
+      "内部网关协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ospf",
+    "name": "OSPF协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "OSPF是链路状态内部网关协议，使用Dijkstra算法、区域层次和链路状态通告实现快速收敛。",
+    "keywords": [
+      "链路状态",
+      "区域",
+      "LSA",
+      "Dijkstra"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_as",
+    "name": "自治系统AS",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "自治系统是在统一技术管理和路由策略下运行的一组网络，对外以自治系统号标识。",
+    "keywords": [
+      "自治系统",
+      "ASN",
+      "域内路由",
+      "域间路由"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_bgp",
+    "name": "BGP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "BGP是自治系统之间的路径向量协议，通告AS-PATH等属性并依据策略选择可达路由。",
+    "keywords": [
+      "路径向量",
+      "AS-PATH",
+      "域间路由",
+      "路由策略"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_transport_layer",
+    "name": "传输层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层在端系统中为应用进程提供端到端逻辑通信，并完成复用分用、差错检测与可选的可靠传输。",
+    "keywords": [
+      "进程通信",
+      "端到端",
+      "复用分用",
+      "可靠传输"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_process_communication",
+    "name": "进程到进程通信",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层把网络层的主机到主机交付扩展为应用进程之间的逻辑通信。",
+    "keywords": [
+      "进程",
+      "逻辑通信",
+      "端系统",
+      "应用数据"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_multiplexing",
+    "name": "复用与分用",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "发送端把多个套接字的数据复用到传输层报文，接收端依据端口及连接标识把报文分用给正确进程。",
+    "keywords": [
+      "复用",
+      "分用",
+      "套接字",
+      "连接标识"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_port",
+    "name": "端口号",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "端口号是16位进程标识，0到1023通常为熟知端口，客户端常使用临时端口。",
+    "keywords": [
+      "16位",
+      "熟知端口",
+      "临时端口",
+      "进程标识"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_socket",
+    "name": "套接字端点",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "传输层套接字是应用进程使用网络服务的端点，TCP连接通常由源和目的IP地址、端口号四元组标识。",
+    "keywords": [
+      "套接字",
+      "四元组",
+      "IP地址",
+      "端口号"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_udp",
+    "name": "UDP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP提供无连接、面向报文的尽最大努力交付，首部开销小且应用可直接控制发送时机。",
+    "keywords": [
+      "无连接",
+      "面向报文",
+      "低开销",
+      "尽最大努力"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_udp_header",
+    "name": "UDP数据报首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP首部固定8字节，依次包含源端口、目的端口、长度和检验和四个16位字段。",
+    "keywords": [
+      "8字节",
+      "源端口",
+      "长度",
+      "检验和"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_udp_checksum",
+    "name": "UDP检验和",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "UDP检验和对伪首部、UDP首部和数据进行反码求和，用于检测端到端传输中的比特差错。",
+    "keywords": [
+      "伪首部",
+      "反码求和",
+      "差错检测",
+      "端到端"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_tcp",
+    "name": "TCP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP提供面向连接、可靠、全双工的字节流服务，并实现流量控制和拥塞控制。",
+    "keywords": [
+      "面向连接",
+      "可靠",
+      "字节流",
+      "全双工"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_tcp_header",
+    "name": "TCP报文段首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP首部至少20字节，包含端口、序号、确认号、标志位、窗口、检验和与选项等字段。",
+    "keywords": [
+      "序号",
+      "确认号",
+      "标志位",
+      "接收窗口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_seq_ack",
+    "name": "序号与确认号",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP按字节编号；确认号表示期望收到的下一个字节序号，累积确认此前连续数据均已收到。",
+    "keywords": [
+      "字节编号",
+      "累计确认",
+      "确认号",
+      "有序交付"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_handshake",
+    "name": "TCP三次握手",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP以SYN、SYN+ACK、ACK三次报文交换同步双方初始序号并确认双向通信能力。",
+    "keywords": [
+      "SYN",
+      "ACK",
+      "初始序号",
+      "连接建立"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_connection_release",
+    "name": "TCP四次挥手",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP全双工连接的两个方向需分别关闭，典型过程为FIN、ACK、FIN、ACK。",
+    "keywords": [
+      "FIN",
+      "半关闭",
+      "连接释放",
+      "全双工"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_time_wait",
+    "name": "TIME_WAIT状态",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "主动关闭方在最终ACK后保持TIME_WAIT，通常等待2MSL，以便重传最终ACK并让旧报文在网络中消失。",
+    "keywords": [
+      "2MSL",
+      "最终ACK",
+      "旧报文",
+      "主动关闭"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_reliable",
+    "name": "可靠数据传输",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "可靠传输综合使用差错检测、序号、确认、定时器和重传，对上层呈现无差错且有序的数据流。",
+    "keywords": [
+      "确认",
+      "重传",
+      "定时器",
+      "有序交付"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_checksum",
+    "name": "传输层检验和",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "检验和把报文按16位字进行反码求和，接收端据此发现传输中的比特差错，但不能纠错。",
+    "keywords": [
+      "16位字",
+      "反码",
+      "差错检测",
+      "伪首部"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_stop_wait",
+    "name": "停止等待协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "停止等待协议每发送一个分组便等待确认，逻辑简单但在带宽时延积较大的链路上利用率低。",
+    "keywords": [
+      "停止等待",
+      "确认",
+      "超时重传",
+      "信道利用率"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_pipelining",
+    "name": "流水线可靠传输",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "流水线允许多个未确认分组同时在途，通过扩大序号空间和缓存提高链路利用率。",
+    "keywords": [
+      "流水线",
+      "在途分组",
+      "序号空间",
+      "缓存"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_sliding_window",
+    "name": "滑动窗口",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "滑动窗口限制发送方未确认数据范围，确认到达后窗口向前移动，实现流水线与发送速率约束。",
+    "keywords": [
+      "发送窗口",
+      "接收窗口",
+      "累计确认",
+      "窗口滑动"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_flow_control",
+    "name": "TCP流量控制",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "接收方在首部中通告接收窗口rwnd，发送方限制未确认数据，避免接收缓存溢出。",
+    "keywords": [
+      "rwnd",
+      "接收缓存",
+      "窗口通告",
+      "零窗口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_rtt_rto",
+    "name": "RTT估计与重传超时",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP以指数加权平均估计RTT，并结合RTT偏差设置RTO，使超时既能响应丢包又不过于敏感。",
+    "keywords": [
+      "SampleRTT",
+      "EstimatedRTT",
+      "DevRTT",
+      "RTO"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_congestion",
+    "name": "TCP拥塞控制",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP根据拥塞窗口cwnd和慢启动门限调节在途数据，以适应网络可用容量并避免拥塞崩溃。",
+    "keywords": [
+      "cwnd",
+      "ssthresh",
+      "AIMD",
+      "拥塞窗口"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_slow_start",
+    "name": "慢开始",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "慢开始阶段每收到一个新的确认就增加cwnd，使拥塞窗口在每个RTT近似翻倍，直到门限或拥塞事件。",
+    "keywords": [
+      "指数增长",
+      "cwnd",
+      "ssthresh",
+      "RTT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_congestion_avoidance",
+    "name": "拥塞避免",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "拥塞避免采用加性增大，使cwnd每个RTT大约增加一个MSS，谨慎探测剩余带宽。",
+    "keywords": [
+      "加性增大",
+      "AIMD",
+      "MSS",
+      "线性增长"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_fast_retransmit",
+    "name": "快重传",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "发送方收到三个重复ACK时，不等待超时便重传推测丢失的报文段，从而缩短丢包恢复时间。",
+    "keywords": [
+      "三个重复ACK",
+      "重传",
+      "丢包",
+      "无需超时"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_fast_recovery",
+    "name": "快恢复",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "快恢复在重复ACK触发丢包后降低拥塞窗口但避免回到一个MSS，使连接较快恢复发送。",
+    "keywords": [
+      "重复ACK",
+      "门限",
+      "窗口减小",
+      "恢复"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch6_tcp_udp_compare",
+    "name": "TCP与UDP对比",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "传输层",
+    "description": "TCP强调连接、可靠性与拥塞控制；UDP强调报文边界、低时延和由应用自行控制可靠策略。",
+    "keywords": [
+      "可靠性",
+      "连接",
+      "开销",
+      "应用选择"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_application_layer",
+    "name": "应用层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "应用层定义网络应用进程交换的报文类型、语义、格式和交互规则，直接为用户应用提供服务。",
+    "keywords": [
+      "应用协议",
+      "报文",
+      "进程",
+      "交互规则"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_architecture",
+    "name": "网络应用体系结构",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "网络应用通常采用客户-服务器、对等或混合体系结构，体系结构决定进程组织和资源分布方式。",
+    "keywords": [
+      "客户-服务器",
+      "P2P",
+      "进程组织",
+      "体系结构"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_client_server",
+    "name": "客户-服务器模式",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "客户进程主动请求服务，服务器在固定地址持续运行并响应多个客户，便于集中管理。",
+    "keywords": [
+      "客户",
+      "服务器",
+      "请求响应",
+      "固定地址"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_p2p",
+    "name": "对等P2P模式",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "P2P中对等方既可请求也可提供资源，具有自扩展性，但管理、安全和可用性更复杂。",
+    "keywords": [
+      "对等方",
+      "自扩展",
+      "去中心化",
+      "资源共享"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_socket_programming",
+    "name": "Socket编程",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "Socket API使应用选择TCP或UDP，通过地址和端口建立通信端点并执行发送、接收操作。",
+    "keywords": [
+      "Socket API",
+      "bind",
+      "connect",
+      "send/receive"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns",
+    "name": "域名系统DNS",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DNS是分布式、层次化命名系统，把域名解析为IP地址，并支持别名、邮件交换和负载分配。",
+    "keywords": [
+      "域名解析",
+      "分布式数据库",
+      "53端口",
+      "资源记录"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_hierarchy",
+    "name": "DNS层次结构",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DNS由根域、顶级域和权威域名服务器形成层次结构，区域数据由相应权威服务器维护。",
+    "keywords": [
+      "根服务器",
+      "顶级域",
+      "权威服务器",
+      "区域"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_resolution",
+    "name": "递归与迭代解析",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "递归查询要求被询问服务器完成后续解析；迭代查询则返回下一步应询问的服务器地址。",
+    "keywords": [
+      "递归查询",
+      "迭代查询",
+      "本地域名服务器",
+      "转介"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_cache",
+    "name": "DNS缓存",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "解析器和域名服务器按TTL缓存资源记录，减少查询时延与根、顶级服务器负载。",
+    "keywords": [
+      "TTL",
+      "缓存命中",
+      "过期",
+      "查询时延"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dns_rr",
+    "name": "DNS资源记录",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DNS资源记录以名称、值、类型和TTL表示，常见类型包括A、AAAA、NS、CNAME和MX。",
+    "keywords": [
+      "A记录",
+      "AAAA",
+      "CNAME",
+      "MX"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http",
+    "name": "HTTP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP是Web的应用层协议，采用请求-响应模型，通常运行于TCP之上且本身无状态。",
+    "keywords": [
+      "请求响应",
+      "无状态",
+      "Web",
+      "TCP"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http_message",
+    "name": "HTTP报文",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP请求报文包含请求行、首部和可选实体；响应报文包含状态行、首部和可选实体。",
+    "keywords": [
+      "请求行",
+      "状态行",
+      "首部",
+      "实体"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_persistent_http",
+    "name": "持续连接HTTP",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "持续连接允许同一TCP连接传输多个HTTP对象，减少重复握手开销和额外RTT。",
+    "keywords": [
+      "持久连接",
+      "RTT",
+      "连接复用",
+      "流水线"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_cookie_session",
+    "name": "Cookie与会话",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "Cookie由服务器通过响应首部设置并由浏览器后续携带，配合服务端会话状态识别用户。",
+    "keywords": [
+      "Set-Cookie",
+      "Cookie",
+      "会话标识",
+      "状态管理"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_web_cache",
+    "name": "Web缓存与代理",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "Web缓存保存可复用响应并代表客户向源服务器请求，能降低访问时延和出口链路流量。",
+    "keywords": [
+      "代理服务器",
+      "缓存命中",
+      "条件GET",
+      "访问时延"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_https_tls",
+    "name": "HTTPS与TLS",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTPS在HTTP与传输层之间使用TLS，提供服务器认证、机密性和报文完整性。",
+    "keywords": [
+      "TLS",
+      "证书",
+      "加密",
+      "完整性"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http2",
+    "name": "HTTP/2",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP/2在一个TCP连接中使用二进制分帧、多路复用和首部压缩，减少应用层队头等待。",
+    "keywords": [
+      "二进制分帧",
+      "多路复用",
+      "HPACK",
+      "单TCP连接"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_http3",
+    "name": "HTTP/3",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "HTTP/3运行在基于UDP的QUIC之上，把可靠流和TLS 1.3结合，降低连接建立及跨流队头阻塞。",
+    "keywords": [
+      "QUIC",
+      "UDP",
+      "TLS 1.3",
+      "多流"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_ftp",
+    "name": "FTP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "FTP使用独立的控制连接和数据连接传输文件，控制连接通常使用TCP 21端口。",
+    "keywords": [
+      "控制连接",
+      "数据连接",
+      "21端口",
+      "文件传输"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_email",
+    "name": "电子邮件系统",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "电子邮件系统由用户代理、邮件服务器和邮件传输协议组成，采用存储转发方式传递邮件。",
+    "keywords": [
+      "用户代理",
+      "邮件服务器",
+      "存储转发",
+      "消息队列"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_smtp",
+    "name": "SMTP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "SMTP用于邮件服务器之间以及客户端到服务器的邮件提交，基于TCP并采用命令-响应交互。",
+    "keywords": [
+      "邮件发送",
+      "TCP",
+      "命令响应",
+      "存储转发"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_mime",
+    "name": "MIME",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "MIME扩展电子邮件格式，用Content-Type和编码方式承载非ASCII文本、图片与附件。",
+    "keywords": [
+      "Content-Type",
+      "附件",
+      "编码",
+      "多媒体邮件"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_pop3",
+    "name": "POP3协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "POP3以下载并可删除服务器邮件为主要模式，功能简单，适合单一终端离线阅读。",
+    "keywords": [
+      "邮件读取",
+      "下载删除",
+      "110端口",
+      "离线"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_imap",
+    "name": "IMAP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "IMAP在服务器保留邮件和文件夹状态，支持多终端同步、服务器搜索与按需获取。",
+    "keywords": [
+      "服务器存储",
+      "多端同步",
+      "文件夹",
+      "按需获取"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_dhcp",
+    "name": "DHCP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "DHCP通过发现、提供、请求、确认过程动态分配IP地址、掩码、默认网关和DNS服务器。",
+    "keywords": [
+      "DORA",
+      "地址租约",
+      "默认网关",
+      "UDP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_url_uri",
+    "name": "URI与URL",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "URI统一标识资源，URL是URI的常见子集，说明访问资源所用方案、主机、端口与路径。",
+    "keywords": [
+      "URI",
+      "URL",
+      "scheme",
+      "资源定位"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch7_websocket",
+    "name": "WebSocket协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "应用层",
+    "description": "WebSocket先经HTTP Upgrade握手建立连接，随后在单一TCP连接上提供全双工消息通信。",
+    "keywords": [
+      "Upgrade",
+      "全双工",
+      "长连接",
+      "消息帧"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_network_layer_01",
+    "name": "网络层·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网络层”关联单选题。",
+    "keywords": [
+      "分组交付",
+      "逻辑寻址",
+      "路由",
+      "转发",
+      "网络层"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_network_layer_02",
+    "name": "网络层·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网络层”关联填空题。",
+    "keywords": [
+      "分组交付",
+      "逻辑寻址",
+      "路由",
+      "转发",
+      "网络层"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_network_layer_03",
+    "name": "网络层·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网络层”关联简答题。",
+    "keywords": [
+      "分组交付",
+      "逻辑寻址",
+      "路由",
+      "转发",
+      "网络层"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ip_service_01",
+    "name": "IP数据报服务·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IP数据报服务”关联单选题。",
+    "keywords": [
+      "无连接",
+      "尽最大努力",
+      "数据报",
+      "不可靠交付",
+      "IP数据报服务"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ip_service_02",
+    "name": "IP数据报服务·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IP数据报服务”关联填空题。",
+    "keywords": [
+      "无连接",
+      "尽最大努力",
+      "数据报",
+      "不可靠交付",
+      "IP数据报服务"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ip_service_03",
+    "name": "IP数据报服务·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IP数据报服务”关联简答题。",
+    "keywords": [
+      "无连接",
+      "尽最大努力",
+      "数据报",
+      "不可靠交付",
+      "IP数据报服务"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_01",
+    "name": "IPv4协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4协议”关联单选题。",
+    "keywords": [
+      "32位地址",
+      "数据报",
+      "TTL",
+      "分片",
+      "IPv4协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_02",
+    "name": "IPv4协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4协议”关联填空题。",
+    "keywords": [
+      "32位地址",
+      "数据报",
+      "TTL",
+      "分片",
+      "IPv4协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_03",
+    "name": "IPv4协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4协议”关联简答题。",
+    "keywords": [
+      "32位地址",
+      "数据报",
+      "TTL",
+      "分片",
+      "IPv4协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_header_01",
+    "name": "IPv4数据报首部·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4数据报首部”关联单选题。",
+    "keywords": [
+      "总长度",
+      "TTL",
+      "首部检验和",
+      "分片偏移",
+      "IPv4数据报首部"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_header_02",
+    "name": "IPv4数据报首部·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4数据报首部”关联填空题。",
+    "keywords": [
+      "总长度",
+      "TTL",
+      "首部检验和",
+      "分片偏移",
+      "IPv4数据报首部"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_header_03",
+    "name": "IPv4数据报首部·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4数据报首部”关联计算题。",
+    "keywords": [
+      "总长度",
+      "TTL",
+      "首部检验和",
+      "分片偏移",
+      "IPv4数据报首部"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_addressing_01",
+    "name": "IPv4地址·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4地址”关联单选题。",
+    "keywords": [
+      "网络前缀",
+      "主机号",
+      "点分十进制",
+      "接口",
+      "IPv4地址"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_addressing_02",
+    "name": "IPv4地址·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4地址”关联填空题。",
+    "keywords": [
+      "网络前缀",
+      "主机号",
+      "点分十进制",
+      "接口",
+      "IPv4地址"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv4_addressing_03",
+    "name": "IPv4地址·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4地址”关联简答题。",
+    "keywords": [
+      "网络前缀",
+      "主机号",
+      "点分十进制",
+      "接口",
+      "IPv4地址"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_classful_addressing_01",
+    "name": "分类编址·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“分类编址”关联单选题。",
+    "keywords": [
+      "A类",
+      "B类",
+      "C类",
+      "网络号",
+      "分类编址"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_classful_addressing_02",
+    "name": "分类编址·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“分类编址”关联填空题。",
+    "keywords": [
+      "A类",
+      "B类",
+      "C类",
+      "网络号",
+      "分类编址"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_classful_addressing_03",
+    "name": "分类编址·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“分类编址”关联简答题。",
+    "keywords": [
+      "A类",
+      "B类",
+      "C类",
+      "网络号",
+      "分类编址"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_subnet_mask_01",
+    "name": "子网掩码·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“子网掩码”关联单选题。",
+    "keywords": [
+      "按位与",
+      "网络地址",
+      "前缀长度",
+      "掩码",
+      "子网掩码"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_subnet_mask_02",
+    "name": "子网掩码·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“子网掩码”关联填空题。",
+    "keywords": [
+      "按位与",
+      "网络地址",
+      "前缀长度",
+      "掩码",
+      "子网掩码"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_subnet_mask_03",
+    "name": "子网掩码·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“子网掩码”关联计算题。",
+    "keywords": [
+      "按位与",
+      "网络地址",
+      "前缀长度",
+      "掩码",
+      "子网掩码"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_subnetting_01",
+    "name": "子网划分·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“子网划分”关联单选题。",
+    "keywords": [
+      "借位",
+      "子网号",
+      "可用主机",
+      "广播地址",
+      "子网划分"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_subnetting_02",
+    "name": "子网划分·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“子网划分”关联填空题。",
+    "keywords": [
+      "借位",
+      "子网号",
+      "可用主机",
+      "广播地址",
+      "子网划分"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_subnetting_03",
+    "name": "子网划分·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“子网划分”关联计算题。",
+    "keywords": [
+      "借位",
+      "子网号",
+      "可用主机",
+      "广播地址",
+      "子网划分"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_cidr_01",
+    "name": "无分类域间路由CIDR·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“无分类域间路由CIDR”关联单选题。",
+    "keywords": [
+      "CIDR",
+      "可变长前缀",
+      "地址块",
+      "路由聚合",
+      "无分类域间路由CIDR"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_cidr_02",
+    "name": "无分类域间路由CIDR·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“无分类域间路由CIDR”关联填空题。",
+    "keywords": [
+      "CIDR",
+      "可变长前缀",
+      "地址块",
+      "路由聚合",
+      "无分类域间路由CIDR"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_cidr_03",
+    "name": "无分类域间路由CIDR·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“无分类域间路由CIDR”关联计算题。",
+    "keywords": [
+      "CIDR",
+      "可变长前缀",
+      "地址块",
+      "路由聚合",
+      "无分类域间路由CIDR"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_longest_prefix_01",
+    "name": "最长前缀匹配·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“最长前缀匹配”关联单选题。",
+    "keywords": [
+      "最长匹配",
+      "转发表",
+      "具体路由",
+      "下一跳",
+      "最长前缀匹配"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_longest_prefix_02",
+    "name": "最长前缀匹配·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“最长前缀匹配”关联填空题。",
+    "keywords": [
+      "最长匹配",
+      "转发表",
+      "具体路由",
+      "下一跳",
+      "最长前缀匹配"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_longest_prefix_03",
+    "name": "最长前缀匹配·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“最长前缀匹配”关联简答题。",
+    "keywords": [
+      "最长匹配",
+      "转发表",
+      "具体路由",
+      "下一跳",
+      "最长前缀匹配"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv6_01",
+    "name": "IPv6协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv6协议”关联单选题。",
+    "keywords": [
+      "128位地址",
+      "固定首部",
+      "扩展首部",
+      "下一首部",
+      "IPv6协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv6_02",
+    "name": "IPv6协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv6协议”关联填空题。",
+    "keywords": [
+      "128位地址",
+      "固定首部",
+      "扩展首部",
+      "下一首部",
+      "IPv6协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv6_03",
+    "name": "IPv6协议·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv6协议”关联计算题。",
+    "keywords": [
+      "128位地址",
+      "固定首部",
+      "扩展首部",
+      "下一首部",
+      "IPv6协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv6_header_01",
+    "name": "IPv6基本首部·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv6基本首部”关联单选题。",
+    "keywords": [
+      "流标签",
+      "跳数限制",
+      "下一首部",
+      "有效载荷长度",
+      "IPv6基本首部"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv6_header_02",
+    "name": "IPv6基本首部·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv6基本首部”关联填空题。",
+    "keywords": [
+      "流标签",
+      "跳数限制",
+      "下一首部",
+      "有效载荷长度",
+      "IPv6基本首部"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ipv6_header_03",
+    "name": "IPv6基本首部·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv6基本首部”关联简答题。",
+    "keywords": [
+      "流标签",
+      "跳数限制",
+      "下一首部",
+      "有效载荷长度",
+      "IPv6基本首部"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_transition_01",
+    "name": "IPv4向IPv6过渡·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4向IPv6过渡”关联单选题。",
+    "keywords": [
+      "双协议栈",
+      "隧道",
+      "协议转换",
+      "过渡机制",
+      "IPv4向IPv6过渡"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_transition_02",
+    "name": "IPv4向IPv6过渡·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4向IPv6过渡”关联填空题。",
+    "keywords": [
+      "双协议栈",
+      "隧道",
+      "协议转换",
+      "过渡机制",
+      "IPv4向IPv6过渡"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_transition_03",
+    "name": "IPv4向IPv6过渡·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“IPv4向IPv6过渡”关联简答题。",
+    "keywords": [
+      "双协议栈",
+      "隧道",
+      "协议转换",
+      "过渡机制",
+      "IPv4向IPv6过渡"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_arp_01",
+    "name": "地址解析协议ARP·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“地址解析协议ARP”关联单选题。",
+    "keywords": [
+      "IP到MAC",
+      "广播请求",
+      "单播响应",
+      "ARP缓存",
+      "地址解析协议ARP"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_arp_02",
+    "name": "地址解析协议ARP·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“地址解析协议ARP”关联填空题。",
+    "keywords": [
+      "IP到MAC",
+      "广播请求",
+      "单播响应",
+      "ARP缓存",
+      "地址解析协议ARP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_arp_03",
+    "name": "地址解析协议ARP·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“地址解析协议ARP”关联简答题。",
+    "keywords": [
+      "IP到MAC",
+      "广播请求",
+      "单播响应",
+      "ARP缓存",
+      "地址解析协议ARP"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_icmp_01",
+    "name": "网际控制报文协议ICMP·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网际控制报文协议ICMP”关联单选题。",
+    "keywords": [
+      "差错报告",
+      "目的不可达",
+      "超时",
+      "回显",
+      "网际控制报文协议ICMP"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_icmp_02",
+    "name": "网际控制报文协议ICMP·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网际控制报文协议ICMP”关联填空题。",
+    "keywords": [
+      "差错报告",
+      "目的不可达",
+      "超时",
+      "回显",
+      "网际控制报文协议ICMP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_icmp_03",
+    "name": "网际控制报文协议ICMP·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网际控制报文协议ICMP”关联简答题。",
+    "keywords": [
+      "差错报告",
+      "目的不可达",
+      "超时",
+      "回显",
+      "网际控制报文协议ICMP"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ping_01",
+    "name": "Ping诊断·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“Ping诊断”关联单选题。",
+    "keywords": [
+      "回显请求",
+      "回显回答",
+      "RTT",
+      "可达性",
+      "Ping诊断"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ping_02",
+    "name": "Ping诊断·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“Ping诊断”关联填空题。",
+    "keywords": [
+      "回显请求",
+      "回显回答",
+      "RTT",
+      "可达性",
+      "Ping诊断"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ping_03",
+    "name": "Ping诊断·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“Ping诊断”关联简答题。",
+    "keywords": [
+      "回显请求",
+      "回显回答",
+      "RTT",
+      "可达性",
+      "Ping诊断"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_traceroute_01",
+    "name": "Traceroute路径探测·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“Traceroute路径探测”关联单选题。",
+    "keywords": [
+      "TTL",
+      "逐跳探测",
+      "ICMP超时",
+      "路径",
+      "Traceroute路径探测"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_traceroute_02",
+    "name": "Traceroute路径探测·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“Traceroute路径探测”关联填空题。",
+    "keywords": [
+      "TTL",
+      "逐跳探测",
+      "ICMP超时",
+      "路径",
+      "Traceroute路径探测"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_traceroute_03",
+    "name": "Traceroute路径探测·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“Traceroute路径探测”关联简答题。",
+    "keywords": [
+      "TTL",
+      "逐跳探测",
+      "ICMP超时",
+      "路径",
+      "Traceroute路径探测"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_nat_01",
+    "name": "网络地址转换NAT·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网络地址转换NAT”关联单选题。",
+    "keywords": [
+      "私网地址",
+      "公网地址",
+      "端口映射",
+      "NAPT",
+      "网络地址转换NAT"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_nat_02",
+    "name": "网络地址转换NAT·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网络地址转换NAT”关联填空题。",
+    "keywords": [
+      "私网地址",
+      "公网地址",
+      "端口映射",
+      "NAPT",
+      "网络地址转换NAT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_nat_03",
+    "name": "网络地址转换NAT·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“网络地址转换NAT”关联简答题。",
+    "keywords": [
+      "私网地址",
+      "公网地址",
+      "端口映射",
+      "NAPT",
+      "网络地址转换NAT"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_router_01",
+    "name": "路由器·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“路由器”关联单选题。",
+    "keywords": [
+      "路由器",
+      "输入端口",
+      "交换结构",
+      "输出端口"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_router_02",
+    "name": "路由器·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“路由器”关联填空题。",
+    "keywords": [
+      "路由器",
+      "输入端口",
+      "交换结构",
+      "输出端口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_router_03",
+    "name": "路由器·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“路由器”关联简答题。",
+    "keywords": [
+      "路由器",
+      "输入端口",
+      "交换结构",
+      "输出端口"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_forwarding_table_01",
+    "name": "转发表·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“转发表”关联单选题。",
+    "keywords": [
+      "目的前缀",
+      "下一跳",
+      "输出接口",
+      "数据平面",
+      "转发表"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_forwarding_table_02",
+    "name": "转发表·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“转发表”关联填空题。",
+    "keywords": [
+      "目的前缀",
+      "下一跳",
+      "输出接口",
+      "数据平面",
+      "转发表"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_forwarding_table_03",
+    "name": "转发表·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“转发表”关联简答题。",
+    "keywords": [
+      "目的前缀",
+      "下一跳",
+      "输出接口",
+      "数据平面",
+      "转发表"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_routing_algorithm_01",
+    "name": "路由选择算法·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“路由选择算法”关联单选题。",
+    "keywords": [
+      "路径选择",
+      "链路代价",
+      "拓扑",
+      "控制平面",
+      "路由选择算法"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_routing_algorithm_02",
+    "name": "路由选择算法·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“路由选择算法”关联填空题。",
+    "keywords": [
+      "路径选择",
+      "链路代价",
+      "拓扑",
+      "控制平面",
+      "路由选择算法"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_routing_algorithm_03",
+    "name": "路由选择算法·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“路由选择算法”关联简答题。",
+    "keywords": [
+      "路径选择",
+      "链路代价",
+      "拓扑",
+      "控制平面",
+      "路由选择算法"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_distance_vector_01",
+    "name": "距离向量算法·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“距离向量算法”关联单选题。",
+    "keywords": [
+      "Bellman-Ford",
+      "距离向量",
+      "邻居交换",
+      "计数到无穷",
+      "距离向量算法"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_distance_vector_02",
+    "name": "距离向量算法·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“距离向量算法”关联填空题。",
+    "keywords": [
+      "Bellman-Ford",
+      "距离向量",
+      "邻居交换",
+      "计数到无穷",
+      "距离向量算法"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_distance_vector_03",
+    "name": "距离向量算法·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“距离向量算法”关联简答题。",
+    "keywords": [
+      "Bellman-Ford",
+      "距离向量",
+      "邻居交换",
+      "计数到无穷",
+      "距离向量算法"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_link_state_01",
+    "name": "链路状态算法·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“链路状态算法”关联单选题。",
+    "keywords": [
+      "链路状态",
+      "泛洪",
+      "Dijkstra",
+      "最短路径树",
+      "链路状态算法"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_link_state_02",
+    "name": "链路状态算法·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“链路状态算法”关联填空题。",
+    "keywords": [
+      "链路状态",
+      "泛洪",
+      "Dijkstra",
+      "最短路径树",
+      "链路状态算法"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_link_state_03",
+    "name": "链路状态算法·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“链路状态算法”关联简答题。",
+    "keywords": [
+      "链路状态",
+      "泛洪",
+      "Dijkstra",
+      "最短路径树",
+      "链路状态算法"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_rip_01",
+    "name": "RIP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“RIP协议”关联单选题。",
+    "keywords": [
+      "距离向量",
+      "跳数",
+      "15跳",
+      "内部网关协议",
+      "RIP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_rip_02",
+    "name": "RIP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“RIP协议”关联填空题。",
+    "keywords": [
+      "距离向量",
+      "跳数",
+      "15跳",
+      "内部网关协议",
+      "RIP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_rip_03",
+    "name": "RIP协议·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“RIP协议”关联计算题。",
+    "keywords": [
+      "距离向量",
+      "跳数",
+      "15跳",
+      "内部网关协议",
+      "RIP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ospf_01",
+    "name": "OSPF协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“OSPF协议”关联单选题。",
+    "keywords": [
+      "链路状态",
+      "区域",
+      "LSA",
+      "Dijkstra",
+      "OSPF协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ospf_02",
+    "name": "OSPF协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“OSPF协议”关联填空题。",
+    "keywords": [
+      "链路状态",
+      "区域",
+      "LSA",
+      "Dijkstra",
+      "OSPF协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_ospf_03",
+    "name": "OSPF协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“OSPF协议”关联简答题。",
+    "keywords": [
+      "链路状态",
+      "区域",
+      "LSA",
+      "Dijkstra",
+      "OSPF协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_as_01",
+    "name": "自治系统AS·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“自治系统AS”关联单选题。",
+    "keywords": [
+      "自治系统",
+      "ASN",
+      "域内路由",
+      "域间路由",
+      "自治系统AS"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_as_02",
+    "name": "自治系统AS·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“自治系统AS”关联填空题。",
+    "keywords": [
+      "自治系统",
+      "ASN",
+      "域内路由",
+      "域间路由",
+      "自治系统AS"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_as_03",
+    "name": "自治系统AS·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“自治系统AS”关联简答题。",
+    "keywords": [
+      "自治系统",
+      "ASN",
+      "域内路由",
+      "域间路由",
+      "自治系统AS"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_bgp_01",
+    "name": "BGP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“BGP协议”关联单选题。",
+    "keywords": [
+      "路径向量",
+      "AS-PATH",
+      "域间路由",
+      "路由策略",
+      "BGP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_bgp_02",
+    "name": "BGP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“BGP协议”关联填空题。",
+    "keywords": [
+      "路径向量",
+      "AS-PATH",
+      "域间路由",
+      "路由策略",
+      "BGP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch5_bgp_03",
+    "name": "BGP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络层",
+    "description": "核心篇“BGP协议”关联简答题。",
+    "keywords": [
+      "路径向量",
+      "AS-PATH",
+      "域间路由",
+      "路由策略",
+      "BGP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_transport_layer_01",
+    "name": "传输层·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“传输层”关联单选题。",
+    "keywords": [
+      "进程通信",
+      "端到端",
+      "复用分用",
+      "可靠传输",
+      "传输层"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_transport_layer_02",
+    "name": "传输层·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“传输层”关联填空题。",
+    "keywords": [
+      "进程通信",
+      "端到端",
+      "复用分用",
+      "可靠传输",
+      "传输层"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_transport_layer_03",
+    "name": "传输层·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“传输层”关联简答题。",
+    "keywords": [
+      "进程通信",
+      "端到端",
+      "复用分用",
+      "可靠传输",
+      "传输层"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_process_communication_01",
+    "name": "进程到进程通信·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“进程到进程通信”关联单选题。",
+    "keywords": [
+      "进程",
+      "逻辑通信",
+      "端系统",
+      "应用数据",
+      "进程到进程通信"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_process_communication_02",
+    "name": "进程到进程通信·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“进程到进程通信”关联填空题。",
+    "keywords": [
+      "进程",
+      "逻辑通信",
+      "端系统",
+      "应用数据",
+      "进程到进程通信"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_process_communication_03",
+    "name": "进程到进程通信·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“进程到进程通信”关联简答题。",
+    "keywords": [
+      "进程",
+      "逻辑通信",
+      "端系统",
+      "应用数据",
+      "进程到进程通信"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_multiplexing_01",
+    "name": "复用与分用·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“复用与分用”关联单选题。",
+    "keywords": [
+      "复用",
+      "分用",
+      "套接字",
+      "连接标识",
+      "复用与分用"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_multiplexing_02",
+    "name": "复用与分用·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“复用与分用”关联填空题。",
+    "keywords": [
+      "复用",
+      "分用",
+      "套接字",
+      "连接标识",
+      "复用与分用"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_multiplexing_03",
+    "name": "复用与分用·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“复用与分用”关联简答题。",
+    "keywords": [
+      "复用",
+      "分用",
+      "套接字",
+      "连接标识",
+      "复用与分用"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_port_01",
+    "name": "端口号·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“端口号”关联单选题。",
+    "keywords": [
+      "16位",
+      "熟知端口",
+      "临时端口",
+      "进程标识",
+      "端口号"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_port_02",
+    "name": "端口号·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“端口号”关联填空题。",
+    "keywords": [
+      "16位",
+      "熟知端口",
+      "临时端口",
+      "进程标识",
+      "端口号"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_port_03",
+    "name": "端口号·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“端口号”关联计算题。",
+    "keywords": [
+      "16位",
+      "熟知端口",
+      "临时端口",
+      "进程标识",
+      "端口号"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_socket_01",
+    "name": "套接字端点·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“套接字端点”关联单选题。",
+    "keywords": [
+      "套接字",
+      "四元组",
+      "IP地址",
+      "端口号",
+      "套接字端点"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_socket_02",
+    "name": "套接字端点·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“套接字端点”关联填空题。",
+    "keywords": [
+      "套接字",
+      "四元组",
+      "IP地址",
+      "端口号",
+      "套接字端点"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_socket_03",
+    "name": "套接字端点·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“套接字端点”关联简答题。",
+    "keywords": [
+      "套接字",
+      "四元组",
+      "IP地址",
+      "端口号",
+      "套接字端点"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_01",
+    "name": "UDP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP协议”关联单选题。",
+    "keywords": [
+      "无连接",
+      "面向报文",
+      "低开销",
+      "尽最大努力",
+      "UDP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_02",
+    "name": "UDP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP协议”关联填空题。",
+    "keywords": [
+      "无连接",
+      "面向报文",
+      "低开销",
+      "尽最大努力",
+      "UDP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_03",
+    "name": "UDP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP协议”关联简答题。",
+    "keywords": [
+      "无连接",
+      "面向报文",
+      "低开销",
+      "尽最大努力",
+      "UDP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_header_01",
+    "name": "UDP数据报首部·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP数据报首部”关联单选题。",
+    "keywords": [
+      "8字节",
+      "源端口",
+      "长度",
+      "检验和",
+      "UDP数据报首部"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_header_02",
+    "name": "UDP数据报首部·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP数据报首部”关联填空题。",
+    "keywords": [
+      "8字节",
+      "源端口",
+      "长度",
+      "检验和",
+      "UDP数据报首部"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_header_03",
+    "name": "UDP数据报首部·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP数据报首部”关联计算题。",
+    "keywords": [
+      "8字节",
+      "源端口",
+      "长度",
+      "检验和",
+      "UDP数据报首部"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_checksum_01",
+    "name": "UDP检验和·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP检验和”关联单选题。",
+    "keywords": [
+      "伪首部",
+      "反码求和",
+      "差错检测",
+      "端到端",
+      "UDP检验和"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_checksum_02",
+    "name": "UDP检验和·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP检验和”关联填空题。",
+    "keywords": [
+      "伪首部",
+      "反码求和",
+      "差错检测",
+      "端到端",
+      "UDP检验和"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_udp_checksum_03",
+    "name": "UDP检验和·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“UDP检验和”关联简答题。",
+    "keywords": [
+      "伪首部",
+      "反码求和",
+      "差错检测",
+      "端到端",
+      "UDP检验和"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_01",
+    "name": "TCP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP协议”关联单选题。",
+    "keywords": [
+      "面向连接",
+      "可靠",
+      "字节流",
+      "全双工",
+      "TCP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_02",
+    "name": "TCP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP协议”关联填空题。",
+    "keywords": [
+      "面向连接",
+      "可靠",
+      "字节流",
+      "全双工",
+      "TCP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_03",
+    "name": "TCP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP协议”关联简答题。",
+    "keywords": [
+      "面向连接",
+      "可靠",
+      "字节流",
+      "全双工",
+      "TCP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_header_01",
+    "name": "TCP报文段首部·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP报文段首部”关联单选题。",
+    "keywords": [
+      "序号",
+      "确认号",
+      "标志位",
+      "接收窗口",
+      "TCP报文段首部"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_header_02",
+    "name": "TCP报文段首部·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP报文段首部”关联填空题。",
+    "keywords": [
+      "序号",
+      "确认号",
+      "标志位",
+      "接收窗口",
+      "TCP报文段首部"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_header_03",
+    "name": "TCP报文段首部·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP报文段首部”关联计算题。",
+    "keywords": [
+      "序号",
+      "确认号",
+      "标志位",
+      "接收窗口",
+      "TCP报文段首部"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_seq_ack_01",
+    "name": "序号与确认号·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“序号与确认号”关联单选题。",
+    "keywords": [
+      "字节编号",
+      "累计确认",
+      "确认号",
+      "有序交付",
+      "序号与确认号"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_seq_ack_02",
+    "name": "序号与确认号·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“序号与确认号”关联填空题。",
+    "keywords": [
+      "字节编号",
+      "累计确认",
+      "确认号",
+      "有序交付",
+      "序号与确认号"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_seq_ack_03",
+    "name": "序号与确认号·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“序号与确认号”关联简答题。",
+    "keywords": [
+      "字节编号",
+      "累计确认",
+      "确认号",
+      "有序交付",
+      "序号与确认号"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_handshake_01",
+    "name": "TCP三次握手·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP三次握手”关联单选题。",
+    "keywords": [
+      "SYN",
+      "ACK",
+      "初始序号",
+      "连接建立",
+      "TCP三次握手"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_handshake_02",
+    "name": "TCP三次握手·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP三次握手”关联填空题。",
+    "keywords": [
+      "SYN",
+      "ACK",
+      "初始序号",
+      "连接建立",
+      "TCP三次握手"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_handshake_03",
+    "name": "TCP三次握手·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP三次握手”关联简答题。",
+    "keywords": [
+      "SYN",
+      "ACK",
+      "初始序号",
+      "连接建立",
+      "TCP三次握手"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_connection_release_01",
+    "name": "TCP四次挥手·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP四次挥手”关联单选题。",
+    "keywords": [
+      "FIN",
+      "半关闭",
+      "连接释放",
+      "全双工",
+      "TCP四次挥手"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_connection_release_02",
+    "name": "TCP四次挥手·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP四次挥手”关联填空题。",
+    "keywords": [
+      "FIN",
+      "半关闭",
+      "连接释放",
+      "全双工",
+      "TCP四次挥手"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_connection_release_03",
+    "name": "TCP四次挥手·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP四次挥手”关联简答题。",
+    "keywords": [
+      "FIN",
+      "半关闭",
+      "连接释放",
+      "全双工",
+      "TCP四次挥手"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_time_wait_01",
+    "name": "TIME_WAIT状态·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TIME_WAIT状态”关联单选题。",
+    "keywords": [
+      "2MSL",
+      "最终ACK",
+      "旧报文",
+      "主动关闭",
+      "TIME_WAIT状态"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_time_wait_02",
+    "name": "TIME_WAIT状态·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TIME_WAIT状态”关联填空题。",
+    "keywords": [
+      "2MSL",
+      "最终ACK",
+      "旧报文",
+      "主动关闭",
+      "TIME_WAIT状态"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_time_wait_03",
+    "name": "TIME_WAIT状态·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TIME_WAIT状态”关联简答题。",
+    "keywords": [
+      "2MSL",
+      "最终ACK",
+      "旧报文",
+      "主动关闭",
+      "TIME_WAIT状态"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_reliable_01",
+    "name": "可靠数据传输·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“可靠数据传输”关联单选题。",
+    "keywords": [
+      "确认",
+      "重传",
+      "定时器",
+      "有序交付",
+      "可靠数据传输"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_reliable_02",
+    "name": "可靠数据传输·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“可靠数据传输”关联填空题。",
+    "keywords": [
+      "确认",
+      "重传",
+      "定时器",
+      "有序交付",
+      "可靠数据传输"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_reliable_03",
+    "name": "可靠数据传输·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“可靠数据传输”关联简答题。",
+    "keywords": [
+      "确认",
+      "重传",
+      "定时器",
+      "有序交付",
+      "可靠数据传输"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_checksum_01",
+    "name": "传输层检验和·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“传输层检验和”关联单选题。",
+    "keywords": [
+      "16位字",
+      "反码",
+      "差错检测",
+      "伪首部",
+      "传输层检验和"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_checksum_02",
+    "name": "传输层检验和·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“传输层检验和”关联填空题。",
+    "keywords": [
+      "16位字",
+      "反码",
+      "差错检测",
+      "伪首部",
+      "传输层检验和"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_checksum_03",
+    "name": "传输层检验和·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“传输层检验和”关联简答题。",
+    "keywords": [
+      "16位字",
+      "反码",
+      "差错检测",
+      "伪首部",
+      "传输层检验和"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_stop_wait_01",
+    "name": "停止等待协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“停止等待协议”关联单选题。",
+    "keywords": [
+      "停止等待",
+      "确认",
+      "超时重传",
+      "信道利用率",
+      "停止等待协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_stop_wait_02",
+    "name": "停止等待协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“停止等待协议”关联填空题。",
+    "keywords": [
+      "停止等待",
+      "确认",
+      "超时重传",
+      "信道利用率",
+      "停止等待协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_stop_wait_03",
+    "name": "停止等待协议·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“停止等待协议”关联计算题。",
+    "keywords": [
+      "停止等待",
+      "确认",
+      "超时重传",
+      "信道利用率",
+      "停止等待协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_pipelining_01",
+    "name": "流水线可靠传输·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“流水线可靠传输”关联单选题。",
+    "keywords": [
+      "流水线",
+      "在途分组",
+      "序号空间",
+      "缓存",
+      "流水线可靠传输"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_pipelining_02",
+    "name": "流水线可靠传输·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“流水线可靠传输”关联填空题。",
+    "keywords": [
+      "流水线",
+      "在途分组",
+      "序号空间",
+      "缓存",
+      "流水线可靠传输"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_pipelining_03",
+    "name": "流水线可靠传输·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“流水线可靠传输”关联简答题。",
+    "keywords": [
+      "流水线",
+      "在途分组",
+      "序号空间",
+      "缓存",
+      "流水线可靠传输"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_sliding_window_01",
+    "name": "滑动窗口·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“滑动窗口”关联单选题。",
+    "keywords": [
+      "发送窗口",
+      "接收窗口",
+      "累计确认",
+      "窗口滑动",
+      "滑动窗口"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_sliding_window_02",
+    "name": "滑动窗口·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“滑动窗口”关联填空题。",
+    "keywords": [
+      "发送窗口",
+      "接收窗口",
+      "累计确认",
+      "窗口滑动",
+      "滑动窗口"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_sliding_window_03",
+    "name": "滑动窗口·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“滑动窗口”关联简答题。",
+    "keywords": [
+      "发送窗口",
+      "接收窗口",
+      "累计确认",
+      "窗口滑动",
+      "滑动窗口"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_flow_control_01",
+    "name": "TCP流量控制·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP流量控制”关联单选题。",
+    "keywords": [
+      "rwnd",
+      "接收缓存",
+      "窗口通告",
+      "零窗口",
+      "TCP流量控制"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_flow_control_02",
+    "name": "TCP流量控制·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP流量控制”关联填空题。",
+    "keywords": [
+      "rwnd",
+      "接收缓存",
+      "窗口通告",
+      "零窗口",
+      "TCP流量控制"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_flow_control_03",
+    "name": "TCP流量控制·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP流量控制”关联简答题。",
+    "keywords": [
+      "rwnd",
+      "接收缓存",
+      "窗口通告",
+      "零窗口",
+      "TCP流量控制"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_rtt_rto_01",
+    "name": "RTT估计与重传超时·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“RTT估计与重传超时”关联单选题。",
+    "keywords": [
+      "SampleRTT",
+      "EstimatedRTT",
+      "DevRTT",
+      "RTO",
+      "RTT估计与重传超时"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_rtt_rto_02",
+    "name": "RTT估计与重传超时·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“RTT估计与重传超时”关联填空题。",
+    "keywords": [
+      "SampleRTT",
+      "EstimatedRTT",
+      "DevRTT",
+      "RTO",
+      "RTT估计与重传超时"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_rtt_rto_03",
+    "name": "RTT估计与重传超时·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“RTT估计与重传超时”关联简答题。",
+    "keywords": [
+      "SampleRTT",
+      "EstimatedRTT",
+      "DevRTT",
+      "RTO",
+      "RTT估计与重传超时"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_congestion_01",
+    "name": "TCP拥塞控制·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP拥塞控制”关联单选题。",
+    "keywords": [
+      "cwnd",
+      "ssthresh",
+      "AIMD",
+      "拥塞窗口",
+      "TCP拥塞控制"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_congestion_02",
+    "name": "TCP拥塞控制·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP拥塞控制”关联填空题。",
+    "keywords": [
+      "cwnd",
+      "ssthresh",
+      "AIMD",
+      "拥塞窗口",
+      "TCP拥塞控制"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_congestion_03",
+    "name": "TCP拥塞控制·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP拥塞控制”关联简答题。",
+    "keywords": [
+      "cwnd",
+      "ssthresh",
+      "AIMD",
+      "拥塞窗口",
+      "TCP拥塞控制"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_slow_start_01",
+    "name": "慢开始·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“慢开始”关联单选题。",
+    "keywords": [
+      "指数增长",
+      "cwnd",
+      "ssthresh",
+      "RTT",
+      "慢开始"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_slow_start_02",
+    "name": "慢开始·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“慢开始”关联填空题。",
+    "keywords": [
+      "指数增长",
+      "cwnd",
+      "ssthresh",
+      "RTT",
+      "慢开始"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_slow_start_03",
+    "name": "慢开始·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“慢开始”关联计算题。",
+    "keywords": [
+      "指数增长",
+      "cwnd",
+      "ssthresh",
+      "RTT",
+      "慢开始"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_congestion_avoidance_01",
+    "name": "拥塞避免·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“拥塞避免”关联单选题。",
+    "keywords": [
+      "加性增大",
+      "AIMD",
+      "MSS",
+      "线性增长",
+      "拥塞避免"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_congestion_avoidance_02",
+    "name": "拥塞避免·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“拥塞避免”关联填空题。",
+    "keywords": [
+      "加性增大",
+      "AIMD",
+      "MSS",
+      "线性增长",
+      "拥塞避免"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_congestion_avoidance_03",
+    "name": "拥塞避免·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“拥塞避免”关联简答题。",
+    "keywords": [
+      "加性增大",
+      "AIMD",
+      "MSS",
+      "线性增长",
+      "拥塞避免"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_fast_retransmit_01",
+    "name": "快重传·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“快重传”关联单选题。",
+    "keywords": [
+      "三个重复ACK",
+      "重传",
+      "丢包",
+      "无需超时",
+      "快重传"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_fast_retransmit_02",
+    "name": "快重传·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“快重传”关联填空题。",
+    "keywords": [
+      "三个重复ACK",
+      "重传",
+      "丢包",
+      "无需超时",
+      "快重传"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_fast_retransmit_03",
+    "name": "快重传·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“快重传”关联简答题。",
+    "keywords": [
+      "三个重复ACK",
+      "重传",
+      "丢包",
+      "无需超时",
+      "快重传"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_fast_recovery_01",
+    "name": "快恢复·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“快恢复”关联单选题。",
+    "keywords": [
+      "重复ACK",
+      "门限",
+      "窗口减小",
+      "恢复",
+      "快恢复"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_fast_recovery_02",
+    "name": "快恢复·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“快恢复”关联填空题。",
+    "keywords": [
+      "重复ACK",
+      "门限",
+      "窗口减小",
+      "恢复",
+      "快恢复"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_fast_recovery_03",
+    "name": "快恢复·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“快恢复”关联简答题。",
+    "keywords": [
+      "重复ACK",
+      "门限",
+      "窗口减小",
+      "恢复",
+      "快恢复"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_udp_compare_01",
+    "name": "TCP与UDP对比·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP与UDP对比”关联单选题。",
+    "keywords": [
+      "可靠性",
+      "连接",
+      "开销",
+      "应用选择",
+      "TCP与UDP对比"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_udp_compare_02",
+    "name": "TCP与UDP对比·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP与UDP对比”关联填空题。",
+    "keywords": [
+      "可靠性",
+      "连接",
+      "开销",
+      "应用选择",
+      "TCP与UDP对比"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch6_tcp_udp_compare_03",
+    "name": "TCP与UDP对比·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "传输层",
+    "description": "核心篇“TCP与UDP对比”关联简答题。",
+    "keywords": [
+      "可靠性",
+      "连接",
+      "开销",
+      "应用选择",
+      "TCP与UDP对比"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_application_layer_01",
+    "name": "应用层·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“应用层”关联单选题。",
+    "keywords": [
+      "应用协议",
+      "报文",
+      "进程",
+      "交互规则",
+      "应用层"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_application_layer_02",
+    "name": "应用层·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“应用层”关联填空题。",
+    "keywords": [
+      "应用协议",
+      "报文",
+      "进程",
+      "交互规则",
+      "应用层"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_application_layer_03",
+    "name": "应用层·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“应用层”关联简答题。",
+    "keywords": [
+      "应用协议",
+      "报文",
+      "进程",
+      "交互规则",
+      "应用层"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_architecture_01",
+    "name": "网络应用体系结构·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“网络应用体系结构”关联单选题。",
+    "keywords": [
+      "客户-服务器",
+      "P2P",
+      "进程组织",
+      "体系结构",
+      "网络应用体系结构"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_architecture_02",
+    "name": "网络应用体系结构·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“网络应用体系结构”关联填空题。",
+    "keywords": [
+      "客户-服务器",
+      "P2P",
+      "进程组织",
+      "体系结构",
+      "网络应用体系结构"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_architecture_03",
+    "name": "网络应用体系结构·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“网络应用体系结构”关联简答题。",
+    "keywords": [
+      "客户-服务器",
+      "P2P",
+      "进程组织",
+      "体系结构",
+      "网络应用体系结构"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_client_server_01",
+    "name": "客户-服务器模式·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“客户-服务器模式”关联单选题。",
+    "keywords": [
+      "客户",
+      "服务器",
+      "请求响应",
+      "固定地址",
+      "客户-服务器模式"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_client_server_02",
+    "name": "客户-服务器模式·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“客户-服务器模式”关联填空题。",
+    "keywords": [
+      "客户",
+      "服务器",
+      "请求响应",
+      "固定地址",
+      "客户-服务器模式"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_client_server_03",
+    "name": "客户-服务器模式·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“客户-服务器模式”关联简答题。",
+    "keywords": [
+      "客户",
+      "服务器",
+      "请求响应",
+      "固定地址",
+      "客户-服务器模式"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_p2p_01",
+    "name": "对等P2P模式·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“对等P2P模式”关联单选题。",
+    "keywords": [
+      "对等方",
+      "自扩展",
+      "去中心化",
+      "资源共享",
+      "对等P2P模式"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_p2p_02",
+    "name": "对等P2P模式·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“对等P2P模式”关联填空题。",
+    "keywords": [
+      "对等方",
+      "自扩展",
+      "去中心化",
+      "资源共享",
+      "对等P2P模式"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_p2p_03",
+    "name": "对等P2P模式·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“对等P2P模式”关联简答题。",
+    "keywords": [
+      "对等方",
+      "自扩展",
+      "去中心化",
+      "资源共享",
+      "对等P2P模式"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_socket_programming_01",
+    "name": "Socket编程·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Socket编程”关联单选题。",
+    "keywords": [
+      "Socket API",
+      "bind",
+      "connect",
+      "send/receive",
+      "Socket编程"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_socket_programming_02",
+    "name": "Socket编程·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Socket编程”关联填空题。",
+    "keywords": [
+      "Socket API",
+      "bind",
+      "connect",
+      "send/receive",
+      "Socket编程"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_socket_programming_03",
+    "name": "Socket编程·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Socket编程”关联简答题。",
+    "keywords": [
+      "Socket API",
+      "bind",
+      "connect",
+      "send/receive",
+      "Socket编程"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_01",
+    "name": "域名系统DNS·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“域名系统DNS”关联单选题。",
+    "keywords": [
+      "域名解析",
+      "分布式数据库",
+      "53端口",
+      "资源记录",
+      "域名系统DNS"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_02",
+    "name": "域名系统DNS·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“域名系统DNS”关联填空题。",
+    "keywords": [
+      "域名解析",
+      "分布式数据库",
+      "53端口",
+      "资源记录",
+      "域名系统DNS"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_03",
+    "name": "域名系统DNS·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“域名系统DNS”关联简答题。",
+    "keywords": [
+      "域名解析",
+      "分布式数据库",
+      "53端口",
+      "资源记录",
+      "域名系统DNS"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_hierarchy_01",
+    "name": "DNS层次结构·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS层次结构”关联单选题。",
+    "keywords": [
+      "根服务器",
+      "顶级域",
+      "权威服务器",
+      "区域",
+      "DNS层次结构"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_hierarchy_02",
+    "name": "DNS层次结构·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS层次结构”关联填空题。",
+    "keywords": [
+      "根服务器",
+      "顶级域",
+      "权威服务器",
+      "区域",
+      "DNS层次结构"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_hierarchy_03",
+    "name": "DNS层次结构·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS层次结构”关联简答题。",
+    "keywords": [
+      "根服务器",
+      "顶级域",
+      "权威服务器",
+      "区域",
+      "DNS层次结构"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_resolution_01",
+    "name": "递归与迭代解析·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“递归与迭代解析”关联单选题。",
+    "keywords": [
+      "递归查询",
+      "迭代查询",
+      "本地域名服务器",
+      "转介",
+      "递归与迭代解析"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_resolution_02",
+    "name": "递归与迭代解析·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“递归与迭代解析”关联填空题。",
+    "keywords": [
+      "递归查询",
+      "迭代查询",
+      "本地域名服务器",
+      "转介",
+      "递归与迭代解析"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_resolution_03",
+    "name": "递归与迭代解析·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“递归与迭代解析”关联简答题。",
+    "keywords": [
+      "递归查询",
+      "迭代查询",
+      "本地域名服务器",
+      "转介",
+      "递归与迭代解析"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_cache_01",
+    "name": "DNS缓存·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS缓存”关联单选题。",
+    "keywords": [
+      "TTL",
+      "缓存命中",
+      "过期",
+      "查询时延",
+      "DNS缓存"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_cache_02",
+    "name": "DNS缓存·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS缓存”关联填空题。",
+    "keywords": [
+      "TTL",
+      "缓存命中",
+      "过期",
+      "查询时延",
+      "DNS缓存"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_cache_03",
+    "name": "DNS缓存·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS缓存”关联计算题。",
+    "keywords": [
+      "TTL",
+      "缓存命中",
+      "过期",
+      "查询时延",
+      "DNS缓存"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_rr_01",
+    "name": "DNS资源记录·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS资源记录”关联单选题。",
+    "keywords": [
+      "A记录",
+      "AAAA",
+      "CNAME",
+      "MX",
+      "DNS资源记录"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_rr_02",
+    "name": "DNS资源记录·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS资源记录”关联填空题。",
+    "keywords": [
+      "A记录",
+      "AAAA",
+      "CNAME",
+      "MX",
+      "DNS资源记录"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dns_rr_03",
+    "name": "DNS资源记录·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DNS资源记录”关联简答题。",
+    "keywords": [
+      "A记录",
+      "AAAA",
+      "CNAME",
+      "MX",
+      "DNS资源记录"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http_01",
+    "name": "HTTP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP协议”关联单选题。",
+    "keywords": [
+      "请求响应",
+      "无状态",
+      "Web",
+      "TCP",
+      "HTTP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http_02",
+    "name": "HTTP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP协议”关联填空题。",
+    "keywords": [
+      "请求响应",
+      "无状态",
+      "Web",
+      "TCP",
+      "HTTP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http_03",
+    "name": "HTTP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP协议”关联简答题。",
+    "keywords": [
+      "请求响应",
+      "无状态",
+      "Web",
+      "TCP",
+      "HTTP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http_message_01",
+    "name": "HTTP报文·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP报文”关联单选题。",
+    "keywords": [
+      "请求行",
+      "状态行",
+      "首部",
+      "实体",
+      "HTTP报文"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http_message_02",
+    "name": "HTTP报文·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP报文”关联填空题。",
+    "keywords": [
+      "请求行",
+      "状态行",
+      "首部",
+      "实体",
+      "HTTP报文"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http_message_03",
+    "name": "HTTP报文·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP报文”关联简答题。",
+    "keywords": [
+      "请求行",
+      "状态行",
+      "首部",
+      "实体",
+      "HTTP报文"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_persistent_http_01",
+    "name": "持续连接HTTP·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“持续连接HTTP”关联单选题。",
+    "keywords": [
+      "持久连接",
+      "RTT",
+      "连接复用",
+      "流水线",
+      "持续连接HTTP"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_persistent_http_02",
+    "name": "持续连接HTTP·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“持续连接HTTP”关联填空题。",
+    "keywords": [
+      "持久连接",
+      "RTT",
+      "连接复用",
+      "流水线",
+      "持续连接HTTP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_persistent_http_03",
+    "name": "持续连接HTTP·计算题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“持续连接HTTP”关联计算题。",
+    "keywords": [
+      "持久连接",
+      "RTT",
+      "连接复用",
+      "流水线",
+      "持续连接HTTP"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_cookie_session_01",
+    "name": "Cookie与会话·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Cookie与会话”关联单选题。",
+    "keywords": [
+      "Set-Cookie",
+      "Cookie",
+      "会话标识",
+      "状态管理",
+      "Cookie与会话"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_cookie_session_02",
+    "name": "Cookie与会话·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Cookie与会话”关联填空题。",
+    "keywords": [
+      "Set-Cookie",
+      "Cookie",
+      "会话标识",
+      "状态管理",
+      "Cookie与会话"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_cookie_session_03",
+    "name": "Cookie与会话·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Cookie与会话”关联简答题。",
+    "keywords": [
+      "Set-Cookie",
+      "Cookie",
+      "会话标识",
+      "状态管理",
+      "Cookie与会话"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_web_cache_01",
+    "name": "Web缓存与代理·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Web缓存与代理”关联单选题。",
+    "keywords": [
+      "代理服务器",
+      "缓存命中",
+      "条件GET",
+      "访问时延",
+      "Web缓存与代理"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_web_cache_02",
+    "name": "Web缓存与代理·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Web缓存与代理”关联填空题。",
+    "keywords": [
+      "代理服务器",
+      "缓存命中",
+      "条件GET",
+      "访问时延",
+      "Web缓存与代理"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_web_cache_03",
+    "name": "Web缓存与代理·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“Web缓存与代理”关联简答题。",
+    "keywords": [
+      "代理服务器",
+      "缓存命中",
+      "条件GET",
+      "访问时延",
+      "Web缓存与代理"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_https_tls_01",
+    "name": "HTTPS与TLS·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTPS与TLS”关联单选题。",
+    "keywords": [
+      "TLS",
+      "证书",
+      "加密",
+      "完整性",
+      "HTTPS与TLS"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_https_tls_02",
+    "name": "HTTPS与TLS·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTPS与TLS”关联填空题。",
+    "keywords": [
+      "TLS",
+      "证书",
+      "加密",
+      "完整性",
+      "HTTPS与TLS"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_https_tls_03",
+    "name": "HTTPS与TLS·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTPS与TLS”关联简答题。",
+    "keywords": [
+      "TLS",
+      "证书",
+      "加密",
+      "完整性",
+      "HTTPS与TLS"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http2_01",
+    "name": "HTTP/2·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP/2”关联单选题。",
+    "keywords": [
+      "二进制分帧",
+      "多路复用",
+      "HPACK",
+      "单TCP连接",
+      "HTTP/2"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http2_02",
+    "name": "HTTP/2·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP/2”关联填空题。",
+    "keywords": [
+      "二进制分帧",
+      "多路复用",
+      "HPACK",
+      "单TCP连接",
+      "HTTP/2"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http2_03",
+    "name": "HTTP/2·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP/2”关联简答题。",
+    "keywords": [
+      "二进制分帧",
+      "多路复用",
+      "HPACK",
+      "单TCP连接",
+      "HTTP/2"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http3_01",
+    "name": "HTTP/3·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP/3”关联单选题。",
+    "keywords": [
+      "QUIC",
+      "UDP",
+      "TLS 1.3",
+      "多流",
+      "HTTP/3"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http3_02",
+    "name": "HTTP/3·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP/3”关联填空题。",
+    "keywords": [
+      "QUIC",
+      "UDP",
+      "TLS 1.3",
+      "多流",
+      "HTTP/3"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_http3_03",
+    "name": "HTTP/3·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“HTTP/3”关联简答题。",
+    "keywords": [
+      "QUIC",
+      "UDP",
+      "TLS 1.3",
+      "多流",
+      "HTTP/3"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_ftp_01",
+    "name": "FTP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“FTP协议”关联单选题。",
+    "keywords": [
+      "控制连接",
+      "数据连接",
+      "21端口",
+      "文件传输",
+      "FTP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_ftp_02",
+    "name": "FTP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“FTP协议”关联填空题。",
+    "keywords": [
+      "控制连接",
+      "数据连接",
+      "21端口",
+      "文件传输",
+      "FTP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_ftp_03",
+    "name": "FTP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“FTP协议”关联简答题。",
+    "keywords": [
+      "控制连接",
+      "数据连接",
+      "21端口",
+      "文件传输",
+      "FTP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_email_01",
+    "name": "电子邮件系统·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“电子邮件系统”关联单选题。",
+    "keywords": [
+      "用户代理",
+      "邮件服务器",
+      "存储转发",
+      "消息队列",
+      "电子邮件系统"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_email_02",
+    "name": "电子邮件系统·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“电子邮件系统”关联填空题。",
+    "keywords": [
+      "用户代理",
+      "邮件服务器",
+      "存储转发",
+      "消息队列",
+      "电子邮件系统"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_email_03",
+    "name": "电子邮件系统·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“电子邮件系统”关联简答题。",
+    "keywords": [
+      "用户代理",
+      "邮件服务器",
+      "存储转发",
+      "消息队列",
+      "电子邮件系统"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_smtp_01",
+    "name": "SMTP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“SMTP协议”关联单选题。",
+    "keywords": [
+      "邮件发送",
+      "TCP",
+      "命令响应",
+      "存储转发",
+      "SMTP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_smtp_02",
+    "name": "SMTP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“SMTP协议”关联填空题。",
+    "keywords": [
+      "邮件发送",
+      "TCP",
+      "命令响应",
+      "存储转发",
+      "SMTP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_smtp_03",
+    "name": "SMTP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“SMTP协议”关联简答题。",
+    "keywords": [
+      "邮件发送",
+      "TCP",
+      "命令响应",
+      "存储转发",
+      "SMTP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_mime_01",
+    "name": "MIME·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“MIME”关联单选题。",
+    "keywords": [
+      "Content-Type",
+      "附件",
+      "编码",
+      "多媒体邮件",
+      "MIME"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_mime_02",
+    "name": "MIME·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“MIME”关联填空题。",
+    "keywords": [
+      "Content-Type",
+      "附件",
+      "编码",
+      "多媒体邮件",
+      "MIME"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_mime_03",
+    "name": "MIME·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“MIME”关联简答题。",
+    "keywords": [
+      "Content-Type",
+      "附件",
+      "编码",
+      "多媒体邮件",
+      "MIME"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_pop3_01",
+    "name": "POP3协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“POP3协议”关联单选题。",
+    "keywords": [
+      "邮件读取",
+      "下载删除",
+      "110端口",
+      "离线",
+      "POP3协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_pop3_02",
+    "name": "POP3协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“POP3协议”关联填空题。",
+    "keywords": [
+      "邮件读取",
+      "下载删除",
+      "110端口",
+      "离线",
+      "POP3协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_pop3_03",
+    "name": "POP3协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“POP3协议”关联简答题。",
+    "keywords": [
+      "邮件读取",
+      "下载删除",
+      "110端口",
+      "离线",
+      "POP3协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_imap_01",
+    "name": "IMAP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“IMAP协议”关联单选题。",
+    "keywords": [
+      "服务器存储",
+      "多端同步",
+      "文件夹",
+      "按需获取",
+      "IMAP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_imap_02",
+    "name": "IMAP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“IMAP协议”关联填空题。",
+    "keywords": [
+      "服务器存储",
+      "多端同步",
+      "文件夹",
+      "按需获取",
+      "IMAP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_imap_03",
+    "name": "IMAP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“IMAP协议”关联简答题。",
+    "keywords": [
+      "服务器存储",
+      "多端同步",
+      "文件夹",
+      "按需获取",
+      "IMAP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dhcp_01",
+    "name": "DHCP协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DHCP协议”关联单选题。",
+    "keywords": [
+      "DORA",
+      "地址租约",
+      "默认网关",
+      "UDP",
+      "DHCP协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dhcp_02",
+    "name": "DHCP协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DHCP协议”关联填空题。",
+    "keywords": [
+      "DORA",
+      "地址租约",
+      "默认网关",
+      "UDP",
+      "DHCP协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_dhcp_03",
+    "name": "DHCP协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“DHCP协议”关联简答题。",
+    "keywords": [
+      "DORA",
+      "地址租约",
+      "默认网关",
+      "UDP",
+      "DHCP协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_url_uri_01",
+    "name": "URI与URL·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“URI与URL”关联单选题。",
+    "keywords": [
+      "URI",
+      "URL",
+      "scheme",
+      "资源定位",
+      "URI与URL"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_url_uri_02",
+    "name": "URI与URL·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“URI与URL”关联填空题。",
+    "keywords": [
+      "URI",
+      "URL",
+      "scheme",
+      "资源定位",
+      "URI与URL"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_url_uri_03",
+    "name": "URI与URL·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“URI与URL”关联简答题。",
+    "keywords": [
+      "URI",
+      "URL",
+      "scheme",
+      "资源定位",
+      "URI与URL"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_websocket_01",
+    "name": "WebSocket协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“WebSocket协议”关联单选题。",
+    "keywords": [
+      "Upgrade",
+      "全双工",
+      "长连接",
+      "消息帧",
+      "WebSocket协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_websocket_02",
+    "name": "WebSocket协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“WebSocket协议”关联填空题。",
+    "keywords": [
+      "Upgrade",
+      "全双工",
+      "长连接",
+      "消息帧",
+      "WebSocket协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_q_ch7_websocket_03",
+    "name": "WebSocket协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "应用层",
+    "description": "核心篇“WebSocket协议”关联简答题。",
+    "keywords": [
+      "Upgrade",
+      "全双工",
+      "长连接",
+      "消息帧",
+      "WebSocket协议"
+    ],
+    "difficulty": 5,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_tcp_congestion",
+    "name": "TCP拥塞控制分析",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "传输层",
+    "description": "根据cwnd、ssthresh和ACK序列识别慢开始、拥塞避免、快重传与快恢复。",
+    "keywords": [
+      "TCP",
+      "拥塞控制",
+      "Wireshark",
+      "cwnd"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_routing_simulation",
+    "name": "路由算法模拟",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "网络层",
+    "description": "在同一拓扑上模拟距离向量与链路状态算法并比较收敛过程。",
+    "keywords": [
+      "路由算法",
+      "Bellman-Ford",
+      "Dijkstra",
+      "收敛"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_http_capture",
+    "name": "HTTP协议抓包分析",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "应用层",
+    "description": "通过浏览器访问测试站点，分析HTTP请求、响应、状态码、首部与连接复用。",
+    "keywords": [
+      "HTTP",
+      "抓包",
+      "状态码",
+      "TLS"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_dns_resolution",
+    "name": "DNS解析过程",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "应用层",
+    "description": "跟踪从本地缓存到根、顶级域和权威服务器的完整域名解析链路。",
+    "keywords": [
+      "DNS",
+      "递归",
+      "迭代",
+      "TTL"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_tcp_lifecycle",
+    "name": "TCP三次握手与四次挥手",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "传输层",
+    "description": "抓取完整TCP连接，逐项核对序号、确认号、标志位和TIME_WAIT。",
+    "keywords": [
+      "三次握手",
+      "四次挥手",
+      "序号",
+      "TIME_WAIT"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_subnetting",
+    "name": "子网划分计算",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "网络层",
+    "description": "为部门网络分配VLSM地址块并验证网络地址、广播地址与可用主机范围。",
+    "keywords": [
+      "子网划分",
+      "VLSM",
+      "CIDR",
+      "广播地址"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_nat",
+    "name": "NAT工作原理",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "网络层",
+    "description": "观察多台私网主机共享公网地址时地址与端口的转换表。",
+    "keywords": [
+      "NAT",
+      "NAPT",
+      "端口映射",
+      "私网"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_case_socket",
+    "name": "Socket编程实践",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "应用层",
+    "description": "实现TCP回显与UDP查询程序，比较连接管理、报文边界和异常处理。",
+    "keywords": [
+      "Socket",
+      "TCP",
+      "UDP",
+      "编程"
     ],
     "difficulty": 4,
     "image_urls": [],

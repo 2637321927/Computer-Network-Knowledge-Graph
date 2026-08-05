@@ -1,8 +1,11 @@
 node_modules/
+.venv/
 __pycache__/
 *.pyc
 .env
 dist/
 .vite/
-.venv/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
 *.pdf

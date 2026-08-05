@@ -13,7 +13,10 @@ import * as THREE from 'three';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import type { KnowledgeNode, GraphStats, GraphData, NeighborData, CaseItem, QuestionItem } from '../types';
-import { fetchGraph, fetchGraphStats, fetchNeighbors, exportData, importData, fetchCaseById, fetchQuestionById } from '../services/api';
+import {
+  fetchGraph, fetchGraphStats, fetchNeighbors, exportData, importData,
+  fetchCaseById, fetchQuestionById, fetchNodeCases, fetchNodeQuestions
+} from '../services/api';
 import type { UploadProps } from 'antd';
 
 const { Option } = Select;
@@ -25,6 +28,15 @@ const layerColors: Record<string, string> = {
   '案例层': '#5AD8A6',
   '问题层': '#F6BD16',
 };
+
+// 核心篇按协议层分色：网络层蓝、传输层绿、应用层橙。
+const chapterColors: Record<string, string> = {
+  '网络层': '#1677FF',
+  '传输层': '#52C41A',
+  '应用层': '#FA8C16',
+};
+
+const getNodeColor = (node: KnowledgeNode) => chapterColors[node.chapter] || layerColors[node.layer] || '#5B8FF9';
 
 const relationColors: Record<string, string> = {
   '包含': '#5B8FF9',
@@ -61,6 +73,8 @@ export default function GraphPage() {
   const [neighborData, setNeighborData] = useState<NeighborData | null>(null);
   const [caseDetail, setCaseDetail] = useState<CaseItem | null>(null);
   const [questionDetail, setQuestionDetail] = useState<QuestionItem | null>(null);
+  const [relatedCases, setRelatedCases] = useState<CaseItem[]>([]);
+  const [relatedQuestions, setRelatedQuestions] = useState<QuestionItem[]>([]);
   const [filterChapter, setFilterChapter] = useState<string | undefined>();
   const [filterLayer, setFilterLayer] = useState<string | undefined>();
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -73,6 +87,31 @@ export default function GraphPage() {
 
   // 最近一次加载的完整数据（用于点击查询）
   const lastDataRef = useRef<GraphData>({ nodes: [], edges: [] });
+
+  const showNodeDetails = async (node: KnowledgeNode) => {
+    setSelectedNode(node);
+    setCaseDetail(null);
+    setQuestionDetail(null);
+    setRelatedCases([]);
+    setRelatedQuestions([]);
+    setDrawerOpen(true);
+
+    const [neighbors, cases, questions] = await Promise.allSettled([
+      fetchNeighbors(node.id),
+      fetchNodeCases(node.id),
+      fetchNodeQuestions(node.id),
+    ]);
+    setNeighborData(neighbors.status === 'fulfilled' ? neighbors.value : null);
+    setRelatedCases(cases.status === 'fulfilled' ? cases.value : []);
+    setRelatedQuestions(questions.status === 'fulfilled' ? questions.value : []);
+
+    if (node.type === '案例' || node.layer === '案例层') {
+      try { setCaseDetail(await fetchCaseById(node.id)); } catch { setCaseDetail(null); }
+    }
+    if (node.type === '问题' || node.layer === '问题层') {
+      try { setQuestionDetail(await fetchQuestionById(node.id)); } catch { setQuestionDetail(null); }
+    }
+  };
 
   // 初始化统计
   useEffect(() => {
@@ -104,30 +143,7 @@ export default function GraphPage() {
         const nodeId = params.nodes[0];
         const node = lastDataRef.current.nodes.find(n => n.id === nodeId);
         if (node) {
-          setSelectedNode(node);
-          setCaseDetail(null);
-          setQuestionDetail(null);
-          setDrawerOpen(true);
-          try {
-            const neighbors = await fetchNeighbors(node.id);
-            setNeighborData(neighbors);
-          } catch {
-            setNeighborData(null);
-          }
-          // 如果是案例节点，拉取案例详细内容
-          if (node.type === '案例' || node.layer === '案例层') {
-            try {
-              const detail = await fetchCaseById(node.id);
-              setCaseDetail(detail);
-            } catch { setCaseDetail(null); }
-          }
-          // 如果是问题节点，拉取试题详细内容
-          if (node.type === '问题' || node.layer === '问题层') {
-            try {
-              const detail = await fetchQuestionById(node.id);
-              setQuestionDetail(detail);
-            } catch { setQuestionDetail(null); }
-          }
+          void showNodeDetails(node);
         }
       }
     });
@@ -210,7 +226,7 @@ export default function GraphPage() {
           layer: n.layer,
           nodeType: n.type,
           chapter: n.chapter,
-          color: layerColors[n.layer] || '#5B8FF9',
+          color: getNodeColor(n),
           size3d: sphereSize3d(tcCount[n.id] || 0),
         })),
         links: data.edges.map(e => ({
@@ -257,16 +273,7 @@ export default function GraphPage() {
         .onNodeClick(async (n: any) => {
           const node = data.nodes.find(x => x.id === n.id);
           if (node) {
-            setSelectedNode(node);
-            setCaseDetail(null); setQuestionDetail(null);
-            setDrawerOpen(true);
-            try { setNeighborData(await fetchNeighbors(node.id)); } catch { setNeighborData(null); }
-            if (node.type === '案例' || node.layer === '案例层') {
-              try { setCaseDetail(await fetchCaseById(node.id)); } catch { setCaseDetail(null); }
-            }
-            if (node.type === '问题' || node.layer === '问题层') {
-              try { setQuestionDetail(await fetchQuestionById(node.id)); } catch { setQuestionDetail(null); }
-            }
+            void showNodeDetails(node);
           }
         });
       graph3dRef.current = graph3d;
@@ -334,9 +341,9 @@ export default function GraphPage() {
           label: n.name,
           title: `<b>${n.name}</b><br>类型：${n.type}<br>章节：${n.chapter}<br>📦 包含：${tc} 个<br>点击查看详情`,
           color: {
-            background: layerColors[n.layer] || '#5B8FF9',
+            background: getNodeColor(n),
             border: '#fff',
-            highlight: { background: layerColors[n.layer] || '#5B8FF9', border: '#333' },
+            highlight: { background: getNodeColor(n), border: '#333' },
           },
           font: { color: '#333', size: Math.max(11, Math.min(16, 10 + size / 4)) },
           borderWidth: 2,
@@ -496,6 +503,11 @@ export default function GraphPage() {
               <Option key={c} value={c}>{c}</Option>
             ))}
           </Select>
+          <Space size={4} aria-label="核心篇协议层颜色图例">
+            <Tag color={chapterColors['网络层']}>网络层</Tag>
+            <Tag color={chapterColors['传输层']}>传输层</Tag>
+            <Tag color={chapterColors['应用层']}>应用层</Tag>
+          </Space>
           <Select
             allowClear
             placeholder="全部层次"
@@ -577,7 +589,7 @@ export default function GraphPage() {
         open={drawerOpen}
         onClose={() => { setDrawerOpen(false); setNeighborData(null); }}
         width={480}
-        extra={<Tag color={layerColors[selectedNode?.layer || '']}>{selectedNode?.layer}</Tag>}
+        extra={<Tag color={selectedNode ? getNodeColor(selectedNode) : undefined}>{selectedNode?.chapter}</Tag>}
       >
         {selectedNode && (
           <>
@@ -605,6 +617,37 @@ export default function GraphPage() {
                 </ReactMarkdown>
               </div>
             </div>
+
+            {relatedQuestions.length > 0 && (
+              <div style={{ marginBottom: 16 }}>
+                <Title level={5}>关联试题 ({relatedQuestions.length})</Title>
+                {relatedQuestions.map(question => (
+                  <Card key={question.id} size="small" style={{ marginBottom: 8 }}>
+                    <Paragraph strong>{question.title}</Paragraph>
+                    {question.options.map(option => <div key={option}>{option}</div>)}
+                    <div style={{ marginTop: 8 }}>
+                      <Tag color="green">答案：{question.answer}</Tag>
+                      {question.difficulty_label && <Tag>{question.difficulty_label}</Tag>}
+                    </div>
+                    <Paragraph style={{ marginTop: 8, marginBottom: 0, color: '#666' }}>
+                      解析：{question.explanation || question.analysis}
+                    </Paragraph>
+                  </Card>
+                ))}
+              </div>
+            )}
+
+            {relatedCases.length > 0 && (
+              <div style={{ marginBottom: 16 }}>
+                <Title level={5}>关联案例 ({relatedCases.length})</Title>
+                {relatedCases.map(item => (
+                  <Card key={item.id} size="small" title={item.title} style={{ marginBottom: 8 }}>
+                    <Paragraph>{item.description}</Paragraph>
+                    {item.analysis && <Paragraph style={{ color: '#666', marginBottom: 0 }}>分析：{item.analysis}</Paragraph>}
+                  </Card>
+                ))}
+              </div>
+            )}
 
             {/* 配图展示（支持多张） */}
             {selectedNode.image_urls && selectedNode.image_urls.length > 0 && (
@@ -713,17 +756,9 @@ export default function GraphPage() {
                     {neighborData.neighbors.map(n => (
                       <Tag
                         key={n.id}
-                        color={layerColors[n.layer]}
+                        color={getNodeColor(n)}
                         style={{ cursor: 'pointer' }}
-                        onClick={async () => {
-                          setSelectedNode(n);
-                          try {
-                            const nd = await fetchNeighbors(n.id);
-                            setNeighborData(nd);
-                          } catch {
-                            setNeighborData(null);
-                          }
-                        }}
+                        onClick={() => { void showNodeDetails(n); }}
                       >
                         {n.name}
                       </Tag>

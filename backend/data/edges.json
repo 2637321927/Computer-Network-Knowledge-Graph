@@ -1,152 +1,5 @@
 [
   {
-    "id": "edge_001",
-    "source": "tcp",
-    "target": "congestion_control",
-    "relation": "包含",
-    "description": "TCP 包含拥塞控制机制"
-  },
-  {
-    "id": "edge_002",
-    "source": "tcp",
-    "target": "flow_control",
-    "relation": "包含",
-    "description": "TCP 包含流量控制机制"
-  },
-  {
-    "id": "edge_003",
-    "source": "tcp",
-    "target": "tcp_handshake",
-    "relation": "包含",
-    "description": "TCP 连接建立使用三次握手"
-  },
-  {
-    "id": "edge_004",
-    "source": "tcp",
-    "target": "tcp_wavehand",
-    "relation": "包含",
-    "description": "TCP 连接释放使用四次挥手"
-  },
-  {
-    "id": "edge_005",
-    "source": "tcp",
-    "target": "tcp_header",
-    "relation": "包含",
-    "description": "TCP 协议定义了报文段格式"
-  },
-  {
-    "id": "edge_006",
-    "source": "ch6_overview",
-    "target": "tcp",
-    "relation": "前置知识",
-    "description": "了解传输层概述后再学习 TCP 协议"
-  },
-  {
-    "id": "edge_007",
-    "source": "ch6_overview",
-    "target": "udp",
-    "relation": "前置知识",
-    "description": "了解传输层概述后再学习 UDP 协议"
-  },
-  {
-    "id": "edge_008",
-    "source": "tcp",
-    "target": "udp",
-    "relation": "对比",
-    "description": "TCP 与 UDP 在可靠性、连接性、效率等方面形成对比"
-  },
-  {
-    "id": "edge_009",
-    "source": "tcp_handshake",
-    "target": "tcp_wavehand",
-    "relation": "对比",
-    "description": "三次握手建立连接与四次挥手释放连接的对比"
-  },
-  {
-    "id": "edge_010",
-    "source": "congestion_control",
-    "target": "flow_control",
-    "relation": "对比",
-    "description": "拥塞控制（全局）与流量控制（端到端）的区别和联系"
-  },
-  {
-    "id": "edge_011",
-    "source": "tcp_header",
-    "target": "udp_header",
-    "relation": "对比",
-    "description": "TCP 首部（20-60字节）与 UDP 首部（8字节）的对比"
-  },
-  {
-    "id": "edge_012",
-    "source": "port",
-    "target": "tcp",
-    "relation": "依赖",
-    "description": "TCP 使用端口号标识应用进程"
-  },
-  {
-    "id": "edge_013",
-    "source": "port",
-    "target": "udp",
-    "relation": "依赖",
-    "description": "UDP 使用端口号标识应用进程"
-  },
-  {
-    "id": "edge_014",
-    "source": "tcp",
-    "target": "case_tcp_congestion",
-    "relation": "相关案例",
-    "description": "TCP 拥塞控制的 Wireshark 分析案例"
-  },
-  {
-    "id": "edge_015",
-    "source": "tcp",
-    "target": "case_tcp_wireshark",
-    "relation": "相关案例",
-    "description": "TCP 协议的 Wireshark 抓包分析案例"
-  },
-  {
-    "id": "edge_016",
-    "source": "tcp_handshake",
-    "target": "q_tcp_001",
-    "relation": "关联试题",
-    "description": "三次握手相关试题"
-  },
-  {
-    "id": "edge_017",
-    "source": "congestion_control",
-    "target": "q_tcp_002",
-    "relation": "关联试题",
-    "description": "拥塞控制计算题"
-  },
-  {
-    "id": "edge_018",
-    "source": "tcp",
-    "target": "q_tcp_003",
-    "relation": "关联试题",
-    "description": "TCP/UDP 对比试题"
-  },
-  {
-    "id": "edge_019",
-    "source": "udp",
-    "target": "udp_header",
-    "relation": "包含",
-    "description": "UDP 协议定义了数据报格式"
-  },
-  {
-    "id": "edge_021",
-    "source": "tcp_wavehand",
-    "target": "q_tcp_004",
-    "relation": "关联试题",
-    "description": "TCP四次挥手状态相关试题"
-  },
-  {
-    "id": "edge_022",
-    "source": "flow_control",
-    "target": "q_tcp_005",
-    "relation": "关联试题",
-    "description": "TCP流量控制字段相关试题"
-  },
-  {
     "id": "edge_fd_001",
     "source": "ch1_internet_overview",
     "target": "ch1_protocol",
@@ -3197,6 +3050,3065 @@
     "target": "case_fd_ch4_vlan_trunk",
     "relation": "相关案例",
     "description": "“ch4_vlan_trunk_8021q”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
+  },
+  {
+    "id": "core_edge_0001",
+    "source": "core_ch5_ip_service",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IP数据报服务属于网络层"
+  },
+  {
+    "id": "core_edge_0002",
+    "source": "core_ch5_ipv4",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IPv4协议属于网络层"
+  },
+  {
+    "id": "core_edge_0003",
+    "source": "core_ch5_ipv4_header",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IPv4数据报首部属于网络层"
+  },
+  {
+    "id": "core_edge_0004",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IPv4地址属于网络层"
+  },
+  {
+    "id": "core_edge_0005",
+    "source": "core_ch5_classful_addressing",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "分类编址属于网络层"
+  },
+  {
+    "id": "core_edge_0006",
+    "source": "core_ch5_subnet_mask",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "子网掩码属于网络层"
+  },
+  {
+    "id": "core_edge_0007",
+    "source": "core_ch5_subnetting",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "子网划分属于网络层"
+  },
+  {
+    "id": "core_edge_0008",
+    "source": "core_ch5_cidr",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "无分类域间路由CIDR属于网络层"
+  },
+  {
+    "id": "core_edge_0009",
+    "source": "core_ch5_longest_prefix",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "最长前缀匹配属于网络层"
+  },
+  {
+    "id": "core_edge_0010",
+    "source": "core_ch5_ipv6",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IPv6协议属于网络层"
+  },
+  {
+    "id": "core_edge_0011",
+    "source": "core_ch5_ipv6_header",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IPv6基本首部属于网络层"
+  },
+  {
+    "id": "core_edge_0012",
+    "source": "core_ch5_transition",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "IPv4向IPv6过渡属于网络层"
+  },
+  {
+    "id": "core_edge_0013",
+    "source": "core_ch5_arp",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "地址解析协议ARP属于网络层"
+  },
+  {
+    "id": "core_edge_0014",
+    "source": "core_ch5_icmp",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "网际控制报文协议ICMP属于网络层"
+  },
+  {
+    "id": "core_edge_0015",
+    "source": "core_ch5_ping",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "Ping诊断属于网络层"
+  },
+  {
+    "id": "core_edge_0016",
+    "source": "core_ch5_traceroute",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "Traceroute路径探测属于网络层"
+  },
+  {
+    "id": "core_edge_0017",
+    "source": "core_ch5_nat",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "网络地址转换NAT属于网络层"
+  },
+  {
+    "id": "core_edge_0018",
+    "source": "core_ch5_router",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "路由器属于网络层"
+  },
+  {
+    "id": "core_edge_0019",
+    "source": "core_ch5_forwarding_table",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "转发表属于网络层"
+  },
+  {
+    "id": "core_edge_0020",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "路由选择算法属于网络层"
+  },
+  {
+    "id": "core_edge_0021",
+    "source": "core_ch5_distance_vector",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "距离向量算法属于网络层"
+  },
+  {
+    "id": "core_edge_0022",
+    "source": "core_ch5_link_state",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "链路状态算法属于网络层"
+  },
+  {
+    "id": "core_edge_0023",
+    "source": "core_ch5_rip",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "RIP协议属于网络层"
+  },
+  {
+    "id": "core_edge_0024",
+    "source": "core_ch5_ospf",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "OSPF协议属于网络层"
+  },
+  {
+    "id": "core_edge_0025",
+    "source": "core_ch5_as",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "自治系统AS属于网络层"
+  },
+  {
+    "id": "core_edge_0026",
+    "source": "core_ch5_bgp",
+    "target": "core_ch5_network_layer",
+    "relation": "属于层",
+    "description": "BGP协议属于网络层"
+  },
+  {
+    "id": "core_edge_0027",
+    "source": "core_ch6_process_communication",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "进程到进程通信属于传输层"
+  },
+  {
+    "id": "core_edge_0028",
+    "source": "core_ch6_multiplexing",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "复用与分用属于传输层"
+  },
+  {
+    "id": "core_edge_0029",
+    "source": "core_ch6_port",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "端口号属于传输层"
+  },
+  {
+    "id": "core_edge_0030",
+    "source": "core_ch6_socket",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "套接字端点属于传输层"
+  },
+  {
+    "id": "core_edge_0031",
+    "source": "core_ch6_udp",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "UDP协议属于传输层"
+  },
+  {
+    "id": "core_edge_0032",
+    "source": "core_ch6_udp_header",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "UDP数据报首部属于传输层"
+  },
+  {
+    "id": "core_edge_0033",
+    "source": "core_ch6_udp_checksum",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "UDP检验和属于传输层"
+  },
+  {
+    "id": "core_edge_0034",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP协议属于传输层"
+  },
+  {
+    "id": "core_edge_0035",
+    "source": "core_ch6_tcp_header",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP报文段首部属于传输层"
+  },
+  {
+    "id": "core_edge_0036",
+    "source": "core_ch6_seq_ack",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "序号与确认号属于传输层"
+  },
+  {
+    "id": "core_edge_0037",
+    "source": "core_ch6_handshake",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP三次握手属于传输层"
+  },
+  {
+    "id": "core_edge_0038",
+    "source": "core_ch6_connection_release",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP四次挥手属于传输层"
+  },
+  {
+    "id": "core_edge_0039",
+    "source": "core_ch6_time_wait",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TIME_WAIT状态属于传输层"
+  },
+  {
+    "id": "core_edge_0040",
+    "source": "core_ch6_reliable",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "可靠数据传输属于传输层"
+  },
+  {
+    "id": "core_edge_0041",
+    "source": "core_ch6_checksum",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "传输层检验和属于传输层"
+  },
+  {
+    "id": "core_edge_0042",
+    "source": "core_ch6_stop_wait",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "停止等待协议属于传输层"
+  },
+  {
+    "id": "core_edge_0043",
+    "source": "core_ch6_pipelining",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "流水线可靠传输属于传输层"
+  },
+  {
+    "id": "core_edge_0044",
+    "source": "core_ch6_sliding_window",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "滑动窗口属于传输层"
+  },
+  {
+    "id": "core_edge_0045",
+    "source": "core_ch6_flow_control",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP流量控制属于传输层"
+  },
+  {
+    "id": "core_edge_0046",
+    "source": "core_ch6_rtt_rto",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "RTT估计与重传超时属于传输层"
+  },
+  {
+    "id": "core_edge_0047",
+    "source": "core_ch6_congestion",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP拥塞控制属于传输层"
+  },
+  {
+    "id": "core_edge_0048",
+    "source": "core_ch6_slow_start",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "慢开始属于传输层"
+  },
+  {
+    "id": "core_edge_0049",
+    "source": "core_ch6_congestion_avoidance",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "拥塞避免属于传输层"
+  },
+  {
+    "id": "core_edge_0050",
+    "source": "core_ch6_fast_retransmit",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "快重传属于传输层"
+  },
+  {
+    "id": "core_edge_0051",
+    "source": "core_ch6_fast_recovery",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "快恢复属于传输层"
+  },
+  {
+    "id": "core_edge_0052",
+    "source": "core_ch6_tcp_udp_compare",
+    "target": "core_ch6_transport_layer",
+    "relation": "属于层",
+    "description": "TCP与UDP对比属于传输层"
+  },
+  {
+    "id": "core_edge_0053",
+    "source": "core_ch7_architecture",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "网络应用体系结构属于应用层"
+  },
+  {
+    "id": "core_edge_0054",
+    "source": "core_ch7_client_server",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "客户-服务器模式属于应用层"
+  },
+  {
+    "id": "core_edge_0055",
+    "source": "core_ch7_p2p",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "对等P2P模式属于应用层"
+  },
+  {
+    "id": "core_edge_0056",
+    "source": "core_ch7_socket_programming",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "Socket编程属于应用层"
+  },
+  {
+    "id": "core_edge_0057",
+    "source": "core_ch7_dns",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "域名系统DNS属于应用层"
+  },
+  {
+    "id": "core_edge_0058",
+    "source": "core_ch7_dns_hierarchy",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "DNS层次结构属于应用层"
+  },
+  {
+    "id": "core_edge_0059",
+    "source": "core_ch7_dns_resolution",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "递归与迭代解析属于应用层"
+  },
+  {
+    "id": "core_edge_0060",
+    "source": "core_ch7_dns_cache",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "DNS缓存属于应用层"
+  },
+  {
+    "id": "core_edge_0061",
+    "source": "core_ch7_dns_rr",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "DNS资源记录属于应用层"
+  },
+  {
+    "id": "core_edge_0062",
+    "source": "core_ch7_http",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "HTTP协议属于应用层"
+  },
+  {
+    "id": "core_edge_0063",
+    "source": "core_ch7_http_message",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "HTTP报文属于应用层"
+  },
+  {
+    "id": "core_edge_0064",
+    "source": "core_ch7_persistent_http",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "持续连接HTTP属于应用层"
+  },
+  {
+    "id": "core_edge_0065",
+    "source": "core_ch7_cookie_session",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "Cookie与会话属于应用层"
+  },
+  {
+    "id": "core_edge_0066",
+    "source": "core_ch7_web_cache",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "Web缓存与代理属于应用层"
+  },
+  {
+    "id": "core_edge_0067",
+    "source": "core_ch7_https_tls",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "HTTPS与TLS属于应用层"
+  },
+  {
+    "id": "core_edge_0068",
+    "source": "core_ch7_http2",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "HTTP/2属于应用层"
+  },
+  {
+    "id": "core_edge_0069",
+    "source": "core_ch7_http3",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "HTTP/3属于应用层"
+  },
+  {
+    "id": "core_edge_0070",
+    "source": "core_ch7_ftp",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "FTP协议属于应用层"
+  },
+  {
+    "id": "core_edge_0071",
+    "source": "core_ch7_email",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "电子邮件系统属于应用层"
+  },
+  {
+    "id": "core_edge_0072",
+    "source": "core_ch7_smtp",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "SMTP协议属于应用层"
+  },
+  {
+    "id": "core_edge_0073",
+    "source": "core_ch7_mime",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "MIME属于应用层"
+  },
+  {
+    "id": "core_edge_0074",
+    "source": "core_ch7_pop3",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "POP3协议属于应用层"
+  },
+  {
+    "id": "core_edge_0075",
+    "source": "core_ch7_imap",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "IMAP协议属于应用层"
+  },
+  {
+    "id": "core_edge_0076",
+    "source": "core_ch7_dhcp",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "DHCP协议属于应用层"
+  },
+  {
+    "id": "core_edge_0077",
+    "source": "core_ch7_url_uri",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "URI与URL属于应用层"
+  },
+  {
+    "id": "core_edge_0078",
+    "source": "core_ch7_websocket",
+    "target": "core_ch7_application_layer",
+    "relation": "属于层",
+    "description": "WebSocket协议属于应用层"
+  },
+  {
+    "id": "core_edge_0079",
+    "source": "core_ch5_ipv4",
+    "target": "core_ch5_ipv4_header",
+    "relation": "包含",
+    "description": "IPv4协议包含IPv4数据报首部相关机制"
+  },
+  {
+    "id": "core_edge_0080",
+    "source": "core_ch5_ipv4",
+    "target": "core_ch5_ipv4_addressing",
+    "relation": "包含",
+    "description": "IPv4协议包含IPv4地址相关机制"
+  },
+  {
+    "id": "core_edge_0081",
+    "source": "core_ch5_ipv4",
+    "target": "core_ch5_icmp",
+    "relation": "包含",
+    "description": "IPv4协议包含网际控制报文协议ICMP相关机制"
+  },
+  {
+    "id": "core_edge_0082",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch5_classful_addressing",
+    "relation": "包含",
+    "description": "IPv4地址包含分类编址相关机制"
+  },
+  {
+    "id": "core_edge_0083",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch5_subnet_mask",
+    "relation": "包含",
+    "description": "IPv4地址包含子网掩码相关机制"
+  },
+  {
+    "id": "core_edge_0084",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch5_subnetting",
+    "relation": "包含",
+    "description": "IPv4地址包含子网划分相关机制"
+  },
+  {
+    "id": "core_edge_0085",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch5_cidr",
+    "relation": "包含",
+    "description": "IPv4地址包含无分类域间路由CIDR相关机制"
+  },
+  {
+    "id": "core_edge_0086",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_ch5_distance_vector",
+    "relation": "包含",
+    "description": "路由选择算法包含距离向量算法相关机制"
+  },
+  {
+    "id": "core_edge_0087",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_ch5_link_state",
+    "relation": "包含",
+    "description": "路由选择算法包含链路状态算法相关机制"
+  },
+  {
+    "id": "core_edge_0088",
+    "source": "core_ch6_udp",
+    "target": "core_ch6_udp_header",
+    "relation": "包含",
+    "description": "UDP协议包含UDP数据报首部相关机制"
+  },
+  {
+    "id": "core_edge_0089",
+    "source": "core_ch6_udp",
+    "target": "core_ch6_udp_checksum",
+    "relation": "包含",
+    "description": "UDP协议包含UDP检验和相关机制"
+  },
+  {
+    "id": "core_edge_0090",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_tcp_header",
+    "relation": "包含",
+    "description": "TCP协议包含TCP报文段首部相关机制"
+  },
+  {
+    "id": "core_edge_0091",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_seq_ack",
+    "relation": "包含",
+    "description": "TCP协议包含序号与确认号相关机制"
+  },
+  {
+    "id": "core_edge_0092",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_handshake",
+    "relation": "包含",
+    "description": "TCP协议包含TCP三次握手相关机制"
+  },
+  {
+    "id": "core_edge_0093",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_connection_release",
+    "relation": "包含",
+    "description": "TCP协议包含TCP四次挥手相关机制"
+  },
+  {
+    "id": "core_edge_0094",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_reliable",
+    "relation": "包含",
+    "description": "TCP协议包含可靠数据传输相关机制"
+  },
+  {
+    "id": "core_edge_0095",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_flow_control",
+    "relation": "包含",
+    "description": "TCP协议包含TCP流量控制相关机制"
+  },
+  {
+    "id": "core_edge_0096",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_congestion",
+    "relation": "包含",
+    "description": "TCP协议包含TCP拥塞控制相关机制"
+  },
+  {
+    "id": "core_edge_0097",
+    "source": "core_ch6_reliable",
+    "target": "core_ch6_stop_wait",
+    "relation": "包含",
+    "description": "可靠数据传输包含停止等待协议相关机制"
+  },
+  {
+    "id": "core_edge_0098",
+    "source": "core_ch6_reliable",
+    "target": "core_ch6_pipelining",
+    "relation": "包含",
+    "description": "可靠数据传输包含流水线可靠传输相关机制"
+  },
+  {
+    "id": "core_edge_0099",
+    "source": "core_ch6_reliable",
+    "target": "core_ch6_sliding_window",
+    "relation": "包含",
+    "description": "可靠数据传输包含滑动窗口相关机制"
+  },
+  {
+    "id": "core_edge_0100",
+    "source": "core_ch6_reliable",
+    "target": "core_ch6_rtt_rto",
+    "relation": "包含",
+    "description": "可靠数据传输包含RTT估计与重传超时相关机制"
+  },
+  {
+    "id": "core_edge_0101",
+    "source": "core_ch6_congestion",
+    "target": "core_ch6_slow_start",
+    "relation": "包含",
+    "description": "TCP拥塞控制包含慢开始相关机制"
+  },
+  {
+    "id": "core_edge_0102",
+    "source": "core_ch6_congestion",
+    "target": "core_ch6_congestion_avoidance",
+    "relation": "包含",
+    "description": "TCP拥塞控制包含拥塞避免相关机制"
+  },
+  {
+    "id": "core_edge_0103",
+    "source": "core_ch6_congestion",
+    "target": "core_ch6_fast_retransmit",
+    "relation": "包含",
+    "description": "TCP拥塞控制包含快重传相关机制"
+  },
+  {
+    "id": "core_edge_0104",
+    "source": "core_ch6_congestion",
+    "target": "core_ch6_fast_recovery",
+    "relation": "包含",
+    "description": "TCP拥塞控制包含快恢复相关机制"
+  },
+  {
+    "id": "core_edge_0105",
+    "source": "core_ch7_dns",
+    "target": "core_ch7_dns_hierarchy",
+    "relation": "包含",
+    "description": "域名系统DNS包含DNS层次结构相关机制"
+  },
+  {
+    "id": "core_edge_0106",
+    "source": "core_ch7_dns",
+    "target": "core_ch7_dns_resolution",
+    "relation": "包含",
+    "description": "域名系统DNS包含递归与迭代解析相关机制"
+  },
+  {
+    "id": "core_edge_0107",
+    "source": "core_ch7_dns",
+    "target": "core_ch7_dns_cache",
+    "relation": "包含",
+    "description": "域名系统DNS包含DNS缓存相关机制"
+  },
+  {
+    "id": "core_edge_0108",
+    "source": "core_ch7_dns",
+    "target": "core_ch7_dns_rr",
+    "relation": "包含",
+    "description": "域名系统DNS包含DNS资源记录相关机制"
+  },
+  {
+    "id": "core_edge_0109",
+    "source": "core_ch7_http",
+    "target": "core_ch7_http_message",
+    "relation": "包含",
+    "description": "HTTP协议包含HTTP报文相关机制"
+  },
+  {
+    "id": "core_edge_0110",
+    "source": "core_ch7_http",
+    "target": "core_ch7_persistent_http",
+    "relation": "包含",
+    "description": "HTTP协议包含持续连接HTTP相关机制"
+  },
+  {
+    "id": "core_edge_0111",
+    "source": "core_ch7_http",
+    "target": "core_ch7_cookie_session",
+    "relation": "包含",
+    "description": "HTTP协议包含Cookie与会话相关机制"
+  },
+  {
+    "id": "core_edge_0112",
+    "source": "core_ch7_http",
+    "target": "core_ch7_web_cache",
+    "relation": "包含",
+    "description": "HTTP协议包含Web缓存与代理相关机制"
+  },
+  {
+    "id": "core_edge_0113",
+    "source": "core_ch7_email",
+    "target": "core_ch7_smtp",
+    "relation": "包含",
+    "description": "电子邮件系统包含SMTP协议相关机制"
+  },
+  {
+    "id": "core_edge_0114",
+    "source": "core_ch7_email",
+    "target": "core_ch7_mime",
+    "relation": "包含",
+    "description": "电子邮件系统包含MIME相关机制"
+  },
+  {
+    "id": "core_edge_0115",
+    "source": "core_ch7_email",
+    "target": "core_ch7_pop3",
+    "relation": "包含",
+    "description": "电子邮件系统包含POP3协议相关机制"
+  },
+  {
+    "id": "core_edge_0116",
+    "source": "core_ch7_email",
+    "target": "core_ch7_imap",
+    "relation": "包含",
+    "description": "电子邮件系统包含IMAP协议相关机制"
+  },
+  {
+    "id": "core_edge_0117",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch5_subnetting",
+    "relation": "前置知识",
+    "description": "学习子网划分前应掌握IPv4地址"
+  },
+  {
+    "id": "core_edge_0118",
+    "source": "core_ch5_subnet_mask",
+    "target": "core_ch5_cidr",
+    "relation": "前置知识",
+    "description": "学习无分类域间路由CIDR前应掌握子网掩码"
+  },
+  {
+    "id": "core_edge_0119",
+    "source": "core_ch5_forwarding_table",
+    "target": "core_ch5_longest_prefix",
+    "relation": "前置知识",
+    "description": "学习最长前缀匹配前应掌握转发表"
+  },
+  {
+    "id": "core_edge_0120",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_ch5_rip",
+    "relation": "前置知识",
+    "description": "学习RIP协议前应掌握路由选择算法"
+  },
+  {
+    "id": "core_edge_0121",
+    "source": "core_ch5_link_state",
+    "target": "core_ch5_ospf",
+    "relation": "前置知识",
+    "description": "学习OSPF协议前应掌握链路状态算法"
+  },
+  {
+    "id": "core_edge_0122",
+    "source": "core_ch5_as",
+    "target": "core_ch5_bgp",
+    "relation": "前置知识",
+    "description": "学习BGP协议前应掌握自治系统AS"
+  },
+  {
+    "id": "core_edge_0123",
+    "source": "core_ch6_port",
+    "target": "core_ch6_multiplexing",
+    "relation": "前置知识",
+    "description": "学习复用与分用前应掌握端口号"
+  },
+  {
+    "id": "core_edge_0124",
+    "source": "core_ch6_seq_ack",
+    "target": "core_ch6_reliable",
+    "relation": "前置知识",
+    "description": "学习可靠数据传输前应掌握序号与确认号"
+  },
+  {
+    "id": "core_edge_0125",
+    "source": "core_ch6_stop_wait",
+    "target": "core_ch6_pipelining",
+    "relation": "前置知识",
+    "description": "学习流水线可靠传输前应掌握停止等待协议"
+  },
+  {
+    "id": "core_edge_0126",
+    "source": "core_ch6_sliding_window",
+    "target": "core_ch6_flow_control",
+    "relation": "前置知识",
+    "description": "学习TCP流量控制前应掌握滑动窗口"
+  },
+  {
+    "id": "core_edge_0127",
+    "source": "core_ch6_rtt_rto",
+    "target": "core_ch6_congestion",
+    "relation": "前置知识",
+    "description": "学习TCP拥塞控制前应掌握RTT估计与重传超时"
+  },
+  {
+    "id": "core_edge_0128",
+    "source": "core_ch7_architecture",
+    "target": "core_ch7_client_server",
+    "relation": "前置知识",
+    "description": "学习客户-服务器模式前应掌握网络应用体系结构"
+  },
+  {
+    "id": "core_edge_0129",
+    "source": "core_ch7_architecture",
+    "target": "core_ch7_p2p",
+    "relation": "前置知识",
+    "description": "学习对等P2P模式前应掌握网络应用体系结构"
+  },
+  {
+    "id": "core_edge_0130",
+    "source": "core_ch7_dns_hierarchy",
+    "target": "core_ch7_dns_resolution",
+    "relation": "前置知识",
+    "description": "学习递归与迭代解析前应掌握DNS层次结构"
+  },
+  {
+    "id": "core_edge_0131",
+    "source": "core_ch7_http",
+    "target": "core_ch7_https_tls",
+    "relation": "前置知识",
+    "description": "学习HTTPS与TLS前应掌握HTTP协议"
+  },
+  {
+    "id": "core_edge_0132",
+    "source": "core_ch7_http",
+    "target": "core_ch7_http2",
+    "relation": "前置知识",
+    "description": "学习HTTP/2前应掌握HTTP协议"
+  },
+  {
+    "id": "core_edge_0133",
+    "source": "core_ch7_http2",
+    "target": "core_ch7_http3",
+    "relation": "前置知识",
+    "description": "学习HTTP/3前应掌握HTTP/2"
+  },
+  {
+    "id": "core_edge_0134",
+    "source": "core_ch7_email",
+    "target": "core_ch7_smtp",
+    "relation": "前置知识",
+    "description": "学习SMTP协议前应掌握电子邮件系统"
+  },
+  {
+    "id": "core_edge_0135",
+    "source": "core_ch5_ipv4",
+    "target": "core_ch5_ipv6",
+    "relation": "对比",
+    "description": "对比IPv4协议与IPv6协议的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0136",
+    "source": "core_ch5_distance_vector",
+    "target": "core_ch5_link_state",
+    "relation": "对比",
+    "description": "对比距离向量算法与链路状态算法的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0137",
+    "source": "core_ch5_rip",
+    "target": "core_ch5_ospf",
+    "relation": "对比",
+    "description": "对比RIP协议与OSPF协议的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0138",
+    "source": "core_ch6_tcp",
+    "target": "core_ch6_udp",
+    "relation": "对比",
+    "description": "对比TCP协议与UDP协议的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0139",
+    "source": "core_ch6_stop_wait",
+    "target": "core_ch6_sliding_window",
+    "relation": "对比",
+    "description": "对比停止等待协议与滑动窗口的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0140",
+    "source": "core_ch7_client_server",
+    "target": "core_ch7_p2p",
+    "relation": "对比",
+    "description": "对比客户-服务器模式与对等P2P模式的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0141",
+    "source": "core_ch7_http",
+    "target": "core_ch7_https_tls",
+    "relation": "对比",
+    "description": "对比HTTP协议与HTTPS与TLS的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0142",
+    "source": "core_ch7_pop3",
+    "target": "core_ch7_imap",
+    "relation": "对比",
+    "description": "对比POP3协议与IMAP协议的适用场景和机制"
+  },
+  {
+    "id": "core_edge_0143",
+    "source": "core_ch5_ip_service",
+    "target": "core_ch6_transport_layer",
+    "relation": "前置知识",
+    "description": "核心篇跨章节关联：IP数据报服务前置知识传输层"
+  },
+  {
+    "id": "core_edge_0144",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_ch7_dns",
+    "relation": "依赖",
+    "description": "核心篇跨章节关联：IPv4地址依赖域名系统DNS"
+  },
+  {
+    "id": "core_edge_0145",
+    "source": "core_ch6_tcp",
+    "target": "core_ch7_http",
+    "relation": "应用于",
+    "description": "核心篇跨章节关联：TCP协议应用于HTTP协议"
+  },
+  {
+    "id": "core_edge_0146",
+    "source": "core_ch6_tcp",
+    "target": "core_ch7_https_tls",
+    "relation": "应用于",
+    "description": "核心篇跨章节关联：TCP协议应用于HTTPS与TLS"
+  },
+  {
+    "id": "core_edge_0147",
+    "source": "core_ch6_tcp",
+    "target": "core_ch7_ftp",
+    "relation": "应用于",
+    "description": "核心篇跨章节关联：TCP协议应用于FTP协议"
+  },
+  {
+    "id": "core_edge_0148",
+    "source": "core_ch6_tcp",
+    "target": "core_ch7_smtp",
+    "relation": "应用于",
+    "description": "核心篇跨章节关联：TCP协议应用于SMTP协议"
+  },
+  {
+    "id": "core_edge_0149",
+    "source": "core_ch6_udp",
+    "target": "core_ch7_dns",
+    "relation": "应用于",
+    "description": "核心篇跨章节关联：UDP协议应用于域名系统DNS"
+  },
+  {
+    "id": "core_edge_0150",
+    "source": "core_ch6_udp",
+    "target": "core_ch7_dhcp",
+    "relation": "应用于",
+    "description": "核心篇跨章节关联：UDP协议应用于DHCP协议"
+  },
+  {
+    "id": "core_edge_0151",
+    "source": "core_ch6_socket",
+    "target": "core_ch7_socket_programming",
+    "relation": "前置知识",
+    "description": "核心篇跨章节关联：套接字端点前置知识Socket编程"
+  },
+  {
+    "id": "core_edge_0152",
+    "source": "core_ch5_nat",
+    "target": "core_ch6_port",
+    "relation": "依赖",
+    "description": "核心篇跨章节关联：网络地址转换NAT依赖端口号"
+  },
+  {
+    "id": "core_edge_0153",
+    "source": "core_ch7_http3",
+    "target": "core_ch6_udp",
+    "relation": "依赖",
+    "description": "核心篇跨章节关联：HTTP/3依赖UDP协议"
+  },
+  {
+    "id": "core_edge_0154",
+    "source": "core_ch5_network_layer",
+    "target": "core_q_ch5_network_layer_01",
+    "relation": "关联试题",
+    "description": "网络层关联试题“网络层·单选题”"
+  },
+  {
+    "id": "core_edge_0155",
+    "source": "core_ch5_network_layer",
+    "target": "core_q_ch5_network_layer_02",
+    "relation": "关联试题",
+    "description": "网络层关联试题“网络层·填空题”"
+  },
+  {
+    "id": "core_edge_0156",
+    "source": "core_ch5_network_layer",
+    "target": "core_q_ch5_network_layer_03",
+    "relation": "关联试题",
+    "description": "网络层关联试题“网络层·简答题”"
+  },
+  {
+    "id": "core_edge_0157",
+    "source": "core_ch5_ip_service",
+    "target": "core_q_ch5_ip_service_01",
+    "relation": "关联试题",
+    "description": "IP数据报服务关联试题“IP数据报服务·单选题”"
+  },
+  {
+    "id": "core_edge_0158",
+    "source": "core_ch5_ip_service",
+    "target": "core_q_ch5_ip_service_02",
+    "relation": "关联试题",
+    "description": "IP数据报服务关联试题“IP数据报服务·填空题”"
+  },
+  {
+    "id": "core_edge_0159",
+    "source": "core_ch5_ip_service",
+    "target": "core_q_ch5_ip_service_03",
+    "relation": "关联试题",
+    "description": "IP数据报服务关联试题“IP数据报服务·简答题”"
+  },
+  {
+    "id": "core_edge_0160",
+    "source": "core_ch5_ipv4",
+    "target": "core_q_ch5_ipv4_01",
+    "relation": "关联试题",
+    "description": "IPv4协议关联试题“IPv4协议·单选题”"
+  },
+  {
+    "id": "core_edge_0161",
+    "source": "core_ch5_ipv4",
+    "target": "core_q_ch5_ipv4_02",
+    "relation": "关联试题",
+    "description": "IPv4协议关联试题“IPv4协议·填空题”"
+  },
+  {
+    "id": "core_edge_0162",
+    "source": "core_ch5_ipv4",
+    "target": "core_q_ch5_ipv4_03",
+    "relation": "关联试题",
+    "description": "IPv4协议关联试题“IPv4协议·简答题”"
+  },
+  {
+    "id": "core_edge_0163",
+    "source": "core_ch5_ipv4_header",
+    "target": "core_q_ch5_ipv4_header_01",
+    "relation": "关联试题",
+    "description": "IPv4数据报首部关联试题“IPv4数据报首部·单选题”"
+  },
+  {
+    "id": "core_edge_0164",
+    "source": "core_ch5_ipv4_header",
+    "target": "core_q_ch5_ipv4_header_02",
+    "relation": "关联试题",
+    "description": "IPv4数据报首部关联试题“IPv4数据报首部·填空题”"
+  },
+  {
+    "id": "core_edge_0165",
+    "source": "core_ch5_ipv4_header",
+    "target": "core_q_ch5_ipv4_header_03",
+    "relation": "关联试题",
+    "description": "IPv4数据报首部关联试题“IPv4数据报首部·计算题”"
+  },
+  {
+    "id": "core_edge_0166",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_q_ch5_ipv4_addressing_01",
+    "relation": "关联试题",
+    "description": "IPv4地址关联试题“IPv4地址·单选题”"
+  },
+  {
+    "id": "core_edge_0167",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_q_ch5_ipv4_addressing_02",
+    "relation": "关联试题",
+    "description": "IPv4地址关联试题“IPv4地址·填空题”"
+  },
+  {
+    "id": "core_edge_0168",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_q_ch5_ipv4_addressing_03",
+    "relation": "关联试题",
+    "description": "IPv4地址关联试题“IPv4地址·简答题”"
+  },
+  {
+    "id": "core_edge_0169",
+    "source": "core_ch5_classful_addressing",
+    "target": "core_q_ch5_classful_addressing_01",
+    "relation": "关联试题",
+    "description": "分类编址关联试题“分类编址·单选题”"
+  },
+  {
+    "id": "core_edge_0170",
+    "source": "core_ch5_classful_addressing",
+    "target": "core_q_ch5_classful_addressing_02",
+    "relation": "关联试题",
+    "description": "分类编址关联试题“分类编址·填空题”"
+  },
+  {
+    "id": "core_edge_0171",
+    "source": "core_ch5_classful_addressing",
+    "target": "core_q_ch5_classful_addressing_03",
+    "relation": "关联试题",
+    "description": "分类编址关联试题“分类编址·简答题”"
+  },
+  {
+    "id": "core_edge_0172",
+    "source": "core_ch5_subnet_mask",
+    "target": "core_q_ch5_subnet_mask_01",
+    "relation": "关联试题",
+    "description": "子网掩码关联试题“子网掩码·单选题”"
+  },
+  {
+    "id": "core_edge_0173",
+    "source": "core_ch5_subnet_mask",
+    "target": "core_q_ch5_subnet_mask_02",
+    "relation": "关联试题",
+    "description": "子网掩码关联试题“子网掩码·填空题”"
+  },
+  {
+    "id": "core_edge_0174",
+    "source": "core_ch5_subnet_mask",
+    "target": "core_q_ch5_subnet_mask_03",
+    "relation": "关联试题",
+    "description": "子网掩码关联试题“子网掩码·计算题”"
+  },
+  {
+    "id": "core_edge_0175",
+    "source": "core_ch5_subnetting",
+    "target": "core_q_ch5_subnetting_01",
+    "relation": "关联试题",
+    "description": "子网划分关联试题“子网划分·单选题”"
+  },
+  {
+    "id": "core_edge_0176",
+    "source": "core_ch5_subnetting",
+    "target": "core_q_ch5_subnetting_02",
+    "relation": "关联试题",
+    "description": "子网划分关联试题“子网划分·填空题”"
+  },
+  {
+    "id": "core_edge_0177",
+    "source": "core_ch5_subnetting",
+    "target": "core_q_ch5_subnetting_03",
+    "relation": "关联试题",
+    "description": "子网划分关联试题“子网划分·计算题”"
+  },
+  {
+    "id": "core_edge_0178",
+    "source": "core_ch5_cidr",
+    "target": "core_q_ch5_cidr_01",
+    "relation": "关联试题",
+    "description": "无分类域间路由CIDR关联试题“无分类域间路由CIDR·单选题”"
+  },
+  {
+    "id": "core_edge_0179",
+    "source": "core_ch5_cidr",
+    "target": "core_q_ch5_cidr_02",
+    "relation": "关联试题",
+    "description": "无分类域间路由CIDR关联试题“无分类域间路由CIDR·填空题”"
+  },
+  {
+    "id": "core_edge_0180",
+    "source": "core_ch5_cidr",
+    "target": "core_q_ch5_cidr_03",
+    "relation": "关联试题",
+    "description": "无分类域间路由CIDR关联试题“无分类域间路由CIDR·计算题”"
+  },
+  {
+    "id": "core_edge_0181",
+    "source": "core_ch5_longest_prefix",
+    "target": "core_q_ch5_longest_prefix_01",
+    "relation": "关联试题",
+    "description": "最长前缀匹配关联试题“最长前缀匹配·单选题”"
+  },
+  {
+    "id": "core_edge_0182",
+    "source": "core_ch5_longest_prefix",
+    "target": "core_q_ch5_longest_prefix_02",
+    "relation": "关联试题",
+    "description": "最长前缀匹配关联试题“最长前缀匹配·填空题”"
+  },
+  {
+    "id": "core_edge_0183",
+    "source": "core_ch5_longest_prefix",
+    "target": "core_q_ch5_longest_prefix_03",
+    "relation": "关联试题",
+    "description": "最长前缀匹配关联试题“最长前缀匹配·简答题”"
+  },
+  {
+    "id": "core_edge_0184",
+    "source": "core_ch5_ipv6",
+    "target": "core_q_ch5_ipv6_01",
+    "relation": "关联试题",
+    "description": "IPv6协议关联试题“IPv6协议·单选题”"
+  },
+  {
+    "id": "core_edge_0185",
+    "source": "core_ch5_ipv6",
+    "target": "core_q_ch5_ipv6_02",
+    "relation": "关联试题",
+    "description": "IPv6协议关联试题“IPv6协议·填空题”"
+  },
+  {
+    "id": "core_edge_0186",
+    "source": "core_ch5_ipv6",
+    "target": "core_q_ch5_ipv6_03",
+    "relation": "关联试题",
+    "description": "IPv6协议关联试题“IPv6协议·计算题”"
+  },
+  {
+    "id": "core_edge_0187",
+    "source": "core_ch5_ipv6_header",
+    "target": "core_q_ch5_ipv6_header_01",
+    "relation": "关联试题",
+    "description": "IPv6基本首部关联试题“IPv6基本首部·单选题”"
+  },
+  {
+    "id": "core_edge_0188",
+    "source": "core_ch5_ipv6_header",
+    "target": "core_q_ch5_ipv6_header_02",
+    "relation": "关联试题",
+    "description": "IPv6基本首部关联试题“IPv6基本首部·填空题”"
+  },
+  {
+    "id": "core_edge_0189",
+    "source": "core_ch5_ipv6_header",
+    "target": "core_q_ch5_ipv6_header_03",
+    "relation": "关联试题",
+    "description": "IPv6基本首部关联试题“IPv6基本首部·简答题”"
+  },
+  {
+    "id": "core_edge_0190",
+    "source": "core_ch5_transition",
+    "target": "core_q_ch5_transition_01",
+    "relation": "关联试题",
+    "description": "IPv4向IPv6过渡关联试题“IPv4向IPv6过渡·单选题”"
+  },
+  {
+    "id": "core_edge_0191",
+    "source": "core_ch5_transition",
+    "target": "core_q_ch5_transition_02",
+    "relation": "关联试题",
+    "description": "IPv4向IPv6过渡关联试题“IPv4向IPv6过渡·填空题”"
+  },
+  {
+    "id": "core_edge_0192",
+    "source": "core_ch5_transition",
+    "target": "core_q_ch5_transition_03",
+    "relation": "关联试题",
+    "description": "IPv4向IPv6过渡关联试题“IPv4向IPv6过渡·简答题”"
+  },
+  {
+    "id": "core_edge_0193",
+    "source": "core_ch5_arp",
+    "target": "core_q_ch5_arp_01",
+    "relation": "关联试题",
+    "description": "地址解析协议ARP关联试题“地址解析协议ARP·单选题”"
+  },
+  {
+    "id": "core_edge_0194",
+    "source": "core_ch5_arp",
+    "target": "core_q_ch5_arp_02",
+    "relation": "关联试题",
+    "description": "地址解析协议ARP关联试题“地址解析协议ARP·填空题”"
+  },
+  {
+    "id": "core_edge_0195",
+    "source": "core_ch5_arp",
+    "target": "core_q_ch5_arp_03",
+    "relation": "关联试题",
+    "description": "地址解析协议ARP关联试题“地址解析协议ARP·简答题”"
+  },
+  {
+    "id": "core_edge_0196",
+    "source": "core_ch5_icmp",
+    "target": "core_q_ch5_icmp_01",
+    "relation": "关联试题",
+    "description": "网际控制报文协议ICMP关联试题“网际控制报文协议ICMP·单选题”"
+  },
+  {
+    "id": "core_edge_0197",
+    "source": "core_ch5_icmp",
+    "target": "core_q_ch5_icmp_02",
+    "relation": "关联试题",
+    "description": "网际控制报文协议ICMP关联试题“网际控制报文协议ICMP·填空题”"
+  },
+  {
+    "id": "core_edge_0198",
+    "source": "core_ch5_icmp",
+    "target": "core_q_ch5_icmp_03",
+    "relation": "关联试题",
+    "description": "网际控制报文协议ICMP关联试题“网际控制报文协议ICMP·简答题”"
+  },
+  {
+    "id": "core_edge_0199",
+    "source": "core_ch5_ping",
+    "target": "core_q_ch5_ping_01",
+    "relation": "关联试题",
+    "description": "Ping诊断关联试题“Ping诊断·单选题”"
+  },
+  {
+    "id": "core_edge_0200",
+    "source": "core_ch5_ping",
+    "target": "core_q_ch5_ping_02",
+    "relation": "关联试题",
+    "description": "Ping诊断关联试题“Ping诊断·填空题”"
+  },
+  {
+    "id": "core_edge_0201",
+    "source": "core_ch5_ping",
+    "target": "core_q_ch5_ping_03",
+    "relation": "关联试题",
+    "description": "Ping诊断关联试题“Ping诊断·简答题”"
+  },
+  {
+    "id": "core_edge_0202",
+    "source": "core_ch5_traceroute",
+    "target": "core_q_ch5_traceroute_01",
+    "relation": "关联试题",
+    "description": "Traceroute路径探测关联试题“Traceroute路径探测·单选题”"
+  },
+  {
+    "id": "core_edge_0203",
+    "source": "core_ch5_traceroute",
+    "target": "core_q_ch5_traceroute_02",
+    "relation": "关联试题",
+    "description": "Traceroute路径探测关联试题“Traceroute路径探测·填空题”"
+  },
+  {
+    "id": "core_edge_0204",
+    "source": "core_ch5_traceroute",
+    "target": "core_q_ch5_traceroute_03",
+    "relation": "关联试题",
+    "description": "Traceroute路径探测关联试题“Traceroute路径探测·简答题”"
+  },
+  {
+    "id": "core_edge_0205",
+    "source": "core_ch5_nat",
+    "target": "core_q_ch5_nat_01",
+    "relation": "关联试题",
+    "description": "网络地址转换NAT关联试题“网络地址转换NAT·单选题”"
+  },
+  {
+    "id": "core_edge_0206",
+    "source": "core_ch5_nat",
+    "target": "core_q_ch5_nat_02",
+    "relation": "关联试题",
+    "description": "网络地址转换NAT关联试题“网络地址转换NAT·填空题”"
+  },
+  {
+    "id": "core_edge_0207",
+    "source": "core_ch5_nat",
+    "target": "core_q_ch5_nat_03",
+    "relation": "关联试题",
+    "description": "网络地址转换NAT关联试题“网络地址转换NAT·简答题”"
+  },
+  {
+    "id": "core_edge_0208",
+    "source": "core_ch5_router",
+    "target": "core_q_ch5_router_01",
+    "relation": "关联试题",
+    "description": "路由器关联试题“路由器·单选题”"
+  },
+  {
+    "id": "core_edge_0209",
+    "source": "core_ch5_router",
+    "target": "core_q_ch5_router_02",
+    "relation": "关联试题",
+    "description": "路由器关联试题“路由器·填空题”"
+  },
+  {
+    "id": "core_edge_0210",
+    "source": "core_ch5_router",
+    "target": "core_q_ch5_router_03",
+    "relation": "关联试题",
+    "description": "路由器关联试题“路由器·简答题”"
+  },
+  {
+    "id": "core_edge_0211",
+    "source": "core_ch5_forwarding_table",
+    "target": "core_q_ch5_forwarding_table_01",
+    "relation": "关联试题",
+    "description": "转发表关联试题“转发表·单选题”"
+  },
+  {
+    "id": "core_edge_0212",
+    "source": "core_ch5_forwarding_table",
+    "target": "core_q_ch5_forwarding_table_02",
+    "relation": "关联试题",
+    "description": "转发表关联试题“转发表·填空题”"
+  },
+  {
+    "id": "core_edge_0213",
+    "source": "core_ch5_forwarding_table",
+    "target": "core_q_ch5_forwarding_table_03",
+    "relation": "关联试题",
+    "description": "转发表关联试题“转发表·简答题”"
+  },
+  {
+    "id": "core_edge_0214",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_q_ch5_routing_algorithm_01",
+    "relation": "关联试题",
+    "description": "路由选择算法关联试题“路由选择算法·单选题”"
+  },
+  {
+    "id": "core_edge_0215",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_q_ch5_routing_algorithm_02",
+    "relation": "关联试题",
+    "description": "路由选择算法关联试题“路由选择算法·填空题”"
+  },
+  {
+    "id": "core_edge_0216",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_q_ch5_routing_algorithm_03",
+    "relation": "关联试题",
+    "description": "路由选择算法关联试题“路由选择算法·简答题”"
+  },
+  {
+    "id": "core_edge_0217",
+    "source": "core_ch5_distance_vector",
+    "target": "core_q_ch5_distance_vector_01",
+    "relation": "关联试题",
+    "description": "距离向量算法关联试题“距离向量算法·单选题”"
+  },
+  {
+    "id": "core_edge_0218",
+    "source": "core_ch5_distance_vector",
+    "target": "core_q_ch5_distance_vector_02",
+    "relation": "关联试题",
+    "description": "距离向量算法关联试题“距离向量算法·填空题”"
+  },
+  {
+    "id": "core_edge_0219",
+    "source": "core_ch5_distance_vector",
+    "target": "core_q_ch5_distance_vector_03",
+    "relation": "关联试题",
+    "description": "距离向量算法关联试题“距离向量算法·简答题”"
+  },
+  {
+    "id": "core_edge_0220",
+    "source": "core_ch5_link_state",
+    "target": "core_q_ch5_link_state_01",
+    "relation": "关联试题",
+    "description": "链路状态算法关联试题“链路状态算法·单选题”"
+  },
+  {
+    "id": "core_edge_0221",
+    "source": "core_ch5_link_state",
+    "target": "core_q_ch5_link_state_02",
+    "relation": "关联试题",
+    "description": "链路状态算法关联试题“链路状态算法·填空题”"
+  },
+  {
+    "id": "core_edge_0222",
+    "source": "core_ch5_link_state",
+    "target": "core_q_ch5_link_state_03",
+    "relation": "关联试题",
+    "description": "链路状态算法关联试题“链路状态算法·简答题”"
+  },
+  {
+    "id": "core_edge_0223",
+    "source": "core_ch5_rip",
+    "target": "core_q_ch5_rip_01",
+    "relation": "关联试题",
+    "description": "RIP协议关联试题“RIP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0224",
+    "source": "core_ch5_rip",
+    "target": "core_q_ch5_rip_02",
+    "relation": "关联试题",
+    "description": "RIP协议关联试题“RIP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0225",
+    "source": "core_ch5_rip",
+    "target": "core_q_ch5_rip_03",
+    "relation": "关联试题",
+    "description": "RIP协议关联试题“RIP协议·计算题”"
+  },
+  {
+    "id": "core_edge_0226",
+    "source": "core_ch5_ospf",
+    "target": "core_q_ch5_ospf_01",
+    "relation": "关联试题",
+    "description": "OSPF协议关联试题“OSPF协议·单选题”"
+  },
+  {
+    "id": "core_edge_0227",
+    "source": "core_ch5_ospf",
+    "target": "core_q_ch5_ospf_02",
+    "relation": "关联试题",
+    "description": "OSPF协议关联试题“OSPF协议·填空题”"
+  },
+  {
+    "id": "core_edge_0228",
+    "source": "core_ch5_ospf",
+    "target": "core_q_ch5_ospf_03",
+    "relation": "关联试题",
+    "description": "OSPF协议关联试题“OSPF协议·简答题”"
+  },
+  {
+    "id": "core_edge_0229",
+    "source": "core_ch5_as",
+    "target": "core_q_ch5_as_01",
+    "relation": "关联试题",
+    "description": "自治系统AS关联试题“自治系统AS·单选题”"
+  },
+  {
+    "id": "core_edge_0230",
+    "source": "core_ch5_as",
+    "target": "core_q_ch5_as_02",
+    "relation": "关联试题",
+    "description": "自治系统AS关联试题“自治系统AS·填空题”"
+  },
+  {
+    "id": "core_edge_0231",
+    "source": "core_ch5_as",
+    "target": "core_q_ch5_as_03",
+    "relation": "关联试题",
+    "description": "自治系统AS关联试题“自治系统AS·简答题”"
+  },
+  {
+    "id": "core_edge_0232",
+    "source": "core_ch5_bgp",
+    "target": "core_q_ch5_bgp_01",
+    "relation": "关联试题",
+    "description": "BGP协议关联试题“BGP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0233",
+    "source": "core_ch5_bgp",
+    "target": "core_q_ch5_bgp_02",
+    "relation": "关联试题",
+    "description": "BGP协议关联试题“BGP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0234",
+    "source": "core_ch5_bgp",
+    "target": "core_q_ch5_bgp_03",
+    "relation": "关联试题",
+    "description": "BGP协议关联试题“BGP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0235",
+    "source": "core_ch6_transport_layer",
+    "target": "core_q_ch6_transport_layer_01",
+    "relation": "关联试题",
+    "description": "传输层关联试题“传输层·单选题”"
+  },
+  {
+    "id": "core_edge_0236",
+    "source": "core_ch6_transport_layer",
+    "target": "core_q_ch6_transport_layer_02",
+    "relation": "关联试题",
+    "description": "传输层关联试题“传输层·填空题”"
+  },
+  {
+    "id": "core_edge_0237",
+    "source": "core_ch6_transport_layer",
+    "target": "core_q_ch6_transport_layer_03",
+    "relation": "关联试题",
+    "description": "传输层关联试题“传输层·简答题”"
+  },
+  {
+    "id": "core_edge_0238",
+    "source": "core_ch6_process_communication",
+    "target": "core_q_ch6_process_communication_01",
+    "relation": "关联试题",
+    "description": "进程到进程通信关联试题“进程到进程通信·单选题”"
+  },
+  {
+    "id": "core_edge_0239",
+    "source": "core_ch6_process_communication",
+    "target": "core_q_ch6_process_communication_02",
+    "relation": "关联试题",
+    "description": "进程到进程通信关联试题“进程到进程通信·填空题”"
+  },
+  {
+    "id": "core_edge_0240",
+    "source": "core_ch6_process_communication",
+    "target": "core_q_ch6_process_communication_03",
+    "relation": "关联试题",
+    "description": "进程到进程通信关联试题“进程到进程通信·简答题”"
+  },
+  {
+    "id": "core_edge_0241",
+    "source": "core_ch6_multiplexing",
+    "target": "core_q_ch6_multiplexing_01",
+    "relation": "关联试题",
+    "description": "复用与分用关联试题“复用与分用·单选题”"
+  },
+  {
+    "id": "core_edge_0242",
+    "source": "core_ch6_multiplexing",
+    "target": "core_q_ch6_multiplexing_02",
+    "relation": "关联试题",
+    "description": "复用与分用关联试题“复用与分用·填空题”"
+  },
+  {
+    "id": "core_edge_0243",
+    "source": "core_ch6_multiplexing",
+    "target": "core_q_ch6_multiplexing_03",
+    "relation": "关联试题",
+    "description": "复用与分用关联试题“复用与分用·简答题”"
+  },
+  {
+    "id": "core_edge_0244",
+    "source": "core_ch6_port",
+    "target": "core_q_ch6_port_01",
+    "relation": "关联试题",
+    "description": "端口号关联试题“端口号·单选题”"
+  },
+  {
+    "id": "core_edge_0245",
+    "source": "core_ch6_port",
+    "target": "core_q_ch6_port_02",
+    "relation": "关联试题",
+    "description": "端口号关联试题“端口号·填空题”"
+  },
+  {
+    "id": "core_edge_0246",
+    "source": "core_ch6_port",
+    "target": "core_q_ch6_port_03",
+    "relation": "关联试题",
+    "description": "端口号关联试题“端口号·计算题”"
+  },
+  {
+    "id": "core_edge_0247",
+    "source": "core_ch6_socket",
+    "target": "core_q_ch6_socket_01",
+    "relation": "关联试题",
+    "description": "套接字端点关联试题“套接字端点·单选题”"
+  },
+  {
+    "id": "core_edge_0248",
+    "source": "core_ch6_socket",
+    "target": "core_q_ch6_socket_02",
+    "relation": "关联试题",
+    "description": "套接字端点关联试题“套接字端点·填空题”"
+  },
+  {
+    "id": "core_edge_0249",
+    "source": "core_ch6_socket",
+    "target": "core_q_ch6_socket_03",
+    "relation": "关联试题",
+    "description": "套接字端点关联试题“套接字端点·简答题”"
+  },
+  {
+    "id": "core_edge_0250",
+    "source": "core_ch6_udp",
+    "target": "core_q_ch6_udp_01",
+    "relation": "关联试题",
+    "description": "UDP协议关联试题“UDP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0251",
+    "source": "core_ch6_udp",
+    "target": "core_q_ch6_udp_02",
+    "relation": "关联试题",
+    "description": "UDP协议关联试题“UDP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0252",
+    "source": "core_ch6_udp",
+    "target": "core_q_ch6_udp_03",
+    "relation": "关联试题",
+    "description": "UDP协议关联试题“UDP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0253",
+    "source": "core_ch6_udp_header",
+    "target": "core_q_ch6_udp_header_01",
+    "relation": "关联试题",
+    "description": "UDP数据报首部关联试题“UDP数据报首部·单选题”"
+  },
+  {
+    "id": "core_edge_0254",
+    "source": "core_ch6_udp_header",
+    "target": "core_q_ch6_udp_header_02",
+    "relation": "关联试题",
+    "description": "UDP数据报首部关联试题“UDP数据报首部·填空题”"
+  },
+  {
+    "id": "core_edge_0255",
+    "source": "core_ch6_udp_header",
+    "target": "core_q_ch6_udp_header_03",
+    "relation": "关联试题",
+    "description": "UDP数据报首部关联试题“UDP数据报首部·计算题”"
+  },
+  {
+    "id": "core_edge_0256",
+    "source": "core_ch6_udp_checksum",
+    "target": "core_q_ch6_udp_checksum_01",
+    "relation": "关联试题",
+    "description": "UDP检验和关联试题“UDP检验和·单选题”"
+  },
+  {
+    "id": "core_edge_0257",
+    "source": "core_ch6_udp_checksum",
+    "target": "core_q_ch6_udp_checksum_02",
+    "relation": "关联试题",
+    "description": "UDP检验和关联试题“UDP检验和·填空题”"
+  },
+  {
+    "id": "core_edge_0258",
+    "source": "core_ch6_udp_checksum",
+    "target": "core_q_ch6_udp_checksum_03",
+    "relation": "关联试题",
+    "description": "UDP检验和关联试题“UDP检验和·简答题”"
+  },
+  {
+    "id": "core_edge_0259",
+    "source": "core_ch6_tcp",
+    "target": "core_q_ch6_tcp_01",
+    "relation": "关联试题",
+    "description": "TCP协议关联试题“TCP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0260",
+    "source": "core_ch6_tcp",
+    "target": "core_q_ch6_tcp_02",
+    "relation": "关联试题",
+    "description": "TCP协议关联试题“TCP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0261",
+    "source": "core_ch6_tcp",
+    "target": "core_q_ch6_tcp_03",
+    "relation": "关联试题",
+    "description": "TCP协议关联试题“TCP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0262",
+    "source": "core_ch6_tcp_header",
+    "target": "core_q_ch6_tcp_header_01",
+    "relation": "关联试题",
+    "description": "TCP报文段首部关联试题“TCP报文段首部·单选题”"
+  },
+  {
+    "id": "core_edge_0263",
+    "source": "core_ch6_tcp_header",
+    "target": "core_q_ch6_tcp_header_02",
+    "relation": "关联试题",
+    "description": "TCP报文段首部关联试题“TCP报文段首部·填空题”"
+  },
+  {
+    "id": "core_edge_0264",
+    "source": "core_ch6_tcp_header",
+    "target": "core_q_ch6_tcp_header_03",
+    "relation": "关联试题",
+    "description": "TCP报文段首部关联试题“TCP报文段首部·计算题”"
+  },
+  {
+    "id": "core_edge_0265",
+    "source": "core_ch6_seq_ack",
+    "target": "core_q_ch6_seq_ack_01",
+    "relation": "关联试题",
+    "description": "序号与确认号关联试题“序号与确认号·单选题”"
+  },
+  {
+    "id": "core_edge_0266",
+    "source": "core_ch6_seq_ack",
+    "target": "core_q_ch6_seq_ack_02",
+    "relation": "关联试题",
+    "description": "序号与确认号关联试题“序号与确认号·填空题”"
+  },
+  {
+    "id": "core_edge_0267",
+    "source": "core_ch6_seq_ack",
+    "target": "core_q_ch6_seq_ack_03",
+    "relation": "关联试题",
+    "description": "序号与确认号关联试题“序号与确认号·简答题”"
+  },
+  {
+    "id": "core_edge_0268",
+    "source": "core_ch6_handshake",
+    "target": "core_q_ch6_handshake_01",
+    "relation": "关联试题",
+    "description": "TCP三次握手关联试题“TCP三次握手·单选题”"
+  },
+  {
+    "id": "core_edge_0269",
+    "source": "core_ch6_handshake",
+    "target": "core_q_ch6_handshake_02",
+    "relation": "关联试题",
+    "description": "TCP三次握手关联试题“TCP三次握手·填空题”"
+  },
+  {
+    "id": "core_edge_0270",
+    "source": "core_ch6_handshake",
+    "target": "core_q_ch6_handshake_03",
+    "relation": "关联试题",
+    "description": "TCP三次握手关联试题“TCP三次握手·简答题”"
+  },
+  {
+    "id": "core_edge_0271",
+    "source": "core_ch6_connection_release",
+    "target": "core_q_ch6_connection_release_01",
+    "relation": "关联试题",
+    "description": "TCP四次挥手关联试题“TCP四次挥手·单选题”"
+  },
+  {
+    "id": "core_edge_0272",
+    "source": "core_ch6_connection_release",
+    "target": "core_q_ch6_connection_release_02",
+    "relation": "关联试题",
+    "description": "TCP四次挥手关联试题“TCP四次挥手·填空题”"
+  },
+  {
+    "id": "core_edge_0273",
+    "source": "core_ch6_connection_release",
+    "target": "core_q_ch6_connection_release_03",
+    "relation": "关联试题",
+    "description": "TCP四次挥手关联试题“TCP四次挥手·简答题”"
+  },
+  {
+    "id": "core_edge_0274",
+    "source": "core_ch6_time_wait",
+    "target": "core_q_ch6_time_wait_01",
+    "relation": "关联试题",
+    "description": "TIME_WAIT状态关联试题“TIME_WAIT状态·单选题”"
+  },
+  {
+    "id": "core_edge_0275",
+    "source": "core_ch6_time_wait",
+    "target": "core_q_ch6_time_wait_02",
+    "relation": "关联试题",
+    "description": "TIME_WAIT状态关联试题“TIME_WAIT状态·填空题”"
+  },
+  {
+    "id": "core_edge_0276",
+    "source": "core_ch6_time_wait",
+    "target": "core_q_ch6_time_wait_03",
+    "relation": "关联试题",
+    "description": "TIME_WAIT状态关联试题“TIME_WAIT状态·简答题”"
+  },
+  {
+    "id": "core_edge_0277",
+    "source": "core_ch6_reliable",
+    "target": "core_q_ch6_reliable_01",
+    "relation": "关联试题",
+    "description": "可靠数据传输关联试题“可靠数据传输·单选题”"
+  },
+  {
+    "id": "core_edge_0278",
+    "source": "core_ch6_reliable",
+    "target": "core_q_ch6_reliable_02",
+    "relation": "关联试题",
+    "description": "可靠数据传输关联试题“可靠数据传输·填空题”"
+  },
+  {
+    "id": "core_edge_0279",
+    "source": "core_ch6_reliable",
+    "target": "core_q_ch6_reliable_03",
+    "relation": "关联试题",
+    "description": "可靠数据传输关联试题“可靠数据传输·简答题”"
+  },
+  {
+    "id": "core_edge_0280",
+    "source": "core_ch6_checksum",
+    "target": "core_q_ch6_checksum_01",
+    "relation": "关联试题",
+    "description": "传输层检验和关联试题“传输层检验和·单选题”"
+  },
+  {
+    "id": "core_edge_0281",
+    "source": "core_ch6_checksum",
+    "target": "core_q_ch6_checksum_02",
+    "relation": "关联试题",
+    "description": "传输层检验和关联试题“传输层检验和·填空题”"
+  },
+  {
+    "id": "core_edge_0282",
+    "source": "core_ch6_checksum",
+    "target": "core_q_ch6_checksum_03",
+    "relation": "关联试题",
+    "description": "传输层检验和关联试题“传输层检验和·简答题”"
+  },
+  {
+    "id": "core_edge_0283",
+    "source": "core_ch6_stop_wait",
+    "target": "core_q_ch6_stop_wait_01",
+    "relation": "关联试题",
+    "description": "停止等待协议关联试题“停止等待协议·单选题”"
+  },
+  {
+    "id": "core_edge_0284",
+    "source": "core_ch6_stop_wait",
+    "target": "core_q_ch6_stop_wait_02",
+    "relation": "关联试题",
+    "description": "停止等待协议关联试题“停止等待协议·填空题”"
+  },
+  {
+    "id": "core_edge_0285",
+    "source": "core_ch6_stop_wait",
+    "target": "core_q_ch6_stop_wait_03",
+    "relation": "关联试题",
+    "description": "停止等待协议关联试题“停止等待协议·计算题”"
+  },
+  {
+    "id": "core_edge_0286",
+    "source": "core_ch6_pipelining",
+    "target": "core_q_ch6_pipelining_01",
+    "relation": "关联试题",
+    "description": "流水线可靠传输关联试题“流水线可靠传输·单选题”"
+  },
+  {
+    "id": "core_edge_0287",
+    "source": "core_ch6_pipelining",
+    "target": "core_q_ch6_pipelining_02",
+    "relation": "关联试题",
+    "description": "流水线可靠传输关联试题“流水线可靠传输·填空题”"
+  },
+  {
+    "id": "core_edge_0288",
+    "source": "core_ch6_pipelining",
+    "target": "core_q_ch6_pipelining_03",
+    "relation": "关联试题",
+    "description": "流水线可靠传输关联试题“流水线可靠传输·简答题”"
+  },
+  {
+    "id": "core_edge_0289",
+    "source": "core_ch6_sliding_window",
+    "target": "core_q_ch6_sliding_window_01",
+    "relation": "关联试题",
+    "description": "滑动窗口关联试题“滑动窗口·单选题”"
+  },
+  {
+    "id": "core_edge_0290",
+    "source": "core_ch6_sliding_window",
+    "target": "core_q_ch6_sliding_window_02",
+    "relation": "关联试题",
+    "description": "滑动窗口关联试题“滑动窗口·填空题”"
+  },
+  {
+    "id": "core_edge_0291",
+    "source": "core_ch6_sliding_window",
+    "target": "core_q_ch6_sliding_window_03",
+    "relation": "关联试题",
+    "description": "滑动窗口关联试题“滑动窗口·简答题”"
+  },
+  {
+    "id": "core_edge_0292",
+    "source": "core_ch6_flow_control",
+    "target": "core_q_ch6_flow_control_01",
+    "relation": "关联试题",
+    "description": "TCP流量控制关联试题“TCP流量控制·单选题”"
+  },
+  {
+    "id": "core_edge_0293",
+    "source": "core_ch6_flow_control",
+    "target": "core_q_ch6_flow_control_02",
+    "relation": "关联试题",
+    "description": "TCP流量控制关联试题“TCP流量控制·填空题”"
+  },
+  {
+    "id": "core_edge_0294",
+    "source": "core_ch6_flow_control",
+    "target": "core_q_ch6_flow_control_03",
+    "relation": "关联试题",
+    "description": "TCP流量控制关联试题“TCP流量控制·简答题”"
+  },
+  {
+    "id": "core_edge_0295",
+    "source": "core_ch6_rtt_rto",
+    "target": "core_q_ch6_rtt_rto_01",
+    "relation": "关联试题",
+    "description": "RTT估计与重传超时关联试题“RTT估计与重传超时·单选题”"
+  },
+  {
+    "id": "core_edge_0296",
+    "source": "core_ch6_rtt_rto",
+    "target": "core_q_ch6_rtt_rto_02",
+    "relation": "关联试题",
+    "description": "RTT估计与重传超时关联试题“RTT估计与重传超时·填空题”"
+  },
+  {
+    "id": "core_edge_0297",
+    "source": "core_ch6_rtt_rto",
+    "target": "core_q_ch6_rtt_rto_03",
+    "relation": "关联试题",
+    "description": "RTT估计与重传超时关联试题“RTT估计与重传超时·简答题”"
+  },
+  {
+    "id": "core_edge_0298",
+    "source": "core_ch6_congestion",
+    "target": "core_q_ch6_congestion_01",
+    "relation": "关联试题",
+    "description": "TCP拥塞控制关联试题“TCP拥塞控制·单选题”"
+  },
+  {
+    "id": "core_edge_0299",
+    "source": "core_ch6_congestion",
+    "target": "core_q_ch6_congestion_02",
+    "relation": "关联试题",
+    "description": "TCP拥塞控制关联试题“TCP拥塞控制·填空题”"
+  },
+  {
+    "id": "core_edge_0300",
+    "source": "core_ch6_congestion",
+    "target": "core_q_ch6_congestion_03",
+    "relation": "关联试题",
+    "description": "TCP拥塞控制关联试题“TCP拥塞控制·简答题”"
+  },
+  {
+    "id": "core_edge_0301",
+    "source": "core_ch6_slow_start",
+    "target": "core_q_ch6_slow_start_01",
+    "relation": "关联试题",
+    "description": "慢开始关联试题“慢开始·单选题”"
+  },
+  {
+    "id": "core_edge_0302",
+    "source": "core_ch6_slow_start",
+    "target": "core_q_ch6_slow_start_02",
+    "relation": "关联试题",
+    "description": "慢开始关联试题“慢开始·填空题”"
+  },
+  {
+    "id": "core_edge_0303",
+    "source": "core_ch6_slow_start",
+    "target": "core_q_ch6_slow_start_03",
+    "relation": "关联试题",
+    "description": "慢开始关联试题“慢开始·计算题”"
+  },
+  {
+    "id": "core_edge_0304",
+    "source": "core_ch6_congestion_avoidance",
+    "target": "core_q_ch6_congestion_avoidance_01",
+    "relation": "关联试题",
+    "description": "拥塞避免关联试题“拥塞避免·单选题”"
+  },
+  {
+    "id": "core_edge_0305",
+    "source": "core_ch6_congestion_avoidance",
+    "target": "core_q_ch6_congestion_avoidance_02",
+    "relation": "关联试题",
+    "description": "拥塞避免关联试题“拥塞避免·填空题”"
+  },
+  {
+    "id": "core_edge_0306",
+    "source": "core_ch6_congestion_avoidance",
+    "target": "core_q_ch6_congestion_avoidance_03",
+    "relation": "关联试题",
+    "description": "拥塞避免关联试题“拥塞避免·简答题”"
+  },
+  {
+    "id": "core_edge_0307",
+    "source": "core_ch6_fast_retransmit",
+    "target": "core_q_ch6_fast_retransmit_01",
+    "relation": "关联试题",
+    "description": "快重传关联试题“快重传·单选题”"
+  },
+  {
+    "id": "core_edge_0308",
+    "source": "core_ch6_fast_retransmit",
+    "target": "core_q_ch6_fast_retransmit_02",
+    "relation": "关联试题",
+    "description": "快重传关联试题“快重传·填空题”"
+  },
+  {
+    "id": "core_edge_0309",
+    "source": "core_ch6_fast_retransmit",
+    "target": "core_q_ch6_fast_retransmit_03",
+    "relation": "关联试题",
+    "description": "快重传关联试题“快重传·简答题”"
+  },
+  {
+    "id": "core_edge_0310",
+    "source": "core_ch6_fast_recovery",
+    "target": "core_q_ch6_fast_recovery_01",
+    "relation": "关联试题",
+    "description": "快恢复关联试题“快恢复·单选题”"
+  },
+  {
+    "id": "core_edge_0311",
+    "source": "core_ch6_fast_recovery",
+    "target": "core_q_ch6_fast_recovery_02",
+    "relation": "关联试题",
+    "description": "快恢复关联试题“快恢复·填空题”"
+  },
+  {
+    "id": "core_edge_0312",
+    "source": "core_ch6_fast_recovery",
+    "target": "core_q_ch6_fast_recovery_03",
+    "relation": "关联试题",
+    "description": "快恢复关联试题“快恢复·简答题”"
+  },
+  {
+    "id": "core_edge_0313",
+    "source": "core_ch6_tcp_udp_compare",
+    "target": "core_q_ch6_tcp_udp_compare_01",
+    "relation": "关联试题",
+    "description": "TCP与UDP对比关联试题“TCP与UDP对比·单选题”"
+  },
+  {
+    "id": "core_edge_0314",
+    "source": "core_ch6_tcp_udp_compare",
+    "target": "core_q_ch6_tcp_udp_compare_02",
+    "relation": "关联试题",
+    "description": "TCP与UDP对比关联试题“TCP与UDP对比·填空题”"
+  },
+  {
+    "id": "core_edge_0315",
+    "source": "core_ch6_tcp_udp_compare",
+    "target": "core_q_ch6_tcp_udp_compare_03",
+    "relation": "关联试题",
+    "description": "TCP与UDP对比关联试题“TCP与UDP对比·简答题”"
+  },
+  {
+    "id": "core_edge_0316",
+    "source": "core_ch7_application_layer",
+    "target": "core_q_ch7_application_layer_01",
+    "relation": "关联试题",
+    "description": "应用层关联试题“应用层·单选题”"
+  },
+  {
+    "id": "core_edge_0317",
+    "source": "core_ch7_application_layer",
+    "target": "core_q_ch7_application_layer_02",
+    "relation": "关联试题",
+    "description": "应用层关联试题“应用层·填空题”"
+  },
+  {
+    "id": "core_edge_0318",
+    "source": "core_ch7_application_layer",
+    "target": "core_q_ch7_application_layer_03",
+    "relation": "关联试题",
+    "description": "应用层关联试题“应用层·简答题”"
+  },
+  {
+    "id": "core_edge_0319",
+    "source": "core_ch7_architecture",
+    "target": "core_q_ch7_architecture_01",
+    "relation": "关联试题",
+    "description": "网络应用体系结构关联试题“网络应用体系结构·单选题”"
+  },
+  {
+    "id": "core_edge_0320",
+    "source": "core_ch7_architecture",
+    "target": "core_q_ch7_architecture_02",
+    "relation": "关联试题",
+    "description": "网络应用体系结构关联试题“网络应用体系结构·填空题”"
+  },
+  {
+    "id": "core_edge_0321",
+    "source": "core_ch7_architecture",
+    "target": "core_q_ch7_architecture_03",
+    "relation": "关联试题",
+    "description": "网络应用体系结构关联试题“网络应用体系结构·简答题”"
+  },
+  {
+    "id": "core_edge_0322",
+    "source": "core_ch7_client_server",
+    "target": "core_q_ch7_client_server_01",
+    "relation": "关联试题",
+    "description": "客户-服务器模式关联试题“客户-服务器模式·单选题”"
+  },
+  {
+    "id": "core_edge_0323",
+    "source": "core_ch7_client_server",
+    "target": "core_q_ch7_client_server_02",
+    "relation": "关联试题",
+    "description": "客户-服务器模式关联试题“客户-服务器模式·填空题”"
+  },
+  {
+    "id": "core_edge_0324",
+    "source": "core_ch7_client_server",
+    "target": "core_q_ch7_client_server_03",
+    "relation": "关联试题",
+    "description": "客户-服务器模式关联试题“客户-服务器模式·简答题”"
+  },
+  {
+    "id": "core_edge_0325",
+    "source": "core_ch7_p2p",
+    "target": "core_q_ch7_p2p_01",
+    "relation": "关联试题",
+    "description": "对等P2P模式关联试题“对等P2P模式·单选题”"
+  },
+  {
+    "id": "core_edge_0326",
+    "source": "core_ch7_p2p",
+    "target": "core_q_ch7_p2p_02",
+    "relation": "关联试题",
+    "description": "对等P2P模式关联试题“对等P2P模式·填空题”"
+  },
+  {
+    "id": "core_edge_0327",
+    "source": "core_ch7_p2p",
+    "target": "core_q_ch7_p2p_03",
+    "relation": "关联试题",
+    "description": "对等P2P模式关联试题“对等P2P模式·简答题”"
+  },
+  {
+    "id": "core_edge_0328",
+    "source": "core_ch7_socket_programming",
+    "target": "core_q_ch7_socket_programming_01",
+    "relation": "关联试题",
+    "description": "Socket编程关联试题“Socket编程·单选题”"
+  },
+  {
+    "id": "core_edge_0329",
+    "source": "core_ch7_socket_programming",
+    "target": "core_q_ch7_socket_programming_02",
+    "relation": "关联试题",
+    "description": "Socket编程关联试题“Socket编程·填空题”"
+  },
+  {
+    "id": "core_edge_0330",
+    "source": "core_ch7_socket_programming",
+    "target": "core_q_ch7_socket_programming_03",
+    "relation": "关联试题",
+    "description": "Socket编程关联试题“Socket编程·简答题”"
+  },
+  {
+    "id": "core_edge_0331",
+    "source": "core_ch7_dns",
+    "target": "core_q_ch7_dns_01",
+    "relation": "关联试题",
+    "description": "域名系统DNS关联试题“域名系统DNS·单选题”"
+  },
+  {
+    "id": "core_edge_0332",
+    "source": "core_ch7_dns",
+    "target": "core_q_ch7_dns_02",
+    "relation": "关联试题",
+    "description": "域名系统DNS关联试题“域名系统DNS·填空题”"
+  },
+  {
+    "id": "core_edge_0333",
+    "source": "core_ch7_dns",
+    "target": "core_q_ch7_dns_03",
+    "relation": "关联试题",
+    "description": "域名系统DNS关联试题“域名系统DNS·简答题”"
+  },
+  {
+    "id": "core_edge_0334",
+    "source": "core_ch7_dns_hierarchy",
+    "target": "core_q_ch7_dns_hierarchy_01",
+    "relation": "关联试题",
+    "description": "DNS层次结构关联试题“DNS层次结构·单选题”"
+  },
+  {
+    "id": "core_edge_0335",
+    "source": "core_ch7_dns_hierarchy",
+    "target": "core_q_ch7_dns_hierarchy_02",
+    "relation": "关联试题",
+    "description": "DNS层次结构关联试题“DNS层次结构·填空题”"
+  },
+  {
+    "id": "core_edge_0336",
+    "source": "core_ch7_dns_hierarchy",
+    "target": "core_q_ch7_dns_hierarchy_03",
+    "relation": "关联试题",
+    "description": "DNS层次结构关联试题“DNS层次结构·简答题”"
+  },
+  {
+    "id": "core_edge_0337",
+    "source": "core_ch7_dns_resolution",
+    "target": "core_q_ch7_dns_resolution_01",
+    "relation": "关联试题",
+    "description": "递归与迭代解析关联试题“递归与迭代解析·单选题”"
+  },
+  {
+    "id": "core_edge_0338",
+    "source": "core_ch7_dns_resolution",
+    "target": "core_q_ch7_dns_resolution_02",
+    "relation": "关联试题",
+    "description": "递归与迭代解析关联试题“递归与迭代解析·填空题”"
+  },
+  {
+    "id": "core_edge_0339",
+    "source": "core_ch7_dns_resolution",
+    "target": "core_q_ch7_dns_resolution_03",
+    "relation": "关联试题",
+    "description": "递归与迭代解析关联试题“递归与迭代解析·简答题”"
+  },
+  {
+    "id": "core_edge_0340",
+    "source": "core_ch7_dns_cache",
+    "target": "core_q_ch7_dns_cache_01",
+    "relation": "关联试题",
+    "description": "DNS缓存关联试题“DNS缓存·单选题”"
+  },
+  {
+    "id": "core_edge_0341",
+    "source": "core_ch7_dns_cache",
+    "target": "core_q_ch7_dns_cache_02",
+    "relation": "关联试题",
+    "description": "DNS缓存关联试题“DNS缓存·填空题”"
+  },
+  {
+    "id": "core_edge_0342",
+    "source": "core_ch7_dns_cache",
+    "target": "core_q_ch7_dns_cache_03",
+    "relation": "关联试题",
+    "description": "DNS缓存关联试题“DNS缓存·计算题”"
+  },
+  {
+    "id": "core_edge_0343",
+    "source": "core_ch7_dns_rr",
+    "target": "core_q_ch7_dns_rr_01",
+    "relation": "关联试题",
+    "description": "DNS资源记录关联试题“DNS资源记录·单选题”"
+  },
+  {
+    "id": "core_edge_0344",
+    "source": "core_ch7_dns_rr",
+    "target": "core_q_ch7_dns_rr_02",
+    "relation": "关联试题",
+    "description": "DNS资源记录关联试题“DNS资源记录·填空题”"
+  },
+  {
+    "id": "core_edge_0345",
+    "source": "core_ch7_dns_rr",
+    "target": "core_q_ch7_dns_rr_03",
+    "relation": "关联试题",
+    "description": "DNS资源记录关联试题“DNS资源记录·简答题”"
+  },
+  {
+    "id": "core_edge_0346",
+    "source": "core_ch7_http",
+    "target": "core_q_ch7_http_01",
+    "relation": "关联试题",
+    "description": "HTTP协议关联试题“HTTP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0347",
+    "source": "core_ch7_http",
+    "target": "core_q_ch7_http_02",
+    "relation": "关联试题",
+    "description": "HTTP协议关联试题“HTTP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0348",
+    "source": "core_ch7_http",
+    "target": "core_q_ch7_http_03",
+    "relation": "关联试题",
+    "description": "HTTP协议关联试题“HTTP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0349",
+    "source": "core_ch7_http_message",
+    "target": "core_q_ch7_http_message_01",
+    "relation": "关联试题",
+    "description": "HTTP报文关联试题“HTTP报文·单选题”"
+  },
+  {
+    "id": "core_edge_0350",
+    "source": "core_ch7_http_message",
+    "target": "core_q_ch7_http_message_02",
+    "relation": "关联试题",
+    "description": "HTTP报文关联试题“HTTP报文·填空题”"
+  },
+  {
+    "id": "core_edge_0351",
+    "source": "core_ch7_http_message",
+    "target": "core_q_ch7_http_message_03",
+    "relation": "关联试题",
+    "description": "HTTP报文关联试题“HTTP报文·简答题”"
+  },
+  {
+    "id": "core_edge_0352",
+    "source": "core_ch7_persistent_http",
+    "target": "core_q_ch7_persistent_http_01",
+    "relation": "关联试题",
+    "description": "持续连接HTTP关联试题“持续连接HTTP·单选题”"
+  },
+  {
+    "id": "core_edge_0353",
+    "source": "core_ch7_persistent_http",
+    "target": "core_q_ch7_persistent_http_02",
+    "relation": "关联试题",
+    "description": "持续连接HTTP关联试题“持续连接HTTP·填空题”"
+  },
+  {
+    "id": "core_edge_0354",
+    "source": "core_ch7_persistent_http",
+    "target": "core_q_ch7_persistent_http_03",
+    "relation": "关联试题",
+    "description": "持续连接HTTP关联试题“持续连接HTTP·计算题”"
+  },
+  {
+    "id": "core_edge_0355",
+    "source": "core_ch7_cookie_session",
+    "target": "core_q_ch7_cookie_session_01",
+    "relation": "关联试题",
+    "description": "Cookie与会话关联试题“Cookie与会话·单选题”"
+  },
+  {
+    "id": "core_edge_0356",
+    "source": "core_ch7_cookie_session",
+    "target": "core_q_ch7_cookie_session_02",
+    "relation": "关联试题",
+    "description": "Cookie与会话关联试题“Cookie与会话·填空题”"
+  },
+  {
+    "id": "core_edge_0357",
+    "source": "core_ch7_cookie_session",
+    "target": "core_q_ch7_cookie_session_03",
+    "relation": "关联试题",
+    "description": "Cookie与会话关联试题“Cookie与会话·简答题”"
+  },
+  {
+    "id": "core_edge_0358",
+    "source": "core_ch7_web_cache",
+    "target": "core_q_ch7_web_cache_01",
+    "relation": "关联试题",
+    "description": "Web缓存与代理关联试题“Web缓存与代理·单选题”"
+  },
+  {
+    "id": "core_edge_0359",
+    "source": "core_ch7_web_cache",
+    "target": "core_q_ch7_web_cache_02",
+    "relation": "关联试题",
+    "description": "Web缓存与代理关联试题“Web缓存与代理·填空题”"
+  },
+  {
+    "id": "core_edge_0360",
+    "source": "core_ch7_web_cache",
+    "target": "core_q_ch7_web_cache_03",
+    "relation": "关联试题",
+    "description": "Web缓存与代理关联试题“Web缓存与代理·简答题”"
+  },
+  {
+    "id": "core_edge_0361",
+    "source": "core_ch7_https_tls",
+    "target": "core_q_ch7_https_tls_01",
+    "relation": "关联试题",
+    "description": "HTTPS与TLS关联试题“HTTPS与TLS·单选题”"
+  },
+  {
+    "id": "core_edge_0362",
+    "source": "core_ch7_https_tls",
+    "target": "core_q_ch7_https_tls_02",
+    "relation": "关联试题",
+    "description": "HTTPS与TLS关联试题“HTTPS与TLS·填空题”"
+  },
+  {
+    "id": "core_edge_0363",
+    "source": "core_ch7_https_tls",
+    "target": "core_q_ch7_https_tls_03",
+    "relation": "关联试题",
+    "description": "HTTPS与TLS关联试题“HTTPS与TLS·简答题”"
+  },
+  {
+    "id": "core_edge_0364",
+    "source": "core_ch7_http2",
+    "target": "core_q_ch7_http2_01",
+    "relation": "关联试题",
+    "description": "HTTP/2关联试题“HTTP/2·单选题”"
+  },
+  {
+    "id": "core_edge_0365",
+    "source": "core_ch7_http2",
+    "target": "core_q_ch7_http2_02",
+    "relation": "关联试题",
+    "description": "HTTP/2关联试题“HTTP/2·填空题”"
+  },
+  {
+    "id": "core_edge_0366",
+    "source": "core_ch7_http2",
+    "target": "core_q_ch7_http2_03",
+    "relation": "关联试题",
+    "description": "HTTP/2关联试题“HTTP/2·简答题”"
+  },
+  {
+    "id": "core_edge_0367",
+    "source": "core_ch7_http3",
+    "target": "core_q_ch7_http3_01",
+    "relation": "关联试题",
+    "description": "HTTP/3关联试题“HTTP/3·单选题”"
+  },
+  {
+    "id": "core_edge_0368",
+    "source": "core_ch7_http3",
+    "target": "core_q_ch7_http3_02",
+    "relation": "关联试题",
+    "description": "HTTP/3关联试题“HTTP/3·填空题”"
+  },
+  {
+    "id": "core_edge_0369",
+    "source": "core_ch7_http3",
+    "target": "core_q_ch7_http3_03",
+    "relation": "关联试题",
+    "description": "HTTP/3关联试题“HTTP/3·简答题”"
+  },
+  {
+    "id": "core_edge_0370",
+    "source": "core_ch7_ftp",
+    "target": "core_q_ch7_ftp_01",
+    "relation": "关联试题",
+    "description": "FTP协议关联试题“FTP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0371",
+    "source": "core_ch7_ftp",
+    "target": "core_q_ch7_ftp_02",
+    "relation": "关联试题",
+    "description": "FTP协议关联试题“FTP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0372",
+    "source": "core_ch7_ftp",
+    "target": "core_q_ch7_ftp_03",
+    "relation": "关联试题",
+    "description": "FTP协议关联试题“FTP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0373",
+    "source": "core_ch7_email",
+    "target": "core_q_ch7_email_01",
+    "relation": "关联试题",
+    "description": "电子邮件系统关联试题“电子邮件系统·单选题”"
+  },
+  {
+    "id": "core_edge_0374",
+    "source": "core_ch7_email",
+    "target": "core_q_ch7_email_02",
+    "relation": "关联试题",
+    "description": "电子邮件系统关联试题“电子邮件系统·填空题”"
+  },
+  {
+    "id": "core_edge_0375",
+    "source": "core_ch7_email",
+    "target": "core_q_ch7_email_03",
+    "relation": "关联试题",
+    "description": "电子邮件系统关联试题“电子邮件系统·简答题”"
+  },
+  {
+    "id": "core_edge_0376",
+    "source": "core_ch7_smtp",
+    "target": "core_q_ch7_smtp_01",
+    "relation": "关联试题",
+    "description": "SMTP协议关联试题“SMTP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0377",
+    "source": "core_ch7_smtp",
+    "target": "core_q_ch7_smtp_02",
+    "relation": "关联试题",
+    "description": "SMTP协议关联试题“SMTP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0378",
+    "source": "core_ch7_smtp",
+    "target": "core_q_ch7_smtp_03",
+    "relation": "关联试题",
+    "description": "SMTP协议关联试题“SMTP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0379",
+    "source": "core_ch7_mime",
+    "target": "core_q_ch7_mime_01",
+    "relation": "关联试题",
+    "description": "MIME关联试题“MIME·单选题”"
+  },
+  {
+    "id": "core_edge_0380",
+    "source": "core_ch7_mime",
+    "target": "core_q_ch7_mime_02",
+    "relation": "关联试题",
+    "description": "MIME关联试题“MIME·填空题”"
+  },
+  {
+    "id": "core_edge_0381",
+    "source": "core_ch7_mime",
+    "target": "core_q_ch7_mime_03",
+    "relation": "关联试题",
+    "description": "MIME关联试题“MIME·简答题”"
+  },
+  {
+    "id": "core_edge_0382",
+    "source": "core_ch7_pop3",
+    "target": "core_q_ch7_pop3_01",
+    "relation": "关联试题",
+    "description": "POP3协议关联试题“POP3协议·单选题”"
+  },
+  {
+    "id": "core_edge_0383",
+    "source": "core_ch7_pop3",
+    "target": "core_q_ch7_pop3_02",
+    "relation": "关联试题",
+    "description": "POP3协议关联试题“POP3协议·填空题”"
+  },
+  {
+    "id": "core_edge_0384",
+    "source": "core_ch7_pop3",
+    "target": "core_q_ch7_pop3_03",
+    "relation": "关联试题",
+    "description": "POP3协议关联试题“POP3协议·简答题”"
+  },
+  {
+    "id": "core_edge_0385",
+    "source": "core_ch7_imap",
+    "target": "core_q_ch7_imap_01",
+    "relation": "关联试题",
+    "description": "IMAP协议关联试题“IMAP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0386",
+    "source": "core_ch7_imap",
+    "target": "core_q_ch7_imap_02",
+    "relation": "关联试题",
+    "description": "IMAP协议关联试题“IMAP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0387",
+    "source": "core_ch7_imap",
+    "target": "core_q_ch7_imap_03",
+    "relation": "关联试题",
+    "description": "IMAP协议关联试题“IMAP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0388",
+    "source": "core_ch7_dhcp",
+    "target": "core_q_ch7_dhcp_01",
+    "relation": "关联试题",
+    "description": "DHCP协议关联试题“DHCP协议·单选题”"
+  },
+  {
+    "id": "core_edge_0389",
+    "source": "core_ch7_dhcp",
+    "target": "core_q_ch7_dhcp_02",
+    "relation": "关联试题",
+    "description": "DHCP协议关联试题“DHCP协议·填空题”"
+  },
+  {
+    "id": "core_edge_0390",
+    "source": "core_ch7_dhcp",
+    "target": "core_q_ch7_dhcp_03",
+    "relation": "关联试题",
+    "description": "DHCP协议关联试题“DHCP协议·简答题”"
+  },
+  {
+    "id": "core_edge_0391",
+    "source": "core_ch7_url_uri",
+    "target": "core_q_ch7_url_uri_01",
+    "relation": "关联试题",
+    "description": "URI与URL关联试题“URI与URL·单选题”"
+  },
+  {
+    "id": "core_edge_0392",
+    "source": "core_ch7_url_uri",
+    "target": "core_q_ch7_url_uri_02",
+    "relation": "关联试题",
+    "description": "URI与URL关联试题“URI与URL·填空题”"
+  },
+  {
+    "id": "core_edge_0393",
+    "source": "core_ch7_url_uri",
+    "target": "core_q_ch7_url_uri_03",
+    "relation": "关联试题",
+    "description": "URI与URL关联试题“URI与URL·简答题”"
+  },
+  {
+    "id": "core_edge_0394",
+    "source": "core_ch7_websocket",
+    "target": "core_q_ch7_websocket_01",
+    "relation": "关联试题",
+    "description": "WebSocket协议关联试题“WebSocket协议·单选题”"
+  },
+  {
+    "id": "core_edge_0395",
+    "source": "core_ch7_websocket",
+    "target": "core_q_ch7_websocket_02",
+    "relation": "关联试题",
+    "description": "WebSocket协议关联试题“WebSocket协议·填空题”"
+  },
+  {
+    "id": "core_edge_0396",
+    "source": "core_ch7_websocket",
+    "target": "core_q_ch7_websocket_03",
+    "relation": "关联试题",
+    "description": "WebSocket协议关联试题“WebSocket协议·简答题”"
+  },
+  {
+    "id": "core_edge_0397",
+    "source": "core_ch6_tcp",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "core_ch6_tcp关联案例“TCP拥塞控制分析”"
+  },
+  {
+    "id": "core_edge_0398",
+    "source": "core_ch6_congestion",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "core_ch6_congestion关联案例“TCP拥塞控制分析”"
+  },
+  {
+    "id": "core_edge_0399",
+    "source": "core_ch6_slow_start",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "core_ch6_slow_start关联案例“TCP拥塞控制分析”"
+  },
+  {
+    "id": "core_edge_0400",
+    "source": "core_ch6_congestion_avoidance",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "core_ch6_congestion_avoidance关联案例“TCP拥塞控制分析”"
+  },
+  {
+    "id": "core_edge_0401",
+    "source": "core_ch6_fast_retransmit",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "core_ch6_fast_retransmit关联案例“TCP拥塞控制分析”"
+  },
+  {
+    "id": "core_edge_0402",
+    "source": "core_ch6_fast_recovery",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": "core_ch6_fast_recovery关联案例“TCP拥塞控制分析”"
+  },
+  {
+    "id": "core_edge_0403",
+    "source": "core_ch5_routing_algorithm",
+    "target": "core_case_routing_simulation",
+    "relation": "相关案例",
+    "description": "core_ch5_routing_algorithm关联案例“路由算法模拟”"
+  },
+  {
+    "id": "core_edge_0404",
+    "source": "core_ch5_distance_vector",
+    "target": "core_case_routing_simulation",
+    "relation": "相关案例",
+    "description": "core_ch5_distance_vector关联案例“路由算法模拟”"
+  },
+  {
+    "id": "core_edge_0405",
+    "source": "core_ch5_link_state",
+    "target": "core_case_routing_simulation",
+    "relation": "相关案例",
+    "description": "core_ch5_link_state关联案例“路由算法模拟”"
+  },
+  {
+    "id": "core_edge_0406",
+    "source": "core_ch5_rip",
+    "target": "core_case_routing_simulation",
+    "relation": "相关案例",
+    "description": "core_ch5_rip关联案例“路由算法模拟”"
+  },
+  {
+    "id": "core_edge_0407",
+    "source": "core_ch5_ospf",
+    "target": "core_case_routing_simulation",
+    "relation": "相关案例",
+    "description": "core_ch5_ospf关联案例“路由算法模拟”"
+  },
+  {
+    "id": "core_edge_0408",
+    "source": "core_ch7_http",
+    "target": "core_case_http_capture",
+    "relation": "相关案例",
+    "description": "core_ch7_http关联案例“HTTP协议抓包分析”"
+  },
+  {
+    "id": "core_edge_0409",
+    "source": "core_ch7_http_message",
+    "target": "core_case_http_capture",
+    "relation": "相关案例",
+    "description": "core_ch7_http_message关联案例“HTTP协议抓包分析”"
+  },
+  {
+    "id": "core_edge_0410",
+    "source": "core_ch7_persistent_http",
+    "target": "core_case_http_capture",
+    "relation": "相关案例",
+    "description": "core_ch7_persistent_http关联案例“HTTP协议抓包分析”"
+  },
+  {
+    "id": "core_edge_0411",
+    "source": "core_ch7_cookie_session",
+    "target": "core_case_http_capture",
+    "relation": "相关案例",
+    "description": "core_ch7_cookie_session关联案例“HTTP协议抓包分析”"
+  },
+  {
+    "id": "core_edge_0412",
+    "source": "core_ch7_https_tls",
+    "target": "core_case_http_capture",
+    "relation": "相关案例",
+    "description": "core_ch7_https_tls关联案例“HTTP协议抓包分析”"
+  },
+  {
+    "id": "core_edge_0413",
+    "source": "core_ch7_dns",
+    "target": "core_case_dns_resolution",
+    "relation": "相关案例",
+    "description": "core_ch7_dns关联案例“DNS解析过程”"
+  },
+  {
+    "id": "core_edge_0414",
+    "source": "core_ch7_dns_hierarchy",
+    "target": "core_case_dns_resolution",
+    "relation": "相关案例",
+    "description": "core_ch7_dns_hierarchy关联案例“DNS解析过程”"
+  },
+  {
+    "id": "core_edge_0415",
+    "source": "core_ch7_dns_resolution",
+    "target": "core_case_dns_resolution",
+    "relation": "相关案例",
+    "description": "core_ch7_dns_resolution关联案例“DNS解析过程”"
+  },
+  {
+    "id": "core_edge_0416",
+    "source": "core_ch7_dns_cache",
+    "target": "core_case_dns_resolution",
+    "relation": "相关案例",
+    "description": "core_ch7_dns_cache关联案例“DNS解析过程”"
+  },
+  {
+    "id": "core_edge_0417",
+    "source": "core_ch7_dns_rr",
+    "target": "core_case_dns_resolution",
+    "relation": "相关案例",
+    "description": "core_ch7_dns_rr关联案例“DNS解析过程”"
+  },
+  {
+    "id": "core_edge_0418",
+    "source": "core_ch6_handshake",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": "core_ch6_handshake关联案例“TCP三次握手与四次挥手”"
+  },
+  {
+    "id": "core_edge_0419",
+    "source": "core_ch6_seq_ack",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": "core_ch6_seq_ack关联案例“TCP三次握手与四次挥手”"
+  },
+  {
+    "id": "core_edge_0420",
+    "source": "core_ch6_connection_release",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": "core_ch6_connection_release关联案例“TCP三次握手与四次挥手”"
+  },
+  {
+    "id": "core_edge_0421",
+    "source": "core_ch6_time_wait",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": "core_ch6_time_wait关联案例“TCP三次握手与四次挥手”"
+  },
+  {
+    "id": "core_edge_0422",
+    "source": "core_ch6_tcp_header",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": "core_ch6_tcp_header关联案例“TCP三次握手与四次挥手”"
+  },
+  {
+    "id": "core_edge_0423",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_case_subnetting",
+    "relation": "相关案例",
+    "description": "core_ch5_ipv4_addressing关联案例“子网划分计算”"
+  },
+  {
+    "id": "core_edge_0424",
+    "source": "core_ch5_subnet_mask",
+    "target": "core_case_subnetting",
+    "relation": "相关案例",
+    "description": "core_ch5_subnet_mask关联案例“子网划分计算”"
+  },
+  {
+    "id": "core_edge_0425",
+    "source": "core_ch5_subnetting",
+    "target": "core_case_subnetting",
+    "relation": "相关案例",
+    "description": "core_ch5_subnetting关联案例“子网划分计算”"
+  },
+  {
+    "id": "core_edge_0426",
+    "source": "core_ch5_cidr",
+    "target": "core_case_subnetting",
+    "relation": "相关案例",
+    "description": "core_ch5_cidr关联案例“子网划分计算”"
+  },
+  {
+    "id": "core_edge_0427",
+    "source": "core_ch5_longest_prefix",
+    "target": "core_case_subnetting",
+    "relation": "相关案例",
+    "description": "core_ch5_longest_prefix关联案例“子网划分计算”"
+  },
+  {
+    "id": "core_edge_0428",
+    "source": "core_ch5_nat",
+    "target": "core_case_nat",
+    "relation": "相关案例",
+    "description": "core_ch5_nat关联案例“NAT工作原理”"
+  },
+  {
+    "id": "core_edge_0429",
+    "source": "core_ch5_ipv4_addressing",
+    "target": "core_case_nat",
+    "relation": "相关案例",
+    "description": "core_ch5_ipv4_addressing关联案例“NAT工作原理”"
+  },
+  {
+    "id": "core_edge_0430",
+    "source": "core_ch5_router",
+    "target": "core_case_nat",
+    "relation": "相关案例",
+    "description": "core_ch5_router关联案例“NAT工作原理”"
+  },
+  {
+    "id": "core_edge_0431",
+    "source": "core_ch6_port",
+    "target": "core_case_nat",
+    "relation": "相关案例",
+    "description": "core_ch6_port关联案例“NAT工作原理”"
+  },
+  {
+    "id": "core_edge_0432",
+    "source": "core_ch6_socket",
+    "target": "core_case_nat",
+    "relation": "相关案例",
+    "description": "core_ch6_socket关联案例“NAT工作原理”"
+  },
+  {
+    "id": "core_edge_0433",
+    "source": "core_ch7_socket_programming",
+    "target": "core_case_socket",
+    "relation": "相关案例",
+    "description": "core_ch7_socket_programming关联案例“Socket编程实践”"
+  },
+  {
+    "id": "core_edge_0434",
+    "source": "core_ch6_socket",
+    "target": "core_case_socket",
+    "relation": "相关案例",
+    "description": "core_ch6_socket关联案例“Socket编程实践”"
+  },
+  {
+    "id": "core_edge_0435",
+    "source": "core_ch6_tcp",
+    "target": "core_case_socket",
+    "relation": "相关案例",
+    "description": "core_ch6_tcp关联案例“Socket编程实践”"
+  },
+  {
+    "id": "core_edge_0436",
+    "source": "core_ch6_udp",
+    "target": "core_case_socket",
+    "relation": "相关案例",
+    "description": "core_ch6_udp关联案例“Socket编程实践”"
+  },
+  {
+    "id": "core_edge_0437",
+    "source": "core_ch6_multiplexing",
+    "target": "core_case_socket",
+    "relation": "相关案例",
+    "description": "core_ch6_multiplexing关联案例“Socket编程实践”"
   },
   {
     "id": "edge_ch8_8c0472c1",

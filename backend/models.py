@@ -16,6 +16,8 @@ class NodeType(str, Enum):
     ALGORITHM = "算法"
     PRINCIPLE = "原理"
     TECHNOLOGY = "技术"
+    DEVICE = "设备"
+    SERVICE = "服务"
 
 
 class RelationType(str, Enum):
@@ -120,6 +122,9 @@ class CaseBase(BaseModel):
     chapter: Chapter = Field(Chapter.CH6, description="所属章节")
     difficulty: int = Field(1, ge=1, le=5, description="难度等级 1-5")
     related_nodes: List[str] = Field(default_factory=list, description="关联知识点ID列表")
+    background: str = Field("", description="案例背景")
+    steps: List[str] = Field(default_factory=list, description="案例实施步骤")
+    analysis: str = Field("", description="案例分析与结论")
     content: str = Field("", description="案例详细内容")
     tags: List[str] = Field(default_factory=list, description="标签")
     image_urls: List[str] = Field(default_factory=list, description="配图URL列表")
@@ -136,6 +141,9 @@ class CaseUpdate(BaseModel):
     chapter: Optional[Chapter] = None
     difficulty: Optional[int] = None
     related_nodes: Optional[List[str]] = None
+    background: Optional[str] = None
+    steps: Optional[List[str]] = None
+    analysis: Optional[str] = None
     content: Optional[str] = None
     tags: Optional[List[str]] = None
     image_urls: Optional[List[str]] = None
@@ -163,15 +171,19 @@ class QuestionType(str, Enum):
 class QuestionBase(BaseModel):
     name: str = Field("", description="题目名称（在图中显示）")
     title: str = Field(..., description="题目标题/题干")
+    question: str = Field("", description="兼容独立题库的题干字段")
     type: QuestionType = Field(..., description="题型")
     chapter: Chapter = Field(Chapter.CH6, description="所属章节")
     description: str = Field("", description="题目描述")
     keywords: List[str] = Field(default_factory=list, description="关键词列表")
     related_nodes: List[str] = Field(default_factory=list, description="关联知识点ID列表")
+    knowledge_point_id: Optional[str] = Field(None, description="主要关联知识点ID")
     options: List[str] = Field(default_factory=list, description="选项列表")
     answer: str = Field("", description="参考答案")
     explanation: str = Field("", description="解析")
+    analysis: str = Field("", description="兼容独立题库的解析字段")
     difficulty: int = Field(1, ge=1, le=5, description="难度等级 1-5")
+    difficulty_label: Optional[str] = Field(None, description="难度中文分级：易/中/难")
 
 
 class QuestionCreate(QuestionBase):
@@ -181,15 +193,19 @@ class QuestionCreate(QuestionBase):
 class QuestionUpdate(BaseModel):
     name: Optional[str] = None
     title: Optional[str] = None
+    question: Optional[str] = None
     type: Optional[QuestionType] = None
     chapter: Optional[Chapter] = None
     description: Optional[str] = None
     keywords: Optional[List[str]] = None
     related_nodes: Optional[List[str]] = None
+    knowledge_point_id: Optional[str] = None
     options: Optional[List[str]] = None
     answer: Optional[str] = None
     explanation: Optional[str] = None
+    analysis: Optional[str] = None
     difficulty: Optional[int] = None
+    difficulty_label: Optional[str] = None
 
 
 class Question(QuestionBase):

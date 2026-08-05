@@ -1,0 +1,461 @@
+[
+  {
+    "id": "core_ch5_network_layer",
+    "name": "网络层",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "网络层负责把分组从源主机逐跳交付到目的主机，核心任务包括逻辑寻址、路由选择和分组转发。",
+    "keywords": [
+      "分组交付",
+      "逻辑寻址",
+      "路由",
+      "转发"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ip_service",
+    "name": "IP数据报服务",
+    "type": "服务",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "网际协议向上层提供无连接、尽最大努力交付的数据报服务，不保证可靠性、顺序或时延。",
+    "keywords": [
+      "无连接",
+      "尽最大努力",
+      "数据报",
+      "不可靠交付"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv4",
+    "name": "IPv4协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv4使用32位地址标识接口，并通过数据报首部支持分片、生存时间和上层协议标识等功能。",
+    "keywords": [
+      "32位地址",
+      "数据报",
+      "TTL",
+      "分片"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv4_header",
+    "name": "IPv4数据报首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv4首部通常为20字节，包含版本、首部长度、总长度、标识、分片字段、TTL、协议和首部检验和等。",
+    "keywords": [
+      "总长度",
+      "TTL",
+      "首部检验和",
+      "分片偏移"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv4_addressing",
+    "name": "IPv4地址",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv4地址由网络前缀和主机号组成，采用点分十进制表示，并分配给网络接口而非抽象主机本身。",
+    "keywords": [
+      "网络前缀",
+      "主机号",
+      "点分十进制",
+      "接口"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_classful_addressing",
+    "name": "分类编址",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "分类编址把IPv4单播地址划分为A、B、C类网络，网络号长度固定，容易产生地址空间浪费。",
+    "keywords": [
+      "A类",
+      "B类",
+      "C类",
+      "网络号"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_subnet_mask",
+    "name": "子网掩码",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "子网掩码以连续的1标识网络前缀，以连续的0标识主机部分，可与IPv4地址按位与得到网络地址。",
+    "keywords": [
+      "按位与",
+      "网络地址",
+      "前缀长度",
+      "掩码"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_subnetting",
+    "name": "子网划分",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "子网划分从主机号借位形成子网号，使一个地址块可按组织结构拆分为多个更小广播域。",
+    "keywords": [
+      "借位",
+      "子网号",
+      "可用主机",
+      "广播地址"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_cidr",
+    "name": "无分类域间路由CIDR",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "CIDR使用可变长度前缀a.b.c.d/x描述地址块，支持路由聚合并提高IPv4地址利用率。",
+    "keywords": [
+      "CIDR",
+      "可变长前缀",
+      "地址块",
+      "路由聚合"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_longest_prefix",
+    "name": "最长前缀匹配",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "路由器在多条匹配路由中选择网络前缀最长的一条，使更具体的路由优先于聚合路由。",
+    "keywords": [
+      "最长匹配",
+      "转发表",
+      "具体路由",
+      "下一跳"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv6",
+    "name": "IPv6协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv6使用128位地址和固定40字节基本首部，扩大地址空间并简化中间路由器处理。",
+    "keywords": [
+      "128位地址",
+      "固定首部",
+      "扩展首部",
+      "下一首部"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ipv6_header",
+    "name": "IPv6基本首部",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "IPv6基本首部包含版本、流量类别、流标签、有效载荷长度、下一首部和跳数限制等字段，不含首部检验和。",
+    "keywords": [
+      "流标签",
+      "跳数限制",
+      "下一首部",
+      "有效载荷长度"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_transition",
+    "name": "IPv4向IPv6过渡",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "双协议栈、隧道和协议转换可使IPv4与IPv6网络在长期过渡阶段互通。",
+    "keywords": [
+      "双协议栈",
+      "隧道",
+      "协议转换",
+      "过渡机制"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_arp",
+    "name": "地址解析协议ARP",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "ARP在同一链路上依据IPv4地址查询对应MAC地址，请求通常广播，响应通常单播，并将结果缓存。",
+    "keywords": [
+      "IP到MAC",
+      "广播请求",
+      "单播响应",
+      "ARP缓存"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_icmp",
+    "name": "网际控制报文协议ICMP",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "ICMP封装在IP数据报中传递差错报告和询问信息，例如目的不可达、超时与回显请求。",
+    "keywords": [
+      "差错报告",
+      "目的不可达",
+      "超时",
+      "回显"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ping",
+    "name": "Ping诊断",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "Ping利用ICMP回显请求与回显回答测试目的主机可达性，并估计往返时间和丢包情况。",
+    "keywords": [
+      "回显请求",
+      "回显回答",
+      "RTT",
+      "可达性"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_traceroute",
+    "name": "Traceroute路径探测",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "Traceroute逐步增加TTL或跳数限制，利用中间路由器返回的ICMP超时报文识别路径上的各跳。",
+    "keywords": [
+      "TTL",
+      "逐跳探测",
+      "ICMP超时",
+      "路径"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_nat",
+    "name": "网络地址转换NAT",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "NAT在边界设备上改写私网地址与端口，使多台内部主机共享少量公网IPv4地址。",
+    "keywords": [
+      "私网地址",
+      "公网地址",
+      "端口映射",
+      "NAPT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_router",
+    "name": "路由器",
+    "type": "设备",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "路由器连接不同网络，依据转发表执行逐包转发，并通过路由协议学习或计算可达路径。",
+    "keywords": [
+      "路由器",
+      "输入端口",
+      "交换结构",
+      "输出端口"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_forwarding_table",
+    "name": "转发表",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "转发表记录目的前缀、下一跳和输出接口，是路由器数据平面实施转发决策的直接依据。",
+    "keywords": [
+      "目的前缀",
+      "下一跳",
+      "输出接口",
+      "数据平面"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_routing_algorithm",
+    "name": "路由选择算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "路由选择算法依据拓扑和链路代价计算源到目的的较优路径，并把结果用于生成转发表。",
+    "keywords": [
+      "路径选择",
+      "链路代价",
+      "拓扑",
+      "控制平面"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_distance_vector",
+    "name": "距离向量算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "距离向量算法依据Bellman-Ford思想与邻居交换距离向量，分布式迭代更新到各目的网络的代价。",
+    "keywords": [
+      "Bellman-Ford",
+      "距离向量",
+      "邻居交换",
+      "计数到无穷"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_link_state",
+    "name": "链路状态算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "链路状态算法通过泛洪获得全网拓扑，再在本地运行Dijkstra算法计算最短路径树。",
+    "keywords": [
+      "链路状态",
+      "泛洪",
+      "Dijkstra",
+      "最短路径树"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_rip",
+    "name": "RIP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "RIP是基于距离向量的内部网关协议，以跳数为度量，最大有效距离为15跳并周期交换路由信息。",
+    "keywords": [
+      "距离向量",
+      "跳数",
+      "15跳",
+      "内部网关协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_ospf",
+    "name": "OSPF协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "OSPF是链路状态内部网关协议，使用Dijkstra算法、区域层次和链路状态通告实现快速收敛。",
+    "keywords": [
+      "链路状态",
+      "区域",
+      "LSA",
+      "Dijkstra"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_as",
+    "name": "自治系统AS",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "自治系统是在统一技术管理和路由策略下运行的一组网络，对外以自治系统号标识。",
+    "keywords": [
+      "自治系统",
+      "ASN",
+      "域内路由",
+      "域间路由"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "core_ch5_bgp",
+    "name": "BGP协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "网络层",
+    "description": "BGP是自治系统之间的路径向量协议，通告AS-PATH等属性并依据策略选择可达路由。",
+    "keywords": [
+      "路径向量",
+      "AS-PATH",
+      "域间路由",
+      "路由策略"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  }
+]

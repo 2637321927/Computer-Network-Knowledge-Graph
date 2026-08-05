@@ -140,6 +140,22 @@ def get_node_neighbors(node_id: str) -> Dict:
     }
 
 
+def get_questions_for_node(node_id: str) -> List[Dict]:
+    """返回以主知识点字段或关联列表指向该节点的全部试题。"""
+    questions = _read_json(QUESTIONS_FILE)
+    return [
+        question for question in questions
+        if question.get("knowledge_point_id") == node_id
+        or node_id in question.get("related_nodes", [])
+    ]
+
+
+def get_cases_for_node(node_id: str) -> List[Dict]:
+    """返回 related_nodes 中包含该知识点的全部案例。"""
+    cases = _read_json(CASES_FILE)
+    return [case for case in cases if node_id in case.get("related_nodes", [])]
+
+
 # 关系操作
 
 def get_all_edges() -> List[Dict]:
