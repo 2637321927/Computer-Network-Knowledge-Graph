@@ -86,7 +86,14 @@ def search_nodes(keyword: str = None, chapter: str = None,
 
 def create_node(node_data: Dict) -> Dict:
     nodes = _read_json(NODES_FILE)
-    node_data["id"] = _generate_id()
+    requested_id = node_data.get("id")
+    if requested_id and any(node["id"] == requested_id for node in nodes):
+        raise ValueError(f"节点ID已存在：{requested_id}")
+    if not requested_id:
+        requested_id = _generate_id()
+        while any(node["id"] == requested_id for node in nodes):
+            requested_id = _generate_id()
+    node_data["id"] = requested_id
     nodes.append(node_data)
     _write_json(NODES_FILE, nodes)
     return node_data

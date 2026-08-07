@@ -19,10 +19,12 @@ BACKEND_DATA = ROOT / "backend" / "data"
 CORE_CHAPTERS = {"网络层", "传输层", "应用层"}
 ALLOWED_NODE_TYPES = {"协议", "概念", "技术", "算法", "设备", "服务"}
 LETTERS = "ABCD"
+CORE_VIDEO_URL = "https://www.bilibili.com/video/BV1c4411d7jb/"
 
 
 def kp(node_id: str, name: str, node_type: str, chapter: str, description: str,
-       keywords: list[str], difficulty: int = 3) -> dict[str, Any]:
+       keywords: list[str], difficulty: int = 3,
+       video_url: str | None = None) -> dict[str, Any]:
     return {
         "id": node_id,
         "name": name,
@@ -33,12 +35,12 @@ def kp(node_id: str, name: str, node_type: str, chapter: str, description: str,
         "keywords": keywords,
         "difficulty": difficulty,
         "image_urls": [],
-        "video_url": None,
+        "video_url": video_url,
     }
 
 
 NETWORK_NODES = [
-    kp("core_ch5_network_layer", "网络层", "概念", "网络层", "网络层负责把分组从源主机逐跳交付到目的主机，核心任务包括逻辑寻址、路由选择和分组转发。", ["分组交付", "逻辑寻址", "路由", "转发"], 1),
+    kp("core_ch5_network_layer", "网络层", "概念", "网络层", "网络层负责把分组从源主机逐跳交付到目的主机，核心任务包括逻辑寻址、路由选择和分组转发。", ["分组交付", "逻辑寻址", "路由", "转发"], 1, video_url=CORE_VIDEO_URL),
     kp("core_ch5_ip_service", "IP数据报服务", "服务", "网络层", "网际协议向上层提供无连接、尽最大努力交付的数据报服务，不保证可靠性、顺序或时延。", ["无连接", "尽最大努力", "数据报", "不可靠交付"], 2),
     kp("core_ch5_ipv4", "IPv4协议", "协议", "网络层", "IPv4使用32位地址标识接口，并通过数据报首部支持分片、生存时间和上层协议标识等功能。", ["32位地址", "数据报", "TTL", "分片"], 2),
     kp("core_ch5_ipv4_header", "IPv4数据报首部", "概念", "网络层", "IPv4首部通常为20字节，包含版本、首部长度、总长度、标识、分片字段、TTL、协议和首部检验和等。", ["总长度", "TTL", "首部检验和", "分片偏移"], 3),
@@ -69,7 +71,7 @@ NETWORK_NODES = [
 
 
 TRANSPORT_NODES = [
-    kp("core_ch6_transport_layer", "传输层", "概念", "传输层", "传输层在端系统中为应用进程提供端到端逻辑通信，并完成复用分用、差错检测与可选的可靠传输。", ["进程通信", "端到端", "复用分用", "可靠传输"], 1),
+    kp("core_ch6_transport_layer", "传输层", "概念", "传输层", "传输层在端系统中为应用进程提供端到端逻辑通信，并完成复用分用、差错检测与可选的可靠传输。", ["进程通信", "端到端", "复用分用", "可靠传输"], 1, video_url=CORE_VIDEO_URL),
     kp("core_ch6_process_communication", "进程到进程通信", "服务", "传输层", "传输层把网络层的主机到主机交付扩展为应用进程之间的逻辑通信。", ["进程", "逻辑通信", "端系统", "应用数据"], 1),
     kp("core_ch6_multiplexing", "复用与分用", "技术", "传输层", "发送端把多个套接字的数据复用到传输层报文，接收端依据端口及连接标识把报文分用给正确进程。", ["复用", "分用", "套接字", "连接标识"], 2),
     kp("core_ch6_port", "端口号", "概念", "传输层", "端口号是16位进程标识，0到1023通常为熟知端口，客户端常使用临时端口。", ["16位", "熟知端口", "临时端口", "进程标识"], 2),
@@ -100,7 +102,7 @@ TRANSPORT_NODES = [
 
 
 APPLICATION_NODES = [
-    kp("core_ch7_application_layer", "应用层", "概念", "应用层", "应用层定义网络应用进程交换的报文类型、语义、格式和交互规则，直接为用户应用提供服务。", ["应用协议", "报文", "进程", "交互规则"], 1),
+    kp("core_ch7_application_layer", "应用层", "概念", "应用层", "应用层定义网络应用进程交换的报文类型、语义、格式和交互规则，直接为用户应用提供服务。", ["应用协议", "报文", "进程", "交互规则"], 1, video_url=CORE_VIDEO_URL),
     kp("core_ch7_architecture", "网络应用体系结构", "概念", "应用层", "网络应用通常采用客户-服务器、对等或混合体系结构，体系结构决定进程组织和资源分布方式。", ["客户-服务器", "P2P", "进程组织", "体系结构"], 2),
     kp("core_ch7_client_server", "客户-服务器模式", "技术", "应用层", "客户进程主动请求服务，服务器在固定地址持续运行并响应多个客户，便于集中管理。", ["客户", "服务器", "请求响应", "固定地址"], 2),
     kp("core_ch7_p2p", "对等P2P模式", "技术", "应用层", "P2P中对等方既可请求也可提供资源，具有自扩展性，但管理、安全和可用性更复杂。", ["对等方", "自扩展", "去中心化", "资源共享"], 3),

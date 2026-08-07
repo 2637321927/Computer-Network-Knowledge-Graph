@@ -44,6 +44,18 @@ npm run dev
 
 两个终端都保持运行，浏览器访问 http://localhost:5173 即可使用。
 
+## 交付材料
+
+- [项目简短报告](docs/project-report.md)
+- [最终验收清单](docs/acceptance-checklist.md)
+- [核心篇课程讲义](docs/courseware/core-courseware.md)
+- [核心篇实验指导](docs/experiments/core-experiment-guide.md)
+- [核心篇数字资源目录](docs/resources/core-resource-catalog.md)
+- [平台演示截图](docs/demo/README.md)
+- [每周进度汇报](docs/progress/)
+
+实习日志与实习总结报告按要求在仓库外单独交付，不提交到本仓库。
+
 ## 功能概览
 
 ### 知识图谱页（首页）
@@ -91,7 +103,7 @@ npm run dev
 │   │   ├── nodes.json        # 知识点（200+）
 │   │   ├── edges.json        # 关系
 │   │   ├── cases.json        # 案例（20+）
-│   │   └── questions.json    # 试题（600+）
+│   │   └── questions.json    # 试题（630）
 │   └── requirements.txt
 │
 ├── frontend/                 # React + Vite + TypeScript
@@ -108,7 +120,9 @@ npm run dev
 │   ├── package.json
 │   └── vite.config.ts
 │
-└── 要求.txt                  # 需求文档
+├── data/core/                # 核心篇六个独立交付JSON
+├── docs/                     # 报告、讲义、实验、截图和进度材料
+└── scripts/                  # 幂等数据生成与覆盖检查脚本
 ```
 
 ## 数据模型
@@ -188,21 +202,20 @@ npm run dev
 
 | 指标 | 要求 | 状态 |
 |------|------|------|
-| 知识点 | >=200 个 | 待填充（现有 15 示例） |
-| 试题 | >=600 道 | 待填充（现有 5 示例） |
-| 案例 | >=20 个 | 待填充（现有 3 示例） |
+| 知识点 | >=200 个 | 已完成（209个概念知识点） |
+| 试题 | >=600 道 | 已完成（630道，每知识点至少3道） |
+| 案例 | >=20 个 | 已完成（21个） |
 | 章节 | 3 篇 10 章 | 已实现 |
 | 关系类型 | 8 种 | 已实现 |
 | 三层结构 | 概念/案例/问题 | 已实现 |
 | CRUD | 完整增删改查 | 已实现 |
-| 可视化 | 力导向交互图 | 已实现 |
+| 可视化 | 二维/三维力导向交互图 | 已实现 |
 | 搜索筛选 | 章节/层次/关键词 | 已实现 |
 | 导入导出 | JSON 格式 | 已实现 |
 
-## 待完成
+## 后续优化
 
-1. 按 3 篇 10 章扩充知识点至 200+
-2. 收集试题至 600+ 道
-3. 完善案例库至 20+ 个
-4. 撰写实习报告（8.30 前）
-5. 每周进度汇报
+1. 将JSON存储迁移至图数据库，提升并发写入和复杂图查询能力。
+2. 增加PCAP、Packet Tracer拓扑与Socket可运行工程附件。
+3. 对Three.js和图谱组件实施动态加载与分包，降低首屏包体。
+4. 增加随机组卷、答题反馈与个性化学习路径推荐。

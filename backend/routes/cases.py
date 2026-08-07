@@ -72,8 +72,3 @@ async def remove_case(case_id: str):
         raise HTTPException(status_code=404, detail="案例不存在")
     delete_node(case_id)
     return {"message": "删除成功"}
-async def remove_case(case_id: str):
-    """删除案例"""
-    if not delete_case(case_id):
-        raise HTTPException(status_code=404, detail="案例不存在")
-    return {"message": "删除成功"}
