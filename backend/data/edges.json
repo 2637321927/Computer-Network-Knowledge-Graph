@@ -3052,6 +3052,1357 @@
     "description": "“ch4_vlan_trunk_8021q”在案例“同VLAN主机无法跨交换机通信：802.1Q Trunk排障”中得到应用"
   },
   {
+    "id": "edge_ch8_8c0472c1",
+    "source": "ch8_qos",
+    "target": "ch8_intserv",
+    "relation": "包含",
+    "description": "IntServ是QoS实现模型之一"
+  },
+  {
+    "id": "edge_ch8_1dddf335",
+    "source": "ch8_qos",
+    "target": "ch8_diffserv",
+    "relation": "包含",
+    "description": "DiffServ是QoS实现模型之一"
+  },
+  {
+    "id": "edge_ch8_7b504459",
+    "source": "ch8_intserv",
+    "target": "ch8_diffserv",
+    "relation": "对比",
+    "description": "IntServ逐流预留 vs DiffServ逐类调度"
+  },
+  {
+    "id": "edge_ch8_6647d30a",
+    "source": "ch8_traffic_shaping",
+    "target": "ch8_token_bucket",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_e01c9825",
+    "source": "ch8_traffic_shaping",
+    "target": "ch8_leaky_bucket",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_dab61842",
+    "source": "ch8_token_bucket",
+    "target": "ch8_leaky_bucket",
+    "relation": "对比",
+    "description": "令牌桶允许突发 vs 漏桶严格平滑"
+  },
+  {
+    "id": "edge_ch8_cbc6b880",
+    "source": "ch8_qos",
+    "target": "ch8_traffic_shaping",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_6d4525d3",
+    "source": "ch8_congestion_control_network",
+    "target": "ch8_qos",
+    "relation": "应用于",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_deac988f",
+    "source": "ch8_cdn",
+    "target": "ch8_load_balance",
+    "relation": "依赖",
+    "description": "CDN依赖GSLB全局负载均衡"
+  },
+  {
+    "id": "edge_ch8_a76754fe",
+    "source": "ch8_qos",
+    "target": "ch8_cdn",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_e40839cc",
+    "source": "ch8_qos",
+    "target": "ch8_load_balance",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_3693852f",
+    "source": "ch8_http_perf",
+    "target": "ch8_qos",
+    "relation": "应用于",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_db8ee7f4",
+    "source": "ch8_bdp",
+    "target": "ch8_qos",
+    "relation": "前置知识",
+    "description": "BDP是理解网络性能的基础"
+  },
+  {
+    "id": "edge_ch9_e9602585",
+    "source": "ch9_sdn",
+    "target": "ch9_openflow",
+    "relation": "包含",
+    "description": "OpenFlow是SDN的核心南向协议"
+  },
+  {
+    "id": "edge_ch9_1637911f",
+    "source": "ch9_sdn",
+    "target": "ch9_sdn_controller",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch9_b9c1361c",
+    "source": "ch9_sdn_controller",
+    "target": "ch9_openflow",
+    "relation": "依赖",
+    "description": "控制器通过OpenFlow管理交换机"
+  },
+  {
+    "id": "edge_ch9_06126aed",
+    "source": "ch9_sdn",
+    "target": "ch9_nfv",
+    "relation": "对比",
+    "description": "SDN控制转发分离 vs NFV硬件虚拟化，互补关系"
+  },
+  {
+    "id": "edge_ch9_6f3a4108",
+    "source": "ch9_sdn",
+    "target": "ch9_sd_wan",
+    "relation": "包含",
+    "description": "SD-WAN是SDN在广域网的应用"
+  },
+  {
+    "id": "edge_ch9_cbdc3d22",
+    "source": "ch9_edge_computing",
+    "target": "ch9_mec",
+    "relation": "包含",
+    "description": "MEC是边缘计算在移动网络的标准化实现"
+  },
+  {
+    "id": "edge_ch9_967a045b",
+    "source": "ch9_edge_computing",
+    "target": "ch9_fog_computing",
+    "relation": "对比",
+    "description": "边缘靠近终端 vs 雾计算处于中间层"
+  },
+  {
+    "id": "edge_ch9_c78ade94",
+    "source": "ch9_edge_computing",
+    "target": "ch9_edge_ai",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch9_d0b8c9b2",
+    "source": "ch9_sdn",
+    "target": "ch9_mininet",
+    "relation": "应用于",
+    "description": "Mininet是SDN教学实验平台"
+  },
+  {
+    "id": "edge_ch10_4700e037",
+    "source": "ch10_network_design",
+    "target": "ch10_packet_tracer_project",
+    "relation": "包含",
+    "description": "设计方法指导组网项目"
+  },
+  {
+    "id": "edge_ch10_1dbfe033",
+    "source": "ch10_network_design",
+    "target": "ch10_socket_project",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch10_9a064161",
+    "source": "ch10_network_design",
+    "target": "ch10_wireshark_project",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch10_ced6bdf2",
+    "source": "ch10_network_design",
+    "target": "ch10_http_perf_project",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch10_c0df643e",
+    "source": "ch10_network_design",
+    "target": "ch10_sdn_mininet_project",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_tcp_congestion_to_congestion_control",
+    "source": "core_ch6_congestion",
+    "target": "core_case_tcp_congestion",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_tcp_wireshark_to_tcp_handshake",
+    "source": "core_ch6_handshake",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_tcp_wireshark_to_tcp_wavehand",
+    "source": "core_ch6_connection_release",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_tcp_wireshark_to_tcp_header",
+    "source": "core_ch6_tcp_header",
+    "target": "core_case_tcp_lifecycle",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch8_cdn_accelerate_to_ch8_cdn",
+    "source": "ch8_cdn",
+    "target": "case_ch8_cdn_accelerate",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch8_cdn_accelerate_to_ch8_load_balance",
+    "source": "ch8_load_balance",
+    "target": "case_ch8_cdn_accelerate",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch8_cdn_accelerate_to_ch8_qos",
+    "source": "ch8_qos",
+    "target": "case_ch8_cdn_accelerate",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch8_token_bucket_limit_to_ch8_token_bucket",
+    "source": "ch8_token_bucket",
+    "target": "case_ch8_token_bucket_limit",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch8_token_bucket_limit_to_ch8_traffic_shaping",
+    "source": "ch8_traffic_shaping",
+    "target": "case_ch8_token_bucket_limit",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch8_token_bucket_limit_to_ch8_leaky_bucket",
+    "source": "ch8_leaky_bucket",
+    "target": "case_ch8_token_bucket_limit",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_mininet",
+    "source": "ch9_mininet",
+    "target": "case_ch9_mininet_sdn",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_openflow",
+    "source": "ch9_openflow",
+    "target": "case_ch9_mininet_sdn",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_sdn",
+    "source": "ch9_sdn",
+    "target": "case_ch9_mininet_sdn",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_sdn_controller",
+    "source": "ch9_sdn_controller",
+    "target": "case_ch9_mininet_sdn",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_edge_face_to_ch9_edge_computing",
+    "source": "ch9_edge_computing",
+    "target": "case_ch9_edge_face",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_edge_face_to_ch9_edge_ai",
+    "source": "ch9_edge_ai",
+    "target": "case_ch9_edge_face",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch9_edge_face_to_ch9_mec",
+    "source": "ch9_mec",
+    "target": "case_ch9_edge_face",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch10_campus_network_to_ch10_network_design",
+    "source": "ch10_network_design",
+    "target": "case_ch10_campus_network",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_cfd_case_ch10_campus_network_to_ch10_packet_tracer_project",
+    "source": "ch10_packet_tracer_project",
+    "target": "case_ch10_campus_network",
+    "relation": "相关案例",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_qos_01_to_ch8_qos",
+    "source": "ch8_qos",
+    "target": "q_ch8_qos_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_qos_02_to_ch8_qos",
+    "source": "ch8_qos",
+    "target": "q_ch8_qos_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_qos_03_to_ch8_qos",
+    "source": "ch8_qos",
+    "target": "q_ch8_qos_03",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_token_01_to_ch8_token_bucket",
+    "source": "ch8_token_bucket",
+    "target": "q_ch8_token_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_token_02_to_ch8_token_bucket",
+    "source": "ch8_token_bucket",
+    "target": "q_ch8_token_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_cdn_01_to_ch8_cdn",
+    "source": "ch8_cdn",
+    "target": "q_ch8_cdn_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_cdn_02_to_ch8_cdn",
+    "source": "ch8_cdn",
+    "target": "q_ch8_cdn_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_load_01_to_ch8_load_balance",
+    "source": "ch8_load_balance",
+    "target": "q_ch8_load_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_congestion_01_to_ch8_congestion_control_network",
+    "source": "ch8_congestion_control_network",
+    "target": "q_ch8_congestion_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_bdp_01_to_ch8_bdp",
+    "source": "ch8_bdp",
+    "target": "q_ch8_bdp_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_sdn_01_to_ch9_sdn",
+    "source": "ch9_sdn",
+    "target": "q_ch9_sdn_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_sdn_02_to_ch9_sdn",
+    "source": "ch9_sdn",
+    "target": "q_ch9_sdn_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_sdn_03_to_ch9_sdn",
+    "source": "ch9_sdn",
+    "target": "q_ch9_sdn_03",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_nfv_01_to_ch9_nfv",
+    "source": "ch9_nfv",
+    "target": "q_ch9_nfv_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_sdwan_01_to_ch9_sd_wan",
+    "source": "ch9_sd_wan",
+    "target": "q_ch9_sdwan_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_edge_01_to_ch9_edge_computing",
+    "source": "ch9_edge_computing",
+    "target": "q_ch9_edge_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_edge_02_to_ch9_edge_computing",
+    "source": "ch9_edge_computing",
+    "target": "q_ch9_edge_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_mininet_01_to_ch9_mininet",
+    "source": "ch9_mininet",
+    "target": "q_ch9_mininet_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch10_design_01_to_ch10_network_design",
+    "source": "ch10_network_design",
+    "target": "q_ch10_design_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch10_design_02_to_ch10_network_design",
+    "source": "ch10_network_design",
+    "target": "q_ch10_design_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch10_design_03_to_ch10_network_design",
+    "source": "ch10_network_design",
+    "target": "q_ch10_design_03",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch10_wireshark_01_to_ch10_wireshark_project",
+    "source": "ch10_wireshark_project",
+    "target": "q_ch10_wireshark_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch10_socket_01_to_ch10_socket_project",
+    "source": "ch10_socket_project",
+    "target": "q_ch10_socket_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch10_vlan_01_to_ch10_packet_tracer_project",
+    "source": "ch10_packet_tracer_project",
+    "target": "q_ch10_vlan_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_ext_f07feed1",
+    "source": "ch8_qos",
+    "target": "ch8_queue_management",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_ext_97be3a39",
+    "source": "ch8_queue_management",
+    "target": "ch8_congestion_control_network",
+    "relation": "包含",
+    "description": "RED/WFQ是队列管理的一部分"
+  },
+  {
+    "id": "edge_ch8_ext_56bee808",
+    "source": "ch8_qos",
+    "target": "ch8_traffic_engineering",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_ext_22e858d9",
+    "source": "ch8_traffic_engineering",
+    "target": "ch8_load_balance",
+    "relation": "依赖",
+    "description": ""
+  },
+  {
+    "id": "edge_ch8_ext_04799b96",
+    "source": "ch8_ha_redundancy",
+    "target": "ch8_load_balance",
+    "relation": "对比",
+    "description": "HA关注可用性 vs 负载均衡关注流量分发"
+  },
+  {
+    "id": "edge_ch8_ext_c05bf461",
+    "source": "ch8_cdn",
+    "target": "ch8_dns_perf",
+    "relation": "依赖",
+    "description": "CDN GSLB依赖DNS智能解析"
+  },
+  {
+    "id": "edge_ch8_ext_28bdcec9",
+    "source": "ch8_http_perf",
+    "target": "ch8_tls_perf",
+    "relation": "依赖",
+    "description": "HTTPS性能依赖TLS优化"
+  },
+  {
+    "id": "edge_ch8_ext_475b0049",
+    "source": "ch8_http_perf",
+    "target": "ch8_compression",
+    "relation": "包含",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_queue_01",
+    "source": "ch8_queue_management",
+    "target": "q_ch8_queue_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_queue_02",
+    "source": "ch8_queue_management",
+    "target": "q_ch8_queue_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_te_01",
+    "source": "ch8_traffic_engineering",
+    "target": "q_ch8_te_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_ha_01",
+    "source": "ch8_ha_redundancy",
+    "target": "q_ch8_ha_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_ha_02",
+    "source": "ch8_ha_redundancy",
+    "target": "q_ch8_ha_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_dns_01",
+    "source": "ch8_dns_perf",
+    "target": "q_ch8_dns_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_dns_02",
+    "source": "ch8_dns_perf",
+    "target": "q_ch8_dns_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_tls_01",
+    "source": "ch8_tls_perf",
+    "target": "q_ch8_tls_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_tls_02",
+    "source": "ch8_tls_perf",
+    "target": "q_ch8_tls_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_comp_01",
+    "source": "ch8_compression",
+    "target": "q_ch8_comp_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_comp_02",
+    "source": "ch8_compression",
+    "target": "q_ch8_comp_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_perf_overall_01",
+    "source": "ch8_qos",
+    "target": "q_ch8_perf_overall_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_perf_overall_02",
+    "source": "ch8_qos",
+    "target": "q_ch8_perf_overall_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch8_perf_overall_03",
+    "source": "ch8_qos",
+    "target": "q_ch8_perf_overall_03",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "source": "ch9_sdn",
+    "target": "ch9_sdn_dataplane",
+    "relation": "包含",
+    "description": "",
+    "id": "edge_ch9_cd443eec"
+  },
+  {
+    "source": "ch9_sdn_dataplane",
+    "target": "ch9_openflow",
+    "relation": "依赖",
+    "description": "",
+    "id": "edge_ch9_46e8153c"
+  },
+  {
+    "source": "ch9_sdn",
+    "target": "ch9_network_slicing",
+    "relation": "包含",
+    "description": "",
+    "id": "edge_ch9_3d89db63"
+  },
+  {
+    "source": "ch9_network_slicing",
+    "target": "ch9_nfv",
+    "relation": "依赖",
+    "description": "",
+    "id": "edge_ch9_d6394d21"
+  },
+  {
+    "source": "ch9_sdn",
+    "target": "ch9_ibn",
+    "relation": "包含",
+    "description": "",
+    "id": "edge_ch9_17dc7e31"
+  },
+  {
+    "source": "ch9_sdn",
+    "target": "ch9_spine_leaf",
+    "relation": "应用于",
+    "description": "",
+    "id": "edge_ch9_d6775793"
+  },
+  {
+    "source": "ch9_spine_leaf",
+    "target": "ch9_vxlan",
+    "relation": "依赖",
+    "description": "",
+    "id": "edge_ch9_68c83f75"
+  },
+  {
+    "source": "ch9_edge_computing",
+    "target": "ch9_compute_offload",
+    "relation": "包含",
+    "description": "",
+    "id": "edge_ch9_c1561ba1"
+  },
+  {
+    "source": "ch9_edge_computing",
+    "target": "ch9_iot_edge",
+    "relation": "包含",
+    "description": "",
+    "id": "edge_ch9_eac19705"
+  },
+  {
+    "source": "ch9_sdn",
+    "target": "ch9_sdn_security",
+    "relation": "包含",
+    "description": "",
+    "id": "edge_ch9_eef3323f"
+  },
+  {
+    "id": "edge_qfd_q_ch9_flow_01",
+    "source": "ch9_sdn_dataplane",
+    "target": "q_ch9_flow_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_flow_02",
+    "source": "ch9_sdn_dataplane",
+    "target": "q_ch9_flow_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_slice_01",
+    "source": "ch9_network_slicing",
+    "target": "q_ch9_slice_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_slice_02",
+    "source": "ch9_network_slicing",
+    "target": "q_ch9_slice_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_ibn_01",
+    "source": "ch9_ibn",
+    "target": "q_ch9_ibn_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_spine_01",
+    "source": "ch9_spine_leaf",
+    "target": "q_ch9_spine_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_spine_02",
+    "source": "ch9_spine_leaf",
+    "target": "q_ch9_spine_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_vxlan_01",
+    "source": "ch9_vxlan",
+    "target": "q_ch9_vxlan_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_vxlan_02",
+    "source": "ch9_vxlan",
+    "target": "q_ch9_vxlan_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_offload_01",
+    "source": "ch9_compute_offload",
+    "target": "q_ch9_offload_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_offload_02",
+    "source": "ch9_compute_offload",
+    "target": "q_ch9_offload_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_iot_01",
+    "source": "ch9_iot_edge",
+    "target": "q_ch9_iot_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_iot_02",
+    "source": "ch9_iot_edge",
+    "target": "q_ch9_iot_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_sdnsec_01",
+    "source": "ch9_sdn_security",
+    "target": "q_ch9_sdnsec_01",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_qfd_q_ch9_sdnsec_02",
+    "source": "ch9_sdn_security",
+    "target": "q_ch9_sdnsec_02",
+    "relation": "关联试题",
+    "description": ""
+  },
+  {
+    "id": "edge_project_ch8_intserv_01",
+    "source": "ch8_intserv",
+    "target": "project_q_ch8_intserv_01",
+    "relation": "关联试题",
+    "description": "IntServ 集成服务关联试题：下列关于“IntServ 集成服务”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch8_intserv_02",
+    "source": "ch8_intserv",
+    "target": "project_q_ch8_intserv_02",
+    "relation": "关联试题",
+    "description": "IntServ 集成服务关联试题：“IntServ(Integrated Services)通过 RSVP 协议在通信前为每条流预留端到端资源。它提供严格的 QoS 保证，但可扩展性差——核心路由器需维护每条流的状态。适用于企业 VoIP 等小规模场景。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_intserv_03",
+    "source": "ch8_intserv",
+    "target": "project_q_ch8_intserv_03",
+    "relation": "关联试题",
+    "description": "IntServ 集成服务关联试题：简述“IntServ 集成服务”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_diffserv_01",
+    "source": "ch8_diffserv",
+    "target": "project_q_ch8_diffserv_01",
+    "relation": "关联试题",
+    "description": "DiffServ 区分服务关联试题：下列关于“DiffServ 区分服务”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch8_diffserv_02",
+    "source": "ch8_diffserv",
+    "target": "project_q_ch8_diffserv_02",
+    "relation": "关联试题",
+    "description": "DiffServ 区分服务关联试题：“DiffServ(Differentiated Services)将流量分成若干类(如 EF 快速转发、AF 保证转发、BE 尽力而为)，在 IP 头的 DSCP 字段打标记。路由器按类调度，不维护单流状态，扩展性好，是互联网 QoS 的主流方案。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_diffserv_03",
+    "source": "ch8_diffserv",
+    "target": "project_q_ch8_diffserv_03",
+    "relation": "关联试题",
+    "description": "DiffServ 区分服务关联试题：简述“DiffServ 区分服务”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_token_bucket_03",
+    "source": "ch8_token_bucket",
+    "target": "project_q_ch8_token_bucket_03",
+    "relation": "关联试题",
+    "description": "令牌桶算法关联试题：简述“令牌桶算法”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_leaky_bucket_01",
+    "source": "ch8_leaky_bucket",
+    "target": "project_q_ch8_leaky_bucket_01",
+    "relation": "关联试题",
+    "description": "漏桶算法关联试题：下列关于“漏桶算法”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch8_leaky_bucket_02",
+    "source": "ch8_leaky_bucket",
+    "target": "project_q_ch8_leaky_bucket_02",
+    "relation": "关联试题",
+    "description": "漏桶算法关联试题：“漏桶(Leaky Bucket)以恒定速率输出分组，无论输入速率如何。桶满则丢弃后续分组。它能平滑突发流量，但不允许任何突发——输出速率完全恒定。比令牌桶更严格。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_leaky_bucket_03",
+    "source": "ch8_leaky_bucket",
+    "target": "project_q_ch8_leaky_bucket_03",
+    "relation": "关联试题",
+    "description": "漏桶算法关联试题：简述“漏桶算法”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_traffic_shaping_01",
+    "source": "ch8_traffic_shaping",
+    "target": "project_q_ch8_traffic_shaping_01",
+    "relation": "关联试题",
+    "description": "流量整形与监管关联试题：下列关于“流量整形与监管”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch8_traffic_shaping_02",
+    "source": "ch8_traffic_shaping",
+    "target": "project_q_ch8_traffic_shaping_02",
+    "relation": "关联试题",
+    "description": "流量整形与监管关联试题：“流量整形(Traffic Shaping)缓冲超额流量延后发送，平滑输出曲线。流量监管(Traffic Policing)直接丢弃或降级超额分组。令牌桶兼有整形和监管功能。常用于 ISP 限速和企业的带宽管理。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_traffic_shaping_03",
+    "source": "ch8_traffic_shaping",
+    "target": "project_q_ch8_traffic_shaping_03",
+    "relation": "关联试题",
+    "description": "流量整形与监管关联试题：简述“流量整形与监管”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_cdn_03",
+    "source": "ch8_cdn",
+    "target": "project_q_ch8_cdn_03",
+    "relation": "关联试题",
+    "description": "CDN 内容分发网络关联试题：简述“CDN 内容分发网络”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_load_balance_02",
+    "source": "ch8_load_balance",
+    "target": "project_q_ch8_load_balance_02",
+    "relation": "关联试题",
+    "description": "负载均衡关联试题：“负载均衡将请求分散到多个服务器，避免单点过载。算法：轮询(Round Robin)、最少连接(Least Connections)、IP 哈希、加权轮询。L4 基于传输层信息分发，L7 可检查 HTTP 内容做更精细路由。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_load_balance_03",
+    "source": "ch8_load_balance",
+    "target": "project_q_ch8_load_balance_03",
+    "relation": "关联试题",
+    "description": "负载均衡关联试题：简述“负载均衡”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_congestion_control_network_02",
+    "source": "ch8_congestion_control_network",
+    "target": "project_q_ch8_congestion_control_network_02",
+    "relation": "关联试题",
+    "description": "网络层拥塞控制关联试题：“除 TCP 端到端拥塞控制外，路由器也可主动参与：RED(Random Early Detection)在队列满前随机丢包预警；ECN(Explicit Congestion Notification)在 IP 头标记拥塞而非丢包；WFQ(加权公平队列)按权重分配带宽。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_congestion_control_network_03",
+    "source": "ch8_congestion_control_network",
+    "target": "project_q_ch8_congestion_control_network_03",
+    "relation": "关联试题",
+    "description": "网络层拥塞控制关联试题：简述“网络层拥塞控制”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_http_perf_01",
+    "source": "ch8_http_perf",
+    "target": "project_q_ch8_http_perf_01",
+    "relation": "关联试题",
+    "description": "HTTP 性能优化关联试题：下列关于“HTTP 性能优化”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch8_http_perf_02",
+    "source": "ch8_http_perf",
+    "target": "project_q_ch8_http_perf_02",
+    "relation": "关联试题",
+    "description": "HTTP 性能优化关联试题：“HTTP/1.1 持久连接和管线化减少握手开销；HTTP/2 多路复用解决队头阻塞；HTTP/3 基于 QUIC(UDP)，0-RTT 连接建立。应用层优化还包括：压缩(Gzip/Brotli)、资源合并、懒加载、域名分片。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_http_perf_03",
+    "source": "ch8_http_perf",
+    "target": "project_q_ch8_http_perf_03",
+    "relation": "关联试题",
+    "description": "HTTP 性能优化关联试题：简述“HTTP 性能优化”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_network_measurement_01",
+    "source": "ch8_network_measurement",
+    "target": "project_q_ch8_network_measurement_01",
+    "relation": "关联试题",
+    "description": "网络性能测量关联试题：下列关于“网络性能测量”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch8_network_measurement_02",
+    "source": "ch8_network_measurement",
+    "target": "project_q_ch8_network_measurement_02",
+    "relation": "关联试题",
+    "description": "网络性能测量关联试题：“通过主动测量(注入探测包)和被动测量(观察真实流量)获取性能数据。工具：iperf3 测吞吐量、ping 测 RTT、traceroute 测路径、Wireshark 抓包分析。SNMP 可采集设备性能计数器。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_network_measurement_03",
+    "source": "ch8_network_measurement",
+    "target": "project_q_ch8_network_measurement_03",
+    "relation": "关联试题",
+    "description": "网络性能测量关联试题：简述“网络性能测量”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_bdp_02",
+    "source": "ch8_bdp",
+    "target": "project_q_ch8_bdp_02",
+    "relation": "关联试题",
+    "description": "带宽-延迟积 BDP关联试题：“BDP = 带宽 × RTT，表示「管道」中能容纳的最大数据量(未确认的比特数)。当 TCP 窗口 < BDP 时链路利用率不足；当缓冲区 < BDP 时无法充分利用带宽。是设计和优化高性能网络的关键参数。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_bdp_03",
+    "source": "ch8_bdp",
+    "target": "project_q_ch8_bdp_03",
+    "relation": "关联试题",
+    "description": "带宽-延迟积 BDP关联试题：简述“带宽-延迟积 BDP”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_openflow_01",
+    "source": "ch9_openflow",
+    "target": "project_q_ch9_openflow_01",
+    "relation": "关联试题",
+    "description": "OpenFlow 协议关联试题：下列关于“OpenFlow 协议”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch9_openflow_02",
+    "source": "ch9_openflow",
+    "target": "project_q_ch9_openflow_02",
+    "relation": "关联试题",
+    "description": "OpenFlow 协议关联试题：“OpenFlow 是 SDN 控制器与交换机之间的南向接口标准协议。控制器通过下发流表(Flow Table)控制交换机的转发行为。流表包含匹配域(源/目的IP、MAC、端口等)和动作(转发、丢弃、修改)。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_openflow_03",
+    "source": "ch9_openflow",
+    "target": "project_q_ch9_openflow_03",
+    "relation": "关联试题",
+    "description": "OpenFlow 协议关联试题：简述“OpenFlow 协议”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_sdn_controller_01",
+    "source": "ch9_sdn_controller",
+    "target": "project_q_ch9_sdn_controller_01",
+    "relation": "关联试题",
+    "description": "SDN 控制器关联试题：下列关于“SDN 控制器”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch9_sdn_controller_02",
+    "source": "ch9_sdn_controller",
+    "target": "project_q_ch9_sdn_controller_02",
+    "relation": "关联试题",
+    "description": "SDN 控制器关联试题：“SDN 控制器是网络的「大脑」，维护全局网络视图，向上提供北向接口供应用调用，向下通过南向接口(OpenFlow等)管理交换机。主流控制器：ONOS(开源)、OpenDaylight、Ryu(Python)、Floodlight。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_sdn_controller_03",
+    "source": "ch9_sdn_controller",
+    "target": "project_q_ch9_sdn_controller_03",
+    "relation": "关联试题",
+    "description": "SDN 控制器关联试题：简述“SDN 控制器”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_nfv_02",
+    "source": "ch9_nfv",
+    "target": "project_q_ch9_nfv_02",
+    "relation": "关联试题",
+    "description": "NFV 网络功能虚拟化关联试题：“NFV 用软件在通用服务器上运行传统硬件网络设备的功能(防火墙、负载均衡器、路由器等)，称为 VNF(虚拟网络功能)。SDN 侧重控制转发分离，NFV 侧重硬件虚拟化，两者互补。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_nfv_03",
+    "source": "ch9_nfv",
+    "target": "project_q_ch9_nfv_03",
+    "relation": "关联试题",
+    "description": "NFV 网络功能虚拟化关联试题：简述“NFV 网络功能虚拟化”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_sd_wan_02",
+    "source": "ch9_sd_wan",
+    "target": "project_q_ch9_sd_wan_02",
+    "relation": "关联试题",
+    "description": "SD-WAN关联试题：“SD-WAN 将 SDN 理念应用于广域网。通过集中控制器管理多分支机构的 MPLS、4G/5G、宽带等多种链路，实现智能路径选择、零接触部署、应用感知路由。降低 WAN 成本，提升可靠性。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_sd_wan_03",
+    "source": "ch9_sd_wan",
+    "target": "project_q_ch9_sd_wan_03",
+    "relation": "关联试题",
+    "description": "SD-WAN关联试题：简述“SD-WAN”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_edge_computing_03",
+    "source": "ch9_edge_computing",
+    "target": "project_q_ch9_edge_computing_03",
+    "relation": "关联试题",
+    "description": "边缘计算关联试题：简述“边缘计算”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_mec_01",
+    "source": "ch9_mec",
+    "target": "project_q_ch9_mec_01",
+    "relation": "关联试题",
+    "description": "MEC 移动边缘计算关联试题：下列关于“MEC 移动边缘计算”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch9_mec_02",
+    "source": "ch9_mec",
+    "target": "project_q_ch9_mec_02",
+    "relation": "关联试题",
+    "description": "MEC 移动边缘计算关联试题：“MEC(Multi-access Edge Computing)是 ETSI 标准化的边缘计算框架，将云计算能力下沉到移动基站侧(RAN边缘)。5G 核心场景：URLLC(超低延迟)和 eMBB(大带宽)都依赖 MEC。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_mec_03",
+    "source": "ch9_mec",
+    "target": "project_q_ch9_mec_03",
+    "relation": "关联试题",
+    "description": "MEC 移动边缘计算关联试题：简述“MEC 移动边缘计算”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_fog_computing_01",
+    "source": "ch9_fog_computing",
+    "target": "project_q_ch9_fog_computing_01",
+    "relation": "关联试题",
+    "description": "雾计算关联试题：下列关于“雾计算”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch9_fog_computing_02",
+    "source": "ch9_fog_computing",
+    "target": "project_q_ch9_fog_computing_02",
+    "relation": "关联试题",
+    "description": "雾计算关联试题：“雾计算(Fog Computing)由 Cisco 提出，是介于边缘和云端之间的中间层。相比边缘计算更靠近网络核心侧，聚合多边缘节点数据并做初步处理后上传云端。edge→fog→cloud 三层架构。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_fog_computing_03",
+    "source": "ch9_fog_computing",
+    "target": "project_q_ch9_fog_computing_03",
+    "relation": "关联试题",
+    "description": "雾计算关联试题：简述“雾计算”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_edge_ai_01",
+    "source": "ch9_edge_ai",
+    "target": "project_q_ch9_edge_ai_01",
+    "relation": "关联试题",
+    "description": "边缘 AI关联试题：下列关于“边缘 AI”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch9_edge_ai_02",
+    "source": "ch9_edge_ai",
+    "target": "project_q_ch9_edge_ai_02",
+    "relation": "关联试题",
+    "description": "边缘 AI关联试题：“边缘 AI 在边缘设备上直接运行 AI 推理(模型压缩后)。优势：低延迟(无需上传云端)、隐私保护(数据不出本地)、离线可用。典型：手机端人脸识别、智能摄像头目标检测、语音助手本地处理。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_edge_ai_03",
+    "source": "ch9_edge_ai",
+    "target": "project_q_ch9_edge_ai_03",
+    "relation": "关联试题",
+    "description": "边缘 AI关联试题：简述“边缘 AI”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_mininet_02",
+    "source": "ch9_mininet",
+    "target": "project_q_ch9_mininet_02",
+    "relation": "关联试题",
+    "description": "Mininet 网络仿真关联试题：“Mininet 是轻量级网络仿真器，可在一台 Linux 机器上创建虚拟主机、交换机、控制器和链路的完整 SDN 网络。广泛用于 SDN 教学和研究。支持自定义拓扑和 OpenFlow 交换机。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_mininet_03",
+    "source": "ch9_mininet",
+    "target": "project_q_ch9_mininet_03",
+    "relation": "关联试题",
+    "description": "Mininet 网络仿真关联试题：简述“Mininet 网络仿真”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch10_wireshark_project_02",
+    "source": "ch10_wireshark_project",
+    "target": "project_q_ch10_wireshark_project_02",
+    "relation": "关联试题",
+    "description": "Wireshark 协议分析项目关联试题：“使用 Wireshark 捕获并分析网络流量，深入理解 TCP/IP 协议栈各层的工作机制。典型项目：分析 TCP 三次握手/四次挥手、HTTP 请求响应、DNS 查询过程、TLS 握手。培养协议级故障排查能力。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch10_wireshark_project_03",
+    "source": "ch10_wireshark_project",
+    "target": "project_q_ch10_wireshark_project_03",
+    "relation": "关联试题",
+    "description": "Wireshark 协议分析项目关联试题：简述“Wireshark 协议分析项目”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch10_socket_project_02",
+    "source": "ch10_socket_project",
+    "target": "project_q_ch10_socket_project_02",
+    "relation": "关联试题",
+    "description": "Socket 编程项目关联试题：“使用 Socket API(Python/Java/C)实现网络应用程序。典型项目：多线程 Web 服务器、文件传输工具、简易聊天室、远程命令执行。理解 TCP/UDP 编程模型、并发处理(多线程/select/epoll)、应用层协议设计。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch10_socket_project_03",
+    "source": "ch10_socket_project",
+    "target": "project_q_ch10_socket_project_03",
+    "relation": "关联试题",
+    "description": "Socket 编程项目关联试题：简述“Socket 编程项目”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch10_packet_tracer_project_02",
+    "source": "ch10_packet_tracer_project",
+    "target": "project_q_ch10_packet_tracer_project_02",
+    "relation": "关联试题",
+    "description": "Packet Tracer 组网项目关联试题：“使用 Cisco Packet Tracer 或 GNS3 设计并模拟企业级网络拓扑。典型项目：多 VLAN 园区网、OSPF 多区域路由、ACL 访问控制、NAT 配置、VPN 隧道。培养网络规划设计能力。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch10_packet_tracer_project_03",
+    "source": "ch10_packet_tracer_project",
+    "target": "project_q_ch10_packet_tracer_project_03",
+    "relation": "关联试题",
+    "description": "Packet Tracer 组网项目关联试题：简述“Packet Tracer 组网项目”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch10_http_perf_project_01",
+    "source": "ch10_http_perf_project",
+    "target": "project_q_ch10_http_perf_project_01",
+    "relation": "关联试题",
+    "description": "Web 性能分析与优化项目关联试题：下列关于“Web 性能分析与优化项目”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch10_http_perf_project_02",
+    "source": "ch10_http_perf_project",
+    "target": "project_q_ch10_http_perf_project_02",
+    "relation": "关联试题",
+    "description": "Web 性能分析与优化项目关联试题：“分析 Web 应用性能瓶颈并实施优化。使用 Chrome DevTools、Lighthouse 测量性能指标(FP/FCP/LCP/TTI)。优化手段：HTTP/2、资源压缩、CDN、缓存策略、图片优化。培养端到端性能调优思维。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch10_http_perf_project_03",
+    "source": "ch10_http_perf_project",
+    "target": "project_q_ch10_http_perf_project_03",
+    "relation": "关联试题",
+    "description": "Web 性能分析与优化项目关联试题：简述“Web 性能分析与优化项目”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch10_sdn_mininet_project_01",
+    "source": "ch10_sdn_mininet_project",
+    "target": "project_q_ch10_sdn_mininet_project_01",
+    "relation": "关联试题",
+    "description": "SDN 组网实验项目关联试题：下列关于“SDN 组网实验项目”的描述，正确的是哪一项？"
+  },
+  {
+    "id": "edge_project_ch10_sdn_mininet_project_02",
+    "source": "ch10_sdn_mininet_project",
+    "target": "project_q_ch10_sdn_mininet_project_02",
+    "relation": "关联试题",
+    "description": "SDN 组网实验项目关联试题：“基于 Mininet + Ryu/ONOS 搭建 SDN 实验环境。实现自定义拓扑、流量监控、动态路由切换、负载均衡。将 SDN 理论与实践结合，理解可编程网络的潜力。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch10_sdn_mininet_project_03",
+    "source": "ch10_sdn_mininet_project",
+    "target": "project_q_ch10_sdn_mininet_project_03",
+    "relation": "关联试题",
+    "description": "SDN 组网实验项目关联试题：简述“SDN 组网实验项目”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_queue_management_03",
+    "source": "ch8_queue_management",
+    "target": "project_q_ch8_queue_management_03",
+    "relation": "关联试题",
+    "description": "队列管理算法关联试题：简述“队列管理算法”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_traffic_engineering_02",
+    "source": "ch8_traffic_engineering",
+    "target": "project_q_ch8_traffic_engineering_02",
+    "relation": "关联试题",
+    "description": "流量工程关联试题：“流量工程(Traffic Engineering)通过优化路由来平衡网络负载，避免局部拥塞。MPLS-TE 在 MPLS 网络中显式指定 LSP 路径；IGP 度量调整可引导流量走特定链路；SDN 控制器可全局视角动态调整流表实现流量工程。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch8_traffic_engineering_03",
+    "source": "ch8_traffic_engineering",
+    "target": "project_q_ch8_traffic_engineering_03",
+    "relation": "关联试题",
+    "description": "流量工程关联试题：简述“流量工程”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_ha_redundancy_03",
+    "source": "ch8_ha_redundancy",
+    "target": "project_q_ch8_ha_redundancy_03",
+    "relation": "关联试题",
+    "description": "网络冗余与高可用关联试题：简述“网络冗余与高可用”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_dns_perf_03",
+    "source": "ch8_dns_perf",
+    "target": "project_q_ch8_dns_perf_03",
+    "relation": "关联试题",
+    "description": "DNS 性能优化关联试题：简述“DNS 性能优化”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_tls_perf_03",
+    "source": "ch8_tls_perf",
+    "target": "project_q_ch8_tls_perf_03",
+    "relation": "关联试题",
+    "description": "TLS 性能优化关联试题：简述“TLS 性能优化”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch8_compression_03",
+    "source": "ch8_compression",
+    "target": "project_q_ch8_compression_03",
+    "relation": "关联试题",
+    "description": "网络压缩技术关联试题：简述“网络压缩技术”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_sdn_dataplane_03",
+    "source": "ch9_sdn_dataplane",
+    "target": "project_q_ch9_sdn_dataplane_03",
+    "relation": "关联试题",
+    "description": "SDN 数据平面关联试题：简述“SDN 数据平面”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_network_slicing_03",
+    "source": "ch9_network_slicing",
+    "target": "project_q_ch9_network_slicing_03",
+    "relation": "关联试题",
+    "description": "网络切片关联试题：简述“网络切片”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_ibn_02",
+    "source": "ch9_ibn",
+    "target": "project_q_ch9_ibn_02",
+    "relation": "关联试题",
+    "description": "意图网络 IBN关联试题：“意图网络(Intent-Based Networking)是SDN的高级形态。管理员只需声明意图(如保证视频会议流量优先级)，IBN自动翻译为配置、持续验证、偏离时自愈。代表：Cisco DNA Center。核心闭环：意图 -> 翻译 -> 激活 -> 保障。”描述的知识点是________。"
+  },
+  {
+    "id": "edge_project_ch9_ibn_03",
+    "source": "ch9_ibn",
+    "target": "project_q_ch9_ibn_03",
+    "relation": "关联试题",
+    "description": "意图网络 IBN关联试题：简述“意图网络 IBN”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_spine_leaf_03",
+    "source": "ch9_spine_leaf",
+    "target": "project_q_ch9_spine_leaf_03",
+    "relation": "关联试题",
+    "description": "Spine-Leaf 数据中心架构关联试题：简述“Spine-Leaf 数据中心架构”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_vxlan_03",
+    "source": "ch9_vxlan",
+    "target": "project_q_ch9_vxlan_03",
+    "relation": "关联试题",
+    "description": "VXLAN 虚拟可扩展局域网关联试题：简述“VXLAN 虚拟可扩展局域网”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_compute_offload_03",
+    "source": "ch9_compute_offload",
+    "target": "project_q_ch9_compute_offload_03",
+    "relation": "关联试题",
+    "description": "计算卸载策略关联试题：简述“计算卸载策略”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_iot_edge_03",
+    "source": "ch9_iot_edge",
+    "target": "project_q_ch9_iot_edge_03",
+    "relation": "关联试题",
+    "description": "IoT 与边缘计算关联试题：简述“IoT 与边缘计算”的核心作用或工作机制。"
+  },
+  {
+    "id": "edge_project_ch9_sdn_security_03",
+    "source": "ch9_sdn_security",
+    "target": "project_q_ch9_sdn_security_03",
+    "relation": "关联试题",
+    "description": "SDN 安全关联试题：简述“SDN 安全”的核心作用或工作机制。"
+  },
+  {
     "id": "core_edge_0001",
     "source": "core_ch5_ip_service",
     "target": "core_ch5_network_layer",
@@ -6109,824 +7460,5 @@
     "target": "core_case_socket",
     "relation": "相关案例",
     "description": "core_ch6_multiplexing关联案例“Socket编程实践”"
-  },
-  {
-    "id": "edge_ch8_8c0472c1",
-    "source": "ch8_qos",
-    "target": "ch8_intserv",
-    "relation": "包含",
-    "description": "IntServ是QoS实现模型之一"
-  },
-  {
-    "id": "edge_ch8_1dddf335",
-    "source": "ch8_qos",
-    "target": "ch8_diffserv",
-    "relation": "包含",
-    "description": "DiffServ是QoS实现模型之一"
-  },
-  {
-    "id": "edge_ch8_7b504459",
-    "source": "ch8_intserv",
-    "target": "ch8_diffserv",
-    "relation": "对比",
-    "description": "IntServ逐流预留 vs DiffServ逐类调度"
-  },
-  {
-    "id": "edge_ch8_6647d30a",
-    "source": "ch8_traffic_shaping",
-    "target": "ch8_token_bucket",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_e01c9825",
-    "source": "ch8_traffic_shaping",
-    "target": "ch8_leaky_bucket",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_dab61842",
-    "source": "ch8_token_bucket",
-    "target": "ch8_leaky_bucket",
-    "relation": "对比",
-    "description": "令牌桶允许突发 vs 漏桶严格平滑"
-  },
-  {
-    "id": "edge_ch8_cbc6b880",
-    "source": "ch8_qos",
-    "target": "ch8_traffic_shaping",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_6d4525d3",
-    "source": "ch8_congestion_control_network",
-    "target": "ch8_qos",
-    "relation": "应用于",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_deac988f",
-    "source": "ch8_cdn",
-    "target": "ch8_load_balance",
-    "relation": "依赖",
-    "description": "CDN依赖GSLB全局负载均衡"
-  },
-  {
-    "id": "edge_ch8_a76754fe",
-    "source": "ch8_qos",
-    "target": "ch8_cdn",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_e40839cc",
-    "source": "ch8_qos",
-    "target": "ch8_load_balance",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_3693852f",
-    "source": "ch8_http_perf",
-    "target": "ch8_qos",
-    "relation": "应用于",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_db8ee7f4",
-    "source": "ch8_bdp",
-    "target": "ch8_qos",
-    "relation": "前置知识",
-    "description": "BDP是理解网络性能的基础"
-  },
-  {
-    "id": "edge_ch9_e9602585",
-    "source": "ch9_sdn",
-    "target": "ch9_openflow",
-    "relation": "包含",
-    "description": "OpenFlow是SDN的核心南向协议"
-  },
-  {
-    "id": "edge_ch9_1637911f",
-    "source": "ch9_sdn",
-    "target": "ch9_sdn_controller",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch9_b9c1361c",
-    "source": "ch9_sdn_controller",
-    "target": "ch9_openflow",
-    "relation": "依赖",
-    "description": "控制器通过OpenFlow管理交换机"
-  },
-  {
-    "id": "edge_ch9_06126aed",
-    "source": "ch9_sdn",
-    "target": "ch9_nfv",
-    "relation": "对比",
-    "description": "SDN控制转发分离 vs NFV硬件虚拟化，互补关系"
-  },
-  {
-    "id": "edge_ch9_6f3a4108",
-    "source": "ch9_sdn",
-    "target": "ch9_sd_wan",
-    "relation": "包含",
-    "description": "SD-WAN是SDN在广域网的应用"
-  },
-  {
-    "id": "edge_ch9_cbdc3d22",
-    "source": "ch9_edge_computing",
-    "target": "ch9_mec",
-    "relation": "包含",
-    "description": "MEC是边缘计算在移动网络的标准化实现"
-  },
-  {
-    "id": "edge_ch9_967a045b",
-    "source": "ch9_edge_computing",
-    "target": "ch9_fog_computing",
-    "relation": "对比",
-    "description": "边缘靠近终端 vs 雾计算处于中间层"
-  },
-  {
-    "id": "edge_ch9_c78ade94",
-    "source": "ch9_edge_computing",
-    "target": "ch9_edge_ai",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch9_d0b8c9b2",
-    "source": "ch9_sdn",
-    "target": "ch9_mininet",
-    "relation": "应用于",
-    "description": "Mininet是SDN教学实验平台"
-  },
-  {
-    "id": "edge_ch10_4700e037",
-    "source": "ch10_network_design",
-    "target": "ch10_packet_tracer_project",
-    "relation": "包含",
-    "description": "设计方法指导组网项目"
-  },
-  {
-    "id": "edge_ch10_1dbfe033",
-    "source": "ch10_network_design",
-    "target": "ch10_socket_project",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch10_9a064161",
-    "source": "ch10_network_design",
-    "target": "ch10_wireshark_project",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch10_ced6bdf2",
-    "source": "ch10_network_design",
-    "target": "ch10_http_perf_project",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch10_c0df643e",
-    "source": "ch10_network_design",
-    "target": "ch10_sdn_mininet_project",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_tcp_congestion_to_congestion_control",
-    "source": "congestion_control",
-    "target": "case_tcp_congestion",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_tcp_wireshark_to_tcp_handshake",
-    "source": "tcp_handshake",
-    "target": "case_tcp_wireshark",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_tcp_wireshark_to_tcp_wavehand",
-    "source": "tcp_wavehand",
-    "target": "case_tcp_wireshark",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_tcp_wireshark_to_tcp_header",
-    "source": "tcp_header",
-    "target": "case_tcp_wireshark",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch8_cdn_accelerate_to_ch8_cdn",
-    "source": "ch8_cdn",
-    "target": "case_ch8_cdn_accelerate",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch8_cdn_accelerate_to_ch8_load_balance",
-    "source": "ch8_load_balance",
-    "target": "case_ch8_cdn_accelerate",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch8_cdn_accelerate_to_ch8_qos",
-    "source": "ch8_qos",
-    "target": "case_ch8_cdn_accelerate",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch8_token_bucket_limit_to_ch8_token_bucket",
-    "source": "ch8_token_bucket",
-    "target": "case_ch8_token_bucket_limit",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch8_token_bucket_limit_to_ch8_traffic_shaping",
-    "source": "ch8_traffic_shaping",
-    "target": "case_ch8_token_bucket_limit",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch8_token_bucket_limit_to_ch8_leaky_bucket",
-    "source": "ch8_leaky_bucket",
-    "target": "case_ch8_token_bucket_limit",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_mininet",
-    "source": "ch9_mininet",
-    "target": "case_ch9_mininet_sdn",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_openflow",
-    "source": "ch9_openflow",
-    "target": "case_ch9_mininet_sdn",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_sdn",
-    "source": "ch9_sdn",
-    "target": "case_ch9_mininet_sdn",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_mininet_sdn_to_ch9_sdn_controller",
-    "source": "ch9_sdn_controller",
-    "target": "case_ch9_mininet_sdn",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_edge_face_to_ch9_edge_computing",
-    "source": "ch9_edge_computing",
-    "target": "case_ch9_edge_face",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_edge_face_to_ch9_edge_ai",
-    "source": "ch9_edge_ai",
-    "target": "case_ch9_edge_face",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch9_edge_face_to_ch9_mec",
-    "source": "ch9_mec",
-    "target": "case_ch9_edge_face",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch10_campus_network_to_ch10_network_design",
-    "source": "ch10_network_design",
-    "target": "case_ch10_campus_network",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_cfd_case_ch10_campus_network_to_ch10_packet_tracer_project",
-    "source": "ch10_packet_tracer_project",
-    "target": "case_ch10_campus_network",
-    "relation": "相关案例",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_qos_01_to_ch8_qos",
-    "source": "ch8_qos",
-    "target": "q_ch8_qos_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_qos_02_to_ch8_qos",
-    "source": "ch8_qos",
-    "target": "q_ch8_qos_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_qos_03_to_ch8_qos",
-    "source": "ch8_qos",
-    "target": "q_ch8_qos_03",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_token_01_to_ch8_token_bucket",
-    "source": "ch8_token_bucket",
-    "target": "q_ch8_token_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_token_02_to_ch8_token_bucket",
-    "source": "ch8_token_bucket",
-    "target": "q_ch8_token_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_cdn_01_to_ch8_cdn",
-    "source": "ch8_cdn",
-    "target": "q_ch8_cdn_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_cdn_02_to_ch8_cdn",
-    "source": "ch8_cdn",
-    "target": "q_ch8_cdn_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_load_01_to_ch8_load_balance",
-    "source": "ch8_load_balance",
-    "target": "q_ch8_load_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_congestion_01_to_ch8_congestion_control_network",
-    "source": "ch8_congestion_control_network",
-    "target": "q_ch8_congestion_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_bdp_01_to_ch8_bdp",
-    "source": "ch8_bdp",
-    "target": "q_ch8_bdp_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_sdn_01_to_ch9_sdn",
-    "source": "ch9_sdn",
-    "target": "q_ch9_sdn_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_sdn_02_to_ch9_sdn",
-    "source": "ch9_sdn",
-    "target": "q_ch9_sdn_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_sdn_03_to_ch9_sdn",
-    "source": "ch9_sdn",
-    "target": "q_ch9_sdn_03",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_nfv_01_to_ch9_nfv",
-    "source": "ch9_nfv",
-    "target": "q_ch9_nfv_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_sdwan_01_to_ch9_sd_wan",
-    "source": "ch9_sd_wan",
-    "target": "q_ch9_sdwan_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_edge_01_to_ch9_edge_computing",
-    "source": "ch9_edge_computing",
-    "target": "q_ch9_edge_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_edge_02_to_ch9_edge_computing",
-    "source": "ch9_edge_computing",
-    "target": "q_ch9_edge_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_mininet_01_to_ch9_mininet",
-    "source": "ch9_mininet",
-    "target": "q_ch9_mininet_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch10_design_01_to_ch10_network_design",
-    "source": "ch10_network_design",
-    "target": "q_ch10_design_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch10_design_02_to_ch10_network_design",
-    "source": "ch10_network_design",
-    "target": "q_ch10_design_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch10_design_03_to_ch10_network_design",
-    "source": "ch10_network_design",
-    "target": "q_ch10_design_03",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch10_wireshark_01_to_ch10_wireshark_project",
-    "source": "ch10_wireshark_project",
-    "target": "q_ch10_wireshark_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch10_socket_01_to_ch10_socket_project",
-    "source": "ch10_socket_project",
-    "target": "q_ch10_socket_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch10_vlan_01_to_ch10_packet_tracer_project",
-    "source": "ch10_packet_tracer_project",
-    "target": "q_ch10_vlan_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_ext_f07feed1",
-    "source": "ch8_qos",
-    "target": "ch8_queue_management",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_ext_97be3a39",
-    "source": "ch8_queue_management",
-    "target": "ch8_congestion_control_network",
-    "relation": "包含",
-    "description": "RED/WFQ是队列管理的一部分"
-  },
-  {
-    "id": "edge_ch8_ext_56bee808",
-    "source": "ch8_qos",
-    "target": "ch8_traffic_engineering",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_ext_22e858d9",
-    "source": "ch8_traffic_engineering",
-    "target": "ch8_load_balance",
-    "relation": "依赖",
-    "description": ""
-  },
-  {
-    "id": "edge_ch8_ext_04799b96",
-    "source": "ch8_ha_redundancy",
-    "target": "ch8_load_balance",
-    "relation": "对比",
-    "description": "HA关注可用性 vs 负载均衡关注流量分发"
-  },
-  {
-    "id": "edge_ch8_ext_c05bf461",
-    "source": "ch8_cdn",
-    "target": "ch8_dns_perf",
-    "relation": "依赖",
-    "description": "CDN GSLB依赖DNS智能解析"
-  },
-  {
-    "id": "edge_ch8_ext_28bdcec9",
-    "source": "ch8_http_perf",
-    "target": "ch8_tls_perf",
-    "relation": "依赖",
-    "description": "HTTPS性能依赖TLS优化"
-  },
-  {
-    "id": "edge_ch8_ext_475b0049",
-    "source": "ch8_http_perf",
-    "target": "ch8_compression",
-    "relation": "包含",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_queue_01",
-    "source": "ch8_queue_management",
-    "target": "q_ch8_queue_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_queue_02",
-    "source": "ch8_queue_management",
-    "target": "q_ch8_queue_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_te_01",
-    "source": "ch8_traffic_engineering",
-    "target": "q_ch8_te_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_ha_01",
-    "source": "ch8_ha_redundancy",
-    "target": "q_ch8_ha_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_ha_02",
-    "source": "ch8_ha_redundancy",
-    "target": "q_ch8_ha_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_dns_01",
-    "source": "ch8_dns_perf",
-    "target": "q_ch8_dns_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_dns_02",
-    "source": "ch8_dns_perf",
-    "target": "q_ch8_dns_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_tls_01",
-    "source": "ch8_tls_perf",
-    "target": "q_ch8_tls_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_tls_02",
-    "source": "ch8_tls_perf",
-    "target": "q_ch8_tls_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_comp_01",
-    "source": "ch8_compression",
-    "target": "q_ch8_comp_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_comp_02",
-    "source": "ch8_compression",
-    "target": "q_ch8_comp_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_perf_overall_01",
-    "source": "ch8_qos",
-    "target": "q_ch8_perf_overall_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_perf_overall_02",
-    "source": "ch8_qos",
-    "target": "q_ch8_perf_overall_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch8_perf_overall_03",
-    "source": "ch8_qos",
-    "target": "q_ch8_perf_overall_03",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "source": "ch9_sdn",
-    "target": "ch9_sdn_dataplane",
-    "relation": "包含",
-    "description": "",
-    "id": "edge_ch9_cd443eec"
-  },
-  {
-    "source": "ch9_sdn_dataplane",
-    "target": "ch9_openflow",
-    "relation": "依赖",
-    "description": "",
-    "id": "edge_ch9_46e8153c"
-  },
-  {
-    "source": "ch9_sdn",
-    "target": "ch9_network_slicing",
-    "relation": "包含",
-    "description": "",
-    "id": "edge_ch9_3d89db63"
-  },
-  {
-    "source": "ch9_network_slicing",
-    "target": "ch9_nfv",
-    "relation": "依赖",
-    "description": "",
-    "id": "edge_ch9_d6394d21"
-  },
-  {
-    "source": "ch9_sdn",
-    "target": "ch9_ibn",
-    "relation": "包含",
-    "description": "",
-    "id": "edge_ch9_17dc7e31"
-  },
-  {
-    "source": "ch9_sdn",
-    "target": "ch9_spine_leaf",
-    "relation": "应用于",
-    "description": "",
-    "id": "edge_ch9_d6775793"
-  },
-  {
-    "source": "ch9_spine_leaf",
-    "target": "ch9_vxlan",
-    "relation": "依赖",
-    "description": "",
-    "id": "edge_ch9_68c83f75"
-  },
-  {
-    "source": "ch9_edge_computing",
-    "target": "ch9_compute_offload",
-    "relation": "包含",
-    "description": "",
-    "id": "edge_ch9_c1561ba1"
-  },
-  {
-    "source": "ch9_edge_computing",
-    "target": "ch9_iot_edge",
-    "relation": "包含",
-    "description": "",
-    "id": "edge_ch9_eac19705"
-  },
-  {
-    "source": "ch9_sdn",
-    "target": "ch9_sdn_security",
-    "relation": "包含",
-    "description": "",
-    "id": "edge_ch9_eef3323f"
-  },
-  {
-    "id": "edge_qfd_q_ch9_flow_01",
-    "source": "ch9_sdn_dataplane",
-    "target": "q_ch9_flow_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_flow_02",
-    "source": "ch9_sdn_dataplane",
-    "target": "q_ch9_flow_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_slice_01",
-    "source": "ch9_network_slicing",
-    "target": "q_ch9_slice_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_slice_02",
-    "source": "ch9_network_slicing",
-    "target": "q_ch9_slice_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_ibn_01",
-    "source": "ch9_ibn",
-    "target": "q_ch9_ibn_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_spine_01",
-    "source": "ch9_spine_leaf",
-    "target": "q_ch9_spine_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_spine_02",
-    "source": "ch9_spine_leaf",
-    "target": "q_ch9_spine_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_vxlan_01",
-    "source": "ch9_vxlan",
-    "target": "q_ch9_vxlan_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_vxlan_02",
-    "source": "ch9_vxlan",
-    "target": "q_ch9_vxlan_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_offload_01",
-    "source": "ch9_compute_offload",
-    "target": "q_ch9_offload_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_offload_02",
-    "source": "ch9_compute_offload",
-    "target": "q_ch9_offload_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_iot_01",
-    "source": "ch9_iot_edge",
-    "target": "q_ch9_iot_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_iot_02",
-    "source": "ch9_iot_edge",
-    "target": "q_ch9_iot_02",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_sdnsec_01",
-    "source": "ch9_sdn_security",
-    "target": "q_ch9_sdnsec_01",
-    "relation": "关联试题",
-    "description": ""
-  },
-  {
-    "id": "edge_qfd_q_ch9_sdnsec_02",
-    "source": "ch9_sdn_security",
-    "target": "q_ch9_sdnsec_02",
-    "relation": "关联试题",
-    "description": ""
   }
 ]

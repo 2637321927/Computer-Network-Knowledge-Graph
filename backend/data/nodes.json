@@ -6284,6 +6284,2877 @@
     "video_url": null
   },
   {
+    "id": "ch8_qos",
+    "name": "QoS 服务质量",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "QoS(Quality of Service)是网络为不同类型流量提供差异化服务的能力。关键指标包括带宽、时延、抖动、丢包率。QoS 通过在路由器中分类、标记、调度数据包，确保关键业务获得优先保障。",
+    "keywords": [
+      "QoS",
+      "服务质量",
+      "带宽",
+      "时延",
+      "抖动"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_intserv",
+    "name": "IntServ 集成服务",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "IntServ(Integrated Services)通过 RSVP 协议在通信前为每条流预留端到端资源。它提供严格的 QoS 保证，但可扩展性差——核心路由器需维护每条流的状态。适用于企业 VoIP 等小规模场景。",
+    "keywords": [
+      "IntServ",
+      "RSVP",
+      "资源预留",
+      "流状态"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_diffserv",
+    "name": "DiffServ 区分服务",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "DiffServ(Differentiated Services)将流量分成若干类(如 EF 快速转发、AF 保证转发、BE 尽力而为)，在 IP 头的 DSCP 字段打标记。路由器按类调度，不维护单流状态，扩展性好，是互联网 QoS 的主流方案。",
+    "keywords": [
+      "DiffServ",
+      "DSCP",
+      "EF",
+      "AF",
+      "PHB"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_token_bucket",
+    "name": "令牌桶算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "令牌桶(Token Bucket)以恒定速率 r 向桶中放入令牌(最多 b 个)。发送一个分组需消耗等量令牌，无令牌时需等待或丢弃。允许突发流量(burst)——桶越大突发能力越强，平均速率 ≤ r。",
+    "keywords": [
+      "令牌桶",
+      "Token Bucket",
+      "流量整形",
+      "突发"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_leaky_bucket",
+    "name": "漏桶算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "漏桶(Leaky Bucket)以恒定速率输出分组，无论输入速率如何。桶满则丢弃后续分组。它能平滑突发流量，但不允许任何突发——输出速率完全恒定。比令牌桶更严格。",
+    "keywords": [
+      "漏桶",
+      "Leaky Bucket",
+      "流量整形",
+      "平滑"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_traffic_shaping",
+    "name": "流量整形与监管",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "流量整形(Traffic Shaping)缓冲超额流量延后发送，平滑输出曲线。流量监管(Traffic Policing)直接丢弃或降级超额分组。令牌桶兼有整形和监管功能。常用于 ISP 限速和企业的带宽管理。",
+    "keywords": [
+      "流量整形",
+      "Traffic Shaping",
+      "流量监管",
+      "Policing"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_cdn",
+    "name": "CDN 内容分发网络",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "CDN 将内容缓存到离用户最近的边缘服务器。用户请求被 DNS 重定向到最近的 CDN 节点，大幅减少延迟和源站压力。关键技术：GSLB 全局负载均衡、缓存策略、内容预热。代表：Akamai、Cloudflare、阿里云 CDN。",
+    "keywords": [
+      "CDN",
+      "内容分发",
+      "边缘缓存",
+      "GSLB",
+      "Akamai"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_load_balance",
+    "name": "负载均衡",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "负载均衡将请求分散到多个服务器，避免单点过载。算法：轮询(Round Robin)、最少连接(Least Connections)、IP 哈希、加权轮询。L4 基于传输层信息分发，L7 可检查 HTTP 内容做更精细路由。",
+    "keywords": [
+      "负载均衡",
+      "Round Robin",
+      "Least Connections",
+      "L4",
+      "L7"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_congestion_control_network",
+    "name": "网络层拥塞控制",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "除 TCP 端到端拥塞控制外，路由器也可主动参与：RED(Random Early Detection)在队列满前随机丢包预警；ECN(Explicit Congestion Notification)在 IP 头标记拥塞而非丢包；WFQ(加权公平队列)按权重分配带宽。",
+    "keywords": [
+      "RED",
+      "ECN",
+      "WFQ",
+      "AQM",
+      "主动队列管理"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_http_perf",
+    "name": "HTTP 性能优化",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "HTTP/1.1 持久连接和管线化减少握手开销；HTTP/2 多路复用解决队头阻塞；HTTP/3 基于 QUIC(UDP)，0-RTT 连接建立。应用层优化还包括：压缩(Gzip/Brotli)、资源合并、懒加载、域名分片。",
+    "keywords": [
+      "HTTP/2",
+      "HTTP/3",
+      "QUIC",
+      "多路复用",
+      "0-RTT"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_network_measurement",
+    "name": "网络性能测量",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "通过主动测量(注入探测包)和被动测量(观察真实流量)获取性能数据。工具：iperf3 测吞吐量、ping 测 RTT、traceroute 测路径、Wireshark 抓包分析。SNMP 可采集设备性能计数器。",
+    "keywords": [
+      "iperf",
+      "ping",
+      "SNMP",
+      "主动测量",
+      "被动测量"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_bdp",
+    "name": "带宽-延迟积 BDP",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "BDP = 带宽 × RTT，表示「管道」中能容纳的最大数据量(未确认的比特数)。当 TCP 窗口 < BDP 时链路利用率不足；当缓冲区 < BDP 时无法充分利用带宽。是设计和优化高性能网络的关键参数。",
+    "keywords": [
+      "BDP",
+      "带宽延迟积",
+      "TCP窗口",
+      "链路利用率"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_sdn",
+    "name": "SDN 软件定义网络",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SDN 将网络设备的控制平面(决策)与数据平面(转发)分离，控制平面集中到 SDN 控制器。这使得网络可编程、灵活配置，打破传统网络设备的封闭性。核心理念：集中控制 + 开放接口。",
+    "keywords": [
+      "SDN",
+      "控制平面",
+      "数据平面",
+      "可编程网络"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_openflow",
+    "name": "OpenFlow 协议",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "OpenFlow 是 SDN 控制器与交换机之间的南向接口标准协议。控制器通过下发流表(Flow Table)控制交换机的转发行为。流表包含匹配域(源/目的IP、MAC、端口等)和动作(转发、丢弃、修改)。",
+    "keywords": [
+      "OpenFlow",
+      "流表",
+      "南向接口",
+      "匹配域"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_sdn_controller",
+    "name": "SDN 控制器",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SDN 控制器是网络的「大脑」，维护全局网络视图，向上提供北向接口供应用调用，向下通过南向接口(OpenFlow等)管理交换机。主流控制器：ONOS(开源)、OpenDaylight、Ryu(Python)、Floodlight。",
+    "keywords": [
+      "SDN控制器",
+      "ONOS",
+      "OpenDaylight",
+      "Ryu",
+      "Floodlight"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_nfv",
+    "name": "NFV 网络功能虚拟化",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "NFV 用软件在通用服务器上运行传统硬件网络设备的功能(防火墙、负载均衡器、路由器等)，称为 VNF(虚拟网络功能)。SDN 侧重控制转发分离，NFV 侧重硬件虚拟化，两者互补。",
+    "keywords": [
+      "NFV",
+      "VNF",
+      "网络功能虚拟化",
+      "通用服务器"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_sd_wan",
+    "name": "SD-WAN",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SD-WAN 将 SDN 理念应用于广域网。通过集中控制器管理多分支机构的 MPLS、4G/5G、宽带等多种链路，实现智能路径选择、零接触部署、应用感知路由。降低 WAN 成本，提升可靠性。",
+    "keywords": [
+      "SD-WAN",
+      "广域网",
+      "MPLS",
+      "应用感知路由"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_edge_computing",
+    "name": "边缘计算",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "边缘计算将计算、存储、网络资源部署到靠近数据源的网络边缘，减少数据传输到云端的延迟和带宽消耗。典型场景：自动驾驶(毫秒级决策)、工业IoT(本地实时控制)、AR/VR(低延迟渲染)。",
+    "keywords": [
+      "边缘计算",
+      "低延迟",
+      "IoT",
+      "计算卸载",
+      "本地处理"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_mec",
+    "name": "MEC 移动边缘计算",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "MEC(Multi-access Edge Computing)是 ETSI 标准化的边缘计算框架，将云计算能力下沉到移动基站侧(RAN边缘)。5G 核心场景：URLLC(超低延迟)和 eMBB(大带宽)都依赖 MEC。",
+    "keywords": [
+      "MEC",
+      "5G",
+      "ETSI",
+      "URLLC",
+      "RAN"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_fog_computing",
+    "name": "雾计算",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "雾计算(Fog Computing)由 Cisco 提出，是介于边缘和云端之间的中间层。相比边缘计算更靠近网络核心侧，聚合多边缘节点数据并做初步处理后上传云端。edge→fog→cloud 三层架构。",
+    "keywords": [
+      "雾计算",
+      "Fog Computing",
+      "Cisco",
+      "三层架构"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_edge_ai",
+    "name": "边缘 AI",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "边缘 AI 在边缘设备上直接运行 AI 推理(模型压缩后)。优势：低延迟(无需上传云端)、隐私保护(数据不出本地)、离线可用。典型：手机端人脸识别、智能摄像头目标检测、语音助手本地处理。",
+    "keywords": [
+      "边缘AI",
+      "模型压缩",
+      "推理",
+      "TensorFlow Lite",
+      "ONNX"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_mininet",
+    "name": "Mininet 网络仿真",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "Mininet 是轻量级网络仿真器，可在一台 Linux 机器上创建虚拟主机、交换机、控制器和链路的完整 SDN 网络。广泛用于 SDN 教学和研究。支持自定义拓扑和 OpenFlow 交换机。",
+    "keywords": [
+      "Mininet",
+      "仿真器",
+      "虚拟网络",
+      "SDN实验"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch10_wireshark_project",
+    "name": "Wireshark 协议分析项目",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "课程综合项目",
+    "description": "使用 Wireshark 捕获并分析网络流量，深入理解 TCP/IP 协议栈各层的工作机制。典型项目：分析 TCP 三次握手/四次挥手、HTTP 请求响应、DNS 查询过程、TLS 握手。培养协议级故障排查能力。",
+    "keywords": [
+      "Wireshark",
+      "抓包分析",
+      "TCP握手",
+      "协议分析"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch10_socket_project",
+    "name": "Socket 编程项目",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "课程综合项目",
+    "description": "使用 Socket API(Python/Java/C)实现网络应用程序。典型项目：多线程 Web 服务器、文件传输工具、简易聊天室、远程命令执行。理解 TCP/UDP 编程模型、并发处理(多线程/select/epoll)、应用层协议设计。",
+    "keywords": [
+      "Socket编程",
+      "TCP",
+      "UDP",
+      "多线程",
+      "Web服务器"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch10_packet_tracer_project",
+    "name": "Packet Tracer 组网项目",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "课程综合项目",
+    "description": "使用 Cisco Packet Tracer 或 GNS3 设计并模拟企业级网络拓扑。典型项目：多 VLAN 园区网、OSPF 多区域路由、ACL 访问控制、NAT 配置、VPN 隧道。培养网络规划设计能力。",
+    "keywords": [
+      "Packet Tracer",
+      "GNS3",
+      "VLAN",
+      "OSPF",
+      "ACL",
+      "NAT"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch10_http_perf_project",
+    "name": "Web 性能分析与优化项目",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "课程综合项目",
+    "description": "分析 Web 应用性能瓶颈并实施优化。使用 Chrome DevTools、Lighthouse 测量性能指标(FP/FCP/LCP/TTI)。优化手段：HTTP/2、资源压缩、CDN、缓存策略、图片优化。培养端到端性能调优思维。",
+    "keywords": [
+      "Web性能",
+      "Lighthouse",
+      "HTTP/2",
+      "缓存",
+      "Core Web Vitals"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch10_sdn_mininet_project",
+    "name": "SDN 组网实验项目",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "课程综合项目",
+    "description": "基于 Mininet + Ryu/ONOS 搭建 SDN 实验环境。实现自定义拓扑、流量监控、动态路由切换、负载均衡。将 SDN 理论与实践结合，理解可编程网络的潜力。",
+    "keywords": [
+      "Mininet",
+      "Ryu",
+      "SDN",
+      "OpenFlow",
+      "流量工程"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch10_network_design",
+    "name": "网络规划与设计方法",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "课程综合项目",
+    "description": "网络设计的系统方法：需求分析(用户数、流量模型、可靠性要求)→逻辑设计(拓扑、编址、路由协议)→物理设计(设备选型、布线)→安全设计(防火墙、ACL、VPN)→测试与验收。遵循自顶向下原则。",
+    "keywords": [
+      "网络设计",
+      "需求分析",
+      "拓扑设计",
+      "设备选型",
+      "自顶向下"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch8_cdn_accelerate",
+    "name": "视频网站CDN加速前后对比",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "网络性能优化",
+    "description": "某视频网站在部署CDN前后，对比全国不同地区用户的视频首帧耗时和卡顿率。分析CDN如何通过边缘缓存减少跨运营商延迟。",
+    "keywords": [
+      "CDN",
+      "视频加速",
+      "延迟优化",
+      "缓存命中率"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch8_token_bucket_limit",
+    "name": "ISP流量整形：令牌桶限速案例分析",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "网络性能优化",
+    "description": "某校园网出口部署令牌桶算法限制P2P下载带宽为5Mbps，允许突发到10Mbps持续2秒。分析参数配置对用户体验的影响。",
+    "keywords": [
+      "令牌桶",
+      "流量整形",
+      "P2P限速",
+      "QoS"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch9_mininet_sdn",
+    "name": "Mininet搭建SDN网络：自定义流表路由",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "使用Mininet创建3交换机+6主机的胖树拓扑，通过Ryu控制器下发自定义流表实现流量工程，对比传统最短路径与负载均衡路由的效果。",
+    "keywords": [
+      "Mininet",
+      "OpenFlow",
+      "SDN",
+      "流表",
+      "Ryu"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch9_edge_face",
+    "name": "边缘AI：智能摄像头实时人脸识别",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "对比云端方案和边缘方案在人脸识别场景的延迟和带宽消耗，分析边缘计算在实时视频分析中的优势与挑战。",
+    "keywords": [
+      "边缘计算",
+      "AI推理",
+      "人脸识别",
+      "延迟",
+      "带宽"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "case_ch10_campus_network",
+    "name": "校园网规划与设计综合案例",
+    "type": "案例",
+    "layer": "案例层",
+    "chapter": "课程综合项目",
+    "description": "为某新建校区(5000人规模)设计完整的校园网络方案，覆盖需求分析、拓扑设计、VLAN规划、IP编址、安全策略、冗余设计全流程。",
+    "keywords": [
+      "校园网",
+      "网络设计",
+      "VLAN",
+      "OSPF",
+      "综合项目"
+    ],
+    "difficulty": 4,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_qos_01",
+    "name": "以下哪项不是QoS的关键性能指标？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "QoS 四大指标是带宽、时延(延迟)、抖动和丢包率。颜色深度是图像属性。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_qos_02",
+    "name": "IntServ与DiffServ对比",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "IntServ(集成服务)：通过RSVP为每条流预留端到端资源，提供严格QoS保证，但可扩展性差(核心路由器需维护每条流状态)，适用于企业VoIP等小规模场景。DiffServ(区分服务)：将流量分类标记(DSCP)，路由器按类调度(PHB)，不维护单流状态，可扩展性好，是互联网QoS的主流方案。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_qos_03",
+    "name": "RSVP协议的全称",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "RSVP = Resource Reservation Protocol，资源预留协议。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_token_01",
+    "name": "令牌桶 vs 漏桶",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "令牌桶允许突发(桶越大突发能力越强)；漏桶输出速率完全恒定，不允许任何突发。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_token_02",
+    "name": "令牌桶参数计算",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "最大突发时长 = b/r = 4Mb/2Mbps = 2s；最大突发数据量 = b = 4Mb。注意令牌桶允许积蓄的最大突发就是桶容量本身。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_cdn_01",
+    "name": "CDN工作原理",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "CDN 通过 DNS 智能解析(全局负载均衡 GSLB)将用户请求导向最近的边缘节点。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_cdn_02",
+    "name": "CDN与边缘计算区别",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "CDN 主要做内容缓存和分发(静态资源、视频)，计算能力有限；边缘计算在靠近用户侧提供通用计算能力(可运行自定义代码、AI推理等)，不限于内容分发。CDN可视为边缘计算在内容分发领域的特化应用。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_load_01",
+    "name": "负载均衡算法",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "轮询、最少连接和 IP 哈希是常见负载均衡算法，冒泡排序和二分查找是排序/搜索算法。注意加了 new 就不是多选",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_congestion_01",
+    "name": "RED算法原理",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "RED 在队列长度达到阈值前就随机选择连接丢包，使发送端提前减小拥塞窗口，避免全局同步(TCP Global Synchronization)。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_bdp_01",
+    "name": "带宽延迟积计算",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "BDP = 带宽 × RTT = 100Mbps × 50ms = 5Mb。当TCP窗口 < BDP 时，发送方必须等ACK才能继续发，链路利用率不足。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_sdn_01",
+    "name": "SDN核心思想",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SDN 的本质是将网络设备的控制平面(决策)与数据平面(转发)分离，控制平面集中到控制器实现可编程管理。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_sdn_02",
+    "name": "OpenFlow流表",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "OpenFlow 交换机通过流表匹配数据包并执行动作。流表由控制器下发，包含匹配域和对应的转发/丢弃/修改动作。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_sdn_03",
+    "name": "南向接口与北向接口",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "南向接口(如OpenFlow)控制交换机，北向接口供上层应用调用网络能力。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_nfv_01",
+    "name": "SDN与NFV关系",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "NFV 和 SDN 是独立互补的概念。NFV 关注用软件替代硬件网络功能，可以不依赖 SDN；但两者结合能发挥更大价值。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_sdwan_01",
+    "name": "SD-WAN优势",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SD-WAN 可用普通宽带替代昂贵 MPLS，支持远程自动配置，能识别应用类型选择最优路径。物理线路稳定性取决于运营商，非 SD-WAN 特有。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_edge_01",
+    "name": "边缘计算适用场景",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "自动驾驶、工业IoT和AR/VR都对延迟极度敏感，是边缘计算的典型场景。离线文档编辑不需要网络，数据备份不敏感于延迟可用云端。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_edge_02",
+    "name": "边缘与雾计算区别",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "层次从近到远：边缘计算(Edge)→雾计算(Fog)→云计算(Cloud)。边缘最近数据源(终端侧)，延迟最低算力最弱；雾计算处于中间层聚合多边缘节点；云计算在远程数据中心，算力最强延迟最高。三者互补形成\"端-边-雾-云\"协同架构。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_mininet_01",
+    "name": "Mininet功能",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "Mininet 是轻量级 SDN 网络仿真器，广泛用于教学和研究，可在一台机器上创建完整的虚拟 SDN 网络。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch10_design_01",
+    "name": "网络设计第一步骤",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "网络设计遵循自顶向下方法，需求分析是第一步骤，后续的逻辑设计、物理设计都基于需求。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch10_design_02",
+    "name": "三层网络架构",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "接入层连接终端用户，汇聚层聚合接入层流量并实施策略，核心层提供高速骨干转发。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch10_design_03",
+    "name": "Socket编程TCP vs UDP",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "文件传输必须可靠完整，应选 TCP(保证顺序、无丢失、无重复)。视频直播对实时性要求高，可容忍少量丢包，应选 UDP(低延迟、无队头阻塞)。实际直播常用 UDP + 应用层 FEC 或基于 UDP 的 QUIC。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch10_wireshark_01",
+    "name": "Wireshark过滤表达式",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "Wireshark 显示过滤器语法为 tcp.port==443。注意与抓包过滤器(bpf语法 \"tcp port 443\")的区别。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch10_socket_01",
+    "name": "多线程服务器设计",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "多线程、线程池、select/poll、epoll 都是常见的并发模型。C10K问题推动从多线程转向IO多路复用。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch10_vlan_01",
+    "name": "VLAN间路由",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "VLAN 隔离广播域，即使在同一交换机上的不同 VLAN 也不能直接通信，必须通过三层设备(路由器或三层交换机)进行 VLAN 间路由。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_queue_management",
+    "name": "队列管理算法",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "路由器队列管理策略直接影响QoS。FIFO(先进先出)简单公平但无优先级；Priority Queuing按优先级严格排队，高优先进低优先级可能饿死；WFQ(加权公平队列)按权重分配带宽，兼顾公平和优先级；CBWFQ基于类的加权公平队列可自定义流量类并分配保证带宽。",
+    "keywords": [
+      "FIFO",
+      "Priority Queuing",
+      "WFQ",
+      "CBWFQ",
+      "队列调度"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_traffic_engineering",
+    "name": "流量工程",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "流量工程(Traffic Engineering)通过优化路由来平衡网络负载，避免局部拥塞。MPLS-TE 在 MPLS 网络中显式指定 LSP 路径；IGP 度量调整可引导流量走特定链路；SDN 控制器可全局视角动态调整流表实现流量工程。",
+    "keywords": [
+      "流量工程",
+      "MPLS-TE",
+      "LSP",
+      "负载均衡",
+      "路由优化"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_ha_redundancy",
+    "name": "网络冗余与高可用",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "高可用(HA)通过冗余设计消除单点故障。VRRP/HSRP 实现网关冗余(虚拟IP在主备间切换)；链路聚合(LACP)将多物理链路捆绑为一条逻辑链路增加带宽和冗余；多路径路由(ECMP)同时利用多条等价路径。可靠性与性能是硬币两面。",
+    "keywords": [
+      "高可用",
+      "VRRP",
+      "HSRP",
+      "LACP",
+      "ECMP",
+      "冗余"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_dns_perf",
+    "name": "DNS 性能优化",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "DNS 解析延迟常被忽视却是页面加载的隐藏瓶颈。优化手段：DNS 预解析(prefetch)、减少域名数量、使用快速权威DNS、Anycast任播部署、DNS over HTTPS/TLS虽增安全但增延迟需权衡。DNS 缓存 TTL 设置也是关键——过短增加查询次数，过长影响变更生效。",
+    "keywords": [
+      "DNS",
+      "预解析",
+      "Anycast",
+      "TTL",
+      "DoH",
+      "DoT"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_tls_perf",
+    "name": "TLS 性能优化",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "TLS 握手的 2-RTT 开销是 HTTPS 延迟的主要来源。优化：Session Resumption(会话恢复)避免完整握手、False Start 在握手完成前发送数据、TLS 1.3 将握手压缩到 1-RTT、0-RTT(基于PSK)实现零往返。证书链优化、OCSP Stapling 减少验证延迟。",
+    "keywords": [
+      "TLS",
+      "Session Resumption",
+      "False Start",
+      "TLS 1.3",
+      "0-RTT",
+      "OCSP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch8_compression",
+    "name": "网络压缩技术",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "网络性能优化",
+    "description": "压缩用CPU换带宽。HTTP内容压缩(Gzip/Brotli)可将文本资源缩小70%+；HTTP头部压缩(HPACK/QPACK)减少重复头部传输；图像压缩(WebP/AVIF)比JPEG/PNG节省25-50%体积；TLS压缩已因CRIME/BREACH攻击被禁用。需注意压缩比与CPU开销的平衡。",
+    "keywords": [
+      "Gzip",
+      "Brotli",
+      "HPACK",
+      "图片压缩",
+      "WebP",
+      "AVIF"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_queue_01",
+    "name": "WFQ加权公平队列",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "WFQ 根据权重(通常基于IP优先级)按比例分配带宽，低权重流仍能获得一定带宽，不会饿死。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_queue_02",
+    "name": "FIFO队列特点",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "FIFO是最简单的排队策略，所有分组按到达顺序处理，不区分优先级。突发流量可能导致对延迟敏感的应用(如VoIP)性能下降。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_te_01",
+    "name": "MPLS流量工程",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "MPLS-TE 通过显式路由(explicit route)建立 LSP(标签交换路径)，使流量可按网络管理者规划的路径转发。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_ha_01",
+    "name": "VRRP网关冗余",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "VRRP(虚拟路由冗余协议)多台路由器共享一个虚拟IP，只有Master负责转发。Master故障时Backup自动接管。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_ha_02",
+    "name": "链路聚合优势",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "链路聚合(LACP)将多物理链路捆绑为逻辑链路，可增加总带宽、提供链路级冗余和负载分担。加密不是LACP的功能。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_dns_01",
+    "name": "DNS预解析",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "DNS 预解析在用户可能点击链接前，由浏览器提前解析该链接的域名IP，减少实际点击后的等待时间。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_dns_02",
+    "name": "Anycast DNS",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "Anycast 允许多台 DNS 服务器共享同一IP地址，用户请求被路由到拓扑最近的服务器。优势：1) 就近响应降低延迟；2) 自动负载分散避免单点过载；3) 天然抗DDoS——攻击流量被分散到多个节点。Google Public DNS(8.8.8.8)就是典型Anycast部署。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_tls_01",
+    "name": "TLS握手RTT",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "TLS 1.2 完整握手需 2-RTT(TCP握手不算在内)，TLS 1.3 简化到 1-RTT。结合TCP 3次握手，TLS 1.2+TCP=3-RTT，TLS 1.3+TCP=2-RTT。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_tls_02",
+    "name": "Session Resumption",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "Session Resumption 通过 Session ID 或 Session Ticket 缓存之前握手协商的主密钥，后续连接可直接复用，避免完整的非对称加密开销。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_comp_01",
+    "name": "Brotli vs Gzip",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "Brotli 在相同压缩级别下压缩率比 Gzip 高 20-30%(即输出更小)，但压缩速度较慢。适合静态资源预压缩场景(CDN/build时压缩)。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_comp_02",
+    "name": "HTTP压缩安全风险",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "CRIME(2012)和BREACH(2013)攻击利用压缩后密文长度变化推测明文中的敏感字段(如Cookie中的CSRF token)。TLS 1.3 完全移除压缩支持。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_perf_overall_01",
+    "name": "端到端延迟组成",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "完整页面加载包括DNS解析+TCP握手+TLS握手+HTTP请求+响应传输+浏览器渲染。优化需关注每一环节。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_perf_overall_02",
+    "name": "带宽延迟积应用",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "窗口远小于BDP时链路近乎闲置——发送方发完64KB后必须等200ms ACK才能继续。高性能跨洋传输需大窗口(TCP Window Scaling)。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch8_perf_overall_03",
+    "name": "Wireshark排查延迟",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "通过Wireshark的Time列和TCP Stream Graph：1)SYN到SYN+ACK的间隔=网络RTT；2)Client Hello到Server Hello的间隔=TLS握手+1RTT；3)HTTP GET到第一个数据包(Time to First Byte)包含应用处理时间。Wireshark的Statistics>TCP Stream Graphs>Time-Sequence图可视化各阶段。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_sdn_dataplane",
+    "name": "SDN 数据平面",
+    "type": "原理",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SDN数据平面负责根据流表规则高速转发数据包。OpenFlow交换机使用多级流水线处理分组，从Table 0开始逐级匹配。流表项包含：匹配域、优先级、计数器、指令、超时。匹配失败时通过Packet-In上报控制器。",
+    "keywords": [
+      "数据平面",
+      "流表",
+      "流水线",
+      "Packet-In",
+      "匹配域"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_network_slicing",
+    "name": "网络切片",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "网络切片(Network Slicing)是5G核心概念，利用SDN/NFV技术在共享物理基础设施上创建多个逻辑隔离的端到端虚拟网络。每个切片针对特定场景优化：eMBB大带宽、URLLC超低延迟、mMTC海量连接。切片间资源隔离互不影响。",
+    "keywords": [
+      "网络切片",
+      "5G",
+      "eMBB",
+      "URLLC",
+      "mMTC"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_ibn",
+    "name": "意图网络 IBN",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "意图网络(Intent-Based Networking)是SDN的高级形态。管理员只需声明意图(如保证视频会议流量优先级)，IBN自动翻译为配置、持续验证、偏离时自愈。代表：Cisco DNA Center。核心闭环：意图 -> 翻译 -> 激活 -> 保障。",
+    "keywords": [
+      "IBN",
+      "意图网络",
+      "Cisco DNA",
+      "自动修复"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_spine_leaf",
+    "name": "Spine-Leaf 数据中心架构",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "Spine-Leaf(脊叶)是现代数据中心扁平化拓扑。Leaf连接服务器，Spine连接所有Leaf。任意两台服务器最多3跳(Leaf->Spine->Leaf)，延迟可预测。配合VXLAN Overlay和SDN控制器实现多租户二层互通和灵活虚拟网络。",
+    "keywords": [
+      "Spine-Leaf",
+      "数据中心",
+      "VXLAN",
+      "Overlay"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_vxlan",
+    "name": "VXLAN 虚拟可扩展局域网",
+    "type": "协议",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "VXLAN使用MAC-in-UDP封装，将二层帧封装在UDP中跨越三层网络。24位VNI支持1600万个虚拟网络，远超VLAN 4096限制。是数据中心多租户隔离和虚拟机迁移的关键技术，通常与SDN控制器配合实现自动隧道建立。",
+    "keywords": [
+      "VXLAN",
+      "VNI",
+      "Overlay",
+      "隧道",
+      "多租户"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_compute_offload",
+    "name": "计算卸载策略",
+    "type": "算法",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "计算卸载决定哪些任务在终端执行、哪些迁移到边缘或云端。决策因素：计算量、数据量、延迟、电量。策略包括全部本地、全部卸载、部分卸载(如DNN分区：浅层边缘推理+深层云端)。目标是最小化总延迟或能耗。",
+    "keywords": [
+      "计算卸载",
+      "DNN分区",
+      "能耗优化",
+      "边缘推理"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_iot_edge",
+    "name": "IoT 与边缘计算",
+    "type": "技术",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "IoT天然适合边缘计算：海量传感器数据在本地过滤预处理后仅上传有价值数据。边缘网关运行协议转换(MQTT/CoAP->HTTP)、数据聚合、规则引擎和本地控制。典型架构：传感器->边缘网关->雾节点->云端，数据量逐层递减。",
+    "keywords": [
+      "IoT",
+      "传感器",
+      "MQTT",
+      "边缘网关",
+      "数据聚合"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "ch9_sdn_security",
+    "name": "SDN 安全",
+    "type": "概念",
+    "layer": "概念层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SDN集中控制带来的安全双刃剑：优势包括全局视图便于检测DDoS、流级精细管控；挑战是控制器成为单点攻击目标，南北向接口需TLS加密认证。安全应用：实时异常流量检测、动态黑洞路由隔离攻击源、MTD随机化IP。",
+    "keywords": [
+      "SDN安全",
+      "DDoS检测",
+      "TLS",
+      "MTD"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_flow_01",
+    "name": "OpenFlow 流表项包含哪些字段？（多选）",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "OpenFlow流表项包含匹配域、优先级、计数器、指令和超时时间。密码不是流表字段。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_flow_02",
+    "name": "OpenFlow 交换机收到无匹配流表的包时，默认行为是？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "Table-miss时交换机将分组封装为Packet-In消息发送给控制器，由控制器决定如何处理(下发流表或丢弃)。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_slice_01",
+    "name": "5G 三大场景中，____切片面向超低延迟(如自动驾驶)，____切片面向海量连接(如智能抄表)。",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "eMBB增强移动宽带(大带宽)、URLLC超高可靠低延迟(自动驾驶/远程手术)、mMTC大规模机器通信(海量IoT)。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_slice_02",
+    "name": "网络切片的核心特征是？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "网络切片在共享物理基础设施上创建多个逻辑隔离的端到端虚拟网络，每个切片独立配置和优化。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_ibn_01",
+    "name": "意图网络(IBN)与传统SDN的最大区别是？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "IBN关键是声明式管理：管理员说「要什么」而非「怎么做」，系统自动翻译为配置、持续验证并在偏离时自愈。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_spine_01",
+    "name": "Spine-Leaf 架构中，任意两台服务器之间最多经过几跳？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "Spine-Leaf中所有Leaf都连接到所有Spine，路径固定为Leaf->Spine->Leaf(3跳)，延迟可预测。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_spine_02",
+    "name": "传统三层架构对比Spine-Leaf架构，正确描述是？（多选）",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "传统三层STP会阻塞冗余链路，且偏南北向优化不适应云数据中心大量东西向流量。Spine-Leaf扁平化+ECMP更适合现代DC。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_vxlan_01",
+    "name": "VXLAN 使用____位 VNI 标识符，理论上支持____个虚拟网络，远超 VLAN 的 4096 限制。",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "VXLAN用24位VNI，支持约1600万个虚拟网络。VLAN只有12位，最多4096个。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_vxlan_02",
+    "name": "VXLAN 封装方式是将二层以太网帧封装在____协议中传输。",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "VXLAN采用MAC-in-UDP封装，原始二层帧作为UDP载荷，外层加IP头，UDP目的端口固定4789。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_offload_01",
+    "name": "以下哪些因素影响计算卸载决策？（多选）",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "计算卸载决策需权衡计算量、数据量、延迟、能耗。屏幕分辨率与卸载无关。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_offload_02",
+    "name": "DNN 分区卸载（部分边缘推理+部分云端推理）属于哪种策略？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "DNN分区将浅层放边缘(特征提取)、深层放云端(复杂推理)，属于部分卸载，在延迟和算力间折中。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_iot_01",
+    "name": "IoT 边缘网关的主要功能包括？（多选）",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "边缘网关负责协议转换、预处理、本地控制和设备管理，不替代云端(云端负责长期存储、大数据分析、AI训练)。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_iot_02",
+    "name": "为什么 IoT 场景不适合将所有数据直接上传云端？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "原因：1)带宽成本高(海量传感器数据)；2)延迟(实时控制不能等云端往返)；3)可靠性(网络中断时本地需自治)；4)隐私(敏感数据不出本地)。边缘计算在近端过滤处理后再上传有效数据。",
+    "keywords": [],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_sdnsec_01",
+    "name": "SDN 集中控制架构带来的主要安全挑战是？",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "SDN控制器是网络大脑，集中控制意味着控制器被攻破则全网沦陷。南北向接口须用TLS加密认证，控制器需高可用部署。",
+    "keywords": [],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "q_ch9_sdnsec_02",
+    "name": "简述利用SDN实现MTD(Moving Target Defense)动态防御的核心思路。",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "MTD通过不断变化系统属性(IP、端口、路由)增加攻击者侦查难度。SDN全局视图和可编程性使MTD易实现：控制器定期随机更换主机IP并更新流表，攻击者刚扫描到的信息很快失效。",
+    "keywords": [],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_intserv_01",
+    "name": "IntServ 集成服务·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "下列关于“IntServ 集成服务”的描述，正确的是哪一项？",
+    "keywords": [
+      "IntServ",
+      "RSVP",
+      "资源预留",
+      "流状态",
+      "IntServ 集成服务"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_intserv_02",
+    "name": "IntServ 集成服务·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“IntServ(Integrated Services)通过 RSVP 协议在通信前为每条流预留端到端资源。它提供严格的 QoS 保证，但可扩展性差——核心路由器需维护每条流的状态。适用于企业 VoIP 等小规模场景。”描述的知识点是________。",
+    "keywords": [
+      "IntServ",
+      "RSVP",
+      "资源预留",
+      "流状态",
+      "IntServ 集成服务"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_intserv_03",
+    "name": "IntServ 集成服务·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“IntServ 集成服务”的核心作用或工作机制。",
+    "keywords": [
+      "IntServ",
+      "RSVP",
+      "资源预留",
+      "流状态",
+      "IntServ 集成服务"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_diffserv_01",
+    "name": "DiffServ 区分服务·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "下列关于“DiffServ 区分服务”的描述，正确的是哪一项？",
+    "keywords": [
+      "DiffServ",
+      "DSCP",
+      "EF",
+      "AF",
+      "PHB",
+      "DiffServ 区分服务"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_diffserv_02",
+    "name": "DiffServ 区分服务·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“DiffServ(Differentiated Services)将流量分成若干类(如 EF 快速转发、AF 保证转发、BE 尽力而为)，在 IP 头的 DSCP 字段打标记。路由器按类调度，不维护单流状态，扩展性好，是互联网 QoS 的主流方案。”描述的知识点是________。",
+    "keywords": [
+      "DiffServ",
+      "DSCP",
+      "EF",
+      "AF",
+      "PHB",
+      "DiffServ 区分服务"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_diffserv_03",
+    "name": "DiffServ 区分服务·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“DiffServ 区分服务”的核心作用或工作机制。",
+    "keywords": [
+      "DiffServ",
+      "DSCP",
+      "EF",
+      "AF",
+      "PHB",
+      "DiffServ 区分服务"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_token_bucket_03",
+    "name": "令牌桶算法·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“令牌桶算法”的核心作用或工作机制。",
+    "keywords": [
+      "令牌桶",
+      "Token Bucket",
+      "流量整形",
+      "突发",
+      "令牌桶算法"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_leaky_bucket_01",
+    "name": "漏桶算法·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "下列关于“漏桶算法”的描述，正确的是哪一项？",
+    "keywords": [
+      "漏桶",
+      "Leaky Bucket",
+      "流量整形",
+      "平滑",
+      "漏桶算法"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_leaky_bucket_02",
+    "name": "漏桶算法·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“漏桶(Leaky Bucket)以恒定速率输出分组，无论输入速率如何。桶满则丢弃后续分组。它能平滑突发流量，但不允许任何突发——输出速率完全恒定。比令牌桶更严格。”描述的知识点是________。",
+    "keywords": [
+      "漏桶",
+      "Leaky Bucket",
+      "流量整形",
+      "平滑",
+      "漏桶算法"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_leaky_bucket_03",
+    "name": "漏桶算法·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“漏桶算法”的核心作用或工作机制。",
+    "keywords": [
+      "漏桶",
+      "Leaky Bucket",
+      "流量整形",
+      "平滑",
+      "漏桶算法"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_traffic_shaping_01",
+    "name": "流量整形与监管·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "下列关于“流量整形与监管”的描述，正确的是哪一项？",
+    "keywords": [
+      "流量整形",
+      "Traffic Shaping",
+      "流量监管",
+      "Policing",
+      "流量整形与监管"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_traffic_shaping_02",
+    "name": "流量整形与监管·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“流量整形(Traffic Shaping)缓冲超额流量延后发送，平滑输出曲线。流量监管(Traffic Policing)直接丢弃或降级超额分组。令牌桶兼有整形和监管功能。常用于 ISP 限速和企业的带宽管理。”描述的知识点是________。",
+    "keywords": [
+      "流量整形",
+      "Traffic Shaping",
+      "流量监管",
+      "Policing",
+      "流量整形与监管"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_traffic_shaping_03",
+    "name": "流量整形与监管·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“流量整形与监管”的核心作用或工作机制。",
+    "keywords": [
+      "流量整形",
+      "Traffic Shaping",
+      "流量监管",
+      "Policing",
+      "流量整形与监管"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_cdn_03",
+    "name": "CDN 内容分发网络·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“CDN 内容分发网络”的核心作用或工作机制。",
+    "keywords": [
+      "CDN",
+      "内容分发",
+      "边缘缓存",
+      "GSLB",
+      "Akamai",
+      "CDN 内容分发网络"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_load_balance_02",
+    "name": "负载均衡·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“负载均衡将请求分散到多个服务器，避免单点过载。算法：轮询(Round Robin)、最少连接(Least Connections)、IP 哈希、加权轮询。L4 基于传输层信息分发，L7 可检查 HTTP 内容做更精细路由。”描述的知识点是________。",
+    "keywords": [
+      "负载均衡",
+      "Round Robin",
+      "Least Connections",
+      "L4",
+      "L7"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_load_balance_03",
+    "name": "负载均衡·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“负载均衡”的核心作用或工作机制。",
+    "keywords": [
+      "负载均衡",
+      "Round Robin",
+      "Least Connections",
+      "L4",
+      "L7"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_congestion_control_network_02",
+    "name": "网络层拥塞控制·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“除 TCP 端到端拥塞控制外，路由器也可主动参与：RED(Random Early Detection)在队列满前随机丢包预警；ECN(Explicit Congestion Notification)在 IP 头标记拥塞而非丢包；WFQ(加权公平队列)按权重分配带宽。”描述的知识点是________。",
+    "keywords": [
+      "RED",
+      "ECN",
+      "WFQ",
+      "AQM",
+      "主动队列管理",
+      "网络层拥塞控制"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_congestion_control_network_03",
+    "name": "网络层拥塞控制·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“网络层拥塞控制”的核心作用或工作机制。",
+    "keywords": [
+      "RED",
+      "ECN",
+      "WFQ",
+      "AQM",
+      "主动队列管理",
+      "网络层拥塞控制"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_http_perf_01",
+    "name": "HTTP 性能优化·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "下列关于“HTTP 性能优化”的描述，正确的是哪一项？",
+    "keywords": [
+      "HTTP/2",
+      "HTTP/3",
+      "QUIC",
+      "多路复用",
+      "0-RTT",
+      "HTTP 性能优化"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_http_perf_02",
+    "name": "HTTP 性能优化·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“HTTP/1.1 持久连接和管线化减少握手开销；HTTP/2 多路复用解决队头阻塞；HTTP/3 基于 QUIC(UDP)，0-RTT 连接建立。应用层优化还包括：压缩(Gzip/Brotli)、资源合并、懒加载、域名分片。”描述的知识点是________。",
+    "keywords": [
+      "HTTP/2",
+      "HTTP/3",
+      "QUIC",
+      "多路复用",
+      "0-RTT",
+      "HTTP 性能优化"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_http_perf_03",
+    "name": "HTTP 性能优化·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“HTTP 性能优化”的核心作用或工作机制。",
+    "keywords": [
+      "HTTP/2",
+      "HTTP/3",
+      "QUIC",
+      "多路复用",
+      "0-RTT",
+      "HTTP 性能优化"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_network_measurement_01",
+    "name": "网络性能测量·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "下列关于“网络性能测量”的描述，正确的是哪一项？",
+    "keywords": [
+      "iperf",
+      "ping",
+      "SNMP",
+      "主动测量",
+      "被动测量",
+      "网络性能测量"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_network_measurement_02",
+    "name": "网络性能测量·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“通过主动测量(注入探测包)和被动测量(观察真实流量)获取性能数据。工具：iperf3 测吞吐量、ping 测 RTT、traceroute 测路径、Wireshark 抓包分析。SNMP 可采集设备性能计数器。”描述的知识点是________。",
+    "keywords": [
+      "iperf",
+      "ping",
+      "SNMP",
+      "主动测量",
+      "被动测量",
+      "网络性能测量"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_network_measurement_03",
+    "name": "网络性能测量·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“网络性能测量”的核心作用或工作机制。",
+    "keywords": [
+      "iperf",
+      "ping",
+      "SNMP",
+      "主动测量",
+      "被动测量",
+      "网络性能测量"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_bdp_02",
+    "name": "带宽-延迟积 BDP·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“BDP = 带宽 × RTT，表示「管道」中能容纳的最大数据量(未确认的比特数)。当 TCP 窗口 < BDP 时链路利用率不足；当缓冲区 < BDP 时无法充分利用带宽。是设计和优化高性能网络的关键参数。”描述的知识点是________。",
+    "keywords": [
+      "BDP",
+      "带宽延迟积",
+      "TCP窗口",
+      "链路利用率",
+      "带宽-延迟积 BDP"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_bdp_03",
+    "name": "带宽-延迟积 BDP·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“带宽-延迟积 BDP”的核心作用或工作机制。",
+    "keywords": [
+      "BDP",
+      "带宽延迟积",
+      "TCP窗口",
+      "链路利用率",
+      "带宽-延迟积 BDP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_openflow_01",
+    "name": "OpenFlow 协议·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "下列关于“OpenFlow 协议”的描述，正确的是哪一项？",
+    "keywords": [
+      "OpenFlow",
+      "流表",
+      "南向接口",
+      "匹配域",
+      "OpenFlow 协议"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_openflow_02",
+    "name": "OpenFlow 协议·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“OpenFlow 是 SDN 控制器与交换机之间的南向接口标准协议。控制器通过下发流表(Flow Table)控制交换机的转发行为。流表包含匹配域(源/目的IP、MAC、端口等)和动作(转发、丢弃、修改)。”描述的知识点是________。",
+    "keywords": [
+      "OpenFlow",
+      "流表",
+      "南向接口",
+      "匹配域",
+      "OpenFlow 协议"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_openflow_03",
+    "name": "OpenFlow 协议·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“OpenFlow 协议”的核心作用或工作机制。",
+    "keywords": [
+      "OpenFlow",
+      "流表",
+      "南向接口",
+      "匹配域",
+      "OpenFlow 协议"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sdn_controller_01",
+    "name": "SDN 控制器·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "下列关于“SDN 控制器”的描述，正确的是哪一项？",
+    "keywords": [
+      "SDN控制器",
+      "ONOS",
+      "OpenDaylight",
+      "Ryu",
+      "Floodlight",
+      "SDN 控制器"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sdn_controller_02",
+    "name": "SDN 控制器·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“SDN 控制器是网络的「大脑」，维护全局网络视图，向上提供北向接口供应用调用，向下通过南向接口(OpenFlow等)管理交换机。主流控制器：ONOS(开源)、OpenDaylight、Ryu(Python)、Floodlight。”描述的知识点是________。",
+    "keywords": [
+      "SDN控制器",
+      "ONOS",
+      "OpenDaylight",
+      "Ryu",
+      "Floodlight",
+      "SDN 控制器"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sdn_controller_03",
+    "name": "SDN 控制器·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“SDN 控制器”的核心作用或工作机制。",
+    "keywords": [
+      "SDN控制器",
+      "ONOS",
+      "OpenDaylight",
+      "Ryu",
+      "Floodlight",
+      "SDN 控制器"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_nfv_02",
+    "name": "NFV 网络功能虚拟化·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“NFV 用软件在通用服务器上运行传统硬件网络设备的功能(防火墙、负载均衡器、路由器等)，称为 VNF(虚拟网络功能)。SDN 侧重控制转发分离，NFV 侧重硬件虚拟化，两者互补。”描述的知识点是________。",
+    "keywords": [
+      "NFV",
+      "VNF",
+      "网络功能虚拟化",
+      "通用服务器",
+      "NFV 网络功能虚拟化"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_nfv_03",
+    "name": "NFV 网络功能虚拟化·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“NFV 网络功能虚拟化”的核心作用或工作机制。",
+    "keywords": [
+      "NFV",
+      "VNF",
+      "网络功能虚拟化",
+      "通用服务器",
+      "NFV 网络功能虚拟化"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sd_wan_02",
+    "name": "SD-WAN·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“SD-WAN 将 SDN 理念应用于广域网。通过集中控制器管理多分支机构的 MPLS、4G/5G、宽带等多种链路，实现智能路径选择、零接触部署、应用感知路由。降低 WAN 成本，提升可靠性。”描述的知识点是________。",
+    "keywords": [
+      "SD-WAN",
+      "广域网",
+      "MPLS",
+      "应用感知路由"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sd_wan_03",
+    "name": "SD-WAN·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“SD-WAN”的核心作用或工作机制。",
+    "keywords": [
+      "SD-WAN",
+      "广域网",
+      "MPLS",
+      "应用感知路由"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_edge_computing_03",
+    "name": "边缘计算·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“边缘计算”的核心作用或工作机制。",
+    "keywords": [
+      "边缘计算",
+      "低延迟",
+      "IoT",
+      "计算卸载",
+      "本地处理"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_mec_01",
+    "name": "MEC 移动边缘计算·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "下列关于“MEC 移动边缘计算”的描述，正确的是哪一项？",
+    "keywords": [
+      "MEC",
+      "5G",
+      "ETSI",
+      "URLLC",
+      "RAN",
+      "MEC 移动边缘计算"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_mec_02",
+    "name": "MEC 移动边缘计算·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“MEC(Multi-access Edge Computing)是 ETSI 标准化的边缘计算框架，将云计算能力下沉到移动基站侧(RAN边缘)。5G 核心场景：URLLC(超低延迟)和 eMBB(大带宽)都依赖 MEC。”描述的知识点是________。",
+    "keywords": [
+      "MEC",
+      "5G",
+      "ETSI",
+      "URLLC",
+      "RAN",
+      "MEC 移动边缘计算"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_mec_03",
+    "name": "MEC 移动边缘计算·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“MEC 移动边缘计算”的核心作用或工作机制。",
+    "keywords": [
+      "MEC",
+      "5G",
+      "ETSI",
+      "URLLC",
+      "RAN",
+      "MEC 移动边缘计算"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_fog_computing_01",
+    "name": "雾计算·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "下列关于“雾计算”的描述，正确的是哪一项？",
+    "keywords": [
+      "雾计算",
+      "Fog Computing",
+      "Cisco",
+      "三层架构"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_fog_computing_02",
+    "name": "雾计算·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“雾计算(Fog Computing)由 Cisco 提出，是介于边缘和云端之间的中间层。相比边缘计算更靠近网络核心侧，聚合多边缘节点数据并做初步处理后上传云端。edge→fog→cloud 三层架构。”描述的知识点是________。",
+    "keywords": [
+      "雾计算",
+      "Fog Computing",
+      "Cisco",
+      "三层架构"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_fog_computing_03",
+    "name": "雾计算·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“雾计算”的核心作用或工作机制。",
+    "keywords": [
+      "雾计算",
+      "Fog Computing",
+      "Cisco",
+      "三层架构"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_edge_ai_01",
+    "name": "边缘 AI·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "下列关于“边缘 AI”的描述，正确的是哪一项？",
+    "keywords": [
+      "边缘AI",
+      "模型压缩",
+      "推理",
+      "TensorFlow Lite",
+      "ONNX",
+      "边缘 AI"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_edge_ai_02",
+    "name": "边缘 AI·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“边缘 AI 在边缘设备上直接运行 AI 推理(模型压缩后)。优势：低延迟(无需上传云端)、隐私保护(数据不出本地)、离线可用。典型：手机端人脸识别、智能摄像头目标检测、语音助手本地处理。”描述的知识点是________。",
+    "keywords": [
+      "边缘AI",
+      "模型压缩",
+      "推理",
+      "TensorFlow Lite",
+      "ONNX",
+      "边缘 AI"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_edge_ai_03",
+    "name": "边缘 AI·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“边缘 AI”的核心作用或工作机制。",
+    "keywords": [
+      "边缘AI",
+      "模型压缩",
+      "推理",
+      "TensorFlow Lite",
+      "ONNX",
+      "边缘 AI"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_mininet_02",
+    "name": "Mininet 网络仿真·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“Mininet 是轻量级网络仿真器，可在一台 Linux 机器上创建虚拟主机、交换机、控制器和链路的完整 SDN 网络。广泛用于 SDN 教学和研究。支持自定义拓扑和 OpenFlow 交换机。”描述的知识点是________。",
+    "keywords": [
+      "Mininet",
+      "仿真器",
+      "虚拟网络",
+      "SDN实验",
+      "Mininet 网络仿真"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_mininet_03",
+    "name": "Mininet 网络仿真·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“Mininet 网络仿真”的核心作用或工作机制。",
+    "keywords": [
+      "Mininet",
+      "仿真器",
+      "虚拟网络",
+      "SDN实验",
+      "Mininet 网络仿真"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_wireshark_project_02",
+    "name": "Wireshark 协议分析项目·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "“使用 Wireshark 捕获并分析网络流量，深入理解 TCP/IP 协议栈各层的工作机制。典型项目：分析 TCP 三次握手/四次挥手、HTTP 请求响应、DNS 查询过程、TLS 握手。培养协议级故障排查能力。”描述的知识点是________。",
+    "keywords": [
+      "Wireshark",
+      "抓包分析",
+      "TCP握手",
+      "协议分析",
+      "Wireshark 协议分析项目"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_wireshark_project_03",
+    "name": "Wireshark 协议分析项目·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "简述“Wireshark 协议分析项目”的核心作用或工作机制。",
+    "keywords": [
+      "Wireshark",
+      "抓包分析",
+      "TCP握手",
+      "协议分析",
+      "Wireshark 协议分析项目"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_socket_project_02",
+    "name": "Socket 编程项目·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "“使用 Socket API(Python/Java/C)实现网络应用程序。典型项目：多线程 Web 服务器、文件传输工具、简易聊天室、远程命令执行。理解 TCP/UDP 编程模型、并发处理(多线程/select/epoll)、应用层协议设计。”描述的知识点是________。",
+    "keywords": [
+      "Socket编程",
+      "TCP",
+      "UDP",
+      "多线程",
+      "Web服务器",
+      "Socket 编程项目"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_socket_project_03",
+    "name": "Socket 编程项目·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "简述“Socket 编程项目”的核心作用或工作机制。",
+    "keywords": [
+      "Socket编程",
+      "TCP",
+      "UDP",
+      "多线程",
+      "Web服务器",
+      "Socket 编程项目"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_packet_tracer_project_02",
+    "name": "Packet Tracer 组网项目·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "“使用 Cisco Packet Tracer 或 GNS3 设计并模拟企业级网络拓扑。典型项目：多 VLAN 园区网、OSPF 多区域路由、ACL 访问控制、NAT 配置、VPN 隧道。培养网络规划设计能力。”描述的知识点是________。",
+    "keywords": [
+      "Packet Tracer",
+      "GNS3",
+      "VLAN",
+      "OSPF",
+      "ACL",
+      "NAT"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_packet_tracer_project_03",
+    "name": "Packet Tracer 组网项目·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "简述“Packet Tracer 组网项目”的核心作用或工作机制。",
+    "keywords": [
+      "Packet Tracer",
+      "GNS3",
+      "VLAN",
+      "OSPF",
+      "ACL",
+      "NAT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_http_perf_project_01",
+    "name": "Web 性能分析与优化项目·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "下列关于“Web 性能分析与优化项目”的描述，正确的是哪一项？",
+    "keywords": [
+      "Web性能",
+      "Lighthouse",
+      "HTTP/2",
+      "缓存",
+      "Core Web Vitals",
+      "Web 性能分析与优化项目"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_http_perf_project_02",
+    "name": "Web 性能分析与优化项目·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "“分析 Web 应用性能瓶颈并实施优化。使用 Chrome DevTools、Lighthouse 测量性能指标(FP/FCP/LCP/TTI)。优化手段：HTTP/2、资源压缩、CDN、缓存策略、图片优化。培养端到端性能调优思维。”描述的知识点是________。",
+    "keywords": [
+      "Web性能",
+      "Lighthouse",
+      "HTTP/2",
+      "缓存",
+      "Core Web Vitals",
+      "Web 性能分析与优化项目"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_http_perf_project_03",
+    "name": "Web 性能分析与优化项目·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "简述“Web 性能分析与优化项目”的核心作用或工作机制。",
+    "keywords": [
+      "Web性能",
+      "Lighthouse",
+      "HTTP/2",
+      "缓存",
+      "Core Web Vitals",
+      "Web 性能分析与优化项目"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_sdn_mininet_project_01",
+    "name": "SDN 组网实验项目·单选题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "下列关于“SDN 组网实验项目”的描述，正确的是哪一项？",
+    "keywords": [
+      "Mininet",
+      "Ryu",
+      "SDN",
+      "OpenFlow",
+      "流量工程",
+      "SDN 组网实验项目"
+    ],
+    "difficulty": 1,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_sdn_mininet_project_02",
+    "name": "SDN 组网实验项目·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "“基于 Mininet + Ryu/ONOS 搭建 SDN 实验环境。实现自定义拓扑、流量监控、动态路由切换、负载均衡。将 SDN 理论与实践结合，理解可编程网络的潜力。”描述的知识点是________。",
+    "keywords": [
+      "Mininet",
+      "Ryu",
+      "SDN",
+      "OpenFlow",
+      "流量工程",
+      "SDN 组网实验项目"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch10_sdn_mininet_project_03",
+    "name": "SDN 组网实验项目·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "课程综合项目",
+    "description": "简述“SDN 组网实验项目”的核心作用或工作机制。",
+    "keywords": [
+      "Mininet",
+      "Ryu",
+      "SDN",
+      "OpenFlow",
+      "流量工程",
+      "SDN 组网实验项目"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_queue_management_03",
+    "name": "队列管理算法·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“队列管理算法”的核心作用或工作机制。",
+    "keywords": [
+      "FIFO",
+      "Priority Queuing",
+      "WFQ",
+      "CBWFQ",
+      "队列调度",
+      "队列管理算法"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_traffic_engineering_02",
+    "name": "流量工程·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "“流量工程(Traffic Engineering)通过优化路由来平衡网络负载，避免局部拥塞。MPLS-TE 在 MPLS 网络中显式指定 LSP 路径；IGP 度量调整可引导流量走特定链路；SDN 控制器可全局视角动态调整流表实现流量工程。”描述的知识点是________。",
+    "keywords": [
+      "流量工程",
+      "MPLS-TE",
+      "LSP",
+      "负载均衡",
+      "路由优化"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_traffic_engineering_03",
+    "name": "流量工程·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“流量工程”的核心作用或工作机制。",
+    "keywords": [
+      "流量工程",
+      "MPLS-TE",
+      "LSP",
+      "负载均衡",
+      "路由优化"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_ha_redundancy_03",
+    "name": "网络冗余与高可用·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“网络冗余与高可用”的核心作用或工作机制。",
+    "keywords": [
+      "高可用",
+      "VRRP",
+      "HSRP",
+      "LACP",
+      "ECMP",
+      "冗余"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_dns_perf_03",
+    "name": "DNS 性能优化·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“DNS 性能优化”的核心作用或工作机制。",
+    "keywords": [
+      "DNS",
+      "预解析",
+      "Anycast",
+      "TTL",
+      "DoH",
+      "DoT"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_tls_perf_03",
+    "name": "TLS 性能优化·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“TLS 性能优化”的核心作用或工作机制。",
+    "keywords": [
+      "TLS",
+      "Session Resumption",
+      "False Start",
+      "TLS 1.3",
+      "0-RTT",
+      "OCSP"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch8_compression_03",
+    "name": "网络压缩技术·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "网络性能优化",
+    "description": "简述“网络压缩技术”的核心作用或工作机制。",
+    "keywords": [
+      "Gzip",
+      "Brotli",
+      "HPACK",
+      "图片压缩",
+      "WebP",
+      "AVIF"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sdn_dataplane_03",
+    "name": "SDN 数据平面·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“SDN 数据平面”的核心作用或工作机制。",
+    "keywords": [
+      "数据平面",
+      "流表",
+      "流水线",
+      "Packet-In",
+      "匹配域",
+      "SDN 数据平面"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_network_slicing_03",
+    "name": "网络切片·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“网络切片”的核心作用或工作机制。",
+    "keywords": [
+      "网络切片",
+      "5G",
+      "eMBB",
+      "URLLC",
+      "mMTC"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_ibn_02",
+    "name": "意图网络 IBN·填空题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "“意图网络(Intent-Based Networking)是SDN的高级形态。管理员只需声明意图(如保证视频会议流量优先级)，IBN自动翻译为配置、持续验证、偏离时自愈。代表：Cisco DNA Center。核心闭环：意图 -> 翻译 -> 激活 -> 保障。”描述的知识点是________。",
+    "keywords": [
+      "IBN",
+      "意图网络",
+      "Cisco DNA",
+      "自动修复",
+      "意图网络 IBN"
+    ],
+    "difficulty": 2,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_ibn_03",
+    "name": "意图网络 IBN·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“意图网络 IBN”的核心作用或工作机制。",
+    "keywords": [
+      "IBN",
+      "意图网络",
+      "Cisco DNA",
+      "自动修复",
+      "意图网络 IBN"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_spine_leaf_03",
+    "name": "Spine-Leaf 数据中心架构·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“Spine-Leaf 数据中心架构”的核心作用或工作机制。",
+    "keywords": [
+      "Spine-Leaf",
+      "数据中心",
+      "VXLAN",
+      "Overlay",
+      "Spine-Leaf 数据中心架构"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_vxlan_03",
+    "name": "VXLAN 虚拟可扩展局域网·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“VXLAN 虚拟可扩展局域网”的核心作用或工作机制。",
+    "keywords": [
+      "VXLAN",
+      "VNI",
+      "Overlay",
+      "隧道",
+      "多租户",
+      "VXLAN 虚拟可扩展局域网"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_compute_offload_03",
+    "name": "计算卸载策略·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“计算卸载策略”的核心作用或工作机制。",
+    "keywords": [
+      "计算卸载",
+      "DNN分区",
+      "能耗优化",
+      "边缘推理",
+      "计算卸载策略"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_iot_edge_03",
+    "name": "IoT 与边缘计算·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“IoT 与边缘计算”的核心作用或工作机制。",
+    "keywords": [
+      "IoT",
+      "传感器",
+      "MQTT",
+      "边缘网关",
+      "数据聚合",
+      "IoT 与边缘计算"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
+    "id": "project_q_ch9_sdn_security_03",
+    "name": "SDN 安全·简答题",
+    "type": "问题",
+    "layer": "问题层",
+    "chapter": "软件定义网络与边缘计算",
+    "description": "简述“SDN 安全”的核心作用或工作机制。",
+    "keywords": [
+      "SDN安全",
+      "DDoS检测",
+      "TLS",
+      "MTD",
+      "SDN 安全"
+    ],
+    "difficulty": 3,
+    "image_urls": [],
+    "video_url": null
+  },
+  {
     "id": "core_ch5_network_layer",
     "name": "网络层",
     "type": "概念",
@@ -6298,7 +9169,7 @@
     ],
     "difficulty": 1,
     "image_urls": [],
-    "video_url": null
+    "video_url": "https://www.bilibili.com/video/BV1c4411d7jb/"
   },
   {
     "id": "core_ch5_ip_service",
@@ -6757,7 +9628,7 @@
     ],
     "difficulty": 1,
     "image_urls": [],
-    "video_url": null
+    "video_url": "https://www.bilibili.com/video/BV1c4411d7jb/"
   },
   {
     "id": "core_ch6_process_communication",
@@ -7216,7 +10087,7 @@
     ],
     "difficulty": 1,
     "image_urls": [],
-    "video_url": null
+    "video_url": "https://www.bilibili.com/video/BV1c4411d7jb/"
   },
   {
     "id": "core_ch7_architecture",
@@ -12164,1475 +15035,6 @@
       "编程"
     ],
     "difficulty": 4,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_qos",
-    "name": "QoS 服务质量",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "QoS(Quality of Service)是网络为不同类型流量提供差异化服务的能力。关键指标包括带宽、时延、抖动、丢包率。QoS 通过在路由器中分类、标记、调度数据包，确保关键业务获得优先保障。",
-    "keywords": [
-      "QoS",
-      "服务质量",
-      "带宽",
-      "时延",
-      "抖动"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_intserv",
-    "name": "IntServ 集成服务",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "IntServ(Integrated Services)通过 RSVP 协议在通信前为每条流预留端到端资源。它提供严格的 QoS 保证，但可扩展性差——核心路由器需维护每条流的状态。适用于企业 VoIP 等小规模场景。",
-    "keywords": [
-      "IntServ",
-      "RSVP",
-      "资源预留",
-      "流状态"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_diffserv",
-    "name": "DiffServ 区分服务",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "DiffServ(Differentiated Services)将流量分成若干类(如 EF 快速转发、AF 保证转发、BE 尽力而为)，在 IP 头的 DSCP 字段打标记。路由器按类调度，不维护单流状态，扩展性好，是互联网 QoS 的主流方案。",
-    "keywords": [
-      "DiffServ",
-      "DSCP",
-      "EF",
-      "AF",
-      "PHB"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_token_bucket",
-    "name": "令牌桶算法",
-    "type": "算法",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "令牌桶(Token Bucket)以恒定速率 r 向桶中放入令牌(最多 b 个)。发送一个分组需消耗等量令牌，无令牌时需等待或丢弃。允许突发流量(burst)——桶越大突发能力越强，平均速率 ≤ r。",
-    "keywords": [
-      "令牌桶",
-      "Token Bucket",
-      "流量整形",
-      "突发"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_leaky_bucket",
-    "name": "漏桶算法",
-    "type": "算法",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "漏桶(Leaky Bucket)以恒定速率输出分组，无论输入速率如何。桶满则丢弃后续分组。它能平滑突发流量，但不允许任何突发——输出速率完全恒定。比令牌桶更严格。",
-    "keywords": [
-      "漏桶",
-      "Leaky Bucket",
-      "流量整形",
-      "平滑"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_traffic_shaping",
-    "name": "流量整形与监管",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "流量整形(Traffic Shaping)缓冲超额流量延后发送，平滑输出曲线。流量监管(Traffic Policing)直接丢弃或降级超额分组。令牌桶兼有整形和监管功能。常用于 ISP 限速和企业的带宽管理。",
-    "keywords": [
-      "流量整形",
-      "Traffic Shaping",
-      "流量监管",
-      "Policing"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_cdn",
-    "name": "CDN 内容分发网络",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "CDN 将内容缓存到离用户最近的边缘服务器。用户请求被 DNS 重定向到最近的 CDN 节点，大幅减少延迟和源站压力。关键技术：GSLB 全局负载均衡、缓存策略、内容预热。代表：Akamai、Cloudflare、阿里云 CDN。",
-    "keywords": [
-      "CDN",
-      "内容分发",
-      "边缘缓存",
-      "GSLB",
-      "Akamai"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_load_balance",
-    "name": "负载均衡",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "负载均衡将请求分散到多个服务器，避免单点过载。算法：轮询(Round Robin)、最少连接(Least Connections)、IP 哈希、加权轮询。L4 基于传输层信息分发，L7 可检查 HTTP 内容做更精细路由。",
-    "keywords": [
-      "负载均衡",
-      "Round Robin",
-      "Least Connections",
-      "L4",
-      "L7"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_congestion_control_network",
-    "name": "网络层拥塞控制",
-    "type": "原理",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "除 TCP 端到端拥塞控制外，路由器也可主动参与：RED(Random Early Detection)在队列满前随机丢包预警；ECN(Explicit Congestion Notification)在 IP 头标记拥塞而非丢包；WFQ(加权公平队列)按权重分配带宽。",
-    "keywords": [
-      "RED",
-      "ECN",
-      "WFQ",
-      "AQM",
-      "主动队列管理"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_http_perf",
-    "name": "HTTP 性能优化",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "HTTP/1.1 持久连接和管线化减少握手开销；HTTP/2 多路复用解决队头阻塞；HTTP/3 基于 QUIC(UDP)，0-RTT 连接建立。应用层优化还包括：压缩(Gzip/Brotli)、资源合并、懒加载、域名分片。",
-    "keywords": [
-      "HTTP/2",
-      "HTTP/3",
-      "QUIC",
-      "多路复用",
-      "0-RTT"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_network_measurement",
-    "name": "网络性能测量",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "通过主动测量(注入探测包)和被动测量(观察真实流量)获取性能数据。工具：iperf3 测吞吐量、ping 测 RTT、traceroute 测路径、Wireshark 抓包分析。SNMP 可采集设备性能计数器。",
-    "keywords": [
-      "iperf",
-      "ping",
-      "SNMP",
-      "主动测量",
-      "被动测量"
-    ],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_bdp",
-    "name": "带宽-延迟积 BDP",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "BDP = 带宽 × RTT，表示「管道」中能容纳的最大数据量(未确认的比特数)。当 TCP 窗口 < BDP 时链路利用率不足；当缓冲区 < BDP 时无法充分利用带宽。是设计和优化高性能网络的关键参数。",
-    "keywords": [
-      "BDP",
-      "带宽延迟积",
-      "TCP窗口",
-      "链路利用率"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_sdn",
-    "name": "SDN 软件定义网络",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SDN 将网络设备的控制平面(决策)与数据平面(转发)分离，控制平面集中到 SDN 控制器。这使得网络可编程、灵活配置，打破传统网络设备的封闭性。核心理念：集中控制 + 开放接口。",
-    "keywords": [
-      "SDN",
-      "控制平面",
-      "数据平面",
-      "可编程网络"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_openflow",
-    "name": "OpenFlow 协议",
-    "type": "协议",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "OpenFlow 是 SDN 控制器与交换机之间的南向接口标准协议。控制器通过下发流表(Flow Table)控制交换机的转发行为。流表包含匹配域(源/目的IP、MAC、端口等)和动作(转发、丢弃、修改)。",
-    "keywords": [
-      "OpenFlow",
-      "流表",
-      "南向接口",
-      "匹配域"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_sdn_controller",
-    "name": "SDN 控制器",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SDN 控制器是网络的「大脑」，维护全局网络视图，向上提供北向接口供应用调用，向下通过南向接口(OpenFlow等)管理交换机。主流控制器：ONOS(开源)、OpenDaylight、Ryu(Python)、Floodlight。",
-    "keywords": [
-      "SDN控制器",
-      "ONOS",
-      "OpenDaylight",
-      "Ryu",
-      "Floodlight"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_nfv",
-    "name": "NFV 网络功能虚拟化",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "NFV 用软件在通用服务器上运行传统硬件网络设备的功能(防火墙、负载均衡器、路由器等)，称为 VNF(虚拟网络功能)。SDN 侧重控制转发分离，NFV 侧重硬件虚拟化，两者互补。",
-    "keywords": [
-      "NFV",
-      "VNF",
-      "网络功能虚拟化",
-      "通用服务器"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_sd_wan",
-    "name": "SD-WAN",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SD-WAN 将 SDN 理念应用于广域网。通过集中控制器管理多分支机构的 MPLS、4G/5G、宽带等多种链路，实现智能路径选择、零接触部署、应用感知路由。降低 WAN 成本，提升可靠性。",
-    "keywords": [
-      "SD-WAN",
-      "广域网",
-      "MPLS",
-      "应用感知路由"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_edge_computing",
-    "name": "边缘计算",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "边缘计算将计算、存储、网络资源部署到靠近数据源的网络边缘，减少数据传输到云端的延迟和带宽消耗。典型场景：自动驾驶(毫秒级决策)、工业IoT(本地实时控制)、AR/VR(低延迟渲染)。",
-    "keywords": [
-      "边缘计算",
-      "低延迟",
-      "IoT",
-      "计算卸载",
-      "本地处理"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_mec",
-    "name": "MEC 移动边缘计算",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "MEC(Multi-access Edge Computing)是 ETSI 标准化的边缘计算框架，将云计算能力下沉到移动基站侧(RAN边缘)。5G 核心场景：URLLC(超低延迟)和 eMBB(大带宽)都依赖 MEC。",
-    "keywords": [
-      "MEC",
-      "5G",
-      "ETSI",
-      "URLLC",
-      "RAN"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_fog_computing",
-    "name": "雾计算",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "雾计算(Fog Computing)由 Cisco 提出，是介于边缘和云端之间的中间层。相比边缘计算更靠近网络核心侧，聚合多边缘节点数据并做初步处理后上传云端。edge→fog→cloud 三层架构。",
-    "keywords": [
-      "雾计算",
-      "Fog Computing",
-      "Cisco",
-      "三层架构"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_edge_ai",
-    "name": "边缘 AI",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "边缘 AI 在边缘设备上直接运行 AI 推理(模型压缩后)。优势：低延迟(无需上传云端)、隐私保护(数据不出本地)、离线可用。典型：手机端人脸识别、智能摄像头目标检测、语音助手本地处理。",
-    "keywords": [
-      "边缘AI",
-      "模型压缩",
-      "推理",
-      "TensorFlow Lite",
-      "ONNX"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_mininet",
-    "name": "Mininet 网络仿真",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "Mininet 是轻量级网络仿真器，可在一台 Linux 机器上创建虚拟主机、交换机、控制器和链路的完整 SDN 网络。广泛用于 SDN 教学和研究。支持自定义拓扑和 OpenFlow 交换机。",
-    "keywords": [
-      "Mininet",
-      "仿真器",
-      "虚拟网络",
-      "SDN实验"
-    ],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch10_wireshark_project",
-    "name": "Wireshark 协议分析项目",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "课程综合项目",
-    "description": "使用 Wireshark 捕获并分析网络流量，深入理解 TCP/IP 协议栈各层的工作机制。典型项目：分析 TCP 三次握手/四次挥手、HTTP 请求响应、DNS 查询过程、TLS 握手。培养协议级故障排查能力。",
-    "keywords": [
-      "Wireshark",
-      "抓包分析",
-      "TCP握手",
-      "协议分析"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch10_socket_project",
-    "name": "Socket 编程项目",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "课程综合项目",
-    "description": "使用 Socket API(Python/Java/C)实现网络应用程序。典型项目：多线程 Web 服务器、文件传输工具、简易聊天室、远程命令执行。理解 TCP/UDP 编程模型、并发处理(多线程/select/epoll)、应用层协议设计。",
-    "keywords": [
-      "Socket编程",
-      "TCP",
-      "UDP",
-      "多线程",
-      "Web服务器"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch10_packet_tracer_project",
-    "name": "Packet Tracer 组网项目",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "课程综合项目",
-    "description": "使用 Cisco Packet Tracer 或 GNS3 设计并模拟企业级网络拓扑。典型项目：多 VLAN 园区网、OSPF 多区域路由、ACL 访问控制、NAT 配置、VPN 隧道。培养网络规划设计能力。",
-    "keywords": [
-      "Packet Tracer",
-      "GNS3",
-      "VLAN",
-      "OSPF",
-      "ACL",
-      "NAT"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch10_http_perf_project",
-    "name": "Web 性能分析与优化项目",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "课程综合项目",
-    "description": "分析 Web 应用性能瓶颈并实施优化。使用 Chrome DevTools、Lighthouse 测量性能指标(FP/FCP/LCP/TTI)。优化手段：HTTP/2、资源压缩、CDN、缓存策略、图片优化。培养端到端性能调优思维。",
-    "keywords": [
-      "Web性能",
-      "Lighthouse",
-      "HTTP/2",
-      "缓存",
-      "Core Web Vitals"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch10_sdn_mininet_project",
-    "name": "SDN 组网实验项目",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "课程综合项目",
-    "description": "基于 Mininet + Ryu/ONOS 搭建 SDN 实验环境。实现自定义拓扑、流量监控、动态路由切换、负载均衡。将 SDN 理论与实践结合，理解可编程网络的潜力。",
-    "keywords": [
-      "Mininet",
-      "Ryu",
-      "SDN",
-      "OpenFlow",
-      "流量工程"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch10_network_design",
-    "name": "网络规划与设计方法",
-    "type": "原理",
-    "layer": "概念层",
-    "chapter": "课程综合项目",
-    "description": "网络设计的系统方法：需求分析(用户数、流量模型、可靠性要求)→逻辑设计(拓扑、编址、路由协议)→物理设计(设备选型、布线)→安全设计(防火墙、ACL、VPN)→测试与验收。遵循自顶向下原则。",
-    "keywords": [
-      "网络设计",
-      "需求分析",
-      "拓扑设计",
-      "设备选型",
-      "自顶向下"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "case_ch8_cdn_accelerate",
-    "name": "视频网站CDN加速前后对比",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "网络性能优化",
-    "description": "某视频网站在部署CDN前后，对比全国不同地区用户的视频首帧耗时和卡顿率。分析CDN如何通过边缘缓存减少跨运营商延迟。",
-    "keywords": [
-      "CDN",
-      "视频加速",
-      "延迟优化",
-      "缓存命中率"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "case_ch8_token_bucket_limit",
-    "name": "ISP流量整形：令牌桶限速案例分析",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "网络性能优化",
-    "description": "某校园网出口部署令牌桶算法限制P2P下载带宽为5Mbps，允许突发到10Mbps持续2秒。分析参数配置对用户体验的影响。",
-    "keywords": [
-      "令牌桶",
-      "流量整形",
-      "P2P限速",
-      "QoS"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "case_ch9_mininet_sdn",
-    "name": "Mininet搭建SDN网络：自定义流表路由",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "使用Mininet创建3交换机+6主机的胖树拓扑，通过Ryu控制器下发自定义流表实现流量工程，对比传统最短路径与负载均衡路由的效果。",
-    "keywords": [
-      "Mininet",
-      "OpenFlow",
-      "SDN",
-      "流表",
-      "Ryu"
-    ],
-    "difficulty": 4,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "case_ch9_edge_face",
-    "name": "边缘AI：智能摄像头实时人脸识别",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "对比云端方案和边缘方案在人脸识别场景的延迟和带宽消耗，分析边缘计算在实时视频分析中的优势与挑战。",
-    "keywords": [
-      "边缘计算",
-      "AI推理",
-      "人脸识别",
-      "延迟",
-      "带宽"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "case_ch10_campus_network",
-    "name": "校园网规划与设计综合案例",
-    "type": "案例",
-    "layer": "案例层",
-    "chapter": "课程综合项目",
-    "description": "为某新建校区(5000人规模)设计完整的校园网络方案，覆盖需求分析、拓扑设计、VLAN规划、IP编址、安全策略、冗余设计全流程。",
-    "keywords": [
-      "校园网",
-      "网络设计",
-      "VLAN",
-      "OSPF",
-      "综合项目"
-    ],
-    "difficulty": 4,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_qos_01",
-    "name": "以下哪项不是QoS的关键性能指标？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "QoS 四大指标是带宽、时延(延迟)、抖动和丢包率。颜色深度是图像属性。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_qos_02",
-    "name": "IntServ与DiffServ对比",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "IntServ(集成服务)：通过RSVP为每条流预留端到端资源，提供严格QoS保证，但可扩展性差(核心路由器需维护每条流状态)，适用于企业VoIP等小规模场景。DiffServ(区分服务)：将流量分类标记(DSCP)，路由器按类调度(PHB)，不维护单流状态，可扩展性好，是互联网QoS的主流方案。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_qos_03",
-    "name": "RSVP协议的全称",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "RSVP = Resource Reservation Protocol，资源预留协议。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_token_01",
-    "name": "令牌桶 vs 漏桶",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "令牌桶允许突发(桶越大突发能力越强)；漏桶输出速率完全恒定，不允许任何突发。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_token_02",
-    "name": "令牌桶参数计算",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "最大突发时长 = b/r = 4Mb/2Mbps = 2s；最大突发数据量 = b = 4Mb。注意令牌桶允许积蓄的最大突发就是桶容量本身。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_cdn_01",
-    "name": "CDN工作原理",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "CDN 通过 DNS 智能解析(全局负载均衡 GSLB)将用户请求导向最近的边缘节点。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_cdn_02",
-    "name": "CDN与边缘计算区别",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "CDN 主要做内容缓存和分发(静态资源、视频)，计算能力有限；边缘计算在靠近用户侧提供通用计算能力(可运行自定义代码、AI推理等)，不限于内容分发。CDN可视为边缘计算在内容分发领域的特化应用。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_load_01",
-    "name": "负载均衡算法",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "轮询、最少连接和 IP 哈希是常见负载均衡算法，冒泡排序和二分查找是排序/搜索算法。注意加了 new 就不是多选",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_congestion_01",
-    "name": "RED算法原理",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "RED 在队列长度达到阈值前就随机选择连接丢包，使发送端提前减小拥塞窗口，避免全局同步(TCP Global Synchronization)。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_bdp_01",
-    "name": "带宽延迟积计算",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "BDP = 带宽 × RTT = 100Mbps × 50ms = 5Mb。当TCP窗口 < BDP 时，发送方必须等ACK才能继续发，链路利用率不足。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_sdn_01",
-    "name": "SDN核心思想",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SDN 的本质是将网络设备的控制平面(决策)与数据平面(转发)分离，控制平面集中到控制器实现可编程管理。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_sdn_02",
-    "name": "OpenFlow流表",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "OpenFlow 交换机通过流表匹配数据包并执行动作。流表由控制器下发，包含匹配域和对应的转发/丢弃/修改动作。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_sdn_03",
-    "name": "南向接口与北向接口",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "南向接口(如OpenFlow)控制交换机，北向接口供上层应用调用网络能力。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_nfv_01",
-    "name": "SDN与NFV关系",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "NFV 和 SDN 是独立互补的概念。NFV 关注用软件替代硬件网络功能，可以不依赖 SDN；但两者结合能发挥更大价值。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_sdwan_01",
-    "name": "SD-WAN优势",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SD-WAN 可用普通宽带替代昂贵 MPLS，支持远程自动配置，能识别应用类型选择最优路径。物理线路稳定性取决于运营商，非 SD-WAN 特有。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_edge_01",
-    "name": "边缘计算适用场景",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "自动驾驶、工业IoT和AR/VR都对延迟极度敏感，是边缘计算的典型场景。离线文档编辑不需要网络，数据备份不敏感于延迟可用云端。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_edge_02",
-    "name": "边缘与雾计算区别",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "层次从近到远：边缘计算(Edge)→雾计算(Fog)→云计算(Cloud)。边缘最近数据源(终端侧)，延迟最低算力最弱；雾计算处于中间层聚合多边缘节点；云计算在远程数据中心，算力最强延迟最高。三者互补形成\"端-边-雾-云\"协同架构。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_mininet_01",
-    "name": "Mininet功能",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "Mininet 是轻量级 SDN 网络仿真器，广泛用于教学和研究，可在一台机器上创建完整的虚拟 SDN 网络。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch10_design_01",
-    "name": "网络设计第一步骤",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "课程综合项目",
-    "description": "网络设计遵循自顶向下方法，需求分析是第一步骤，后续的逻辑设计、物理设计都基于需求。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch10_design_02",
-    "name": "三层网络架构",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "课程综合项目",
-    "description": "接入层连接终端用户，汇聚层聚合接入层流量并实施策略，核心层提供高速骨干转发。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch10_design_03",
-    "name": "Socket编程TCP vs UDP",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "课程综合项目",
-    "description": "文件传输必须可靠完整，应选 TCP(保证顺序、无丢失、无重复)。视频直播对实时性要求高，可容忍少量丢包，应选 UDP(低延迟、无队头阻塞)。实际直播常用 UDP + 应用层 FEC 或基于 UDP 的 QUIC。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch10_wireshark_01",
-    "name": "Wireshark过滤表达式",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "课程综合项目",
-    "description": "Wireshark 显示过滤器语法为 tcp.port==443。注意与抓包过滤器(bpf语法 \"tcp port 443\")的区别。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch10_socket_01",
-    "name": "多线程服务器设计",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "课程综合项目",
-    "description": "多线程、线程池、select/poll、epoll 都是常见的并发模型。C10K问题推动从多线程转向IO多路复用。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch10_vlan_01",
-    "name": "VLAN间路由",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "课程综合项目",
-    "description": "VLAN 隔离广播域，即使在同一交换机上的不同 VLAN 也不能直接通信，必须通过三层设备(路由器或三层交换机)进行 VLAN 间路由。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_queue_management",
-    "name": "队列管理算法",
-    "type": "算法",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "路由器队列管理策略直接影响QoS。FIFO(先进先出)简单公平但无优先级；Priority Queuing按优先级严格排队，高优先进低优先级可能饿死；WFQ(加权公平队列)按权重分配带宽，兼顾公平和优先级；CBWFQ基于类的加权公平队列可自定义流量类并分配保证带宽。",
-    "keywords": [
-      "FIFO",
-      "Priority Queuing",
-      "WFQ",
-      "CBWFQ",
-      "队列调度"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_traffic_engineering",
-    "name": "流量工程",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "流量工程(Traffic Engineering)通过优化路由来平衡网络负载，避免局部拥塞。MPLS-TE 在 MPLS 网络中显式指定 LSP 路径；IGP 度量调整可引导流量走特定链路；SDN 控制器可全局视角动态调整流表实现流量工程。",
-    "keywords": [
-      "流量工程",
-      "MPLS-TE",
-      "LSP",
-      "负载均衡",
-      "路由优化"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_ha_redundancy",
-    "name": "网络冗余与高可用",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "高可用(HA)通过冗余设计消除单点故障。VRRP/HSRP 实现网关冗余(虚拟IP在主备间切换)；链路聚合(LACP)将多物理链路捆绑为一条逻辑链路增加带宽和冗余；多路径路由(ECMP)同时利用多条等价路径。可靠性与性能是硬币两面。",
-    "keywords": [
-      "高可用",
-      "VRRP",
-      "HSRP",
-      "LACP",
-      "ECMP",
-      "冗余"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_dns_perf",
-    "name": "DNS 性能优化",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "DNS 解析延迟常被忽视却是页面加载的隐藏瓶颈。优化手段：DNS 预解析(prefetch)、减少域名数量、使用快速权威DNS、Anycast任播部署、DNS over HTTPS/TLS虽增安全但增延迟需权衡。DNS 缓存 TTL 设置也是关键——过短增加查询次数，过长影响变更生效。",
-    "keywords": [
-      "DNS",
-      "预解析",
-      "Anycast",
-      "TTL",
-      "DoH",
-      "DoT"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_tls_perf",
-    "name": "TLS 性能优化",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "TLS 握手的 2-RTT 开销是 HTTPS 延迟的主要来源。优化：Session Resumption(会话恢复)避免完整握手、False Start 在握手完成前发送数据、TLS 1.3 将握手压缩到 1-RTT、0-RTT(基于PSK)实现零往返。证书链优化、OCSP Stapling 减少验证延迟。",
-    "keywords": [
-      "TLS",
-      "Session Resumption",
-      "False Start",
-      "TLS 1.3",
-      "0-RTT",
-      "OCSP"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch8_compression",
-    "name": "网络压缩技术",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "网络性能优化",
-    "description": "压缩用CPU换带宽。HTTP内容压缩(Gzip/Brotli)可将文本资源缩小70%+；HTTP头部压缩(HPACK/QPACK)减少重复头部传输；图像压缩(WebP/AVIF)比JPEG/PNG节省25-50%体积；TLS压缩已因CRIME/BREACH攻击被禁用。需注意压缩比与CPU开销的平衡。",
-    "keywords": [
-      "Gzip",
-      "Brotli",
-      "HPACK",
-      "图片压缩",
-      "WebP",
-      "AVIF"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_queue_01",
-    "name": "WFQ加权公平队列",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "WFQ 根据权重(通常基于IP优先级)按比例分配带宽，低权重流仍能获得一定带宽，不会饿死。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_queue_02",
-    "name": "FIFO队列特点",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "FIFO是最简单的排队策略，所有分组按到达顺序处理，不区分优先级。突发流量可能导致对延迟敏感的应用(如VoIP)性能下降。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_te_01",
-    "name": "MPLS流量工程",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "MPLS-TE 通过显式路由(explicit route)建立 LSP(标签交换路径)，使流量可按网络管理者规划的路径转发。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_ha_01",
-    "name": "VRRP网关冗余",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "VRRP(虚拟路由冗余协议)多台路由器共享一个虚拟IP，只有Master负责转发。Master故障时Backup自动接管。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_ha_02",
-    "name": "链路聚合优势",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "链路聚合(LACP)将多物理链路捆绑为逻辑链路，可增加总带宽、提供链路级冗余和负载分担。加密不是LACP的功能。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_dns_01",
-    "name": "DNS预解析",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "DNS 预解析在用户可能点击链接前，由浏览器提前解析该链接的域名IP，减少实际点击后的等待时间。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_dns_02",
-    "name": "Anycast DNS",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "Anycast 允许多台 DNS 服务器共享同一IP地址，用户请求被路由到拓扑最近的服务器。优势：1) 就近响应降低延迟；2) 自动负载分散避免单点过载；3) 天然抗DDoS——攻击流量被分散到多个节点。Google Public DNS(8.8.8.8)就是典型Anycast部署。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_tls_01",
-    "name": "TLS握手RTT",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "TLS 1.2 完整握手需 2-RTT(TCP握手不算在内)，TLS 1.3 简化到 1-RTT。结合TCP 3次握手，TLS 1.2+TCP=3-RTT，TLS 1.3+TCP=2-RTT。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_tls_02",
-    "name": "Session Resumption",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "Session Resumption 通过 Session ID 或 Session Ticket 缓存之前握手协商的主密钥，后续连接可直接复用，避免完整的非对称加密开销。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_comp_01",
-    "name": "Brotli vs Gzip",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "Brotli 在相同压缩级别下压缩率比 Gzip 高 20-30%(即输出更小)，但压缩速度较慢。适合静态资源预压缩场景(CDN/build时压缩)。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_comp_02",
-    "name": "HTTP压缩安全风险",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "CRIME(2012)和BREACH(2013)攻击利用压缩后密文长度变化推测明文中的敏感字段(如Cookie中的CSRF token)。TLS 1.3 完全移除压缩支持。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_perf_overall_01",
-    "name": "端到端延迟组成",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "完整页面加载包括DNS解析+TCP握手+TLS握手+HTTP请求+响应传输+浏览器渲染。优化需关注每一环节。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_perf_overall_02",
-    "name": "带宽延迟积应用",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "窗口远小于BDP时链路近乎闲置——发送方发完64KB后必须等200ms ACK才能继续。高性能跨洋传输需大窗口(TCP Window Scaling)。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch8_perf_overall_03",
-    "name": "Wireshark排查延迟",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "网络性能优化",
-    "description": "通过Wireshark的Time列和TCP Stream Graph：1)SYN到SYN+ACK的间隔=网络RTT；2)Client Hello到Server Hello的间隔=TLS握手+1RTT；3)HTTP GET到第一个数据包(Time to First Byte)包含应用处理时间。Wireshark的Statistics>TCP Stream Graphs>Time-Sequence图可视化各阶段。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_sdn_dataplane",
-    "name": "SDN 数据平面",
-    "type": "原理",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SDN数据平面负责根据流表规则高速转发数据包。OpenFlow交换机使用多级流水线处理分组，从Table 0开始逐级匹配。流表项包含：匹配域、优先级、计数器、指令、超时。匹配失败时通过Packet-In上报控制器。",
-    "keywords": [
-      "数据平面",
-      "流表",
-      "流水线",
-      "Packet-In",
-      "匹配域"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_network_slicing",
-    "name": "网络切片",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "网络切片(Network Slicing)是5G核心概念，利用SDN/NFV技术在共享物理基础设施上创建多个逻辑隔离的端到端虚拟网络。每个切片针对特定场景优化：eMBB大带宽、URLLC超低延迟、mMTC海量连接。切片间资源隔离互不影响。",
-    "keywords": [
-      "网络切片",
-      "5G",
-      "eMBB",
-      "URLLC",
-      "mMTC"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_ibn",
-    "name": "意图网络 IBN",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "意图网络(Intent-Based Networking)是SDN的高级形态。管理员只需声明意图(如保证视频会议流量优先级)，IBN自动翻译为配置、持续验证、偏离时自愈。代表：Cisco DNA Center。核心闭环：意图 -> 翻译 -> 激活 -> 保障。",
-    "keywords": [
-      "IBN",
-      "意图网络",
-      "Cisco DNA",
-      "自动修复"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_spine_leaf",
-    "name": "Spine-Leaf 数据中心架构",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "Spine-Leaf(脊叶)是现代数据中心扁平化拓扑。Leaf连接服务器，Spine连接所有Leaf。任意两台服务器最多3跳(Leaf->Spine->Leaf)，延迟可预测。配合VXLAN Overlay和SDN控制器实现多租户二层互通和灵活虚拟网络。",
-    "keywords": [
-      "Spine-Leaf",
-      "数据中心",
-      "VXLAN",
-      "Overlay"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_vxlan",
-    "name": "VXLAN 虚拟可扩展局域网",
-    "type": "协议",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "VXLAN使用MAC-in-UDP封装，将二层帧封装在UDP中跨越三层网络。24位VNI支持1600万个虚拟网络，远超VLAN 4096限制。是数据中心多租户隔离和虚拟机迁移的关键技术，通常与SDN控制器配合实现自动隧道建立。",
-    "keywords": [
-      "VXLAN",
-      "VNI",
-      "Overlay",
-      "隧道",
-      "多租户"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_compute_offload",
-    "name": "计算卸载策略",
-    "type": "算法",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "计算卸载决定哪些任务在终端执行、哪些迁移到边缘或云端。决策因素：计算量、数据量、延迟、电量。策略包括全部本地、全部卸载、部分卸载(如DNN分区：浅层边缘推理+深层云端)。目标是最小化总延迟或能耗。",
-    "keywords": [
-      "计算卸载",
-      "DNN分区",
-      "能耗优化",
-      "边缘推理"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_iot_edge",
-    "name": "IoT 与边缘计算",
-    "type": "技术",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "IoT天然适合边缘计算：海量传感器数据在本地过滤预处理后仅上传有价值数据。边缘网关运行协议转换(MQTT/CoAP->HTTP)、数据聚合、规则引擎和本地控制。典型架构：传感器->边缘网关->雾节点->云端，数据量逐层递减。",
-    "keywords": [
-      "IoT",
-      "传感器",
-      "MQTT",
-      "边缘网关",
-      "数据聚合"
-    ],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "ch9_sdn_security",
-    "name": "SDN 安全",
-    "type": "概念",
-    "layer": "概念层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SDN集中控制带来的安全双刃剑：优势包括全局视图便于检测DDoS、流级精细管控；挑战是控制器成为单点攻击目标，南北向接口需TLS加密认证。安全应用：实时异常流量检测、动态黑洞路由隔离攻击源、MTD随机化IP。",
-    "keywords": [
-      "SDN安全",
-      "DDoS检测",
-      "TLS",
-      "MTD"
-    ],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_flow_01",
-    "name": "OpenFlow 流表项包含哪些字段？（多选）",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "OpenFlow流表项包含匹配域、优先级、计数器、指令和超时时间。密码不是流表字段。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_flow_02",
-    "name": "OpenFlow 交换机收到无匹配流表的包时，默认行为是？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "Table-miss时交换机将分组封装为Packet-In消息发送给控制器，由控制器决定如何处理(下发流表或丢弃)。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_slice_01",
-    "name": "5G 三大场景中，____切片面向超低延迟(如自动驾驶)，____切片面向海量连接(如智能抄表)。",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "eMBB增强移动宽带(大带宽)、URLLC超高可靠低延迟(自动驾驶/远程手术)、mMTC大规模机器通信(海量IoT)。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_slice_02",
-    "name": "网络切片的核心特征是？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "网络切片在共享物理基础设施上创建多个逻辑隔离的端到端虚拟网络，每个切片独立配置和优化。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_ibn_01",
-    "name": "意图网络(IBN)与传统SDN的最大区别是？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "IBN关键是声明式管理：管理员说「要什么」而非「怎么做」，系统自动翻译为配置、持续验证并在偏离时自愈。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_spine_01",
-    "name": "Spine-Leaf 架构中，任意两台服务器之间最多经过几跳？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "Spine-Leaf中所有Leaf都连接到所有Spine，路径固定为Leaf->Spine->Leaf(3跳)，延迟可预测。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_spine_02",
-    "name": "传统三层架构对比Spine-Leaf架构，正确描述是？（多选）",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "传统三层STP会阻塞冗余链路，且偏南北向优化不适应云数据中心大量东西向流量。Spine-Leaf扁平化+ECMP更适合现代DC。",
-    "keywords": [],
-    "difficulty": 3,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_vxlan_01",
-    "name": "VXLAN 使用____位 VNI 标识符，理论上支持____个虚拟网络，远超 VLAN 的 4096 限制。",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "VXLAN用24位VNI，支持约1600万个虚拟网络。VLAN只有12位，最多4096个。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_vxlan_02",
-    "name": "VXLAN 封装方式是将二层以太网帧封装在____协议中传输。",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "VXLAN采用MAC-in-UDP封装，原始二层帧作为UDP载荷，外层加IP头，UDP目的端口固定4789。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_offload_01",
-    "name": "以下哪些因素影响计算卸载决策？（多选）",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "计算卸载决策需权衡计算量、数据量、延迟、能耗。屏幕分辨率与卸载无关。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_offload_02",
-    "name": "DNN 分区卸载（部分边缘推理+部分云端推理）属于哪种策略？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "DNN分区将浅层放边缘(特征提取)、深层放云端(复杂推理)，属于部分卸载，在延迟和算力间折中。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_iot_01",
-    "name": "IoT 边缘网关的主要功能包括？（多选）",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "边缘网关负责协议转换、预处理、本地控制和设备管理，不替代云端(云端负责长期存储、大数据分析、AI训练)。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_iot_02",
-    "name": "为什么 IoT 场景不适合将所有数据直接上传云端？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "原因：1)带宽成本高(海量传感器数据)；2)延迟(实时控制不能等云端往返)；3)可靠性(网络中断时本地需自治)；4)隐私(敏感数据不出本地)。边缘计算在近端过滤处理后再上传有效数据。",
-    "keywords": [],
-    "difficulty": 2,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_sdnsec_01",
-    "name": "SDN 集中控制架构带来的主要安全挑战是？",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "SDN控制器是网络大脑，集中控制意味着控制器被攻破则全网沦陷。南北向接口须用TLS加密认证，控制器需高可用部署。",
-    "keywords": [],
-    "difficulty": 1,
-    "image_urls": [],
-    "video_url": null
-  },
-  {
-    "id": "q_ch9_sdnsec_02",
-    "name": "简述利用SDN实现MTD(Moving Target Defense)动态防御的核心思路。",
-    "type": "问题",
-    "layer": "问题层",
-    "chapter": "软件定义网络与边缘计算",
-    "description": "MTD通过不断变化系统属性(IP、端口、路由)增加攻击者侦查难度。SDN全局视图和可编程性使MTD易实现：控制器定期随机更换主机IP并更新流表，攻击者刚扫描到的信息很快失效。",
-    "keywords": [],
-    "difficulty": 3,
     "image_urls": [],
     "video_url": null
   }
